@@ -1,0 +1,9 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.dagouzhi.app.hongtangyun.android.pro",
+    "sha256_cert_fingerprints":
+    ["83:D6:9F:79:83:6D:21:EC:52:1D:01:0F:A9:6E:4E:CB:59:4D:C7:67:E9:C1:EA:16:37:4B:69:FB:7F:43:6D:D4"]
+  }
+}]

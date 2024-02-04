@@ -1,0 +1,45 @@
+/* stylelint-disable */
+.a.b {}
+/* stylelint-enable */
+
+a {
+  background-color: red;
+}
+
+a + b {
+  background: fixed;
+}
+
+.c .d {
+  background: red;
+}
+
+.b.c {
+  background: red;
+}
+
+a b {
+  background: red;
+}
+
+.c {
+  border-radius: 100%;
+  background-image: url('');
+  position: fixed;
+  box-shadow: none;
+}
+
+.e {
+  background: url('');
+  font-family: 'Courier New', Courier, monospace;
+}
+
+a:hover {
+  flex: 1;
+  background: red;
+}
+
+#ccc {
+  background: red;
+}
+

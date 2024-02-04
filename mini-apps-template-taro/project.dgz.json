@@ -1,0 +1,8 @@
+{
+  "type": "app",
+  "name": "分享",
+  "projectname": "分享",
+  "appid": "touristappid_zwds",
+  "appUrlConfig": "https://hongtangyun-1252095557.cos.ap-chengdu.myqcloud.com/assets/testMiniApps/zwds/latest/outputs/app.json",
+  "zipUrl": "https://hongtangyun-1252095557.cos.ap-chengdu.myqcloud.com/assets/testMiniApps/zwds/latest/outputs/dist.dgz"
+}
