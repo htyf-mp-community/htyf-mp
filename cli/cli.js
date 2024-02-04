@@ -9,6 +9,14 @@ import { input } from '@inquirer/prompts';
 import {execa, execaCommand} from 'execa'
 import ora from 'ora'
 import childProcess from 'child_process'
+import { v4 as uuidv4 } from 'uuid';
+import md5 from 'md5'
+
+const v4options = {
+  random: [
+    0x10, 0x91, 0x56, 0xbe, 0xc4, 0xfb, 0xc1, 0xea, 0x71, 0xb4, 0xef, 0xe1, 0x67, 0x1c, 0x58, 0x36,
+  ],
+};
 
 const log = console.log
 const program = new Command()
@@ -36,7 +44,7 @@ const isBunInstalled = () => {
 
 async function main() {
   const spinner = ora({
-    text: 'Creating codebase'
+    text: '创建代码库'
   })
   try {
     const kebabRegez = /^([a-z]+)(-[a-z0-9]+)*$/
@@ -77,7 +85,7 @@ async function main() {
       ]
     })
 
-    const appid = '';
+    const appid = md5(uuidv4(v4options));
   
     let config =  {
       "type": "app",
@@ -95,30 +103,33 @@ async function main() {
     await execa('git', ['clone', repoUrl, appName])
     try {
       if (tempType === 'taro') {
-        await execa('rm', ['-r', `${appName}/mini-apps-template-taro`])
+        await execa('rm', ['-r', `${appName}/mini-apps-template-rn`])
       }
       if (tempType === 'react-native') {
-        await execa('rm', ['-r', `${appName}/mini-apps-template-rn`])
+        await execa('rm', ['-r', `${appName}/mini-apps-template-taro`])
       }
       await execa('rm', ['-r', `${appName}/cli`])
       await execa('rm', ['-rf', `${appName}/.git`])
     } catch (err) {}
     
     if (tempType === 'taro') {
+      console.log(`${appName}/mini-apps-template-taro/project.dgz.json`)
       fs.writeFileSync(`${appName}/mini-apps-template-taro/project.dgz.json`, JSON.stringify(config, undefined, 2))
+      console.log(`${appName}/mini-apps-template-taro/project.dgz.json`)
     }
     if (tempType === 'react-native') {
       fs.writeFileSync(`${appName}/mini-apps-template-rn/project.dgz.json`, JSON.stringify(config, undefined, 2))
+      console.log(`${appName}/mini-apps-template-rn/project.dgz.json`)
     }
 
     
     spinner.text = ''
-    let serverStartCommand = ''
 
     spinner.stop() 
     log(`${green.bold('Success!')} Created ${appName} at ${process.cwd()} \n`)
     log(`切换到${appName}目录并运行开发`)
   } catch (err) {
+    console.log(err)
     log('\n')
     if (err.exitCode == 128) {
       log('Error: 目录已经存在。')

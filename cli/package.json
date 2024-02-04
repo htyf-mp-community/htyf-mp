@@ -1,13 +1,18 @@
 {
   "name": "htyf-mp",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "红糖云服app小程序模板-cli",
   "type": "module",
   "bin": "cli.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["hongtangyun", "mp", "taro", "react-native"],
+  "keywords": [
+    "hongtangyun",
+    "mp",
+    "taro",
+    "react-native"
+  ],
   "author": "dgz",
   "license": "MIT",
   "repository": {
@@ -20,6 +25,8 @@
     "cli-spinners": "^2.9.0",
     "commander": "^11.0.0",
     "execa": "^8.0.1",
-    "ora": "^7.0.1"
+    "md5": "^2.3.0",
+    "ora": "^7.0.1",
+    "uuid": "^9.0.1"
   }
 }
