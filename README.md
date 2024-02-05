@@ -19,3 +19,10 @@ npx htyf-mp
 ```sh
 npm start
 ```
+## 投食
+
+开发迭代不易，觉得 App 好用的，有能力的请投喂一下，也可以给个星星
+
+| 微信  | 支付宝 |
+| ------------- | ------------- |
+| ![微信](./mini-apps-template-rn/docs/IMG_5087.jpg)  | ![支付宝](./mini-apps-template-rn/docs/IMG_5088.jpg) |
