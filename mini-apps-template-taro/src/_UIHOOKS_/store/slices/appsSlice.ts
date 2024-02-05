@@ -25,8 +25,6 @@ export interface AppsState {
   token: string;
 }
 
-
-
 // 定义一个初始状态
 const initialState: AppsState = {
   __ENV__: "MASTER",
@@ -62,6 +60,6 @@ const counterSlice = createSlice({
   },
 });
 // 每个 case reducer 函数会生成对应的 Action creators
-export const {setToken, logout} = counterSlice.actions;
+export const {setEnv, setToken, logout} = counterSlice.actions;
 
 export default counterSlice.reducer;

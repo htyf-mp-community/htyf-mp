@@ -1,4 +1,4 @@
-import {combineReducers, configureStore} from '@reduxjs/toolkit';
+import {Reducer, combineReducers, configureStore} from '@reduxjs/toolkit';
 import Taro from '@tarojs/taro'
 import {
   persistStore,
@@ -10,13 +10,15 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
-import appsSlice, { APP_APPID, APP_BUILD_TIME, APP_VERSION } from './slices/appsSlice';
+import appsSlice, { APP_APPID, APP_BUILD_TIME, APP_VERSION, AppsState } from './slices/appsSlice';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 
 const rootReducer = combineReducers({
   apps: appsSlice,
-});
+}) as Reducer<{
+  apps: AppsState;
+}>;
 
 const persistedReducer = persistReducer({
   key: `__APP_${APP_APPID}_${APP_VERSION}_${APP_BUILD_TIME}__`,
