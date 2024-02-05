@@ -14,6 +14,9 @@ import appsSlice, { APP_APPID, APP_BUILD_TIME, APP_VERSION, AppsState } from './
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 
+/**
+ * 这块类型要自已定义一下
+ */
 const rootReducer = combineReducers({
   apps: appsSlice,
 }) as Reducer<{
