@@ -24,6 +24,9 @@ const green = chalk.green
 
 const repoUrl = 'https://github.com/htyf-mp-community/htyf-mp.git'
 
+const taroTempPath = 'mini-apps-template-taro';
+const rnTempPath = 'mini-apps-template-rn';
+
 const isYarnInstalled = () => {
   try {
     childProcess.execSync('yarn --version');
@@ -116,33 +119,38 @@ async function main() {
 
     spinner.start()
     await execa('git', ['clone', repoUrl, appName])
+    let appRootPath = '';
     try {
       if (tempType === 'taro') {
-        await execa('rm', ['-r', `${appName}/mini-apps-template-rn`])
+        appRootPath = `${appName}/${taroTempPath}`
+        await execa('rm', ['-r', `${appName}/${rnTempPath}`])
       }
       if (tempType === 'react-native') {
-        await execa('rm', ['-r', `${appName}/mini-apps-template-taro`])
+        appRootPath = `${appName}/${rnTempPath}`
+        await execa('rm', ['-r', `${appName}/${taroTempPath}`])
       }
       await execa('rm', ['-r', `${appName}/cli`])
       await execa('rm', ['-rf', `${appName}/.git`])
     } catch (err) {}
     
     if (tempType === 'taro') {
-      console.log(`${appName}/mini-apps-template-taro/project.dgz.json`)
-      fs.writeFileSync(`${appName}/mini-apps-template-taro/project.dgz.json`, JSON.stringify(config, undefined, 2))
-      console.log(`${appName}/mini-apps-template-taro/project.dgz.json`)
+      const dgzJosn = `${appRootPath}/project.dgz.json`
+      fs.writeFileSync(dgzJosn, JSON.stringify(config, undefined, 2))
+      console.log(dgzJosn)
     }
     if (tempType === 'react-native') {
-      fs.writeFileSync(`${appName}/mini-apps-template-rn/project.dgz.json`, JSON.stringify(config, undefined, 2))
-      console.log(`${appName}/mini-apps-template-rn/project.dgz.json`)
+      const dgzJosn = `${appRootPath}/project.dgz.json`
+      fs.writeFileSync(dgzJosn, JSON.stringify(config, undefined, 2))
+      console.log(dgzJosn)
     }
 
     
     spinner.text = ''
 
     spinner.stop() 
-    log(`${green.bold('Success!')} Created ${appName} at ${process.cwd()} \n`)
-    log(`切换到${appName}目录并运行开发`)
+    log(`${green.bold('Success!')} 创建项目 ${appName} 在 ${appRootPath} \n`)
+    log(`切换到【 ${appRootPath} 】目录并运行开发`)
+    log('\n')
   } catch (err) {
     console.log(err)
     log('\n')
