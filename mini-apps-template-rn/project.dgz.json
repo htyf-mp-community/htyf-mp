@@ -1,6 +1,6 @@
 {
   "type": "app",
-  "name": "RN模版",
+  "name": "mini-apps-template-rn",
   "projectname": "RN模版",
   "appid": "__rn_temp_appid__",
   "appUrlConfig": "https://raw.gitmirror.com/htyf-mp-community/htyf-mp/main/mini-apps-template-rn/dgz/build/outputs/app.json",

@@ -1,6 +1,6 @@
 {
   "type": "app",
-  "name": "Taro模板",
+  "name": "mini-apps-template-taro",
   "projectname": "Taro模板",
   "appid": "__taro_temp_appid__",
   "appUrlConfig": "https://raw.gitmirror.com/htyf-mp-community/htyf-mp/main/mini-apps-template-taro/dgz/build/outputs/app.json",
