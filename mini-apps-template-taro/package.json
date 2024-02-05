@@ -44,7 +44,6 @@
   "author": "",
   "resolutions": {
     "@ant-design/react-native": "5.0.5",
-    "@api.video/react-native-livestream": "1.2.4",
     "@babel/core": "7.23.9",
     "@babel/helper-create-class-features-plugin": "7.23.10",
     "@babel/plugin-proposal-decorators": "7.23.9",
@@ -335,7 +334,6 @@
   },
   "dependencies": {
     "@ant-design/react-native": "5.0.5",
-    "@api.video/react-native-livestream": "1.2.4",
     "@babel/core": "7.23.9",
     "@babel/helper-create-class-features-plugin": "7.23.10",
     "@babel/plugin-proposal-decorators": "7.23.9",

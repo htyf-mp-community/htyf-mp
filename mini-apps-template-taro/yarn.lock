@@ -44,11 +44,6 @@
     shallowequal "^1.1.0"
     utility-types "^3.10.0"
 
-"@api.video/react-native-livestream@1.2.4":
-  version "1.2.4"
-  resolved "https://registry.yarnpkg.com/@api.video/react-native-livestream/-/react-native-livestream-1.2.4.tgz#2b86352c5afd205ee8d0dfdcbb9a73afc57837a8"
-  integrity sha512-IYtx3pCnOrURrf5uI5X/k1p0b/S8lhs/C9LohD3sQY0DvqMtTn05ktKtlbkLDeDiJ/uYu7+7vnAPUfRj2I/jFQ==
-
 "@azure/abort-controller@^1.0.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@azure/abort-controller/-/abort-controller-1.1.0.tgz#788ee78457a55af8a1ad342acb182383d2119249"

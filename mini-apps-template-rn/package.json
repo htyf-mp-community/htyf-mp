@@ -16,7 +16,6 @@
   },
   "dependencies": {
     "@ant-design/react-native": "5.0.5",
-    "@api.video/react-native-livestream": "1.2.4",
     "@babel/core": "7.23.9",
     "@babel/helper-create-class-features-plugin": "7.23.10",
     "@babel/plugin-proposal-decorators": "7.23.9",
@@ -380,7 +379,6 @@
     "webpack-bundle-analyzer": "4.10.1",
     "webpack-sources": "3.2.3",
     "@ant-design/react-native": "5.0.5",
-    "@api.video/react-native-livestream": "1.2.4",
     "@bam.tech/react-native-image-resizer": "3.0.7",
     "@craftzdog/react-native-buffer": "6.0.5",
     "@dr.pogodin/react-native-static-server": "0.10.5",
