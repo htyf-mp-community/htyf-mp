@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "postinstall": "npm run dgz:init",
-    "dgz": "mini-apps-cli",
-    "dgz:init": "mini-apps-cli --init",
-    "build:dgz": "mini-apps-cli --build",
+    "dgz": "node ./scripts/index.js && mini-apps-cli",
+    "dgz:init": "node ./scripts/index.js && mini-apps-cli --init",
+    "build:dgz": "node ./scripts/index.js && mini-apps-cli --build",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "lint": "eslint .",

@@ -62,12 +62,14 @@ dgz 小程序!!!
 ```
 {
   "type": "app",
-  "name": "xxxx",
-  "appid": "xxxxx",
-  "version": "1.0.5",
-  "appUrlConfig": "https://hongtangyun-1252095557.cos.ap-chengdu.myqcloud.com/assets/testMiniApps/htyanimation/app.json",
-  "zipUrl": "https://xxxxx.myqcloud.com/assets/testMiniApps/xxxxx/outputs/ios/remotes/data.dgz"
+  "name": "RN模版",
+  "projectname": "RN模版",
+  "appid": "__rn_temp_appid__",
+  "appUrlConfig": "https://raw.gitmirror.com/htyf-mp-community/htyf-mp/main/mini-apps-template-rn/dgz/build/outputs/app.json",
+  "zipUrl": "https://raw.gitmirror.com/htyf-mp-community/htyf-mp/main/mini-apps-template-rn/dgz/build/outputs/dist.dgz"
 }
 ```
 
 并将以上 json 生成二维码就可以用红糖云服 app 扫码加入小程序
+
+![小程序码](./qrcode.png)
