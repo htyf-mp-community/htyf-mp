@@ -60,11 +60,27 @@ async function main() {
   
     if (!appName || !kebabRegez.test(args[0])) {
       appName = await input({
-        message: '输入应用程序名称',
+        message: '输入应用程序目录名称',
         default: 'my-htyf-mp',
         validate: d => {
          if(!kebabRegez.test(d)) {
-          return '请以my-app-name格式输入您的应用程序名称'
+          return '请以my-app-name格式输入您的应用程序目录名称'
+         }
+         return true
+        }
+      })
+    }
+
+    const displayNameRegez = /^[\u4e00-\u9fa5a-zA-Z0-9]{2,4}$/
+
+    let displayName = ''
+    if (!displayName) {
+      displayName = await input({
+        message: '输入应用程序名称',
+        default: '小程序',
+        validate: d => {
+         if(!displayNameRegez.test(d)) {
+          return '只能中文、字母和数字, 不能包含特殊字符, 限2-4个字符'
          }
          return true
         }
@@ -90,12 +106,11 @@ async function main() {
     let config =  {
       "type": "app",
       "name": appName,
+      "projectname": displayName,
       "appid": appid,
       "appUrlConfig": "https://xxx.cos.ap-chengdu.myqcloud.com/assets/testMiniApps/htyanimation/app.json",
       "zipUrl": "https://xxxxx.myqcloud.com/assets/testMiniApps/xxxxx/outputs/dist.dgz"
     }
-
-
 
     log(`\n初始化项目. \n`)
 
