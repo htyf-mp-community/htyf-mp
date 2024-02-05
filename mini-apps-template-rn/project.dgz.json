@@ -1,7 +1,8 @@
 {
- "type": "app",
-  "name": "模版RN",
-  "appid": "___dgz_template_appid___",
+  "type": "app",
+  "name": "RN模版",
+  "projectname": "RN模版",
+  "appid": "__rn_temp_appid__",
   "appUrlConfig": "https://xxx.cos.ap-chengdu.myqcloud.com/assets/testMiniApps/htyanimation/app.json",
   "zipUrl": "https://xxxxx.myqcloud.com/assets/testMiniApps/xxxxx/outputs/dist.dgz"
 }

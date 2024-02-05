@@ -1,8 +1,8 @@
 {
   "type": "app",
-  "name": "分享",
-  "projectname": "分享",
-  "appid": "touristappid_zwds",
+  "name": "taro模板",
+  "projectname": "taro模板",
+  "appid": "__taro_temp_appid__",
   "appUrlConfig": "https://hongtangyun-1252095557.cos.ap-chengdu.myqcloud.com/assets/testMiniApps/zwds/latest/outputs/app.json",
   "zipUrl": "https://hongtangyun-1252095557.cos.ap-chengdu.myqcloud.com/assets/testMiniApps/zwds/latest/outputs/dist.dgz"
 }
