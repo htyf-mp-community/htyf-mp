@@ -7,7 +7,7 @@
     "postinstall": "npm run run:scripts && npm run dgz:init",
     "dgz": "npm run run:scripts && mini-apps-cli",
     "dgz:init": "npm run run:scripts && mini-apps-cli --init",
-    "build:dgz": "npm run run:scripts && && mini-apps-cli --build",
+    "build:dgz": "npm run run:scripts && mini-apps-cli --build",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "lint": "eslint .",
