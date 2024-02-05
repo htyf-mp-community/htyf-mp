@@ -12,7 +12,7 @@
     "lint": "npm run lint:scss",
     "lint:scss": "stylelint ./src/stylelint.test.scss",
     "start": "npm run build:dgz && react-native webpack-start -- --reset-cache",
-    "postinstall": "npm run dgz:init",
+    "postinstall": "node ./scripts/index.js && npm run dgz:init",
     "dgz": "node ./scripts/index.js && mini-apps-cli",
     "build:js-crawler": "cd packages/js-crawler && npm run build",
     "dgz:init": "node ./scripts/index.js && mini-apps-cli --init",
