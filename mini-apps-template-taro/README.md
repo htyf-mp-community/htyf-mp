@@ -14,13 +14,15 @@
 yarn
 ```
 
+## 注意事项
+
 ### 2. 开发时可按 taro 官方文档开发（不能使用相关ui库如`taro-ui`等）
 
 > 注意
 > [vscode 安装 stylelint 扩展](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint)
 >
 > 1. 所有样式名不能重复(最好以文件相对路径为前缀)，不能嵌套, 写法如普通 css. 具体可参考`注意 7`。
-> 2. 引用资源请用此用法 `import xxpng from '@/assets/xxx.png';` 这个---`@/assets`。
+> 2. 引用资源请用此用法 `import xxpng from '@/assets/xxx.png';` 所有静资源放`@/assets`目录。
 > 3. 为了更好的兼容性，禁用 css 背景图，所有图片以 image 标签写入到页面，可以用绝对定位来布局。
 > 4. 定位只能支持用 position: absolute | relative。
 > 5. 所有图片资源 禁用@2x @3x 等后缀。
@@ -59,7 +61,9 @@ function Index() {
 }
 export default () => <UIProvider><Index /></UIProvider>
 ```
-> 14. `_UIHOOKS_`目录里的样式名规范： `uihooks-相对路径-具体类名`
+> 14. `_UIHOOKS_`目录里的为全局组件目录
+> 15. `_UIHOOKS_/store`目录放redux相关业为, 全局存储状态都应放这统一面管理
+> 16. `_UIHOOKS_`目录里的样式名规范： `uihooks-相对路径-具体类名`
 
 ### 3. 目录
 
