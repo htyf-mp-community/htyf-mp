@@ -1,6 +1,6 @@
 import { Alert, StatusBar } from 'react-native'
 import { CardStyleInterpolators, createStackNavigator } from '@react-navigation/stack';
-import React, { forwardRef, useEffect, useImperativeHandle, useMemo } from 'react'
+import React, { forwardRef, useEffect, useImperativeHandle } from 'react'
 import { useSafeAreaInsets, initialWindowMetrics, useSafeAreaFrame } from 'react-native-safe-area-context'
 import {StoreProvider, UIProvider, useAppSelector} from '@/_UIHOOKS_'
 

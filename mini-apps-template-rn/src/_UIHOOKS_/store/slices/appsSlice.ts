@@ -16,7 +16,6 @@ enum HOST_ENUM {
 }
 
 
-
 // 初始状态类型
 export interface AppsState {
   __ENV__: keyof typeof ENV_ENUM;
