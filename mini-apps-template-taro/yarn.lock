@@ -2155,10 +2155,10 @@
   resolved "https://registry.yarnpkg.com/@gar/promisify/-/promisify-1.1.3.tgz#555193ab2e3bb3b6adc3d551c9c030d9e860daf6"
   integrity sha512-k2Ty1JcVojjJFwrg/ThKi2ujJ7XNLYaFGNB/bWT9wGR+oSMJHMa5w+CUq6p/pVrKeNNgA7pCqEcjSnHVoqJQFw==
 
-"@gorhom/bottom-sheet@4.6.0", "@gorhom/bottom-sheet@^4.6.0":
-  version "4.6.0"
-  resolved "https://registry.yarnpkg.com/@gorhom/bottom-sheet/-/bottom-sheet-4.6.0.tgz#16bebbe4f5925447ece0d727830cf1776d5620f8"
-  integrity sha512-XgNflkhATUqTIiMDGuLaQZAtjUzcrhGOEJGHT+7Tou1ctTMb958YRGGnU9KFo5TkD6YCZcfWfxHPi9F0FF+DjA==
+"@gorhom/bottom-sheet@4.6.1", "@gorhom/bottom-sheet@^4.6.0":
+  version "4.6.1"
+  resolved "https://registry.yarnpkg.com/@gorhom/bottom-sheet/-/bottom-sheet-4.6.1.tgz#e45e2183246e338cf732fe4f8f2c91875b22ddce"
+  integrity sha512-sXqsYqX1/rAbmCC5fb9o6hwSF3KXriC0EGUGvLlhFvjaEEMBrRKFTNndiluRK1HmpUzazVaYdTm/lLkSiA2ooQ==
   dependencies:
     "@gorhom/portal" "1.0.14"
     invariant "^2.2.4"
@@ -2187,10 +2187,10 @@
   dependencies:
     "@hapi/hoek" "^9.0.0"
 
-"@hongtangyun/react-native-mini-apps-engines@0.15.16":
-  version "0.15.16"
-  resolved "https://registry.yarnpkg.com/@hongtangyun/react-native-mini-apps-engines/-/react-native-mini-apps-engines-0.15.16.tgz#7135c8c0b1c29adc3254468fa5f35f22ee990ba9"
-  integrity sha512-CGE/ql3WYPUaNpIpeTLZ1zI8CB0DugA0UcSgyiTGFhdBQsgKft/ukYHToiqLgLJEc82j3I3gfzXWHVzpSGaNNg==
+"@hongtangyun/react-native-mini-apps-engines@0.15.17":
+  version "0.15.17"
+  resolved "https://registry.yarnpkg.com/@hongtangyun/react-native-mini-apps-engines/-/react-native-mini-apps-engines-0.15.17.tgz#26eb6076ef3e4d01bd92c9aedd5a689eb10c0f49"
+  integrity sha512-diedSuPesrUUJQfnvMbFFpKL+/VNcA7jQGcUu9fhddI6fexAXA8kLEiFqCnM/14Hn41o0GiEUIGOrtVcl2eGEA==
   dependencies:
     "@callstack/repack" "^3.7.0"
     "@gorhom/bottom-sheet" "^4.6.0"
@@ -3323,10 +3323,10 @@
     "@react-aria/ssr" "^3.0.1"
     "@react-aria/utils" "^3.3.0"
 
-"@react-native-async-storage/async-storage@1.21.0", "@react-native-async-storage/async-storage@~1.17.7":
-  version "1.21.0"
-  resolved "https://registry.yarnpkg.com/@react-native-async-storage/async-storage/-/async-storage-1.21.0.tgz#d7e370028e228ab84637016ceeb495878b7a44c8"
-  integrity sha512-JL0w36KuFHFCvnbOXRekqVAUplmOyT/OuCQkogo6X98MtpSaJOKEAeZnYO8JB0U/RIEixZaGI5px73YbRm/oag==
+"@react-native-async-storage/async-storage@1.22.0", "@react-native-async-storage/async-storage@~1.17.7":
+  version "1.22.0"
+  resolved "https://registry.yarnpkg.com/@react-native-async-storage/async-storage/-/async-storage-1.22.0.tgz#202a9afd15a5b829c39b709d0ca3942612441efc"
+  integrity sha512-b5KD010iiZnot86RbAaHpLuHwmPW2qA3SSN/OSZhd1kBoINEQEVBuv+uFtcaTxAhX27bT0wd13GOb2IOSDUXSA==
   dependencies:
     merge-options "^3.0.4"
 
@@ -4633,6 +4633,11 @@
     "@types/estree" "0.0.39"
     estree-walker "^1.0.1"
     picomatch "^2.2.2"
+
+"@sayem314/react-native-keep-awake@1.2.3":
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/@sayem314/react-native-keep-awake/-/react-native-keep-awake-1.2.3.tgz#e212bbd8be95296c37a75cde02c081f0e2602e46"
+  integrity sha512-Vk/1cYfEiZpKUKDH1c4NzRwSROcIRGjH/QY0/AnDoYTY01LJiqn9h7xKmLl7VtZlvgTkhcWwISpFSPYDU5TfwA==
 
 "@segment/loosely-validate-event@^2.0.0":
   version "2.0.0"
@@ -11296,7 +11301,7 @@ eventemitter2@6.4.9, eventemitter2@^6.4.9:
   resolved "https://registry.yarnpkg.com/eventemitter2/-/eventemitter2-6.4.9.tgz#41f2750781b4230ed58827bc119d293471ecb125"
   integrity sha512-JEPTiaOt9f04oa6NOkc4aH+nVp5I3wEjpHbIPqfgCdD5v5bUzy7xQqwcVO2aDQgOWhI28da57HksMrzK9HlRxg==
 
-eventemitter3@^4.0.0:
+eventemitter3@^4.0.0, eventemitter3@^4.0.7:
   version "4.0.7"
   resolved "https://registry.yarnpkg.com/eventemitter3/-/eventemitter3-4.0.7.tgz#2de9b68f6528d5644ef5c59526a1b4a07306169f"
   integrity sha512-8guHBZCwKnFhYdHr2ysuRWErTwhoN2X8XELRlrRwpmfeY2jjuUN4taQMsULKUVo1K4DvZl+0pgfyoysHxvmvEw==
@@ -11430,10 +11435,10 @@ expo-av@13.10.5, expo-av@~13.0.0:
   resolved "https://registry.yarnpkg.com/expo-av/-/expo-av-13.10.5.tgz#cdce4db8c0f896be88cc881994704a251a1e63ff"
   integrity sha512-w45oCoe+8PunDeM0rh/Ut6UaGh7OjEJOCjAiQy3nCxpA8FaXB17KaqpsvkAXIMvceHYWndH8+D29esUTS6wEsA==
 
-expo-barcode-scanner@12.9.2, expo-barcode-scanner@~12.0.0:
-  version "12.9.2"
-  resolved "https://registry.yarnpkg.com/expo-barcode-scanner/-/expo-barcode-scanner-12.9.2.tgz#f204cff97b32f071a3a8b2bd33f693f5a527d0b3"
-  integrity sha512-szsGCWMu6HXWigSKvGy7q+5v7EyIUr4SYdmMhzLxNQmNA8fPP2t2SMOhX8AVcGAqu9nOY7ij0bZUtAWrLFo6FA==
+expo-barcode-scanner@12.9.3, expo-barcode-scanner@~12.0.0:
+  version "12.9.3"
+  resolved "https://registry.yarnpkg.com/expo-barcode-scanner/-/expo-barcode-scanner-12.9.3.tgz#b6be7975c7a347d5906255b2117eb8ea35dde275"
+  integrity sha512-I3zaKSINRMHbTc7sHIq14ug3fHkCsW4rweJF12yk0kHaympI2wxVgIo2DhzeZaYG1Ylkuj5aiKen3NuwDk1FSA==
   dependencies:
     expo-image-loader "~4.6.0"
 
@@ -11442,10 +11447,10 @@ expo-brightness@11.8.0, expo-brightness@~11.0.0:
   resolved "https://registry.yarnpkg.com/expo-brightness/-/expo-brightness-11.8.0.tgz#214cd01682ba3214ccb7c4c70cc3b9d9f6c1a1f5"
   integrity sha512-ipQA7s8PvJVhy+Ls6Dsql0veXXV5CdMcbXNPwQuXTbUofRE+8FHO0vasShMZlKYcD9KNgFygjx0U+THi80dtAw==
 
-expo-camera@14.0.4, expo-camera@~13.0.0:
-  version "14.0.4"
-  resolved "https://registry.yarnpkg.com/expo-camera/-/expo-camera-14.0.4.tgz#8705e6d8620854ba217480fd40700b66d287c28a"
-  integrity sha512-0kOSIkvRkkJInwzvcWvmogWz7ta6oqjS3HD81z/Vm+fFUtmZ13PZEOWD8arYySoU1qMlUw9LztoBY09bpNeWOg==
+expo-camera@14.0.5, expo-camera@~13.0.0:
+  version "14.0.5"
+  resolved "https://registry.yarnpkg.com/expo-camera/-/expo-camera-14.0.5.tgz#b39a873316895e5a7ab86e8131dc9ffe529fc972"
+  integrity sha512-rHCOEAjt0NOjYXMyKnrGruOMvPdKbhhJBMtpr8LfJPVprsxZTjFC+flQgX52tZZWxPa1Hn6qpGYUzxZhVakHCg==
   dependencies:
     invariant "^2.2.4"
 
@@ -11461,10 +11466,10 @@ expo-file-system@16.0.6, expo-file-system@~15.1.1, expo-file-system@~16.0.0, exp
   resolved "https://registry.yarnpkg.com/expo-file-system/-/expo-file-system-16.0.6.tgz#07a140a7bcb44b42bd3f0b465e7583cc7f7d7078"
   integrity sha512-ATCHL7nEg2WwKeamW/SDTR9jBEqM5wncFq594ftKS5QFmhKIrX48d9jyPFGnNq+6h8AGPg4QKh2KCA4OY49L4g==
 
-expo-font@11.10.2, expo-font@^10.0.5, expo-font@~11.10.2:
-  version "11.10.2"
-  resolved "https://registry.yarnpkg.com/expo-font/-/expo-font-11.10.2.tgz#233195c4fa0321763bd89bd7919bf7271a439c3f"
-  integrity sha512-AE0Q0LiWiVosQ/jlKUPoWoob7p3GwYM2xmLoUkuopO9RYh9NL1hZKHiMKcWBZyDG8Gww1GtBQwh7ZREST8+jjQ==
+expo-font@11.10.3, expo-font@^10.0.5, expo-font@~11.10.3:
+  version "11.10.3"
+  resolved "https://registry.yarnpkg.com/expo-font/-/expo-font-11.10.3.tgz#a3115ebda8e09bd7cb8052619a4bbe606f0c17f4"
+  integrity sha512-q1Td2zUvmLbCA9GV4OG4nLPw5gJuNY1VrPycsnemN1m8XWTzzs8nyECQQqrcBhgulCgcKZZJJ6U0kC2iuSoQHQ==
   dependencies:
     fontfaceobserver "^2.1.0"
 
@@ -11514,10 +11519,10 @@ expo-modules-autolinking@1.10.3:
     find-up "^5.0.0"
     fs-extra "^9.1.0"
 
-expo-modules-core@1.11.8:
-  version "1.11.8"
-  resolved "https://registry.yarnpkg.com/expo-modules-core/-/expo-modules-core-1.11.8.tgz#b0bdb31e70e1e570b70a9613f4b6392306c99a80"
-  integrity sha512-rlctE3nCNLCGv3LosGQNaTuwGrr2SyQA+hOgci/0l+VRc0gFNtvl0gskph9C0tnN1jzBeb8rRZQYVj5ih1yxcA==
+expo-modules-core@1.11.9:
+  version "1.11.9"
+  resolved "https://registry.yarnpkg.com/expo-modules-core/-/expo-modules-core-1.11.9.tgz#4b95070390fe7e3418aa84580244bcf0540357ca"
+  integrity sha512-GTUb81vcPaF+5MtlBI1u9IjrZbGdF1ZUwz3u8Gc+rOLBblkZ7pYsj2mU/tu+k0khTckI9vcH4ZBksXWvE1ncjQ==
   dependencies:
     invariant "^2.2.4"
 
@@ -11543,10 +11548,10 @@ expo-video-thumbnails@7.9.0:
   resolved "https://registry.yarnpkg.com/expo-video-thumbnails/-/expo-video-thumbnails-7.9.0.tgz#7ec03759ae169a9a585d94b15c9de96dffae8851"
   integrity sha512-KP7ZlIu83xXXIFx24bzjScwLns6b93f3eHPDUOnT5UtOScbIV3guXA6P9pRBnyxJe0K5+NhR11wX1wf+QCk9+g==
 
-expo@50.0.6:
-  version "50.0.6"
-  resolved "https://registry.yarnpkg.com/expo/-/expo-50.0.6.tgz#36135b59e51a40a166d47de845da313fc0184da5"
-  integrity sha512-CVg0h9bmYeTWtw4EOL0HKNL+zu84YZl5nLWRPKrcpt8jox1VQQAYmvJGMdM5gSRxq5CFNLlWGxq9O8Zvfi1SOQ==
+expo@50.0.7:
+  version "50.0.7"
+  resolved "https://registry.yarnpkg.com/expo/-/expo-50.0.7.tgz#d32e6f05e03e7b97d53571f5b3a453a1c4d72fde"
+  integrity sha512-lTqIrKOUTKHLdTuAaJzZihi1v7F8Ix1dOXVWMpToDy9zPC/s+fet0fbyXdFUxYsCUyuEDIB9tvejrTYZk8Hm0Q==
   dependencies:
     "@babel/runtime" "^7.20.0"
     "@expo/cli" "0.17.5"
@@ -11557,10 +11562,10 @@ expo@50.0.6:
     babel-preset-expo "~10.0.1"
     expo-asset "~9.0.2"
     expo-file-system "~16.0.6"
-    expo-font "~11.10.2"
+    expo-font "~11.10.3"
     expo-keep-awake "~12.8.2"
     expo-modules-autolinking "1.10.3"
-    expo-modules-core "1.11.8"
+    expo-modules-core "1.11.9"
     fbemitter "^3.0.0"
     whatwg-url-without-unicode "8.0.0-3"
 
@@ -19690,6 +19695,13 @@ react-native-avoid-softinput@5.0.0:
   resolved "https://registry.yarnpkg.com/react-native-avoid-softinput/-/react-native-avoid-softinput-5.0.0.tgz#651ff4d1d44685bc185ffa0ee49687488a91e3b8"
   integrity sha512-hpyWhBLiWcMqKbnhH1uQ+xWjv8b9L4sxIUyWiRE4F2O7lk7KlOvMKcpdl7Xxb6cyBOUNQxxtqN0btOAC6hT6oQ==
 
+react-native-background-actions@3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/react-native-background-actions/-/react-native-background-actions-3.0.1.tgz#35a7aa77c8becd47fe677955e257c09b80cfebfb"
+  integrity sha512-xlEjUM2PP+OEQQkr9Z4c4+dRIzhbCh1xAeakL8FKGDib2a3dki2kMR4ZTw+9oHspHn9VF1Fuu78mWXR5zqkVaA==
+  dependencies:
+    eventemitter3 "^4.0.7"
+
 react-native-background-timer@2.4.1:
   version "2.4.1"
   resolved "https://registry.yarnpkg.com/react-native-background-timer/-/react-native-background-timer-2.4.1.tgz#a3bc1cafa8c1e3aeefd0611de120298b67978a0f"
@@ -19700,10 +19712,10 @@ react-native-bars@2.4.3:
   resolved "https://registry.yarnpkg.com/react-native-bars/-/react-native-bars-2.4.3.tgz#b1841634f469b99c1ead6cddc21b5a1ba0d0fea1"
   integrity sha512-CcqMqDN3Vp7xcOLzHlLmdK+1MBKF2S2tBqWUw/bKLtX/cRGgJwhXvCLD7fctA91V7Jh4vWiGmQPqWGHHXRfnog==
 
-react-native-ble-manager@11.2.1:
-  version "11.2.1"
-  resolved "https://registry.yarnpkg.com/react-native-ble-manager/-/react-native-ble-manager-11.2.1.tgz#5587c0f63adf0b6aacc78612e28f23646d00c407"
-  integrity sha512-+Q9TfVWntC5JK/nBsSV5BLBZM3zq7QD60qoelJnrjlPDIPBR1arJjnUni6DnaGTCzrGjbJLQIQv/GsOR/wuehg==
+react-native-ble-manager@11.3.1:
+  version "11.3.1"
+  resolved "https://registry.yarnpkg.com/react-native-ble-manager/-/react-native-ble-manager-11.3.1.tgz#88833efdf9d30ed8b1fe8bcffd7b142d6cdb1246"
+  integrity sha512-dIn5IoaO/TE1dgWiFvn5d3n+XDUvAJgy4MS8ZaXMlCSIbf58/3Nl0Qz1wu3e75rzqLW8AdAfeV654vBjMk8RTA==
 
 react-native-blob-util@0.19.6:
   version "0.19.6"
@@ -19991,10 +20003,10 @@ react-native-localize@3.0.6:
   resolved "https://registry.yarnpkg.com/react-native-localize/-/react-native-localize-3.0.6.tgz#6df2e317038c0cafe051184b2f0280f89ef8050c"
   integrity sha512-pfwwNKRfXcxp0LZEzj5oW2/uo5oZOhiQ4PYlg8uLlsl9pDLcWg03yLCHohTWKX02vE/BFz9hkrHT/nQtlO/iFg==
 
-react-native-maps@1.10.2, react-native-maps@^1.3.2:
-  version "1.10.2"
-  resolved "https://registry.yarnpkg.com/react-native-maps/-/react-native-maps-1.10.2.tgz#a01e92e44de5abc7937068bbb39dee776ca2dbfb"
-  integrity sha512-kWKr14kQXIF3h8x5D072gE2MSXEz0DGt5EdKV11dcyUbXj3cId1hviOTc4aYkstjsqefKN27ZNeGALG7/f5u9g==
+react-native-maps@1.10.3, react-native-maps@^1.3.2:
+  version "1.10.3"
+  resolved "https://registry.yarnpkg.com/react-native-maps/-/react-native-maps-1.10.3.tgz#a669ee3a8baa01d30c5c7af7bdc498428d0e8284"
+  integrity sha512-P8/Viq5vgW9FRhvfDFQHxq02cZUcDJu6VbBZar7c/voGDbD5nrTIA0qlpiUAmrs1ikd8+7S4QjXQlorppBBMvA==
   dependencies:
     "@types/geojson" "^7946.0.13"
 
@@ -20060,10 +20072,10 @@ react-native-parsed-text@0.0.22:
   dependencies:
     prop-types "^15.7.x"
 
-react-native-permissions@4.1.1:
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/react-native-permissions/-/react-native-permissions-4.1.1.tgz#6c185f9ec45069fa14cf8992bed6b67fc8981478"
-  integrity sha512-wdIHMwmDZ6pRVsgAgF7mn/pJEuJd5wJDGENqvFDJs2lW4BSZeN++ZFsA6FgOqUs/2276Oj7rslQgVaxdOsi6yw==
+react-native-permissions@4.1.2:
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/react-native-permissions/-/react-native-permissions-4.1.2.tgz#14f31192f852c5e0813451f8f39fd22f041b1919"
+  integrity sha512-dduzHcjYp1o52M8OLYhygQbGb/UnQLD3Gqhu+5cZz6MyWAb/4DQp5yYwKu6a2lY9Cz0QgbRd1Ejkmqn01cQqEg==
 
 react-native-progress@5.0.1:
   version "5.0.1"
@@ -22911,10 +22923,10 @@ symbol-tree@^3.2.4:
   resolved "https://registry.yarnpkg.com/symbol-tree/-/symbol-tree-3.2.4.tgz#430637d248ba77e078883951fb9aa0eed7c63fa2"
   integrity sha512-9QNk5KwDF+Bvz+PyObkmSYjI5ksVUYtjW7AU22r2NKcfLJcXp96hkDWU3+XndOsUb+AQ9QhfzfCT2O+CNWT5Tw==
 
-systeminformation@5.21.24, systeminformation@^5.21.24:
-  version "5.21.24"
-  resolved "https://registry.yarnpkg.com/systeminformation/-/systeminformation-5.21.24.tgz#1c95265badda0c49312e2409872b1473c72398ca"
-  integrity sha512-xQada8ByGGFoRXJaUptGgddn3i7IjtSdqNdCKzB8xkzsM7pHnfLYBWxkPdGzhZ0Z/l+W1yo+aZQZ74d2isj8kw==
+systeminformation@5.22.0, systeminformation@^5.21.24:
+  version "5.22.0"
+  resolved "https://registry.yarnpkg.com/systeminformation/-/systeminformation-5.22.0.tgz#d2b3c75bfa68be612d6ed4addb94cc59b901797b"
+  integrity sha512-oAP80ymt8ssrAzjX8k3frbL7ys6AotqC35oikG6/SG15wBw+tG9nCk4oPaXIhEaAOAZ8XngxUv3ORq2IuR3r4Q==
 
 table@^6.8.1:
   version "6.8.1"
@@ -24955,9 +24967,9 @@ zrender@5.4.4:
   dependencies:
     tslib "2.3.0"
 
-zustand@4.5.0:
-  version "4.5.0"
-  resolved "https://registry.yarnpkg.com/zustand/-/zustand-4.5.0.tgz#141354af56f91de378aa6c4b930032ab338f3ef0"
-  integrity sha512-zlVFqS5TQ21nwijjhJlx4f9iGrXSL0o/+Dpy4txAP22miJ8Ti6c1Ol1RLNN98BMib83lmDH/2KmLwaNXpjrO1A==
+zustand@4.5.1:
+  version "4.5.1"
+  resolved "https://registry.yarnpkg.com/zustand/-/zustand-4.5.1.tgz#2088956ee454759fb8b866ca335a2373e76736c5"
+  integrity sha512-XlauQmH64xXSC1qGYNv00ODaQ3B+tNPoy22jv2diYiP4eoDKr9LA+Bh5Bc3gplTrFdb6JVI+N4kc1DZ/tbtfPg==
   dependencies:
     use-sync-external-store "1.2.0"
