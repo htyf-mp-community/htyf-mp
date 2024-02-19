@@ -351,7 +351,7 @@
     "@dr.pogodin/react-native-fs": "2.21.0-alpha.8",
     "@dr.pogodin/react-native-static-server": "0.10.5",
     "@gorhom/bottom-sheet": "4.6.1",
-    "@hongtangyun/react-native-mini-apps-engines": "0.15.17",
+    "@hongtangyun/react-native-mini-apps-engines": "^0.15.18",
     "@hongtangyun/react-native-utils": "0.1.2",
     "@hongtangyun/rooms-sdk": "0.10.20",
     "@hromovp/react-native-static-server": "0.5.5",
@@ -383,6 +383,7 @@
     "@react-navigation/native-stack": "6.9.18",
     "@react-navigation/stack": "6.3.21",
     "@reduxjs/toolkit": "2.2.1",
+    "@sayem314/react-native-keep-awake": "1.2.3",
     "@sentry/react-native": "5.19.0",
     "@shopify/flash-list": "1.6.3",
     "@tarojs/components": "3.6.23",
@@ -508,6 +509,7 @@
     "react-native-audio-recorder-player": "3.6.6",
     "react-native-autoheight-webview": "1.6.5",
     "react-native-avoid-softinput": "5.0.0",
+    "react-native-background-actions": "3.0.1",
     "react-native-background-timer": "2.4.1",
     "react-native-bars": "2.4.3",
     "react-native-ble-manager": "11.3.1",
@@ -626,9 +628,7 @@
     "webpack-bundle-analyzer": "4.10.1",
     "webpack-sources": "3.2.3",
     "wtils": "0.2.0",
-    "zustand": "4.5.1",
-    "@sayem314/react-native-keep-awake": "1.2.3",
-    "react-native-background-actions": "3.0.1"
+    "zustand": "4.5.1"
   },
   "devDependencies": {
     "@babel/core": "7.22.19",
