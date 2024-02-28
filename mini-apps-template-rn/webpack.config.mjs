@@ -122,6 +122,7 @@ export default (env) => {
         axios$: path.join(dirname, './node_modules/axios/dist/browser/axios.cjs'),
         cheerio: path.join(dirname, './node_modules/cheerio/lib/slim.js'),
         realm$: path.join(dirname, './node_modules/realm/index.react-native.js'),
+        "@realm/fetch": path.join(dirname, './node_modules/@realm/fetch/dist/react-native/react-native.js'),
         // immer$: path.join(dirname, './node_modules/immer/dist/index.js'),
         // '@react-stately/combobox': path.join(dirname, './node_modules/@react-stately/combobox/src/index.ts'),
       },
