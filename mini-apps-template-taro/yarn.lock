@@ -2265,10 +2265,10 @@
   dependencies:
     "@hapi/hoek" "^9.0.0"
 
-"@hongtangyun/react-native-mini-apps-engines@0.15.29":
-  version "0.15.29"
-  resolved "https://registry.yarnpkg.com/@hongtangyun/react-native-mini-apps-engines/-/react-native-mini-apps-engines-0.15.29.tgz#087774c2c2277dc00cb7638de855c811c16c0629"
-  integrity sha512-wVXTe9dtuGfREP+RGCDKd42yQiP2QP7smMeDv4zRRekDT60Kyhp3eG3KbDlkamWx8yFZGdczytrGU0FCq0bjYQ==
+"@hongtangyun/react-native-mini-apps-engines@0.15.31":
+  version "0.15.31"
+  resolved "https://registry.yarnpkg.com/@hongtangyun/react-native-mini-apps-engines/-/react-native-mini-apps-engines-0.15.31.tgz#343acf12d21e0036a1cf4b2906f602620011bd16"
+  integrity sha512-2E4zRCoe3T48YjvbFybipVQf3HdqhxEvGzFZ3IuBlXi+ztVdWnmDDcE7NFvRO1q3yGp2KlShGghS/FuzbaCcjw==
   dependencies:
     "@callstack/repack" "^3.7.0"
     "@gorhom/bottom-sheet" "^4.6.0"
@@ -2875,6 +2875,11 @@
   dependencies:
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
+
+"@notifee/react-native@7.8.2":
+  version "7.8.2"
+  resolved "https://registry.yarnpkg.com/@notifee/react-native/-/react-native-7.8.2.tgz#72d3199ae830b4128ddaef3c1c2f11604759c9c4"
+  integrity sha512-VG4IkWJIlOKqXwa3aExC3WFCVCGCC9BA55Ivg0SMRfEs+ruvYy/zlLANcrVGiPtgkUEryXDhA8SXx9+JcO8oLA==
 
 "@npmcli/agent@^2.0.0":
   version "2.2.0"
@@ -19870,10 +19875,10 @@ react-lifecycles-compat@^3.0.4:
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
-react-native-agora@4.2.6:
-  version "4.2.6"
-  resolved "https://registry.yarnpkg.com/react-native-agora/-/react-native-agora-4.2.6.tgz#3f6db860b2da088b0e63441b53b3e31f1a51df4f"
-  integrity sha512-k7l0JxYGdZa49E6j+L9UlWwNTKU0JFtGvhxxHxisXUO87OfnZ1akdbwhdHwf2+JYFAF2cp6dHwM3NdAm/KCHWw==
+react-native-agora@4.3.0:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/react-native-agora/-/react-native-agora-4.3.0.tgz#3649605719e51ef9daa8111e328891a18c9180ba"
+  integrity sha512-mvOjPdYcZSJk6amzccD8LLWXiOOrx6Lcc+nqyyiRgKD/2f/fCs42ucsh/qr2WEgSrIYT46LKABVdN9VCveVfrA==
   dependencies:
     buffer "^6.0.3"
     eventemitter3 "^5.0.1"

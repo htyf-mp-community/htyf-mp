@@ -58,7 +58,7 @@
     "@craftzdog/react-native-buffer": "6.0.5",
     "@dr.pogodin/react-native-static-server": "0.11.0",
     "@gorhom/bottom-sheet": "4.6.1",
-    "@hongtangyun/react-native-mini-apps-engines": "0.15.29",
+    "@hongtangyun/react-native-mini-apps-engines": "0.15.31",
     "@hongtangyun/react-native-utils": "0.1.2",
     "@hongtangyun/rooms-sdk": "0.10.20",
     "@miblanchard/react-native-slider": "2.3.1",
@@ -204,7 +204,7 @@
     "react-dom": "18.1.0",
     "react-error-boundary": "4.0.12",
     "react-json-view": "1.21.3",
-    "react-native-agora": "4.2.6",
+    "react-native-agora": "4.3.0",
     "react-native-audio-recorder-player": "3.6.6",
     "react-native-autoheight-webview": "1.6.5",
     "react-native-avoid-softinput": "5.0.0",
@@ -348,7 +348,8 @@
     "expo-clipboard": "5.0.1",
     "expo-speech": "11.7.0",
     "@realm/fetch": "0.1.1",
-    "path-browserify": "1.0.1"
+    "path-browserify": "1.0.1",
+    "@notifee/react-native": "7.8.2"
   },
   "dependencies": {
     "@ant-design/react-native": "5.1.0",
@@ -366,7 +367,7 @@
     "@dr.pogodin/react-native-fs": "2.21.0-alpha.8",
     "@dr.pogodin/react-native-static-server": "0.11.0",
     "@gorhom/bottom-sheet": "4.6.1",
-    "@hongtangyun/react-native-mini-apps-engines": "0.15.29",
+    "@hongtangyun/react-native-mini-apps-engines": "0.15.31",
     "@hongtangyun/react-native-utils": "0.1.2",
     "@hongtangyun/rooms-sdk": "0.10.20",
     "@hromovp/react-native-static-server": "0.5.5",
@@ -398,6 +399,7 @@
     "@react-navigation/native": "6.1.12",
     "@react-navigation/native-stack": "6.9.20",
     "@react-navigation/stack": "6.3.23",
+    "@realm/fetch": "0.1.1",
     "@reduxjs/toolkit": "2.2.1",
     "@sayem314/react-native-keep-awake": "1.2.3",
     "@sentry/react-native": "5.19.1",
@@ -522,6 +524,7 @@
     "native-base": "3.4.28",
     "pako": "2.1.0",
     "patch-package": "8.0.0",
+    "path-browserify": "1.0.1",
     "postinstall-postinstall": "2.1.0",
     "qrcode": "1.5.3",
     "react": "18.2.0",
@@ -531,7 +534,7 @@
     "react-error-boundary": "4.0.12",
     "react-json-view": "1.21.3",
     "react-native": "0.71.14",
-    "react-native-agora": "4.2.6",
+    "react-native-agora": "4.3.0",
     "react-native-audio-recorder-player": "3.6.6",
     "react-native-autoheight-webview": "1.6.5",
     "react-native-avoid-softinput": "5.0.0",
@@ -657,8 +660,7 @@
     "webpack-sources": "3.2.3",
     "wtils": "0.2.0",
     "zustand": "4.5.1",
-    "@realm/fetch": "0.1.1",
-    "path-browserify": "1.0.1"
+    "@notifee/react-native": "7.8.2"
   },
   "devDependencies": {
     "@babel/core": "7.22.19",
