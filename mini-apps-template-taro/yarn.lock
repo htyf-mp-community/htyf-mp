@@ -2265,10 +2265,10 @@
   dependencies:
     "@hapi/hoek" "^9.0.0"
 
-"@hongtangyun/react-native-mini-apps-engines@0.15.31":
-  version "0.15.31"
-  resolved "https://registry.yarnpkg.com/@hongtangyun/react-native-mini-apps-engines/-/react-native-mini-apps-engines-0.15.31.tgz#343acf12d21e0036a1cf4b2906f602620011bd16"
-  integrity sha512-2E4zRCoe3T48YjvbFybipVQf3HdqhxEvGzFZ3IuBlXi+ztVdWnmDDcE7NFvRO1q3yGp2KlShGghS/FuzbaCcjw==
+"@hongtangyun/react-native-mini-apps-engines@0.15.32":
+  version "0.15.32"
+  resolved "https://registry.yarnpkg.com/@hongtangyun/react-native-mini-apps-engines/-/react-native-mini-apps-engines-0.15.32.tgz#691aee114d07ec54a5b737dc5c62e6ddcfe5f73d"
+  integrity sha512-INFREwd+VBpUJ3V/lxuWTtuBWI2e++bON6A3nYKm4PYiglGZoVkdmQsbC/c6jKRjHbd5PLhEVD+VCyL/5yKYfg==
   dependencies:
     "@callstack/repack" "^3.7.0"
     "@gorhom/bottom-sheet" "^4.6.0"

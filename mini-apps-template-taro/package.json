@@ -58,7 +58,7 @@
     "@craftzdog/react-native-buffer": "6.0.5",
     "@dr.pogodin/react-native-static-server": "0.11.0",
     "@gorhom/bottom-sheet": "4.6.1",
-    "@hongtangyun/react-native-mini-apps-engines": "0.15.31",
+    "@hongtangyun/react-native-mini-apps-engines": "0.15.32",
     "@hongtangyun/react-native-utils": "0.1.2",
     "@hongtangyun/rooms-sdk": "0.10.20",
     "@miblanchard/react-native-slider": "2.3.1",
@@ -367,12 +367,13 @@
     "@dr.pogodin/react-native-fs": "2.21.0-alpha.8",
     "@dr.pogodin/react-native-static-server": "0.11.0",
     "@gorhom/bottom-sheet": "4.6.1",
-    "@hongtangyun/react-native-mini-apps-engines": "0.15.31",
+    "@hongtangyun/react-native-mini-apps-engines": "0.15.32",
     "@hongtangyun/react-native-utils": "0.1.2",
     "@hongtangyun/rooms-sdk": "0.10.20",
     "@hromovp/react-native-static-server": "0.5.5",
     "@miblanchard/react-native-slider": "2.3.1",
     "@native-base/icons": "0.0.11",
+    "@notifee/react-native": "7.8.2",
     "@pmmmwh/react-refresh-webpack-plugin": "0.5.11",
     "@ptomasroos/react-native-multi-slider": "2.2.2",
     "@react-native-async-storage/async-storage": "1.22.2",
@@ -659,8 +660,7 @@
     "webpack-bundle-analyzer": "4.10.1",
     "webpack-sources": "3.2.3",
     "wtils": "0.2.0",
-    "zustand": "4.5.1",
-    "@notifee/react-native": "7.8.2"
+    "zustand": "4.5.1"
   },
   "devDependencies": {
     "@babel/core": "7.22.19",
