@@ -31,7 +31,7 @@
     "@dr.pogodin/react-native-fs": "2.21.0-alpha.8",
     "@dr.pogodin/react-native-static-server": "0.11.0",
     "@gorhom/bottom-sheet": "4.6.1",
-    "@hongtangyun/react-native-mini-apps-engines": "0.15.33",
+    "@hongtangyun/react-native-mini-apps-engines": "^0.15.34",
     "@hongtangyun/react-native-utils": "0.1.2",
     "@hongtangyun/rooms-sdk": "0.10.20",
     "@hromovp/react-native-static-server": "0.5.5",
@@ -151,6 +151,7 @@
     "expo-speech": "11.7.0",
     "expo-sqlite": "13.2.2",
     "expo-status-bar": "1.11.1",
+    "expo-system-ui": "2.9.3",
     "expo-video-thumbnails": "7.9.0",
     "expo-web-browser": "12.8.2",
     "ffmpeg-kit-react-native": "6.0.2",
@@ -241,6 +242,7 @@
     "react-native-record-screen": "0.6.1",
     "react-native-render-html": "6.3.4",
     "react-native-responsive-image-view": "2.2.0",
+    "react-native-restart": "0.0.27",
     "react-native-root-siblings": "5.0.1",
     "react-native-saf-x": "2.2.3",
     "react-native-safe-area-context": "4.9.0",
@@ -302,9 +304,7 @@
     "webpack": "5.90.3",
     "webpack-bundle-analyzer": "4.10.1",
     "webpack-sources": "3.2.3",
-    "zustand": "4.5.1",
-    "expo-system-ui": "2.9.3",
-    "react-native-restart": "0.0.27"
+    "zustand": "4.5.1"
   },
   "devDependencies": {
     "@babel/core": "7.20.0",
