@@ -31,7 +31,7 @@
     "@dr.pogodin/react-native-fs": "2.21.0-alpha.8",
     "@dr.pogodin/react-native-static-server": "0.11.0",
     "@gorhom/bottom-sheet": "4.6.1",
-    "@hongtangyun/react-native-mini-apps-engines": "0.15.36",
+    "@hongtangyun/react-native-mini-apps-engines": "0.15.38",
     "@hongtangyun/react-native-utils": "0.1.2",
     "@hongtangyun/rooms-sdk": "0.10.20",
     "@hromovp/react-native-static-server": "0.5.5",
@@ -91,8 +91,8 @@
     "@types/url-parse": "1.4.11",
     "@types/use-subscription": "1.0.2",
     "@types/uuid": "9.0.8",
-    "@typescript-eslint/eslint-plugin": "7.1.0",
-    "@typescript-eslint/parser": "7.1.0",
+    "@typescript-eslint/eslint-plugin": "7.1.1",
+    "@typescript-eslint/parser": "7.1.1",
     "@voximplant/react-native-foreground-service": "3.0.2",
     "@wuba/react-native-echarts": "1.2.5",
     "ahooks": "3.7.10",
@@ -206,7 +206,7 @@
     "react-native-flash-message": "0.4.2",
     "react-native-floating-action": "1.22.0",
     "react-native-gesture-handler": "2.15.0",
-    "react-native-get-random-values": "1.10.0",
+    "react-native-get-random-values": "1.11.0",
     "react-native-gifted-chat": "2.4.0",
     "react-native-google-cast": "4.8.0",
     "react-native-google-mobile-ads": "13.0.2",
@@ -303,7 +303,9 @@
     "webpack": "5.90.3",
     "webpack-bundle-analyzer": "4.10.1",
     "webpack-sources": "3.2.3",
-    "zustand": "4.5.2"
+    "zustand": "4.5.2",
+    "javascript-obfuscator": "4.1.0",
+    "webpack-obfuscator": "3.5.1"
   },
   "devDependencies": {
     "@babel/core": "7.20.0",
@@ -363,8 +365,8 @@
     "@types/url-parse": "1.4.11",
     "@types/use-subscription": "1.0.2",
     "@types/uuid": "9.0.8",
-    "@typescript-eslint/eslint-plugin": "7.1.0",
-    "@typescript-eslint/parser": "7.1.0",
+    "@typescript-eslint/eslint-plugin": "7.1.1",
+    "@typescript-eslint/parser": "7.1.1",
     "appcenter-cli": "3.0.0",
     "babel-jest": "29.7.0",
     "babel-loader": "9.1.2",
@@ -403,7 +405,7 @@
     "@craftzdog/react-native-buffer": "6.0.5",
     "@dr.pogodin/react-native-static-server": "0.11.0",
     "@gorhom/bottom-sheet": "4.6.1",
-    "@hongtangyun/react-native-mini-apps-engines": "0.15.36",
+    "@hongtangyun/react-native-mini-apps-engines": "0.15.38",
     "@hongtangyun/react-native-utils": "0.1.2",
     "@hongtangyun/rooms-sdk": "0.10.20",
     "@miblanchard/react-native-slider": "2.3.1",
@@ -503,7 +505,7 @@
     "react-native-fast-image": "8.6.3",
     "react-native-file-access": "3.0.5",
     "react-native-gesture-handler": "2.15.0",
-    "react-native-get-random-values": "1.10.0",
+    "react-native-get-random-values": "1.11.0",
     "react-native-gifted-chat": "2.4.0",
     "react-native-google-cast": "4.8.0",
     "react-native-google-mobile-ads": "13.0.2",
@@ -607,6 +609,8 @@
     "path-browserify": "1.0.1",
     "@notifee/react-native": "7.8.2",
     "expo-system-ui": "2.9.3",
-    "react-native-restart": "0.0.27"
+    "react-native-restart": "0.0.27",
+    "javascript-obfuscator": "4.1.0",
+    "webpack-obfuscator": "3.5.1"
   }
 }
