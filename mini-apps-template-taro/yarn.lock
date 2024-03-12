@@ -2434,10 +2434,10 @@
   resolved "https://registry.yarnpkg.com/@hromovp/react-native-static-server/-/react-native-static-server-0.5.5.tgz#c8ae66e4b6a5729a34de97bd17c216b81018842b"
   integrity sha512-0edx/cwOU9+Nd7Owz+qjfV/L7ImFneHw7DiBdYBL39Ffxkcij1qnwRyLm4AdqL+/xV+25AUfAlz9t4y/u+N9Zw==
 
-"@htyf-mp/js-sdk@0.0.6":
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/@htyf-mp/js-sdk/-/js-sdk-0.0.6.tgz#39599454a00431e9ed02b0d8045a7f2d92303ff4"
-  integrity sha512-EFds3fCequnbdl1hDEj5A9VNyz+XxI5Dn6rCY0qKbtzPUafNhkgOMd1pxY6fst8KnPagV+jsKJpVuVoCpYQzsA==
+"@htyf-mp/js-sdk@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@htyf-mp/js-sdk/-/js-sdk-0.0.2.tgz#64e19d92d5e43d4632c300989548264b72f607e8"
+  integrity sha512-VUO9Py3BFkxmzbyHMqNnxECIlsRE4DwVm5JH1x6IagKH2TV8MQX147vPViURQtsbQFrwbvXd1czIMVW3sLJY3Q==
   dependencies:
     "@fingerprintjs/fingerprintjs" "^3.3.3"
     "@types/qs" "^6.9.7"
@@ -2456,10 +2456,10 @@
     react "^17.0.2"
     url-parse "^1.5.10"
 
-"@htyf-mp/js-sdk@^0.0.2":
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@htyf-mp/js-sdk/-/js-sdk-0.0.2.tgz#64e19d92d5e43d4632c300989548264b72f607e8"
-  integrity sha512-VUO9Py3BFkxmzbyHMqNnxECIlsRE4DwVm5JH1x6IagKH2TV8MQX147vPViURQtsbQFrwbvXd1czIMVW3sLJY3Q==
+"@htyf-mp/js-sdk@^0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@htyf-mp/js-sdk/-/js-sdk-0.0.7.tgz#0a6e9dfa2e4be50875efe454cd2736ebd793f3b2"
+  integrity sha512-P4+LTLRUzWKpar3i68mpYz5kAdrcnMBXyTnEjHeq4lSFxHvCieVem7oxrLKxHYMyWs2bGR2JBFH8Ua6hY1CSdw==
   dependencies:
     "@fingerprintjs/fingerprintjs" "^3.3.3"
     "@types/qs" "^6.9.7"

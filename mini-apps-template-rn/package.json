@@ -35,7 +35,7 @@
     "@hongtangyun/react-native-utils": "0.1.2",
     "@hongtangyun/rooms-sdk": "0.10.20",
     "@hromovp/react-native-static-server": "0.5.5",
-    "@htyf-mp/js-sdk": "0.0.6",
+    "@htyf-mp/js-sdk": "^0.0.7",
     "@miblanchard/react-native-slider": "2.3.1",
     "@native-base/icons": "0.0.11",
     "@notifee/react-native": "7.8.2",
