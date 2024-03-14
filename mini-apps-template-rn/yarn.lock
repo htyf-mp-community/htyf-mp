@@ -2898,10 +2898,10 @@
     react "^17.0.2"
     url-parse "^1.5.10"
 
-"@htyf-mp/js-sdk@^0.0.7":
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/@htyf-mp/js-sdk/-/js-sdk-0.0.7.tgz#0a6e9dfa2e4be50875efe454cd2736ebd793f3b2"
-  integrity sha512-P4+LTLRUzWKpar3i68mpYz5kAdrcnMBXyTnEjHeq4lSFxHvCieVem7oxrLKxHYMyWs2bGR2JBFH8Ua6hY1CSdw==
+"@htyf-mp/js-sdk@^0.0.8":
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/@htyf-mp/js-sdk/-/js-sdk-0.0.8.tgz#06ffcee6cb2e8b6ac6214edc56c6c973f4bce6cd"
+  integrity sha512-9FUOZPn3q94kL+vdtWISYoMR3gY3zQ91GSo1NYCuB1d6Gw3iAq2zcSE/4qhHUUvfOJnBVYsg5oYFW4DsKx0JvA==
   dependencies:
     "@fingerprintjs/fingerprintjs" "^3.3.3"
     "@types/qs" "^6.9.7"
@@ -2918,6 +2918,10 @@
     qs "^6.10.3"
     queue "^6.0.2"
     react "^17.0.2"
+    react-native-image-viewing "^0.2.2"
+    react-native-permissions "^4.1.4"
+    react-native-track-player "^4.0.1"
+    react-native-view-shot "^3.8.0"
     url-parse "^1.5.10"
 
 "@humanwhocodes/config-array@^0.11.14":
@@ -18272,7 +18276,7 @@ react-native-image-picker@7.1.0:
   resolved "https://registry.yarnpkg.com/react-native-image-picker/-/react-native-image-picker-7.1.0.tgz#1a41cc45ccdc177c2ebf7c7accee0ceadc36abd8"
   integrity sha512-An0hn2mwqjGAA2mbsXdHRTyoMMklGPT9stIjE2zvkegU7CdoFhowqvVHfnELJNZnfAiSQuIaeY//z0r1R0lsgw==
 
-react-native-image-viewing@0.2.2:
+react-native-image-viewing@0.2.2, react-native-image-viewing@^0.2.2:
   version "0.2.2"
   resolved "https://registry.npmmirror.com/react-native-image-viewing/-/react-native-image-viewing-0.2.2.tgz#fb26e57d7d3d9ce4559a3af3d244387c0367242b"
   integrity sha512-osWieG+p/d2NPbAyonOMubttajtYEYiRGQaJA54slFxZ69j1V4/dCmcrVQry47ktVKy8/qpFwCpW1eT6MH5T2Q==
@@ -18409,7 +18413,7 @@ react-native-parsed-text@0.0.22:
   dependencies:
     prop-types "^15.7.x"
 
-react-native-permissions@4.1.4:
+react-native-permissions@4.1.4, react-native-permissions@^4.1.4:
   version "4.1.4"
   resolved "https://registry.yarnpkg.com/react-native-permissions/-/react-native-permissions-4.1.4.tgz#7e105470acea7fc1748bb36915095fd3304cd9da"
   integrity sha512-el6u90VZNFDEtmHpSheirwRhGvs6M5rSZcoqIqB128IPO00f2c1q+PP4kEaM1u19Q0ldQ+R+S7C/l8Zrduy6JQ==
@@ -18657,7 +18661,7 @@ react-native-toast-message@2.2.0:
   resolved "https://registry.yarnpkg.com/react-native-toast-message/-/react-native-toast-message-2.2.0.tgz#c53a4746b15616858a7d61c4386b92cbe9fbf911"
   integrity sha512-AFti8VzUk6JvyGAlLm9/BknTNDXrrhqnUk7ak/pM7uCTxDPveAu2ekszU0on6vnUPFnG04H/QfYE2IlETqeaWw==
 
-react-native-track-player@4.0.1:
+react-native-track-player@4.0.1, react-native-track-player@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/react-native-track-player/-/react-native-track-player-4.0.1.tgz#df80c27290db610f92dc73d89ecae8e354acb28d"
   integrity sha512-DpqKL4TQS0kGlHwEtmMrL++mdgWb+uc75eQiP3vfYSlgvAJjbXbkL9h+cofndSuq4TTCp8jclAK+hZKqtMw6+A==
@@ -18707,7 +18711,7 @@ react-native-video@6.0.0-beta.5:
   resolved "https://registry.yarnpkg.com/react-native-video/-/react-native-video-6.0.0-beta.5.tgz#9559d7a6c43c0cf68ef8d8780b599460ec7a44b8"
   integrity sha512-dAfIXvtxsMI8TE3Q+1MHTP1brq3/V2VsPKVDtU8E+JcF963y5upnBb8JFiG8Yl4s4qAoQum2P02fZE30stQOHg==
 
-react-native-view-shot@3.8.0:
+react-native-view-shot@3.8.0, react-native-view-shot@^3.8.0:
   version "3.8.0"
   resolved "https://registry.yarnpkg.com/react-native-view-shot/-/react-native-view-shot-3.8.0.tgz#1aa1905f0e79428ca32bf80c16fd4abc719c600b"
   integrity sha512-4cU8SOhMn3YQIrskh+5Q8VvVRxQOu8/s1M9NAL4z5BY1Rm0HXMWkQJ4N0XsZ42+Yca+y86ISF3LC5qdLPvPuiA==
