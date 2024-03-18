@@ -2366,10 +2366,10 @@
     webpack-cli "^5.1.4"
     yarn-add-no-save "^1.0.3"
 
-"@hongtangyun/react-native-mini-apps-engines@0.15.40":
-  version "0.15.40"
-  resolved "https://registry.yarnpkg.com/@hongtangyun/react-native-mini-apps-engines/-/react-native-mini-apps-engines-0.15.40.tgz#aad23c358bafa3e7a857f7a8fe243a19a2273ed7"
-  integrity sha512-t8oXURNfnVQTEAlM4dFaNJQpvUAIVCVgsvEnuA1OtqBTioIZxkKtZ7GUSckzXg9loi7sMWSKgnyBM3DgTPfhwA==
+"@hongtangyun/react-native-mini-apps-engines@^0.15.41":
+  version "0.15.41"
+  resolved "https://registry.yarnpkg.com/@hongtangyun/react-native-mini-apps-engines/-/react-native-mini-apps-engines-0.15.41.tgz#a61bb1132b65da9c8a9caab957f110065bd20b87"
+  integrity sha512-vdi/MIIQAh12dAtZuYD3BSBAxPOycKw7by7R1LTLgQBKogcaeUt6v9o3IA1yM0bzX4SgkNreMIIvC5o8g/Z/SA==
   dependencies:
     "@callstack/repack" "^3.7.0"
     "@gorhom/bottom-sheet" "^4.6.0"
