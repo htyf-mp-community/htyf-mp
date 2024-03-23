@@ -1,89 +1,79 @@
-## [红糖云服app下载 https://mp.dagouzhi.com/ ](https://mp.dagouzhi.com/)
+This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
-### 使用红糖云服app 扫码添加小程序
+# Getting Started
 
-[![小程序码](./qrcode.png)](https://share.dagouzhi.com/#/pages/index/index?data=%7B%22type%22%3A%22app%22%2C%22name%22%3A%22RN%E6%A8%A1%E7%89%88%22%2C%22projectname%22%3A%22RN%E6%A8%A1%E7%89%88%22%2C%22appid%22%3A%22__rn_temp_appid__%22%2C%22appUrlConfig%22%3A%22https%3A%2F%2Fraw.gitmirror.com%2Fhtyf-mp-community%2Fhtyf-mp%2Fmain%2Fmini-apps-template-rn%2Fdgz%2Fbuild%2Foutputs%2Fapp.json%22%2C%22zipUrl%22%3A%22https%3A%2F%2Fraw.gitmirror.com%2Fhtyf-mp-community%2Fhtyf-mp%2Fmain%2Fmini-apps-template-rn%2Fdgz%2Fbuild%2Foutputs%2Fdist.dgz%22%7D)
+>**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
 
->更多小程序demo 请查看[https://github.com/htyf-mp-community/demo](https://github.com/htyf-mp-community/demo)
+## Step 1: Start the Metro Server
 
-## 开发步骤
+First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
 
-### 1. 安装依赖,时入项目根目录
+To start Metro, run the following command from the _root_ of your React Native project:
 
-```
-yarn
-```
+```bash
+# using npm
+npm start
 
-### 2. 开发时可按 taro 官方文档开发（不能使用相关 ui 库如`,`）
-
-> 注意
-> [vscode 安装 stylelint 扩展](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint)
->
-> 1. 所有样式名不能重复(最好以文件相对路径为前缀)，不能嵌套, 写法如普通 css. 具体可参考`注意 7`。
-> 2. 引用资源请用此用法 `import xxpng from '@/assets/xxx.png';` 这个---`@/assets`。
-> 3. 为了更好的兼容性，禁用 css 背景图，所有图片以 image 标签写入到页面，可以用绝对定位来布局。
-> 4. 定位只能用用 position: absolute | relative。
-> 5. 所有图片资源 禁用@2x @3x 等后缀。
-> 6. border-radius 值必须为数字，圆形可以设置一个 99999px。
-> 7. 可参考 taro 开发 react-native 文档 [`https://docs.taro.zone/docs/react-native-remind`](https://docs.taro.zone/docs/react-native-remind)
-> 8. `box-shadow` css 阴影不能使用。
-> 9. `margin: 0 atuo;` css 居中不能使用，可用 flex 布局去居中。
-> 10. 页面`index.config.ts`配置。
-> 11. 设置文字时不要使用`line-height`属性，也不要给文字设置高度，防止与文字相关的布局紊乱。 
-> 12. 但凡涉及文字，尽量使用`<Text></Text>`标签进行包裹。且将文字css属性名写在该标签上，防止有些端的文字样式不生效。 
-```
-export default definePageConfig({
-  navigationBarTitleText: '页面',
-  backgroundColor: '#fff',
-  // 禁滚动
-  disableScroll: true,
-  // 自定页面头
-  navigationStyle: "custom",
-})
-
-```
-> 11. 页面头部组件使用自定义`import { Header } from '@/UIHooks';`
-> 12. 页面如需要滚动使用`import { ScrollView } from '@tarojs/components'';`
-
-### 3. 打包
-
-> 打包其它小程序按 taro 官方文档打包
-
-> 如打包红糖云服小程序
-
-```
-npm run build:dgz
-dgz 小程序!!!
-? [小程序]请选择你想要操作的任务？
-  1) 初始化
-  2) 打包
-  3) 补丁
-  4) 退出
+# OR using Yarn
+yarn start
 ```
 
-选择[2]打包
+## Step 2: Start your Application
 
-### 4. 上传运行红糖云服小程序
+Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
 
-> 把打包出来的根目录 dgz/build/outputs 目录上传自己的 oss/cos 上
+### For Android
 
-```
-{
-  "type": "app",
-  "name": "RN模版",
-  "projectname": "RN模版",
-  "appid": "__rn_temp_appid__",
-  "appUrlConfig": "https://raw.gitmirror.com/htyf-mp-community/htyf-mp/main/mini-apps-template-rn/dgz/build/outputs/app.json",
-  "zipUrl": "https://raw.gitmirror.com/htyf-mp-community/htyf-mp/main/mini-apps-template-rn/dgz/build/outputs/dist.dgz"
-}
+```bash
+# using npm
+npm run android
+
+# OR using Yarn
+yarn android
 ```
 
-并将以上 json 生成二维码就可以用红糖云服 app 扫码加入小程序
+### For iOS
 
-## 投食
+```bash
+# using npm
+npm run ios
 
-开发迭代不易，觉得 App 好用的，有能力的请投喂一下，也可以给个星星
+# OR using Yarn
+yarn ios
+```
 
-| 微信  | 支付宝 |
-| ------------- | ------------- |
-| ![微信](./docs/IMG_5087.jpg)  | ![支付宝](./docs/IMG_5088.jpg) |
+If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+
+This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+
+## Step 3: Modifying your App
+
+Now that you have successfully run the app, let's modify it.
+
+1. Open `App.tsx` in your text editor of choice and edit some lines.
+2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+
+   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+
+## Congratulations! :tada:
+
+You've successfully run and modified your React Native App. :partying_face:
+
+### Now what?
+
+- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
+- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
+
+# Troubleshooting
+
+If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+
+# Learn More
+
+To learn more about React Native, take a look at the following resources:
+
+- [React Native Website](https://reactnative.dev) - learn more about React Native.
+- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
+- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
+- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
+- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.

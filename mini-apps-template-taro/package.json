@@ -231,8 +231,6 @@
     "react-native-gesture-handler": "2.15.0",
     "react-native-get-random-values": "1.11.0",
     "react-native-gifted-chat": "2.4.0",
-    "react-native-google-cast": "4.8.0",
-    "react-native-google-mobile-ads": "13.0.2",
     "react-native-haptic-feedback": "2.2.0",
     "react-native-image-colors": "2.4.0",
     "react-native-image-picker": "7.1.2",
@@ -352,9 +350,7 @@
     "expo-system-ui": "2.9.3",
     "react-native-restart": "0.0.27",
     "javascript-obfuscator": "4.1.0",
-    "webpack-obfuscator": "3.5.1",
-    "jcore-react-native": "2.1.6",
-    "jpush-react-native": "3.0.6"
+    "webpack-obfuscator": "3.5.1"
   },
   "dependencies": {
     "@ant-design/react-native": "5.1.1",
@@ -574,8 +570,6 @@
     "react-native-gesture-handler": "2.15.0",
     "react-native-get-random-values": "1.11.0",
     "react-native-gifted-chat": "2.4.0",
-    "react-native-google-cast": "4.8.0",
-    "react-native-google-mobile-ads": "13.0.2",
     "react-native-haptic-feedback": "2.2.0",
     "react-native-image-colors": "2.4.0",
     "react-native-image-picker": "7.1.2",

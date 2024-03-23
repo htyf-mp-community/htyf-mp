@@ -62,12 +62,5 @@ yarn-error.log
 # Temporary files created by Metro to check the health of the file watcher
 .metro-health-check*
 
-# 只保留app.json/dist.dgz
-dgz/*
-!dgz/build
-dgz/build/*
-!dgz/build/outputs
-dgz/build/outputs/*
-!dgz/build/outputs/app.json
-!dgz/build/outputs/dist.dgz
-# 只保留app.json/dist.dgz
+# testing
+/coverage
