@@ -13,6 +13,8 @@
     "lint": "npm run lint:scss",
     "lint:scss": "stylelint ./src/stylelint.test.scss",
     "postinstall": "npm run run:scripts && npm run dgz:init",
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
     "dgz": "npm run run:scripts && htyf-mp",
     "dgz:init": "npm run run:scripts && htyf-mp --init",
     "build:dgz": "npm run run:scripts && htyf-mp --build",
