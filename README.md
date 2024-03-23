@@ -7,7 +7,7 @@
 生成一个新项目:
 
 ```sh
-npx htyf-mp
+npx @htyf-mp/cli
 ```
 
 接下来，使用CLI配置项目名和Appid，或者稍后再配置，最后选择模板类型
