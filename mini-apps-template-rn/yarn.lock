@@ -2929,10 +2929,10 @@
   resolved "https://registry.yarnpkg.com/@hromovp/react-native-static-server/-/react-native-static-server-0.5.5.tgz#c8ae66e4b6a5729a34de97bd17c216b81018842b"
   integrity sha512-0edx/cwOU9+Nd7Owz+qjfV/L7ImFneHw7DiBdYBL39Ffxkcij1qnwRyLm4AdqL+/xV+25AUfAlz9t4y/u+N9Zw==
 
-"@htyf-mp/engines@^0.0.5":
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/@htyf-mp/engines/-/engines-0.0.5.tgz#cef31a7704c9a25d56c743d01980e7d0c06d1c90"
-  integrity sha512-LqcwgtgR/WMs08jwepBvkink04yaz4ayek9SboyzjuH1HbTkRd82lQyjuuz8kigF33A2xGdan3EvmbR1ZuZUxQ==
+"@htyf-mp/engines@^0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@htyf-mp/engines/-/engines-0.0.7.tgz#fd75736322fdc5447d2450a449d59c4ba8ce2d20"
+  integrity sha512-SeIsFC4fY9LAOLxsETm4DT0z5d6dPxJLVRM9WSPMY1EiTCzCn1JHl5V0Eu38ROrB2Hrqp73+GDnWkyKBQiKO9w==
   dependencies:
     "@callstack/repack" "^3.7.0"
     "@gorhom/bottom-sheet" "^4.6.0"
@@ -2966,10 +2966,10 @@
     webpack-cli "^5.1.4"
     yarn-add-no-save "^1.0.3"
 
-"@htyf-mp/js-sdk@0.0.8":
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/@htyf-mp/js-sdk/-/js-sdk-0.0.8.tgz#06ffcee6cb2e8b6ac6214edc56c6c973f4bce6cd"
-  integrity sha512-9FUOZPn3q94kL+vdtWISYoMR3gY3zQ91GSo1NYCuB1d6Gw3iAq2zcSE/4qhHUUvfOJnBVYsg5oYFW4DsKx0JvA==
+"@htyf-mp/js-sdk@^0.0.10":
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/@htyf-mp/js-sdk/-/js-sdk-0.0.10.tgz#514d34f3f3cfbbbb15d00e5a1bf327a08e97b43c"
+  integrity sha512-BISjgNIUv65dwcPaQ2ONp0nbV9BjluyGfIY3meugvDlCFLg7HIusXfqhEbNdiDQ6vhb5CgHbkL1SgigpbE0ztw==
   dependencies:
     "@fingerprintjs/fingerprintjs" "^3.3.3"
     "@types/qs" "^6.9.7"

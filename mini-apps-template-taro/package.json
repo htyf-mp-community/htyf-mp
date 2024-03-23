@@ -375,8 +375,8 @@
     "@hongtangyun/react-native-utils": "0.1.2",
     "@hongtangyun/rooms-sdk": "0.10.20",
     "@hromovp/react-native-static-server": "0.5.5",
-    "@htyf-mp/engines": "0.0.5",
-    "@htyf-mp/js-sdk": "0.0.8",
+    "@htyf-mp/engines": "^0.0.7",
+    "@htyf-mp/js-sdk": "^0.0.10",
     "@miblanchard/react-native-slider": "2.3.1",
     "@native-base/icons": "0.0.11",
     "@notifee/react-native": "7.8.2",
@@ -522,7 +522,9 @@
     "immutable": "4.3.5",
     "inquirer": "8.2.4",
     "javascript-obfuscator": "4.1.0",
+    "jcore-react-native": "2.1.6",
     "jest": "29.7.0",
+    "jpush-react-native": "3.0.6",
     "jsencrypt": "3.3.2",
     "lodash": "4.17.21",
     "lottie-react-native": "6.7.0",
@@ -670,9 +672,7 @@
     "webpack-obfuscator": "3.5.1",
     "webpack-sources": "3.2.3",
     "wtils": "0.2.0",
-    "zustand": "4.5.2",
-    "jcore-react-native": "2.1.6",
-    "jpush-react-native": "3.0.6"
+    "zustand": "4.5.2"
   },
   "devDependencies": {
     "@babel/core": "7.22.19",
