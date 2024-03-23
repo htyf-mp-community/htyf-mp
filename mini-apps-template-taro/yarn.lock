@@ -2671,10 +2671,10 @@
   resolved "https://registry.yarnpkg.com/@hromovp/react-native-static-server/-/react-native-static-server-0.5.5.tgz#c8ae66e4b6a5729a34de97bd17c216b81018842b"
   integrity sha512-0edx/cwOU9+Nd7Owz+qjfV/L7ImFneHw7DiBdYBL39Ffxkcij1qnwRyLm4AdqL+/xV+25AUfAlz9t4y/u+N9Zw==
 
-"@htyf-mp/engines@^0.0.7":
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/@htyf-mp/engines/-/engines-0.0.7.tgz#fd75736322fdc5447d2450a449d59c4ba8ce2d20"
-  integrity sha512-SeIsFC4fY9LAOLxsETm4DT0z5d6dPxJLVRM9WSPMY1EiTCzCn1JHl5V0Eu38ROrB2Hrqp73+GDnWkyKBQiKO9w==
+"@htyf-mp/engines@0.0.8":
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/@htyf-mp/engines/-/engines-0.0.8.tgz#dcf69b81322ed683499ded428a67d6ae84cb3a72"
+  integrity sha512-XJ6Q27dJAEUuBGtA7TiaCskVsFeoq3zIWFscUbs3AM2aARSsPwNaJemn86Ks14p5TcP9vr6crGCmw6bJYPSGOw==
   dependencies:
     "@callstack/repack" "^3.7.0"
     "@gorhom/bottom-sheet" "^4.6.0"
@@ -2708,7 +2708,7 @@
     webpack-cli "^5.1.4"
     yarn-add-no-save "^1.0.3"
 
-"@htyf-mp/js-sdk@^0.0.10":
+"@htyf-mp/js-sdk@0.0.10":
   version "0.0.10"
   resolved "https://registry.yarnpkg.com/@htyf-mp/js-sdk/-/js-sdk-0.0.10.tgz#514d34f3f3cfbbbb15d00e5a1bf327a08e97b43c"
   integrity sha512-BISjgNIUv65dwcPaQ2ONp0nbV9BjluyGfIY3meugvDlCFLg7HIusXfqhEbNdiDQ6vhb5CgHbkL1SgigpbE0ztw==
@@ -2774,11 +2774,6 @@
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-2.0.2.tgz#d9fae00a2d5cb40f92cfe64b47ad749fbc38f917"
   integrity sha512-6EwiSjwWYP7pTckG6I5eyFANjPhmPjUX9JRLUSfNPC7FX7zK9gyZAfUEaECL6ALTpGX5AjnBq3C9XmVWPitNpw==
-
-"@iabtcf/core@^1.5.3":
-  version "1.5.6"
-  resolved "https://registry.yarnpkg.com/@iabtcf/core/-/core-1.5.6.tgz#92568d89252fbf205aa65836703cb0a52e812382"
-  integrity sha512-u2q9thI9vLurYZdGtyJsDYOqoeLc4EgQsYGSc+UVibYII61B/ENJPZS6eFlML1F0hSoTR/goptpo5nGRDkKd2w==
 
 "@ide/backoff@^1.0.0":
   version "1.0.0"
@@ -10903,11 +10898,6 @@ deps-regex@^0.2.0:
   resolved "https://registry.yarnpkg.com/deps-regex/-/deps-regex-0.2.0.tgz#3ee7ddae5fd784f3accf29d5a711aa6e10044137"
   integrity sha512-PwuBojGMQAYbWkMXOY9Pd/NWCDNHVH12pnS7WHqZkTSeMESe4hwnKKRp0yR87g37113x4JPbo/oIvXY+s/f56Q==
 
-dequal@^2.0.2:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/dequal/-/dequal-2.0.3.tgz#2644214f1997d39ed0ee0ece72335490a7ac67be"
-  integrity sha512-0je+qPKHEMohvfRTCEo3CrPG6cAzAYgmzKyxRiYSSDkS6eGJdyVJm7WaYA5ECaAD9wLB2T4EEeymA5aFVcYXCA==
-
 derive-valtio@0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/derive-valtio/-/derive-valtio-0.1.0.tgz#4b9fb393dfefccfef15fcbbddd745dd22d5d63d7"
@@ -15332,11 +15322,6 @@ javascript-stringify@^2.0.1:
   resolved "https://registry.yarnpkg.com/javascript-stringify/-/javascript-stringify-2.1.0.tgz#27c76539be14d8bd128219a2d731b09337904e79"
   integrity sha512-JVAfqNPTvNq3sB/VHQJAFxN/sPgKnsKrCwyRt15zwNCdrMMJDdcEOdubuy+DuJYYdm0ox1J4uzEuYKkN+9yhVg==
 
-jcore-react-native@2.1.6:
-  version "2.1.6"
-  resolved "https://registry.yarnpkg.com/jcore-react-native/-/jcore-react-native-2.1.6.tgz#c5a400bc60132686860741270a4c5e0398db0f51"
-  integrity sha512-vp8ZypCKkWnaC2eqWPpYUKR4YxSUUDMW6rqfwKmDFzzsUVaz2DNujhIUdvICWRAD5l+I5Sycvc67zxRyxMFYGg==
-
 jest-changed-files@^29.7.0:
   version "29.7.0"
   resolved "https://registry.yarnpkg.com/jest-changed-files/-/jest-changed-files-29.7.0.tgz#1c06d07e77c78e1585d020424dedc10d6e17ac3a"
@@ -15790,11 +15775,6 @@ jpeg-js@^0.4.2:
   version "0.4.4"
   resolved "https://registry.yarnpkg.com/jpeg-js/-/jpeg-js-0.4.4.tgz#a9f1c6f1f9f0fa80cdb3484ed9635054d28936aa"
   integrity sha512-WZzeDOEtTOBK4Mdsar0IqEU5sMr3vSV2RqkAIzUEV2BHnUfKGyswWFPFwK5EeDo93K3FohSHbLAjj0s1Wzd+dg==
-
-jpush-react-native@3.0.6:
-  version "3.0.6"
-  resolved "https://registry.yarnpkg.com/jpush-react-native/-/jpush-react-native-3.0.6.tgz#9322725a2c50d9d51b3d433df360b6b57a59bd65"
-  integrity sha512-ajOzIDaX67H/Aplmh42QhC6EtmZRaTgumEdncBQJG0LScRHEHrw1Rill+f705AZ8oGJ8Vjb6dLR4a37MzYkAnQ==
 
 jquery@^3.6.1:
   version "3.7.1"
@@ -20778,19 +20758,6 @@ react-native-gifted-chat@2.4.0:
     use-memo-one "1.1.3"
     uuid "3.4.0"
 
-react-native-google-cast@4.8.0:
-  version "4.8.0"
-  resolved "https://registry.yarnpkg.com/react-native-google-cast/-/react-native-google-cast-4.8.0.tgz#7af427bc8a44d1da62e6d2238c3c74136d098297"
-  integrity sha512-1BjHueIWO5NvR9VjJLeB8SvC8cidTJaZopztI8KbBc64GIiF9jWcfoV/MGK+IRsBZ9E8mDJ2syJmS+AAqgWiEA==
-
-react-native-google-mobile-ads@13.0.2:
-  version "13.0.2"
-  resolved "https://registry.yarnpkg.com/react-native-google-mobile-ads/-/react-native-google-mobile-ads-13.0.2.tgz#7bdd374e7a6260c82da3860acaf33be16835afdf"
-  integrity sha512-TsDbWMSs4EreiKx4pHTgacamTZMU4Zj5Sz3XjDKuyQln/WadiLPaRWokifb/G3lkIXNmzA/apaCs3wWMEnQW9g==
-  dependencies:
-    "@iabtcf/core" "^1.5.3"
-    use-deep-compare-effect "^1.8.1"
-
 react-native-gradle-plugin@^0.71.19:
   version "0.71.19"
   resolved "https://registry.yarnpkg.com/react-native-gradle-plugin/-/react-native-gradle-plugin-0.71.19.tgz#3379e28341fcd189bc1f4691cefc84c1a4d7d232"
@@ -24904,14 +24871,6 @@ use-composed-ref@^1.3.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/use-composed-ref/-/use-composed-ref-1.3.0.tgz#3d8104db34b7b264030a9d916c5e94fbe280dbda"
   integrity sha512-GLMG0Jc/jiKov/3Ulid1wbv3r54K9HlMW29IWcDFPEqFkSO2nS0MuefWgMJpeHQ9YJeXDL3ZUF+P3jdXlZX/cQ==
-
-use-deep-compare-effect@^1.8.1:
-  version "1.8.1"
-  resolved "https://registry.yarnpkg.com/use-deep-compare-effect/-/use-deep-compare-effect-1.8.1.tgz#ef0ce3b3271edb801da1ec23bf0754ef4189d0c6"
-  integrity sha512-kbeNVZ9Zkc0RFGpfMN3MNfaKNvcLNyxOAAd9O4CBZ+kCBXXscn9s/4I+8ytUER4RDpEYs5+O6Rs4PqiZ+rHr5Q==
-  dependencies:
-    "@babel/runtime" "^7.12.5"
-    dequal "^2.0.2"
 
 use-immer@0.9.0:
   version "0.9.0"
