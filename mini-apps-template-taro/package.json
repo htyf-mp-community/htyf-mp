@@ -12,7 +12,6 @@
     "run:scripts": "node ./scripts/index.js",
     "lint": "npm run lint:scss",
     "lint:scss": "stylelint ./src/stylelint.test.scss",
-    "start": "npm run build:dgz && react-native webpack-start -- --reset-cache",
     "postinstall": "npm run run:scripts && npm run dgz:init",
     "dgz": "npm run run:scripts && htyf-mp",
     "dgz:init": "npm run run:scripts && htyf-mp --init",
