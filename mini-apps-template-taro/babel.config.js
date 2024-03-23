@@ -7,4 +7,7 @@ module.exports = {
       ts: true
     }]
   ],
+  plugins: [
+    'react-native-reanimated/plugin'
+  ]
 }
