@@ -1,0 +1,13 @@
+{
+  "ver": "4.0.23",
+  "importer": "typescript",
+  "imported": true,
+  "uuid": "daea1101-a32d-4cb3-a3c1-740ba94169e7",
+  "files": [],
+  "subMetas": {},
+  "userData": {
+    "moduleId": "project:///assets/script/ui/fight/fightCanvas.js",
+    "importerSettings": 7,
+    "simulateGlobals": []
+  }
+}

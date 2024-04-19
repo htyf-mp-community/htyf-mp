@@ -1,0 +1,13 @@
+{
+  "ver": "4.0.23",
+  "importer": "typescript",
+  "imported": true,
+  "uuid": "e478cb8c-1c97-481d-ae5f-3f79b9519ed2",
+  "files": [],
+  "subMetas": {},
+  "userData": {
+    "moduleId": "project:///assets/script/framework/audioManager.js",
+    "importerSettings": 7,
+    "simulateGlobals": []
+  }
+}

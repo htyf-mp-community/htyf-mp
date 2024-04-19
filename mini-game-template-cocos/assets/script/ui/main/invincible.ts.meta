@@ -1,0 +1,13 @@
+{
+  "ver": "4.0.23",
+  "importer": "typescript",
+  "imported": true,
+  "uuid": "ec04ba20-7a6a-4e1e-b421-5551d5a92655",
+  "files": [],
+  "subMetas": {},
+  "userData": {
+    "moduleId": "project:///assets/script/ui/main/invincible.js",
+    "importerSettings": 7,
+    "simulateGlobals": []
+  }
+}

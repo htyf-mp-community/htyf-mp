@@ -1,0 +1,13 @@
+{
+  "ver": "4.0.23",
+  "importer": "typescript",
+  "imported": true,
+  "uuid": "93fc8b1e-5d3a-4f26-abc7-17a265a62a2c",
+  "files": [],
+  "subMetas": {},
+  "userData": {
+    "moduleId": "project:///assets/script/ui/lottery/lotteryItem.js",
+    "importerSettings": 7,
+    "simulateGlobals": []
+  }
+}

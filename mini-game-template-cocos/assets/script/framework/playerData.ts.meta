@@ -1,0 +1,13 @@
+{
+  "ver": "4.0.23",
+  "importer": "typescript",
+  "imported": true,
+  "uuid": "985d5f67-e433-48ac-8718-f6622c7195cd",
+  "files": [],
+  "subMetas": {},
+  "userData": {
+    "moduleId": "project:///assets/script/framework/playerData.js",
+    "importerSettings": 7,
+    "simulateGlobals": []
+  }
+}

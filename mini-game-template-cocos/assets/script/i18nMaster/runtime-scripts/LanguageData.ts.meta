@@ -1,0 +1,13 @@
+{
+  "ver": "4.0.23",
+  "importer": "typescript",
+  "imported": true,
+  "uuid": "d659735e-473e-4eb9-9ea4-71e2641d6737",
+  "files": [],
+  "subMetas": {},
+  "userData": {
+    "moduleId": "project:///assets/script/i18nMaster/runtime-scripts/LanguageData.js",
+    "importerSettings": 7,
+    "simulateGlobals": []
+  }
+}

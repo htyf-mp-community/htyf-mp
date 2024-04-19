@@ -1,0 +1,13 @@
+{
+  "ver": "4.0.23",
+  "importer": "typescript",
+  "imported": true,
+  "uuid": "aebee106-2516-466c-adf5-e504f3b28965",
+  "files": [],
+  "subMetas": {},
+  "userData": {
+    "moduleId": "project:///assets/script/framework/resourceUtil.js",
+    "importerSettings": 7,
+    "simulateGlobals": []
+  }
+}

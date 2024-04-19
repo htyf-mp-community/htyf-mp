@@ -1,0 +1,13 @@
+{
+  "ver": "4.0.23",
+  "importer": "typescript",
+  "imported": true,
+  "uuid": "10a09a26-dec6-43f2-ad87-e744cbc0b21c",
+  "files": [],
+  "subMetas": {},
+  "userData": {
+    "moduleId": "project:///assets/script/framework/eventListener.js",
+    "importerSettings": 7,
+    "simulateGlobals": []
+  }
+}

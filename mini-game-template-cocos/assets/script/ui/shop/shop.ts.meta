@@ -1,0 +1,13 @@
+{
+  "ver": "4.0.23",
+  "importer": "typescript",
+  "imported": true,
+  "uuid": "15eff5cd-b4aa-4678-b72d-38395346a865",
+  "files": [],
+  "subMetas": {},
+  "userData": {
+    "moduleId": "project:///assets/script/ui/shop/shop.js",
+    "importerSettings": 7,
+    "simulateGlobals": []
+  }
+}

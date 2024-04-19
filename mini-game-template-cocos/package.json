@@ -1,0 +1,25 @@
+{
+  "creator": {
+    "version": "3.7.4"
+  },
+  "CocosPath": {
+    "mac": "/Applications/Cocos/Creator/3.7.4/CocosCreator.app/Contents/MacOS/CocosCreator",
+    "win": "/CocosCreator.exe"
+  },
+  "name": "mini-game-template-cocos",
+  "uuid": "48f5f480-9985-419e-be9e-3f1b0b72a929",
+  "version": "3.6.0",
+  "_sourceId": "0194ae3d-fea3-43ac-8fca-c1fa1ca1e654",
+  "scripts": {
+    "run:scripts": "node ./scripts/index.js",
+    "dgz": "htyf-mp",
+    "build:dgz": "npm run run:scripts && htyf-mp --build"
+  },
+  "dependencies": {
+    "@htyf-mp/engines": "^0.0.46",
+    "@htyf-mp/js-sdk": "^0.0.10"
+  },
+  "devDependencies": {
+    "qrcode": "^1.5.3"
+  }
+}

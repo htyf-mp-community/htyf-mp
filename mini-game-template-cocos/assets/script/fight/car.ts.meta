@@ -1,0 +1,13 @@
+{
+  "ver": "4.0.23",
+  "importer": "typescript",
+  "imported": true,
+  "uuid": "e6d4f543-de9c-49ed-8d4a-85ff1f454a1a",
+  "files": [],
+  "subMetas": {},
+  "userData": {
+    "moduleId": "project:///assets/script/fight/car.js",
+    "importerSettings": 7,
+    "simulateGlobals": []
+  }
+}

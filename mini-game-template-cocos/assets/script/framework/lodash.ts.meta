@@ -1,0 +1,13 @@
+{
+  "ver": "4.0.23",
+  "importer": "typescript",
+  "imported": true,
+  "uuid": "8cbac0dd-5530-4e81-940c-caf43339e033",
+  "files": [],
+  "subMetas": {},
+  "userData": {
+    "moduleId": "project:///assets/script/framework/lodash.js",
+    "importerSettings": 7,
+    "simulateGlobals": []
+  }
+}

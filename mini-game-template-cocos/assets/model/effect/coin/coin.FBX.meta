@@ -1,0 +1,130 @@
+{
+  "ver": "2.3.4",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "d0de18df-e2e4-4b30-9e7f-2930376ee3cc",
+  "files": [],
+  "subMetas": {
+    "c6160": {
+      "ver": "1.1.0",
+      "importer": "gltf-mesh",
+      "name": "Cylinder001.mesh",
+      "id": "c6160",
+      "displayName": "",
+      "uuid": "d0de18df-e2e4-4b30-9e7f-2930376ee3cc@c6160",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      }
+    },
+    "df7df": {
+      "importer": "gltf-embeded-image",
+      "uuid": "d0de18df-e2e4-4b30-9e7f-2930376ee3cc@df7df",
+      "displayName": "",
+      "id": "df7df",
+      "name": "贴图 #1.image",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".json",
+        ".png"
+      ],
+      "subMetas": {}
+    },
+    "a96a6": {
+      "ver": "1.0.22",
+      "importer": "texture",
+      "name": "贴图 #1.texture",
+      "id": "a96a6",
+      "displayName": "",
+      "uuid": "d0de18df-e2e4-4b30-9e7f-2930376ee3cc@a96a6",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "premultiplyAlpha": false,
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "d0de18df-e2e4-4b30-9e7f-2930376ee3cc@df7df"
+      }
+    },
+    "9d093": {
+      "ver": "1.0.14",
+      "importer": "gltf-material",
+      "name": "Material #25.material",
+      "id": "9d093",
+      "displayName": "",
+      "uuid": "d0de18df-e2e4-4b30-9e7f-2930376ee3cc@9d093",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      }
+    },
+    "8038b": {
+      "importer": "gltf-scene",
+      "uuid": "d0de18df-e2e4-4b30-9e7f-2930376ee3cc@8038b",
+      "displayName": "",
+      "id": "8038b",
+      "name": "coin.prefab",
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      }
+    }
+  },
+  "userData": {
+    "normals": 0,
+    "tangents": 1,
+    "dumpMaterials": false,
+    "redirect": "d0de18df-e2e4-4b30-9e7f-2930376ee3cc@8038b",
+    "assetFinder": {
+      "meshes": [
+        "d0de18df-e2e4-4b30-9e7f-2930376ee3cc@c6160"
+      ],
+      "textures": [
+        "d0de18df-e2e4-4b30-9e7f-2930376ee3cc@a96a6"
+      ],
+      "materials": [
+        "d0de18df-e2e4-4b30-9e7f-2930376ee3cc@9d093"
+      ],
+      "scenes": [
+        "d0de18df-e2e4-4b30-9e7f-2930376ee3cc@8038b"
+      ],
+      "skeletons": []
+    },
+    "imageMetas": [
+      {
+        "name": "贴图 #1",
+        "uri": "d0de18df-e2e4-4b30-9e7f-2930376ee3cc@df7df"
+      }
+    ],
+    "legacyFbxImporter": true,
+    "fbx": {
+      "smartMaterialEnabled": false
+    }
+  }
+}

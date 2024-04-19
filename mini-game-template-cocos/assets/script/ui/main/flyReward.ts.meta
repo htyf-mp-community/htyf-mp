@@ -1,0 +1,13 @@
+{
+  "ver": "4.0.23",
+  "importer": "typescript",
+  "imported": true,
+  "uuid": "d14d411e-c120-45b4-89fa-07fad152f8cc",
+  "files": [],
+  "subMetas": {},
+  "userData": {
+    "moduleId": "project:///assets/script/ui/main/flyReward.js",
+    "importerSettings": 7,
+    "simulateGlobals": []
+  }
+}

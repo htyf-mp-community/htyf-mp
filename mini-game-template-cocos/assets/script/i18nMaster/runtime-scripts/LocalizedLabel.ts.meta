@@ -1,0 +1,13 @@
+{
+  "ver": "4.0.23",
+  "importer": "typescript",
+  "imported": true,
+  "uuid": "c4c1ac57-37e3-4be2-8610-12bd8ce2a9f6",
+  "files": [],
+  "subMetas": {},
+  "userData": {
+    "moduleId": "project:///assets/script/i18nMaster/runtime-scripts/LocalizedLabel.js",
+    "importerSettings": 7,
+    "simulateGlobals": []
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "ver": "4.0.23",
+  "importer": "typescript",
+  "imported": true,
+  "uuid": "64d5a474-d666-4802-b675-e28a92c5dcf4",
+  "files": [],
+  "subMetas": {},
+  "userData": {
+    "moduleId": "project:///assets/script/framework/csvManager.js",
+    "importerSettings": 7,
+    "simulateGlobals": []
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "ver": "4.0.23",
+  "importer": "typescript",
+  "imported": true,
+  "uuid": "b6eed76d-c047-4f0d-8b33-48f9f6ad58db",
+  "files": [],
+  "subMetas": {},
+  "userData": {
+    "moduleId": "project:///assets/script/logic/gameLogic.js",
+    "importerSettings": 7,
+    "simulateGlobals": []
+  }
+}

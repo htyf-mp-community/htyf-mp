@@ -1,0 +1,13 @@
+{
+  "ver": "4.0.23",
+  "importer": "typescript",
+  "imported": true,
+  "uuid": "5b356c32-2770-4261-9a40-0d750ec9a7e8",
+  "files": [],
+  "subMetas": {},
+  "userData": {
+    "moduleId": "project:///assets/script/ui/online/onlineDouble.js",
+    "importerSettings": 7,
+    "simulateGlobals": []
+  }
+}

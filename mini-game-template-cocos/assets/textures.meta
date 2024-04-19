@@ -1,0 +1,14 @@
+{
+  "ver": "1.1.0",
+  "importer": "directory",
+  "imported": true,
+  "uuid": "1e1e8637-e9a2-4f14-9a36-850cde5047f2",
+  "files": [],
+  "subMetas": {},
+  "userData": {
+    "isSubpackage": true,
+    "subpackageName": "textures",
+    "compressionType": {},
+    "isRemoteBundle": {}
+  }
+}

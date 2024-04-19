@@ -1,0 +1,13 @@
+{
+  "ver": "4.0.23",
+  "importer": "typescript",
+  "imported": true,
+  "uuid": "b6b069a9-14c9-4866-a2e9-c578ac5370ae",
+  "files": [],
+  "subMetas": {},
+  "userData": {
+    "moduleId": "project:///assets/script/ui/fight/balance.js",
+    "importerSettings": 7,
+    "simulateGlobals": []
+  }
+}

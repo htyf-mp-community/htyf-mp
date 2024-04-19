@@ -1,0 +1,13 @@
+{
+  "ver": "4.0.23",
+  "importer": "typescript",
+  "imported": true,
+  "uuid": "cf3718af-39cd-407b-ae2d-dd2700cea8ef",
+  "files": [],
+  "subMetas": {},
+  "userData": {
+    "moduleId": "project:///assets/script/fight/effectManager.js",
+    "importerSettings": 7,
+    "simulateGlobals": []
+  }
+}

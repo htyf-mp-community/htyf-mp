@@ -1,0 +1,13 @@
+{
+  "ver": "4.0.23",
+  "importer": "typescript",
+  "imported": true,
+  "uuid": "dbe36cbe-2f00-4618-82fc-23cec5dcefbf",
+  "files": [],
+  "subMetas": {},
+  "userData": {
+    "moduleId": "project:///assets/script/fight/fightConstants.js",
+    "importerSettings": 7,
+    "simulateGlobals": []
+  }
+}

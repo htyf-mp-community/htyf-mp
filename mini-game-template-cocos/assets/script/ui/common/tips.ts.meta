@@ -1,0 +1,13 @@
+{
+  "ver": "4.0.23",
+  "importer": "typescript",
+  "imported": true,
+  "uuid": "60f49bb0-e3f7-40e2-b1a1-fc2ef7f14d53",
+  "files": [],
+  "subMetas": {},
+  "userData": {
+    "moduleId": "project:///assets/script/ui/common/tips.js",
+    "importerSettings": 7,
+    "simulateGlobals": []
+  }
+}

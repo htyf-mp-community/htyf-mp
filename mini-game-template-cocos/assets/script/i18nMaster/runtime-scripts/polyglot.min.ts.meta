@@ -1,0 +1,13 @@
+{
+  "ver": "4.0.23",
+  "importer": "typescript",
+  "imported": true,
+  "uuid": "2683925c-556a-4669-b13d-c40effb96270",
+  "files": [],
+  "subMetas": {},
+  "userData": {
+    "moduleId": "project:///assets/script/i18nMaster/runtime-scripts/polyglot.min.js",
+    "importerSettings": 7,
+    "simulateGlobals": []
+  }
+}

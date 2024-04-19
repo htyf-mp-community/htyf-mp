@@ -1,0 +1,13 @@
+{
+  "ver": "4.0.23",
+  "importer": "typescript",
+  "imported": true,
+  "uuid": "586a8b5d-6818-4f42-9ae5-dab72fcf3b40",
+  "files": [],
+  "subMetas": {},
+  "userData": {
+    "moduleId": "project:///assets/script/fight/customerManager.js",
+    "importerSettings": 7,
+    "simulateGlobals": []
+  }
+}

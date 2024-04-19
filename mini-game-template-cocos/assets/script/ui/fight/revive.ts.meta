@@ -1,0 +1,13 @@
+{
+  "ver": "4.0.23",
+  "importer": "typescript",
+  "imported": true,
+  "uuid": "95f632fa-e777-4180-b05d-220616ce91ef",
+  "files": [],
+  "subMetas": {},
+  "userData": {
+    "moduleId": "project:///assets/script/ui/fight/revive.js",
+    "importerSettings": 7,
+    "simulateGlobals": []
+  }
+}

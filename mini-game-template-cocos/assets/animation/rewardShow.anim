@@ -1,0 +1,261 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "rewardShow",
+  "_objFlags": 0,
+  "_native": "",
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": 1,
+  "curveDatas": {
+    "light": {
+      "props": {
+        "scale": {
+          "keys": 0,
+          "values": [
+            {
+              "__type__": "cc.Vec3",
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            {
+              "__type__": "cc.Vec3",
+              "x": 1.1,
+              "y": 1.1,
+              "z": 1.1
+            },
+            {
+              "__type__": "cc.Vec3",
+              "x": 1.2,
+              "y": 1.2,
+              "z": 1.2
+            }
+          ],
+          "easingMethods": [
+            null,
+            null,
+            null
+          ]
+        },
+        "eulerAngles": {
+          "keys": 7,
+          "values": [
+            {
+              "__type__": "cc.Vec3",
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            {
+              "__type__": "cc.Vec3",
+              "x": 0,
+              "y": 0,
+              "z": 360
+            }
+          ],
+          "easingMethods": [
+            null,
+            null
+          ]
+        }
+      },
+      "comps": {
+        "cc.Sprite": {
+          "color": {
+            "keys": 1,
+            "values": [
+              {
+                "__type__": "cc.Color",
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 0
+              },
+              {
+                "__type__": "cc.Color",
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+              },
+              {
+                "__type__": "cc.Color",
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 220
+              }
+            ],
+            "easingMethods": [
+              null,
+              null,
+              null
+            ]
+          }
+        }
+      }
+    },
+    "icon": {
+      "props": {
+        "scale": {
+          "keys": 2,
+          "values": [
+            {
+              "__type__": "cc.Vec3",
+              "x": 2,
+              "y": 2,
+              "z": 2
+            },
+            {
+              "__type__": "cc.Vec3",
+              "x": 0.9,
+              "y": 0.9,
+              "z": 0.9
+            },
+            {
+              "__type__": "cc.Vec3",
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          ],
+          "easingMethods": [
+            null,
+            null,
+            null
+          ]
+        }
+      },
+      "comps": {
+        "cc.Sprite": {
+          "color": {
+            "keys": 3,
+            "values": [
+              {
+                "__type__": "cc.Color",
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 0
+              },
+              {
+                "__type__": "cc.Color",
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+              }
+            ],
+            "easingMethods": [
+              null,
+              null
+            ]
+          }
+        }
+      }
+    },
+    "car": {
+      "props": {
+        "scale": {
+          "keys": 4,
+          "values": [
+            {
+              "__type__": "cc.Vec3",
+              "x": 3,
+              "y": 3,
+              "z": 3
+            },
+            {
+              "__type__": "cc.Vec3",
+              "x": 1.8,
+              "y": 1.8,
+              "z": 1.8
+            },
+            {
+              "__type__": "cc.Vec3",
+              "x": 2,
+              "y": 2,
+              "z": 2
+            }
+          ],
+          "easingMethods": [
+            null,
+            null,
+            null
+          ]
+        }
+      }
+    },
+    "value": {
+      "props": {
+        "position": {
+          "keys": 6,
+          "values": [
+            {
+              "__type__": "cc.Vec3",
+              "x": 0,
+              "y": -280,
+              "z": 0
+            },
+            {
+              "__type__": "cc.Vec3",
+              "x": 0,
+              "y": -190,
+              "z": 0
+            },
+            {
+              "__type__": "cc.Vec3",
+              "x": 0,
+              "y": -200,
+              "z": 0
+            }
+          ],
+          "easingMethods": [
+            null,
+            null,
+            null
+          ]
+        }
+      },
+      "comps": {
+        "cc.Label": {
+          "color": {
+            "keys": 5,
+            "values": [
+              {
+                "__type__": "cc.Color",
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 0
+              },
+              {
+                "__type__": "cc.Color",
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+              },
+              {
+                "__type__": "cc.Color",
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+              }
+            ],
+            "easingMethods": [
+              null,
+              null,
+              null
+            ]
+          }
+        }
+      }
+    }
+  },
+  "_duration": 2,
+  "_tracks": [],
+  "_events": [],
+  "_exoticAnimation": null
+}

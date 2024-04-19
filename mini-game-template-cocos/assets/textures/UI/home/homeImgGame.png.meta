@@ -1,0 +1,142 @@
+{
+  "ver": "1.0.25",
+  "importer": "image",
+  "imported": true,
+  "uuid": "fd82e8a9-33d9-4005-8f29-2a9661aa8dff",
+  "files": [
+    ".json",
+    ".png"
+  ],
+  "subMetas": {
+    "6c48a": {
+      "importer": "texture",
+      "uuid": "fd82e8a9-33d9-4005-8f29-2a9661aa8dff@6c48a",
+      "displayName": "homeImgGame",
+      "id": "6c48a",
+      "name": "texture",
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "wrapModeS": "clamp-to-edge",
+        "wrapModeT": "clamp-to-edge",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "premultiplyAlpha": false,
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "fd82e8a9-33d9-4005-8f29-2a9661aa8dff",
+        "visible": false
+      }
+    },
+    "f9941": {
+      "ver": "1.0.12",
+      "importer": "sprite-frame",
+      "uuid": "fd82e8a9-33d9-4005-8f29-2a9661aa8dff@f9941",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "premultiplyAlpha": false,
+        "anisotropy": 1,
+        "trimType": "auto",
+        "trimThreshold": 1,
+        "rotated": false,
+        "offsetX": 0,
+        "offsetY": 0,
+        "trimX": 3,
+        "trimY": 2,
+        "width": 342,
+        "height": 264,
+        "rawWidth": 348,
+        "rawHeight": 268,
+        "borderTop": 0,
+        "borderBottom": 0,
+        "borderLeft": 0,
+        "borderRight": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "fd82e8a9-33d9-4005-8f29-2a9661aa8dff@6c48a",
+        "atlasUuid": "",
+        "packable": true,
+        "pixelsToUnit": 100,
+        "pivotX": 0.5,
+        "pivotY": 0.5,
+        "meshType": 0,
+        "vertices": {
+          "rawPosition": [
+            -171,
+            -132,
+            0,
+            171,
+            -132,
+            0,
+            -171,
+            132,
+            0,
+            171,
+            132,
+            0
+          ],
+          "indexes": [
+            0,
+            1,
+            2,
+            2,
+            1,
+            3
+          ],
+          "uv": [
+            3,
+            266,
+            345,
+            266,
+            3,
+            2,
+            345,
+            2
+          ],
+          "nuv": [
+            0.008620689655172414,
+            0.007462686567164179,
+            0.9913793103448276,
+            0.007462686567164179,
+            0.008620689655172414,
+            0.9925373134328358,
+            0.9913793103448276,
+            0.9925373134328358
+          ],
+          "minPos": [
+            -171,
+            -132,
+            0
+          ],
+          "maxPos": [
+            171,
+            132,
+            0
+          ]
+        }
+      },
+      "displayName": "homeImgGame",
+      "id": "f9941",
+      "name": "spriteFrame"
+    }
+  },
+  "userData": {
+    "type": "sprite-frame",
+    "redirect": "fd82e8a9-33d9-4005-8f29-2a9661aa8dff@f9941",
+    "hasAlpha": true,
+    "fixAlphaTransparencyArtifacts": false
+  }
+}

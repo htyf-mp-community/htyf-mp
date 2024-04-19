@@ -1,0 +1,80 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "rewardIdle",
+  "_objFlags": 1,
+  "_native": "",
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": 2,
+  "curveDatas": {
+    "light": {
+      "props": {
+        "scale": {
+          "keys": 0,
+          "values": [
+            {
+              "__type__": "cc.Vec3",
+              "x": 1.2,
+              "y": 1.2,
+              "z": 1.2
+            }
+          ],
+          "easingMethods": [
+            null
+          ]
+        },
+        "eulerAngles": {
+          "keys": 2,
+          "values": [
+            {
+              "__type__": "cc.Vec3",
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            {
+              "__type__": "cc.Vec3",
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            {
+              "__type__": "cc.Vec3",
+              "x": 0,
+              "y": 0,
+              "z": 360
+            }
+          ],
+          "easingMethods": [
+            null,
+            null,
+            null
+          ]
+        }
+      },
+      "comps": {
+        "cc.Sprite": {
+          "color": {
+            "keys": 1,
+            "values": [
+              {
+                "__type__": "cc.Color",
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 220
+              }
+            ],
+            "easingMethods": [
+              null
+            ]
+          }
+        }
+      }
+    }
+  },
+  "_duration": 2.0166666666666666,
+  "_tracks": [],
+  "_events": [],
+  "_exoticAnimation": null
+}

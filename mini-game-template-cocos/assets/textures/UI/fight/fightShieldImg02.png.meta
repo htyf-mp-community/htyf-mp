@@ -1,0 +1,142 @@
+{
+  "ver": "1.0.25",
+  "importer": "image",
+  "imported": true,
+  "uuid": "972ffe0b-b60b-4229-993f-0c5043e18c52",
+  "files": [
+    ".json",
+    ".png"
+  ],
+  "subMetas": {
+    "6c48a": {
+      "importer": "texture",
+      "uuid": "972ffe0b-b60b-4229-993f-0c5043e18c52@6c48a",
+      "displayName": "fightShieldImg02",
+      "id": "6c48a",
+      "name": "texture",
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "wrapModeS": "clamp-to-edge",
+        "wrapModeT": "clamp-to-edge",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "premultiplyAlpha": false,
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "972ffe0b-b60b-4229-993f-0c5043e18c52",
+        "visible": false
+      }
+    },
+    "f9941": {
+      "ver": "1.0.12",
+      "importer": "sprite-frame",
+      "uuid": "972ffe0b-b60b-4229-993f-0c5043e18c52@f9941",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "premultiplyAlpha": false,
+        "anisotropy": 1,
+        "trimType": "auto",
+        "trimThreshold": 1,
+        "rotated": false,
+        "offsetX": 0,
+        "offsetY": 0,
+        "trimX": 1,
+        "trimY": 1,
+        "width": 310,
+        "height": 213,
+        "rawWidth": 312,
+        "rawHeight": 215,
+        "borderTop": 0,
+        "borderBottom": 0,
+        "borderLeft": 0,
+        "borderRight": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "972ffe0b-b60b-4229-993f-0c5043e18c52@6c48a",
+        "atlasUuid": "",
+        "packable": true,
+        "pixelsToUnit": 100,
+        "pivotX": 0.5,
+        "pivotY": 0.5,
+        "meshType": 0,
+        "vertices": {
+          "rawPosition": [
+            -155,
+            -106.5,
+            0,
+            155,
+            -106.5,
+            0,
+            -155,
+            106.5,
+            0,
+            155,
+            106.5,
+            0
+          ],
+          "indexes": [
+            0,
+            1,
+            2,
+            2,
+            1,
+            3
+          ],
+          "uv": [
+            1,
+            214,
+            311,
+            214,
+            1,
+            1,
+            311,
+            1
+          ],
+          "nuv": [
+            0.003205128205128205,
+            0.004651162790697674,
+            0.9967948717948718,
+            0.004651162790697674,
+            0.003205128205128205,
+            0.9953488372093023,
+            0.9967948717948718,
+            0.9953488372093023
+          ],
+          "minPos": [
+            -155,
+            -106.5,
+            0
+          ],
+          "maxPos": [
+            155,
+            106.5,
+            0
+          ]
+        }
+      },
+      "displayName": "fightShieldImg02",
+      "id": "f9941",
+      "name": "spriteFrame"
+    }
+  },
+  "userData": {
+    "type": "sprite-frame",
+    "redirect": "972ffe0b-b60b-4229-993f-0c5043e18c52@f9941",
+    "hasAlpha": true,
+    "fixAlphaTransparencyArtifacts": false
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "ver": "4.0.23",
+  "importer": "typescript",
+  "imported": true,
+  "uuid": "28bd9c44-32fd-4628-b6d3-b808b8078748",
+  "files": [],
+  "subMetas": {},
+  "userData": {
+    "moduleId": "project:///assets/script/i18nMaster/runtime-scripts/LocalizedSprite.js",
+    "importerSettings": 7,
+    "simulateGlobals": []
+  }
+}

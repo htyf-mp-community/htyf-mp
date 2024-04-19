@@ -1,0 +1,13 @@
+{
+  "ver": "4.0.23",
+  "importer": "typescript",
+  "imported": true,
+  "uuid": "10a2583a-4c33-4fd8-8202-745e07b68a71",
+  "files": [],
+  "subMetas": {},
+  "userData": {
+    "moduleId": "project:///assets/script/framework/oneToMultiListener.js",
+    "importerSettings": 7,
+    "simulateGlobals": []
+  }
+}

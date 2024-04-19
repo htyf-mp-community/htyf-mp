@@ -1,0 +1,13 @@
+{
+  "ver": "4.0.23",
+  "importer": "typescript",
+  "imported": true,
+  "uuid": "9d0166c1-881e-49d6-9aed-47a55c04f778",
+  "files": [],
+  "subMetas": {},
+  "userData": {
+    "moduleId": "project:///assets/script/ui/signIn/signIn.js",
+    "importerSettings": 7,
+    "simulateGlobals": []
+  }
+}

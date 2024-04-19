@@ -1,0 +1,8 @@
+{
+  "type": "game",
+  "name": "Game模板",
+  "projectname": "Game模板",
+  "appid": "__game_temp_appid__",
+  "appUrlConfig": "https://raw.githubusercontent.com/htyf-mp-community/htyf-mp/main/mini-game-template-cocos/dgz/build/outputs/app.json",
+  "zipUrl": "https://raw.githubusercontent.com/htyf-mp-community/htyf-mp/main/mini-game-template-cocos/dgz/build/outputs/dist.dgz"
+}

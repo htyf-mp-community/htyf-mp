@@ -1,0 +1,13 @@
+{
+  "ver": "4.0.23",
+  "importer": "typescript",
+  "imported": true,
+  "uuid": "fb9b757c-6d93-43df-9220-37201354c36f",
+  "files": [],
+  "subMetas": {},
+  "userData": {
+    "moduleId": "project:///assets/script/ui/fight/fightUI.js",
+    "importerSettings": 7,
+    "simulateGlobals": []
+  }
+}
