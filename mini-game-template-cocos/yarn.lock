@@ -143,10 +143,10 @@
   dependencies:
     nanoid "^3.3.1"
 
-"@htyf-mp/engines@^0.0.48":
-  version "0.0.48"
-  resolved "https://registry.yarnpkg.com/@htyf-mp/engines/-/engines-0.0.48.tgz#0b18dde3778719ca7d638468f28c0bfb13fda884"
-  integrity sha512-hvUV00TXAyWc9RwYjDR2PQxAknL/MJLB4SR7RVc47sMvG0JGkDY1GBJDLh26g0N6O23iY9GQRPBc9Ch2VLjAhw==
+"@htyf-mp/engines@^0.0.52":
+  version "0.0.52"
+  resolved "https://registry.yarnpkg.com/@htyf-mp/engines/-/engines-0.0.52.tgz#9f9b4908c71ad1dd36a85346b3815977c9d20d8c"
+  integrity sha512-5N6heMmWFAzHr9cMlRsAqGCuYVeWHiNKfJMbxImcpacyaobyJfouX02WILOir/Nax4fgyFnxd+wEgV09mxL4eg==
   dependencies:
     "@callstack/repack" "^3.7.0"
     "@gorhom/bottom-sheet" "^4.6.0"
