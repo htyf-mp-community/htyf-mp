@@ -1,7 +1,7 @@
 import { AppRegistry } from 'react-native'
-import App from './src'
-import { name as appName } from './app.json'
 import { MiniAppsEnginesProvider } from '@htyf-mp/engines'
+import { name as appName } from './app.json'
+import App from './src'
 
 const Root = () => {
   return <MiniAppsEnginesProvider>

@@ -1,12 +1,9 @@
-import { Alert, StatusBar } from 'react-native'
 import { CardStyleInterpolators, createStackNavigator } from '@react-navigation/stack';
-import React, { forwardRef, useEffect, useImperativeHandle } from 'react'
-import { useSafeAreaInsets, initialWindowMetrics, useSafeAreaFrame } from 'react-native-safe-area-context'
+import React, { forwardRef, memo, useEffect } from 'react'
 import {StoreProvider, UIProvider, useAppSelector} from '@/_UIHOOKS_'
 
-import { minisdkRef } from './utils'
-
 import createRouter from './router'
+import { NavigationContainer } from '@react-navigation/native';
 
 const RootStack = createStackNavigator();
 
@@ -36,39 +33,17 @@ function RootFix(props: any) {
 
 
 const MiniApp = forwardRef(({ dataSupper, minisdk }: any, ref) => {
-  console.log(dataSupper)
-  const insets = useSafeAreaInsets();
-  const frame = useSafeAreaFrame();
-  useEffect(() => {
-    minisdkRef.current = minisdk;
-  }, [minisdk]);
-  useEffect(() => {
-    /** 修复 useSafeAreaInsets 修复未触发 */
-    if (
-      JSON.stringify(insets) !== JSON.stringify(initialWindowMetrics?.insets) || 
-      JSON.stringify(frame) !== JSON.stringify(initialWindowMetrics?.frame) 
-    ) {
-      setTimeout(i => {
-        StatusBar.setHidden(true)
-        StatusBar.setHidden(false)
-      }, 0)
-    }
-  }, [])
-  useImperativeHandle(ref, () => ({
-    // Do not edit
-    getData: () => {
-      return 'Mini app data'
-    },
-  }))
   return (
-    <StoreProvider>
-      <UIProvider>
-        <RootFix />
-      </UIProvider>
-    </StoreProvider>
+    <NavigationContainer>
+      <StoreProvider>
+        <UIProvider>
+          <RootFix />
+        </UIProvider>
+      </StoreProvider>
+    </NavigationContainer>
   );
 });
 
 
-export default MiniApp;
+export default memo(MiniApp);
 
