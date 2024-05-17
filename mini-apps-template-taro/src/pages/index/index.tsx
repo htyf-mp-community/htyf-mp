@@ -12,7 +12,7 @@ function Index() {
   const apps = useAppSelector(i => i.apps)
   return (
     <View className='page'>
-      <Text>红糖云服-小程序模板(Taro) {router.path}</Text>
+      <Text>红糖云服-小程序模板(Taro)</Text>
       <Text>appid: {apps.__APPID__}</Text>
       <Text>version: {apps.__VERSION__}</Text>
       <Text>build time: {apps.__BUILD_TIME__}</Text>
@@ -38,7 +38,7 @@ function Index() {
       >
         进入详情页
       </Button>
-      <View>
+      <View className="icon-wrap">
         <Text>Png icon</Text>
         <Image
           style={{
