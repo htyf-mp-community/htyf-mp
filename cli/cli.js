@@ -95,12 +95,12 @@ async function main() {
       message: '请选择模板类型?',
       choices: [
         {
-          name: 'Taro',
-          value: 'taro',
+          name: 'Expo (https://expo.dev/)',
+          value: 'expo',
         },
         {
-          name: 'Expo',
-          value: 'expo',
+          name: 'Taro (https://docs.taro.zone/)',
+          value: 'taro',
         },
         {
           name: 'Game',
