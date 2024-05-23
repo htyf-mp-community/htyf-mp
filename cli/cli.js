@@ -25,7 +25,7 @@ const green = chalk.green
 const repoUrl = 'https://github.com/htyf-mp-community/htyf-mp.git'
 
 const taroTempPath = 'mini-apps-template-taro';
-const rnTempPath = 'mini-apps-template-rn';
+const expoTempPath = 'mini-apps-template-expo';
 const gameTempPath = 'mini-game-template-cocos';
 
 const isYarnInstalled = () => {
@@ -99,8 +99,8 @@ async function main() {
           value: 'taro',
         },
         {
-          name: 'ReactNative',
-          value: 'react-native',
+          name: 'Expo',
+          value: 'expo',
         },
         {
           name: 'Game',
@@ -128,17 +128,17 @@ async function main() {
     try {
       if (tempType === 'taro') {
         appRootPath = `${appName}/${taroTempPath}`
-        await execa('rm', ['-r', `${appName}/${rnTempPath}`])
+        await execa('rm', ['-r', `${appName}/${expoTempPath}`])
         await execa('rm', ['-r', `${appName}/${gameTempPath}`])
       }
-      if (tempType === 'react-native') {
-        appRootPath = `${appName}/${rnTempPath}`
+      if (tempType === 'expo') {
+        appRootPath = `${appName}/${expoTempPath}`
         await execa('rm', ['-r', `${appName}/${taroTempPath}`])
         await execa('rm', ['-r', `${appName}/${gameTempPath}`])
       }
       if (tempType === 'game-cocos') {
         appRootPath = `${appName}/${gameTempPath}`
-        await execa('rm', ['-r', `${appName}/${rnTempPath}`])
+        await execa('rm', ['-r', `${appName}/${expoTempPath}`])
         await execa('rm', ['-r', `${appName}/${taroTempPath}`])
       }
       await execa('rm', ['-r', `${appName}/cli`])

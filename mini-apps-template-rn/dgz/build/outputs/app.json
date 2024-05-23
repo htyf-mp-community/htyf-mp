@@ -1,8 +1,1 @@
-{
-  "type": "app",
-  "name": "RN模版",
-  "appid": "__rn_temp_appid__",
-  "version": "0.0.13",
-  "appUrlConfig": "https://raw.githubusercontent.com/htyf-mp-community/htyf-mp/main/mini-apps-template-rn/dgz/build/outputs/app.json",
-  "zipUrl": "https://raw.githubusercontent.com/htyf-mp-community/htyf-mp/main/mini-apps-template-rn/dgz/build/outputs/dist.dgz"
-}
+{"type":"app","name":"RN模版","appid":"__rn_temp_appid____dev__","version":"0.0.13.1716370376703","appUrlConfig":"http://192.168.199.150:8000/app.json","zipUrl":"http://192.168.199.150:8000/dist.dgz"}

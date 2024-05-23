@@ -14,7 +14,7 @@ function App() {
     alignItems: 'center',
     flexDirection: 'column'
   }}>
-    <Text>红糖云服-小程序模板(RN)</Text>
+    <Text>11111红糖云服-小程序模板(RN)</Text>
     <Text>appid: {apps.__APPID__}</Text>
     <Text>version: {apps.__VERSION__}</Text>
     <Text>build time: {apps.__BUILD_TIME__}</Text>
