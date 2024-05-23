@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "react-native-boilerplate",
-    "slug": "react-native-boilerplate",
+    "name": "htyf-mp",
+    "slug": "htyf-mp",
     "owner": "wataru",
     "privacy": "unlisted",
     "version": "1.0.0",
@@ -37,7 +37,6 @@
     },
     "runtimeVersion": {
       "policy": "sdkVersion"
-    },
-    "plugins": ["expo-asset", "expo-font"]
+    }
   }
 }

@@ -18,3 +18,14 @@ web-build/
 .metro-health-check*
 
 .env*.local
+
+.dgz.babel.config.js
+# 只保留app.json/dist.dgz
+dgz/*
+!dgz/build
+dgz/build/*
+!dgz/build/outputs
+dgz/build/outputs/*
+!dgz/build/outputs/app.json
+!dgz/build/outputs/dist.dgz
+# 只保留app.json/dist.dgz

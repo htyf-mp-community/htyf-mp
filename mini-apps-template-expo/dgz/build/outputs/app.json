@@ -1,0 +1,8 @@
+{
+  "type": "app",
+  "name": "expo模版",
+  "appid": "__expo_temp_appid__",
+  "version": "1.0.0",
+  "appUrlConfig": "https://raw.githubusercontent.com/htyf-mp-community/htyf-mp/main/mini-apps-template-expo/dgz/build/outputs/app.json",
+  "zipUrl": "https://raw.githubusercontent.com/htyf-mp-community/htyf-mp/main/mini-apps-template-expo/dgz/build/outputs/dist.dgz"
+}
