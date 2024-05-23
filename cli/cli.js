@@ -95,7 +95,7 @@ async function main() {
       message: '请选择模板类型?',
       choices: [
         {
-          name: 'Expo (https://expo.dev/)',
+          name: 'Expo (https://docs.expo.dev/)',
           value: 'expo',
         },
         {
@@ -103,7 +103,7 @@ async function main() {
           value: 'taro',
         },
         {
-          name: 'Game',
+          name: 'Game (https://docs.cocos.com/)',
           value: 'game-cocos',
         }
       ]
