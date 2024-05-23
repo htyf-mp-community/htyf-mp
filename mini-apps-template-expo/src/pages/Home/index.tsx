@@ -1,7 +1,6 @@
 import React from 'react';
 import { Button, Image, Text, View } from 'react-native';
 import { useAppSelector } from '@/_UIHOOKS_';
-import jssdk from '@htyf-mp/js-sdk';
 import pngIcon from '@/assets/icon.png'
 import { useNavigation } from '@react-navigation/native';
 
@@ -18,18 +17,6 @@ function App() {
     <Text>appid: {apps.__APPID__}</Text>
     <Text>version: {apps.__VERSION__}</Text>
     <Text>build time: {apps.__BUILD_TIME__}</Text>
-    <Button
-      title='JSSDK-调用'
-      onPress={() => {
-        jssdk.showToast({
-          text1: '提示',
-          text2: '这是个提示',
-          type: '',
-          position: 'top',
-          autoHide: true,
-        })
-      }}
-    />
     <Button
       title='进入详情页'
       onPress={() => {
