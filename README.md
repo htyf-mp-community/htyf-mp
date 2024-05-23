@@ -32,4 +32,4 @@ npm start
 
 | 微信  | 支付宝 |
 | ------------- | ------------- |
-| ![微信](./mini-apps-template-rn/docs/IMG_5087.jpg)  | ![支付宝](./mini-apps-template-rn/docs/IMG_5088.jpg) |
+| ![微信](./mini-apps-template-expo/docs/IMG_5087.jpg)  | ![支付宝](./mini-apps-template-expo/docs/IMG_5088.jpg) |
