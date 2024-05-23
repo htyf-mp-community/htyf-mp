@@ -1039,7 +1039,7 @@ PODS:
     - glog
     - RCT-Folly (= 2022.05.16.00)
     - React-Core
-  - react-native-cameraroll (7.7.0):
+  - react-native-cameraroll (7.8.0):
     - glog
     - RCT-Folly (= 2022.05.16.00)
     - React-Core
@@ -1063,7 +1063,7 @@ PODS:
     - glog
     - RCT-Folly (= 2022.05.16.00)
     - React-Core
-  - react-native-maps (1.15.1):
+  - react-native-maps (1.15.2):
     - React-Core
   - react-native-mmkv (2.12.2):
     - glog
@@ -1110,12 +1110,12 @@ PODS:
     - React-Core
   - react-native-user-agent (2.3.1):
     - React
-  - react-native-video (6.0.0):
+  - react-native-video (6.1.2):
     - glog
     - RCT-Folly (= 2022.05.16.00)
     - React-Core
-    - react-native-video/Video (= 6.0.0)
-  - react-native-video/Video (6.0.0):
+    - react-native-video/Video (= 6.1.2)
+  - react-native-video/Video (6.1.2):
     - glog
     - RCT-Folly (= 2022.05.16.00)
     - React-Core
@@ -1321,7 +1321,7 @@ PODS:
     - React-Core
   - RNCMaskedView (0.3.1):
     - React-Core
-  - RNCPicker (2.7.5):
+  - RNCPicker (2.7.6):
     - React-Core
   - RNDeviceInfo (11.1.0):
     - React-Core
@@ -1943,7 +1943,7 @@ SPEC CHECKSUMS:
   react-native-background-timer: 17ea5e06803401a379ebf1f20505b793ac44d0fe
   react-native-blob-util: 18b510205c080a453574a7d2344d64673d0ad9af
   react-native-blur: 799045500f56146afc46245148080e7b7623cb75
-  react-native-cameraroll: 30b9c7bb77e2ced096bd4032c6bbbb2948b5d050
+  react-native-cameraroll: abd04892a6cf688ae1dd1b49377c835d1c1146b3
   react-native-cookies: f54fcded06bb0cda05c11d86788020b43528a26c
   react-native-date-picker: 90687f1dbd374ff0265dca99d949998364c22fa9
   react-native-document-picker: 2b3efb60622b7be891b8d0e0e5424632150e0c94
@@ -1951,7 +1951,7 @@ SPEC CHECKSUMS:
   react-native-get-random-values: 21325b2244dfa6b58878f51f9aa42821e7ba3d06
   react-native-image-picker: d3db110a3ded6e48c93aef7e8e51afdde8b16ed0
   react-native-keyboard-controller: 544386be57227ae5e235876c2035102ddbf412e8
-  react-native-maps: 4c07b21deac3ac3579558956b63e288efb8725bb
+  react-native-maps: 3df08c84c698a6f6a98c290a23c138d4706a42da
   react-native-mmkv: 1fdc81aa70c1aba09370718e6a63a09cbbbac8d2
   react-native-netinfo: 076df4f9b07f6670acf4ce9a75aac8d34c2e2ccc
   react-native-orientation-locker: 5819fd23ca89cbac0d736fb4314745f62716d517
@@ -1968,7 +1968,7 @@ SPEC CHECKSUMS:
   react-native-track-player: 82ef1756ffeea61140fea17519ecd6d64ec3cf3e
   react-native-udp: df79c3cb72c4e71240cd3ce4687bfb8a137140d5
   react-native-user-agent: a90a1e839b99801baad67a73dd6f361a52aa3cf1
-  react-native-video: 0c2ca9ef7008151d30be92244355d2a3d93462b4
+  react-native-video: 88cf186299aa6c3e4fb54aa1bc99267bf99c2b91
   react-native-view-shot: 6b7ed61d77d88580fed10954d45fad0eb2d47688
   react-native-vlc-media-player: 0f9860bded57cd6764ac55b5c0e97347069cb40a
   react-native-volume-manager: 3c7d8047841b6831730dea7bf25250522388b4f4
@@ -2002,7 +2002,7 @@ SPEC CHECKSUMS:
   RNCCheckbox: a3ca9978cb0846b981d28da4e9914bd437403d77
   RNCClipboard: 0a720adef5ec193aa0e3de24c3977222c7e52a37
   RNCMaskedView: 090213d32d8b3bb83a4dcb7d12c18f0152591906
-  RNCPicker: 3e2c37a8328f368ce14da050cdc8231deb5fc9f9
+  RNCPicker: f58e790450cb0a74c09dd1c677bd1de41a5741b9
   RNDeviceInfo: b899ce37a403a4dea52b7cb85e16e49c04a5b88e
   RNFastImage: 5c9c9fed9c076e521b3f509fe79e790418a544e8
   RNFlashList: b521ebdd7f9352673817f1d98e8bdc0c8cf8545b
