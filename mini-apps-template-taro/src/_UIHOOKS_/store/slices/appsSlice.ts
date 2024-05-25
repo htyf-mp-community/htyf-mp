@@ -1,8 +1,8 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 
-export const APP_APPID = `${__APP_DEFINE_APPID__}`;
-export const APP_VERSION = `${__APP_DEFINE_VERSION__}`;
-export const APP_BUILD_TIME = `${__APP_DEFINE_BUILD_TIME__}`;
+export const APP_APPID = __APP_DEFINE_APPID__;
+export const APP_VERSION = __APP_DEFINE_VERSION__;
+export const APP_BUILD_TIME = __APP_DEFINE_BUILD_TIME__;
 
 enum ENV_ENUM {
   'MASTER',
