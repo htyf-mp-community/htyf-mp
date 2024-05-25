@@ -9,22 +9,14 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
-import { MMKV } from 'react-native-mmkv';
-import ReactNativeBlobUtil from 'react-native-blob-util'
 import appsSlice, { APP_APPID, APP_BUILD_TIME, APP_VERSION } from './slices/appsSlice';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
+import {localStorage} from '@/utils'
 
 const rootReducer = combineReducers({
   apps: appsSlice,
 });
-const MMKV_KEY = `app_${APP_APPID}_storage`;
-
-const storage = new MMKV({
-  id: MMKV_KEY,
-  path: `${ReactNativeBlobUtil.fs.dirs.DocumentDir}/${MMKV_KEY}`,
-  encryptionKey: `${MMKV_KEY}_encryptionKey`
-})
 
 
 const persistedReducer = persistReducer({
@@ -37,16 +29,16 @@ const persistedReducer = persistReducer({
   ],
   storage: {
     async getItem(key: string) {
-      const res = storage.getString(key)
+      const res = localStorage.getItem(key)
       return res;
     },
 
     async setItem(key: string, data: string) {
-      return storage.set(key, data)
+      return localStorage.setItem(key, data)
     },
 
     async removeItem(key: string) {
-      return storage.delete(key)
+      return localStorage.removeItem(key)
     },
   }, // 使用 AsyncStorage 作为持久化存储的仓库
 }, rootReducer);
