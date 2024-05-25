@@ -20,8 +20,6 @@ web-build/
 .env*.local
 
 .dgz.babel.config.js
-src_expo
-
 # 只保留app.json/dist.dgz
 dgz/*
 !dgz/build

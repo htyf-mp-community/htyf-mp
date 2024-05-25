@@ -1,5 +1,4 @@
 import * as SplashScreen from 'expo-splash-screen';
-import App from './dgz/__source__/entry-file'
 import { useEffect } from 'react';
 
 
@@ -13,5 +12,5 @@ export default function Root() {
 
     }
   }, [])
-  return <App />;
+  return <></>;
 }

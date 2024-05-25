@@ -1327,8 +1327,8 @@ PODS:
     - React-Core
   - RNFastImage (8.6.3):
     - React-Core
-    - SDWebImage (~> 5.11.1)
-    - SDWebImageWebPCoder (~> 0.8.4)
+    - SDWebImage
+    - SDWebImageWebPCoder
   - RNFlashList (1.6.4):
     - React-Core
   - RNGestureHandler (2.16.2):
@@ -2004,7 +2004,7 @@ SPEC CHECKSUMS:
   RNCMaskedView: 090213d32d8b3bb83a4dcb7d12c18f0152591906
   RNCPicker: f58e790450cb0a74c09dd1c677bd1de41a5741b9
   RNDeviceInfo: b899ce37a403a4dea52b7cb85e16e49c04a5b88e
-  RNFastImage: 5c9c9fed9c076e521b3f509fe79e790418a544e8
+  RNFastImage: 245a26474e581bcb6ad90e02c4d57b185a6bcc8e
   RNFlashList: b521ebdd7f9352673817f1d98e8bdc0c8cf8545b
   RNGestureHandler: 96439cf6543defdde87459e48cd1a3f0e45a008e
   RNLocalize: e8694475db034bf601e17bd3dfa8986565e769eb
