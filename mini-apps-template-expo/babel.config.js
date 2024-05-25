@@ -12,15 +12,15 @@ module.exports = function (api) {
           /**
            * appid
            */
-          __APP_DEFINE_APPID__: `"${dgz.appid}"`,
+          __APP_DEFINE_APPID__: `${dgz.appid}`,
           /**
            * app 版本号
            */
-          __APP_DEFINE_VERSION__: `"${pkg.version}"`,
+          __APP_DEFINE_VERSION__: `${pkg.version}`,
           /**
            * app 打包时间
            */
-          __APP_DEFINE_BUILD_TIME__: `"${new Date().getTime()}"`,
+          __APP_DEFINE_BUILD_TIME__: `${new Date().getTime()}`,
         },
       ],
       [
