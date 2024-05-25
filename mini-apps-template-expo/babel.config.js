@@ -3,8 +3,15 @@ const pkg = require('./package.json')
 
 module.exports = function (api) {
   api.cache(true);
+  let type = 'htyf-mp';
+  let presets = ['module:metro-react-native-babel-preset'];
+  if (process.env.EXPO_PUBLIC_PROJECT_ROOT) {
+    presets = ['babel-preset-expo'];
+    type = 'expo';
+  }
+  console.log('run', type)
   return {
-    presets: ['babel-preset-expo'],
+    presets: presets,
     plugins: [
       [
         'transform-define',
@@ -32,6 +39,7 @@ module.exports = function (api) {
           },
         },
       ],
+      'react-native-reanimated/plugin',
     ],
   };
 };

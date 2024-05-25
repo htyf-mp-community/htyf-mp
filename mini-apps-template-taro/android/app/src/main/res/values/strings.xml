@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">apps</string>
+  <string name="app_name">DEV - htyf-mp</string>
+  <string name="expo_splash_screen_resize_mode" translatable="false">contain</string>
+  <string name="expo_splash_screen_status_bar_translucent" translatable="false">false</string>
+  <string name="expo_system_ui_user_interface_style" translatable="false">light</string>
+  <string name="expo_runtime_version">exposdk:50.0.0</string>
 </resources>

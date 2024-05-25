@@ -15,7 +15,7 @@ const config = {
   defineConstants: {},
   copy: {
     patterns: [
-      { from: 'public/', to: 'dist/' },
+      { from: 'assets/', to: 'dist/' },
       // { from: 'dgz/build/outputs/app.json', to: 'dist/' },
       // { from: 'dgz/build/outputs/dist.zip', to: 'dist/' },
     ],
@@ -116,9 +116,6 @@ const config = {
       }
     }
   },
-  alias: {
-    '@': path.resolve(__dirname, '..', 'src')
-  }
 }
 
 module.exports = function (merge) {
