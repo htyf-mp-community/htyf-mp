@@ -14,7 +14,7 @@
     "prestart": "watchman watch-del-all",
     "start": "npm run build:dgz && concurrently \"npm run dev:dgz \" \"NODE_ENV=production npx expo start -c\"",
     "start:dev": "npm run build:dgz && concurrently \"npm run dev:dgz \" \"NODE_ENV=development npx expo start -c\"",
-    "android": "npm run build:dgz && concurrently \"npm run dev:dgz \" \"expo run:androi\"",
+    "android": "npm run build:dgz && concurrently \"npm run dev:dgz \" \"expo run:android\"",
     "android:dev": "npm run build:dgz && concurrently \"npm run dev:dgz \" \"NODE_ENV=development npx expo start --android\"",
     "ios": "npm run build:dgz && concurrently \"npm run dev:dgz \" \"expo run:ios\"",
     "ios:dev": "npm run build:dgz && concurrently \"npm run dev:dgz \" \"NODE_ENV=development npx expo start --ios\"",
