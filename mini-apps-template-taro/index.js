@@ -1,6 +1,6 @@
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
-
+import {View, Text} from 'react-native'
 
 // keep the splash screen visible while complete fetching resources
 SplashScreen.preventAutoHideAsync();
@@ -12,5 +12,7 @@ export default function Root() {
 
     }
   }, [])
-  return <></>;
+  return <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+    <Text>123</Text>
+  </View>;
 }

@@ -20,6 +20,7 @@ web-build/
 .env*.local
 
 .dgz.babel.config.js
+.swc
 # 只保留app.json/dist.dgz
 dgz/*
 !dgz/build
