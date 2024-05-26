@@ -42,7 +42,7 @@ PODS:
     - ExpoModulesCore
   - EXPermissions (14.4.0):
     - ExpoModulesCore
-  - Expo (50.0.17):
+  - Expo (50.0.18):
     - ExpoModulesCore
   - ExpoBrightness (11.8.0):
     - ExpoModulesCore
@@ -63,6 +63,12 @@ PODS:
     - ReactCommon/turbomodule/core
   - ExpoHaptics (12.8.1):
     - ExpoModulesCore
+  - ExpoImage (1.10.6):
+    - ExpoModulesCore
+    - SDWebImage (~> 5.17.0)
+    - SDWebImageAVIFCoder (~> 0.10.1)
+    - SDWebImageSVGCoder (~> 1.7.0)
+    - SDWebImageWebPCoder (~> 0.13.0)
   - ExpoImagePicker (14.7.1):
     - ExpoModulesCore
   - ExpoKeepAwake (12.8.2):
@@ -129,7 +135,16 @@ PODS:
   - ImageColors (2.4.0):
     - ExpoModulesCore
   - JWTDecode (3.0.1)
+  - libaom (3.0.0):
+    - libvmaf (>= 2.2.0)
+  - libavif (0.11.1):
+    - libavif/libaom (= 0.11.1)
+  - libavif/core (0.11.1)
+  - libavif/libaom (0.11.1):
+    - libaom (>= 2.0.0)
+    - libavif/core
   - libevent (2.1.12)
+  - libvmaf (2.3.1)
   - libwebp (1.3.2):
     - libwebp/demux (= 1.3.2)
     - libwebp/mux (= 1.3.2)
@@ -182,7 +197,7 @@ PODS:
     - FBLazyVector (= 0.73.8)
     - RCTRequired (= 0.73.8)
     - React-Core (= 0.73.8)
-  - ReachabilitySwift (5.2.2)
+  - ReachabilitySwift (5.2.3)
   - React (0.73.8):
     - React-Core (= 0.73.8)
     - React-Core/DevSupport (= 0.73.8)
@@ -1045,7 +1060,7 @@ PODS:
     - React-Core
   - react-native-cookies (6.2.1):
     - React-Core
-  - react-native-date-picker (5.0.2):
+  - react-native-date-picker (5.0.3):
     - React-Core
   - react-native-document-picker (9.2.0):
     - React-Core
@@ -1063,7 +1078,7 @@ PODS:
     - glog
     - RCT-Folly (= 2022.05.16.00)
     - React-Core
-  - react-native-maps (1.15.2):
+  - react-native-maps (1.15.3):
     - React-Core
   - react-native-mmkv (2.12.2):
     - glog
@@ -1327,8 +1342,8 @@ PODS:
     - React-Core
   - RNFastImage (8.6.3):
     - React-Core
-    - SDWebImage (~> 5.11.1)
-    - SDWebImageWebPCoder (~> 0.8.4)
+    - SDWebImage
+    - SDWebImageWebPCoder
   - RNFlashList (1.6.4):
     - React-Core
   - RNGestureHandler (2.16.2):
@@ -1357,12 +1372,17 @@ PODS:
     - glog
     - RCT-Folly (= 2022.05.16.00)
     - React-Core
-  - SDWebImage (5.11.1):
-    - SDWebImage/Core (= 5.11.1)
-  - SDWebImage/Core (5.11.1)
-  - SDWebImageWebPCoder (0.8.5):
+  - SDWebImage (5.17.0):
+    - SDWebImage/Core (= 5.17.0)
+  - SDWebImage/Core (5.17.0)
+  - SDWebImageAVIFCoder (0.10.1):
+    - libavif (>= 0.11.0)
+    - SDWebImage (~> 5.10)
+  - SDWebImageSVGCoder (1.7.0):
+    - SDWebImage/Core (~> 5.6)
+  - SDWebImageWebPCoder (0.13.0):
     - libwebp (~> 1.0)
-    - SDWebImage/Core (~> 5.10)
+    - SDWebImage/Core (~> 5.17)
   - SocketRocket (0.6.1)
   - sqlite3 (3.42.0):
     - sqlite3/common (= 3.42.0)
@@ -1410,6 +1430,7 @@ DEPENDENCIES:
   - ExpoFileSystem (from `../node_modules/expo-file-system/ios`)
   - ExpoGL (from `../node_modules/expo-gl`)
   - ExpoHaptics (from `../node_modules/expo-haptics/ios`)
+  - ExpoImage (from `../node_modules/expo-image/ios`)
   - ExpoImagePicker (from `../node_modules/expo-image-picker/ios`)
   - ExpoKeepAwake (from `../node_modules/expo-keep-awake/ios`)
   - ExpoLinearGradient (from `../node_modules/expo-linear-gradient/ios`)
@@ -1541,7 +1562,10 @@ SPEC REPOS:
     - CocoaAsyncSocket
     - fmt
     - JWTDecode
+    - libaom
+    - libavif
     - libevent
+    - libvmaf
     - libwebp
     - lottie-ios
     - MMKV
@@ -1550,6 +1574,8 @@ SPEC REPOS:
     - Mute
     - ReachabilitySwift
     - SDWebImage
+    - SDWebImageAVIFCoder
+    - SDWebImageSVGCoder
     - SDWebImageWebPCoder
     - SocketRocket
     - sqlite3
@@ -1611,6 +1637,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/expo-gl"
   ExpoHaptics:
     :path: "../node_modules/expo-haptics/ios"
+  ExpoImage:
+    :path: "../node_modules/expo-image/ios"
   ExpoImagePicker:
     :path: "../node_modules/expo-image-picker/ios"
   ExpoKeepAwake:
@@ -1875,7 +1903,7 @@ SPEC CHECKSUMS:
   EXMediaLibrary: 8a6c24dc593462d07b12e505c1abc90f5e232683
   EXNotifications: 1c117bf042bd05a5b1a1ffd06f4c36ff9921ed2b
   EXPermissions: 51c6115893689c3e9787f4819aa67ceeae601038
-  Expo: 2cdb5916749a1509cf88114f1f510bd458630eb4
+  Expo: 09bd48f31bb7f1a3c97fd5a6cb28feae89cb4e40
   ExpoBrightness: 6d160de5877289d11674aea61aacdb37422774cf
   ExpoCamera: f3f157db67e5a491e1104a2c0018c240242936e7
   ExpoClipboard: b597982124f067ff9f5b89093eb3d97898d5d877
@@ -1884,6 +1912,7 @@ SPEC CHECKSUMS:
   ExpoFileSystem: 74cc0fae916f9f044248433971dcfc8c3befd057
   ExpoGL: 085542f97b13f2428ac2edb077c9a90f4566944d
   ExpoHaptics: 28a771b630353cd6e8dcf1b1e3e693e38ad7c3c3
+  ExpoImage: 8cf2d51de3d03b7e984e9b0ba8f19c0c22057001
   ExpoImagePicker: 66970181d1c838f444e5e1f81b804ab2d5ff49bd
   ExpoKeepAwake: 0f5cad99603a3268e50af9a6eb8b76d0d9ac956c
   ExpoLinearGradient: 4ad1449a2408e0435ac959076562b3921f2e32a1
@@ -1907,7 +1936,10 @@ SPEC CHECKSUMS:
   hermes-engine: b12d9bb1b7cee546f5e48212e7ea7e3c1665a367
   ImageColors: 88be684570585c07ae2750bff34eb7b78bfc53b4
   JWTDecode: 2eed97c2fa46ccaf3049a787004eedf0be474a87
+  libaom: 144606b1da4b5915a1054383c3a4459ccdb3c661
+  libavif: 84bbb62fb232c3018d6f1bab79beea87e35de7b7
   libevent: 4049cae6c81cdb3654a443be001fb9bdceff7913
+  libvmaf: 27f523f1e63c694d14d534cd0fddd2fab0ae8711
   libwebp: 1786c9f4ff8a279e4dac1e8f385004d5fc253009
   lottie-ios: e047b1d2e6239b787cc5e9755b988869cf190494
   lottie-react-native: 2d9efc8a5ffabe688b55a1a1ac1fb94b9d971995
@@ -1919,7 +1951,7 @@ SPEC CHECKSUMS:
   RCTRequired: 0c7f03a41ee32dec802c74c341e317a4165973d5
   RCTSystemSetting: 5107b7350d63b3f7b42a1277d07e4e5d9df879be
   RCTTypeSafety: 57698bb7fcde424922e201dab377f496a08a63e3
-  ReachabilitySwift: 2128f3a8c9107e1ad33574c6e58e8285d460b149
+  ReachabilitySwift: 7f151ff156cea1481a8411701195ac6a984f4979
   React: 64c0c83924460a3d34fa5857ca2fd3ed2a69b581
   react-airplay: 8197767f12cae11a7623b1507d29a89482a720ad
   React-callinvoker: c0129cd7b8babac64b3d3515e72a8b2e743d261e
@@ -1945,13 +1977,13 @@ SPEC CHECKSUMS:
   react-native-blur: 799045500f56146afc46245148080e7b7623cb75
   react-native-cameraroll: abd04892a6cf688ae1dd1b49377c835d1c1146b3
   react-native-cookies: f54fcded06bb0cda05c11d86788020b43528a26c
-  react-native-date-picker: 90687f1dbd374ff0265dca99d949998364c22fa9
+  react-native-date-picker: 682417ada6f9c334b969f7df6dd331a56983c63c
   react-native-document-picker: 2b3efb60622b7be891b8d0e0e5424632150e0c94
   react-native-geolocation: ed9e1d132f576b9a4a503af46f9704413ea0dec1
   react-native-get-random-values: 21325b2244dfa6b58878f51f9aa42821e7ba3d06
   react-native-image-picker: d3db110a3ded6e48c93aef7e8e51afdde8b16ed0
   react-native-keyboard-controller: 544386be57227ae5e235876c2035102ddbf412e8
-  react-native-maps: 3df08c84c698a6f6a98c290a23c138d4706a42da
+  react-native-maps: 75681193c8beca45e117bbddd7a10d9625348921
   react-native-mmkv: 1fdc81aa70c1aba09370718e6a63a09cbbbac8d2
   react-native-netinfo: 076df4f9b07f6670acf4ce9a75aac8d34c2e2ccc
   react-native-orientation-locker: 5819fd23ca89cbac0d736fb4314745f62716d517
@@ -2004,7 +2036,7 @@ SPEC CHECKSUMS:
   RNCMaskedView: 090213d32d8b3bb83a4dcb7d12c18f0152591906
   RNCPicker: f58e790450cb0a74c09dd1c677bd1de41a5741b9
   RNDeviceInfo: b899ce37a403a4dea52b7cb85e16e49c04a5b88e
-  RNFastImage: 5c9c9fed9c076e521b3f509fe79e790418a544e8
+  RNFastImage: 245a26474e581bcb6ad90e02c4d57b185a6bcc8e
   RNFlashList: b521ebdd7f9352673817f1d98e8bdc0c8cf8545b
   RNGestureHandler: 96439cf6543defdde87459e48cd1a3f0e45a008e
   RNLocalize: e8694475db034bf601e17bd3dfa8986565e769eb
@@ -2014,8 +2046,10 @@ SPEC CHECKSUMS:
   RNShare: 0fad69ae2d71de9d1f7b9a43acf876886a6cb99c
   RNSVG: a48668fd382115bc89761ce291a81c4ca5f2fd2e
   RNVectorIcons: 96e8c5c45609932bb2f8347e1c709bcca0e95654
-  SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
-  SDWebImageWebPCoder: 908b83b6adda48effe7667cd2b7f78c897e5111d
+  SDWebImage: 750adf017a315a280c60fde706ab1e552a3ae4e9
+  SDWebImageAVIFCoder: 8348fef6d0ec69e129c66c9fe4d74fbfbf366112
+  SDWebImageSVGCoder: 15a300a97ec1c8ac958f009c02220ac0402e936c
+  SDWebImageWebPCoder: af09429398d99d524cae2fe00f6f0f6e491ed102
   SocketRocket: f32cd54efbe0f095c4d7594881e52619cfe80b17
   sqlite3: f163dbbb7aa3339ad8fc622782c2d9d7b72f7e9c
   SwiftAudioEx: f6aa653770f3a0d3851edaf8d834a30aee4a7646
