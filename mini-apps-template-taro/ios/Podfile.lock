@@ -1078,7 +1078,7 @@ PODS:
     - glog
     - RCT-Folly (= 2022.05.16.00)
     - React-Core
-  - react-native-maps (1.15.3):
+  - react-native-maps (1.15.4):
     - React-Core
   - react-native-mmkv (2.12.2):
     - glog
@@ -1983,7 +1983,7 @@ SPEC CHECKSUMS:
   react-native-get-random-values: 21325b2244dfa6b58878f51f9aa42821e7ba3d06
   react-native-image-picker: d3db110a3ded6e48c93aef7e8e51afdde8b16ed0
   react-native-keyboard-controller: 544386be57227ae5e235876c2035102ddbf412e8
-  react-native-maps: 75681193c8beca45e117bbddd7a10d9625348921
+  react-native-maps: aa8d9dece9896ff1b74dd969a7bd7a5896bba832
   react-native-mmkv: 1fdc81aa70c1aba09370718e6a63a09cbbbac8d2
   react-native-netinfo: 076df4f9b07f6670acf4ce9a75aac8d34c2e2ccc
   react-native-orientation-locker: 5819fd23ca89cbac0d736fb4314745f62716d517
