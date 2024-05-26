@@ -15,6 +15,6 @@ export default function Root() {
   }, [])
   return <App />
   return <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-    <Text>123</Text>
+    <Text>test</Text>
   </View>;
 }
