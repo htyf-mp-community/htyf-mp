@@ -3,30 +3,28 @@ const gulp = require('gulp');
 const shell = require('shelljs');
 const path = require('path');
 const fse = require('fs-extra');
+const axios = require('axios');
 const { env } = require('process');
-
-function build() {
+const _ = require('lodash')
+const build = _.throttle(function build() {
   try {
-    console.log('=====  =====')
-    // shell.exec(`npm run build:dgz`, (err) => {
-    //   console.log(err)
-    // })
+    const url = `http://localhost:8089/index.bundle?platform=ios&dev=true&time=${Date.now()}`;
+    axios.get(url)
+    .then(response => {
+    })
+    .catch(error => {
+      build()
+    });
   } catch (error) {
-    console.error(error)
   }
-}
+}, 500)
 
 gulp.task('watch-all-files', function(done) {
   build();
-  if (env._BUILD_TYPE_ === 'watch') {
-    // 监听指定目录内所有文件的变化
-    return gulp.watch('./src/**', function(done) {
-      build();
-      done();
-    })
-  } else {
+  return gulp.watch('./src/**', function(done) {
+    build();
     done();
-  }
+  })
 });
 
 // 默认任务
