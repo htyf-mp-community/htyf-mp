@@ -37,6 +37,34 @@
     },
     "runtimeVersion": {
       "policy": "sdkVersion"
-    }
+    },
+    "plugins": [
+      [
+        "react-native-permissions",
+        {
+          "iosPermissions": [
+            "AppTrackingTransparency",
+            "BluetoothPeripheral",
+            "Calendars",
+            "Camera",
+            "Contacts",
+            "FaceID",
+            "LocationAccuracy",
+            "LocationAlways",
+            "LocationWhenInUse",
+            "MediaLibrary",
+            "Microphone",
+            "Motion",
+            "Notifications",
+            "PhotoLibrary",
+            "PhotoLibraryAddOnly",
+            "Reminders",
+            "Siri",
+            "SpeechRecognition",
+            "StoreKit"
+          ]
+        }
+      ]
+    ]
   }
 }

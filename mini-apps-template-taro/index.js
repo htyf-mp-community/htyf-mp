@@ -1,6 +1,6 @@
+/** 禁止修改些块代码 */
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
-import {View, Text} from 'react-native'
 import App from '@tarojs/rn-supporter/entry-file.js'
 
 // keep the splash screen visible while complete fetching resources
@@ -14,7 +14,5 @@ export default function Root() {
     }
   }, [])
   return <App />
-  return <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-    <Text>test</Text>
-  </View>;
 }
+/** 禁止修改些块代码 */
