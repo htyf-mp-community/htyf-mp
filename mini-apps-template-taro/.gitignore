@@ -19,8 +19,15 @@ web-build/
 
 .env*.local
 
-.dgz.babel.config.js
+dist/
+deploy_versions/
+.temp/
+.rn_temp/
+node_modules/
+.DS_Store
 .swc
+
+.dgz.babel.config.js
 # 只保留app.json/dist.dgz
 dgz/*
 !dgz/build
