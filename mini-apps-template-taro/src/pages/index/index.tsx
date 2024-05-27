@@ -4,6 +4,7 @@ import './index.scss'
 import pngIcon from '@/assets/icon.png'
 import Taro from '@tarojs/taro';
 import routes from '@/routes';
+import jssdk from '@htyf-mp/js-sdk'
 
 function Index() {
   const apps = useAppSelector(i => i.apps)
@@ -13,6 +14,19 @@ function Index() {
       <Text>appid: {apps.__APPID__}</Text>
       <Text>version: {apps.__VERSION__}</Text>
       <Text>build time: {apps.__BUILD_TIME__}</Text>
+      <Button
+        onClick={() => {
+          jssdk.showToast({
+            text1: '提示',
+            text2: '这是个提示',
+            type: '',
+            position: 'bottom',
+            autoHide: true,
+          })
+        }}
+      >
+        jssdk调用
+      </Button>
       <Button
         onClick={() => {
           Taro.navigateTo({

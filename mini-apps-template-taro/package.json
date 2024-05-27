@@ -1,6 +1,6 @@
 {
   "name": "htyf-mp",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "gulp:rn": "gulp",
