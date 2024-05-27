@@ -42,9 +42,9 @@ npm run build:dgz
 ```
 {
   "type": "app",
-  "name": "expo模板",
-  "projectname": "expo模板",
-  "appid": "__expo_temp_appid__",
+  "name": "Taro模板",
+  "projectname": "Taro模板",
+  "appid": "__taro_temp_appid__",
   "appUrlConfig": "https://raw.gitmirror.com/htyf-mp-community/htyf-mp/main/mini-apps-template-taro/dgz/build/outputs/app.json",
   "zipUrl": "https://raw.gitmirror.com/htyf-mp-community/htyf-mp/main/mini-apps-template-taro/dgz/build/outputs/dist.dgz"
 }
