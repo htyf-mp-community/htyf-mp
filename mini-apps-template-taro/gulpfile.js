@@ -17,7 +17,7 @@ const build = _.throttle(function build() {
     });
   } catch (error) {
   }
-}, 500)
+}, 300)
 
 gulp.task('watch-all-files', function(done) {
   build();
