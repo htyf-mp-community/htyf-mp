@@ -2622,10 +2622,10 @@
     webpack-merge "^5.10.0"
     yarn-add-no-save "^1.0.3"
 
-"@htyf-mp/engines@^0.0.78":
-  version "0.0.78"
-  resolved "https://registry.yarnpkg.com/@htyf-mp/engines/-/engines-0.0.78.tgz#1e7a5921a0330b5240cf592725444f7231195634"
-  integrity sha512-p/+Y63qP3hSurmcSk1PuBjFXy/K186rbDGRzb8uN4oJ2kNivAqjA4f/zy2rAT9pFcOq+1a5Z4OaE3orUTQvvpA==
+"@htyf-mp/engines@^0.0.81":
+  version "0.0.81"
+  resolved "https://registry.yarnpkg.com/@htyf-mp/engines/-/engines-0.0.81.tgz#2e7b2b3fb60c09d9dc05c1839d7d9f4a70ed8dbd"
+  integrity sha512-/3zxvAQCphk3Y+3IsFj76WZQpvsRl716P26sq3abiiP2iQQrPgz6jngNlLrm1OPJi4fgjDVsaHCaguau5u/VXw==
   dependencies:
     "@callstack/repack" "^3.7.0"
     "@gorhom/bottom-sheet" "^4.6.0"
@@ -2641,6 +2641,7 @@
     delay "5"
     eventemitter2 "^6.4.9"
     fs-extra "^11.2.0"
+    gulp "^5.0.0"
     inquirer "8.2.0"
     jsonc-parser "^3.2.1"
     lodash "^4.17.21"
@@ -7067,9 +7068,9 @@ balanced-match@^2.0.0:
   integrity sha512-1ugUSr8BHXRnK23KfuYS+gVMC3LB8QGH9W1iGtDPsNWoQbgtXSExkBu2aDR4epiGWZOjZsj6lDl/N/AqqTC3UA==
 
 bare-events@^2.2.0:
-  version "2.2.2"
-  resolved "https://registry.yarnpkg.com/bare-events/-/bare-events-2.2.2.tgz#a98a41841f98b2efe7ecc5c5468814469b018078"
-  integrity sha512-h7z00dWdG0PYOQEvChhOSWvOfkIKsdZGkWr083FgN/HyoQuebSew/cgirYqh9SCuy/hRvxc5Vy6Fw8xAmYHLkQ==
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/bare-events/-/bare-events-2.3.1.tgz#5af2ee0be9578f81e3c1aa9bc3a6a2bcf22307ce"
+  integrity sha512-sJnSOTVESURZ61XgEleqmP255T6zTYwHPwE4r6SssIh0U9/uDvfpdoJYpVUerJJZH2fueO+CdT8ZT+OC/7aZDA==
 
 base-64@0.1.0, base-64@^0.1.0:
   version "0.1.0"
