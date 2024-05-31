@@ -1054,7 +1054,7 @@ PODS:
     - glog
     - RCT-Folly (= 2022.05.16.00)
     - React-Core
-  - react-native-cameraroll (7.8.0):
+  - react-native-cameraroll (7.8.1):
     - glog
     - RCT-Folly (= 2022.05.16.00)
     - React-Core
@@ -1975,7 +1975,7 @@ SPEC CHECKSUMS:
   react-native-background-timer: 17ea5e06803401a379ebf1f20505b793ac44d0fe
   react-native-blob-util: 18b510205c080a453574a7d2344d64673d0ad9af
   react-native-blur: 799045500f56146afc46245148080e7b7623cb75
-  react-native-cameraroll: abd04892a6cf688ae1dd1b49377c835d1c1146b3
+  react-native-cameraroll: 433f793bc2eb3bcb65c9e166f4225eae7876d056
   react-native-cookies: f54fcded06bb0cda05c11d86788020b43528a26c
   react-native-date-picker: 682417ada6f9c334b969f7df6dd331a56983c63c
   react-native-document-picker: 2b3efb60622b7be891b8d0e0e5424632150e0c94
