@@ -1,3 +1,4 @@
+/** 非必要禁止修改此块代码 */
 const pkg = require('./package.json');
 const dgz = require('./project.dgz.json');
 
