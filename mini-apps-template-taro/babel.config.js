@@ -58,7 +58,6 @@ module.exports = function (api) {
           __APP_DEFINE_BUILD_TIME__: `${new Date().getTime()}`,
         },
       ],
-      'react-native-reanimated/plugin',
     ]
   };
 };
