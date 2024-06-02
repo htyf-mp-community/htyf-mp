@@ -194,10 +194,10 @@
     webpack-merge "^5.10.0"
     yarn-add-no-save "^1.0.3"
 
-"@htyf-mp/engines@^0.0.87":
-  version "0.0.87"
-  resolved "https://registry.yarnpkg.com/@htyf-mp/engines/-/engines-0.0.87.tgz#3f92ab3c2aa45557ac332a0337d8e26058dec9fa"
-  integrity sha512-YyKW244pXdrmgbYChI5s+jxjjsuFF/xcsuuCryYdI6zy8y7nzwqZOZEQDBXeI7fyPTk5tMdZ5Ur2ltlRDKY4ZA==
+"@htyf-mp/engines@^0.0.88":
+  version "0.0.88"
+  resolved "https://registry.yarnpkg.com/@htyf-mp/engines/-/engines-0.0.88.tgz#fbe1b460ec653042614d5e431e441f410ae72bea"
+  integrity sha512-Pv31wyJxX2PdTz30ESuirM6hSYBxUmAfbdnTVPYTFPNyMIxqX4nd2ieyYVxgwM9bEDhhvmZXPA7grLEH5L3EBg==
   dependencies:
     "@callstack/repack" "^3.7.0"
     "@gorhom/bottom-sheet" "^4.6.0"
