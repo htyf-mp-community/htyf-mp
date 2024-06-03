@@ -2583,53 +2583,13 @@
   dependencies:
     "@hapi/hoek" "^9.0.0"
 
-"@htyf-mp/engines@^0.0.68":
-  version "0.0.68"
-  resolved "https://registry.yarnpkg.com/@htyf-mp/engines/-/engines-0.0.68.tgz#94f724e269cc69e3c899c74f82d0782c2770a504"
-  integrity sha512-3OgRHqsKOoBuT4jrepKelDmpuAMQSm4SShwltiBK0IQftn7tAwFHTVEY15QbnWtOXAIdpE+ZV7opf8ESxYm8aQ==
+"@htyf-mp/engines@^0.0.93":
+  version "0.0.93"
+  resolved "https://registry.yarnpkg.com/@htyf-mp/engines/-/engines-0.0.93.tgz#205d89f4315773d5a33977502db2411229b3b144"
+  integrity sha512-0GiUed9vC7ZCKjznPlBSA6JJnsMCDlwvDxagZSjY/hCIkW/eLQbecVmIMVQpv28jqcW5+kNd9tg7iJfNo36wPQ==
   dependencies:
     "@callstack/repack" "^3.7.0"
     "@gorhom/bottom-sheet" "^4.6.0"
-    "@htyf-mp/js-sdk" "^0.0.2"
-    "@react-native-clipboard/clipboard" "^1.13.2"
-    "@react-native-community/hooks" "^3.0.0"
-    "@react-native-segmented-control/segmented-control" "^2.5.0"
-    "@types/uuid" "^9.0.8"
-    adm-zip "^0.5.10"
-    babel-plugin-transform-remove-debugger "^6.9.4"
-    dayjs "^1.11.10"
-    delay "5"
-    eventemitter2 "^6.4.9"
-    fs-extra "^11.2.0"
-    inquirer "8.2.0"
-    jsonc-parser "^3.2.1"
-    lodash "^4.17.21"
-    md5 "2.3.0"
-    ora "5.4.1"
-    portfinder "^1.0.32"
-    qrcode "^1.5.3"
-    react-native-keyboard-controller "^1.11.1"
-    react-native-splash-screen "^3.3.0"
-    request "^2.88.2"
-    rimraf "^5.0.5"
-    shelljs "^0.8.5"
-    superstatic "^9.0.3"
-    systeminformation "^5.21.24"
-    terser-webpack-plugin "^5.3.10"
-    uuid "9.0.1"
-    webpack "^5.90.1"
-    webpack-cli "^5.1.4"
-    webpack-merge "^5.10.0"
-    yarn-add-no-save "^1.0.3"
-
-"@htyf-mp/engines@^0.0.91":
-  version "0.0.91"
-  resolved "https://registry.yarnpkg.com/@htyf-mp/engines/-/engines-0.0.91.tgz#662e88c6f56ef977ee5fb84cf644e9bee60f864f"
-  integrity sha512-d5ReBTFD16V3PWok48mtP3MVrndPT52y8KUhT1qqADTGGJXGaTOyWI1zKVOUGhpRlmLgscyILFL7Gu2tIhJ4Yg==
-  dependencies:
-    "@callstack/repack" "^3.7.0"
-    "@gorhom/bottom-sheet" "^4.6.0"
-    "@htyf-mp/engines" "^0.0.68"
     "@htyf-mp/js-sdk" "^0.0.11"
     "@react-native-clipboard/clipboard" "^1.13.2"
     "@react-native-community/hooks" "^3.0.0"
@@ -2687,28 +2647,6 @@
     react-native-permissions "^4.1.4"
     react-native-track-player "^4.0.1"
     react-native-view-shot "^3.8.0"
-    url-parse "^1.5.10"
-
-"@htyf-mp/js-sdk@^0.0.2":
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@htyf-mp/js-sdk/-/js-sdk-0.0.2.tgz#64e19d92d5e43d4632c300989548264b72f607e8"
-  integrity sha512-VUO9Py3BFkxmzbyHMqNnxECIlsRE4DwVm5JH1x6IagKH2TV8MQX147vPViURQtsbQFrwbvXd1czIMVW3sLJY3Q==
-  dependencies:
-    "@fingerprintjs/fingerprintjs" "^3.3.3"
-    "@types/qs" "^6.9.7"
-    axios "^0.26.1"
-    dayjs "^1.11.0"
-    delay "^5.0.0"
-    events "^3.3.0"
-    global "^4.4.0"
-    jquery "^3.6.1"
-    js-base64 "^3.7.6"
-    lodash "^4.17.21"
-    mobx "^6.5.0"
-    penpal "^6.2.2"
-    qs "^6.10.3"
-    queue "^6.0.2"
-    react "^17.0.2"
     url-parse "^1.5.10"
 
 "@humanwhocodes/config-array@^0.11.14":
