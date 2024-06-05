@@ -1074,7 +1074,7 @@ PODS:
     - glog
     - RCT-Folly (= 2022.05.16.00)
     - React-Core
-  - react-native-keyboard-controller (1.12.1):
+  - react-native-keyboard-controller (1.12.2):
     - glog
     - RCT-Folly (= 2022.05.16.00)
     - React-Core
@@ -1107,7 +1107,7 @@ PODS:
     - React-Core
   - react-native-saf-x (2.2.3):
     - React-Core
-  - react-native-safe-area-context (4.10.3):
+  - react-native-safe-area-context (4.10.4):
     - React-Core
   - react-native-segmented-control (2.5.2):
     - React-Core
@@ -1143,7 +1143,7 @@ PODS:
   - react-native-volume-manager (1.10.0):
     - Mute
     - React-Core
-  - react-native-webview (13.10.2):
+  - react-native-webview (13.10.3):
     - glog
     - RCT-Folly (= 2022.05.16.00)
     - React-Core
@@ -1982,7 +1982,7 @@ SPEC CHECKSUMS:
   react-native-geolocation: ed9e1d132f576b9a4a503af46f9704413ea0dec1
   react-native-get-random-values: 21325b2244dfa6b58878f51f9aa42821e7ba3d06
   react-native-image-picker: d3db110a3ded6e48c93aef7e8e51afdde8b16ed0
-  react-native-keyboard-controller: 544386be57227ae5e235876c2035102ddbf412e8
+  react-native-keyboard-controller: 99a0b9ee6e3aec9ec259df3953d2e471ea946677
   react-native-maps: aa8d9dece9896ff1b74dd969a7bd7a5896bba832
   react-native-mmkv: 1fdc81aa70c1aba09370718e6a63a09cbbbac8d2
   react-native-netinfo: 076df4f9b07f6670acf4ce9a75aac8d34c2e2ccc
@@ -1993,7 +1993,7 @@ SPEC CHECKSUMS:
   react-native-quick-sqlite: e0e23b749382a85e4b57146f753de737a6c3a9e1
   react-native-restart: 7595693413fe3ca15893702f2c8306c62a708162
   react-native-saf-x: 0674418b3dc3279fadfbf346880702d01c1f9035
-  react-native-safe-area-context: b01d8f42d4e62a7be5a3e69fd332e0c7e67584c7
+  react-native-safe-area-context: 399a5859f6acbdf67f671c69b53113f535f3b5b0
   react-native-segmented-control: b92809e9111013dfa266e1168ba366d62898d9a4
   react-native-slider: 7a39874fc1fcdfee48e448fa72cce0a8f2c7c5d6
   react-native-splash-screen: 4312f786b13a81b5169ef346d76d33bc0c6dc457
@@ -2004,7 +2004,7 @@ SPEC CHECKSUMS:
   react-native-view-shot: 6b7ed61d77d88580fed10954d45fad0eb2d47688
   react-native-vlc-media-player: 0f9860bded57cd6764ac55b5c0e97347069cb40a
   react-native-volume-manager: 3c7d8047841b6831730dea7bf25250522388b4f4
-  react-native-webview: c461fed0b58be5ee5180c3c3092a1d5dcb214a94
+  react-native-webview: d2116987f3a75ba677a9f49565bae6834d0e12c4
   React-nativeconfig: 2e44d0d2dd222b12a5183f4bcaa4a91881497acb
   React-NativeModulesApple: 8aa032fe6c92c1a3c63e4809d42816284a56a9b0
   React-perflogger: f9367428cf475f4606b5965c1d5a71781bb95299
