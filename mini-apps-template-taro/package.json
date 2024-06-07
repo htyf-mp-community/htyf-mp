@@ -313,6 +313,7 @@
   },
   "devDependencies": {
     "@babel/core": "7.23.3",
+    "@expo/webpack-config": "^19.0.1",
     "@pmmmwh/react-refresh-webpack-plugin": "0.5.11",
     "@tarojs/cli": "3.6.31",
     "@tarojs/taro-loader": "3.6.31",
