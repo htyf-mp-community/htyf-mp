@@ -3,7 +3,7 @@ PODS:
   - boost (1.83.0)
   - BVLinearGradient (2.8.3):
     - React-Core
-  - callstack-repack (4.1.0):
+  - callstack-repack (4.1.1):
     - DoubleConversion
     - glog
     - hermes-engine
@@ -1390,7 +1390,7 @@ PODS:
     - React-Core
   - react-native-user-agent (2.3.1):
     - React
-  - react-native-video (6.1.2):
+  - react-native-video (6.2.0):
     - DoubleConversion
     - glog
     - hermes-engine
@@ -1404,7 +1404,7 @@ PODS:
     - React-featureflags
     - React-graphics
     - React-ImageManager
-    - react-native-video/Video (= 6.1.2)
+    - react-native-video/Video (= 6.2.0)
     - React-NativeModulesApple
     - React-RCTFabric
     - React-rendererdebug
@@ -1412,7 +1412,7 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
-  - react-native-video/Video (6.1.2):
+  - react-native-video/Video (6.2.0):
     - DoubleConversion
     - glog
     - hermes-engine
@@ -2346,7 +2346,7 @@ SPEC CHECKSUMS:
   BEMCheckBox: 5ba6e37ade3d3657b36caecc35c8b75c6c2b1a4e
   boost: d3f49c53809116a5d38da093a8aa78bf551aed09
   BVLinearGradient: 880f91a7854faff2df62518f0281afb1c60d49a3
-  callstack-repack: 9aa28f4e0e75e9beb154d9ee08683c747f846247
+  callstack-repack: 2db7cbeced7cd5da360d01965e0b983f6dacfd54
   CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
   DoubleConversion: 76ab83afb40bddeeee456813d9c04f67f78771b5
   EXApplication: c08200c34daca7af7fd76ac4b9d606077410e8ad
@@ -2452,7 +2452,7 @@ SPEC CHECKSUMS:
   react-native-track-player: 82ef1756ffeea61140fea17519ecd6d64ec3cf3e
   react-native-udp: df79c3cb72c4e71240cd3ce4687bfb8a137140d5
   react-native-user-agent: a90a1e839b99801baad67a73dd6f361a52aa3cf1
-  react-native-video: 9f29aee2feb9e42da24cb40b70d005d38a1a132f
+  react-native-video: 8cd68fa00f56087184154c0e976d3756adaad144
   react-native-view-shot: 6b7ed61d77d88580fed10954d45fad0eb2d47688
   react-native-vlc-media-player: 0f9860bded57cd6764ac55b5c0e97347069cb40a
   react-native-volume-manager: 3c7d8047841b6831730dea7bf25250522388b4f4
