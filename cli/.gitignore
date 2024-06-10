@@ -3,3 +3,6 @@ yarn.lock
 rn-ai
 .DS_Store
 my-htyf-mp/
+my-htyf-mp-expo/
+my-htyf-mp-taro/
+my-htyf-mp-game/
