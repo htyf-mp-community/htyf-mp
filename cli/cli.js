@@ -24,10 +24,11 @@ const program = new Command()
 const green = chalk.green
 
 const repoUrl = 'https://github.com/htyf-mp-community/htyf-mp.git'
+const codingRepoUrl = 'https://e.coding.net/dagouzhi/hongtangyun_mobile/htyf-mp.git'
 
 const taroTempPath = 'mini-apps-template';
 const expoTempPath = 'mini-apps-template';
-const gameTempPath = 'mini-game-template-cocos';
+const gameTempPath = 'mini-game-template';
 
 const isYarnInstalled = () => {
   try {
@@ -110,6 +111,20 @@ async function main() {
       ]
     })
 
+    const repoType = await select({
+      message: '请选择模板镜像?',
+      choices: [
+        {
+          name: 'github(最新)',
+          value: repoUrl,
+        },
+        {
+          name: 'coding(最快)',
+          value: codingRepoUrl,
+        },
+      ]
+    })
+
     const appid = md5(uuidv4(v4options));
   
     let config =  {
@@ -124,48 +139,59 @@ async function main() {
     log(`\n初始化项目. \n`)
 
     spinner.start()
-    await execa('git', ['clone', repoUrl, appName])
+    await execa('git', ['clone', repoType, appName])
     let appRootPath = '';
+    const taro_path = path.join('./', `${appName}`, `${taroTempPath}`)
+    const expo_path = path.join('./', `${appName}`, `${expoTempPath}`)
+    const game_path = path.join('./', `${appName}`, `${gameTempPath}`)
+    const cli_path = path.join('./', `${appName}`, `cli`)
+    const git_path = path.join('./', `${appName}`, `.git`)
+    const docs_path = path.join('./', `${appName}`, `docs`)
+    const README_path = path.join('./', `${appName}`, `README.md`)
     try {
       if (tempType === 'taro') {
-        appRootPath = `${appName}/${taroTempPath}`
-        await execa('rm', ['-r', `${appName}/${expoTempPath}`])
-        await execa('rm', ['-r', `${appName}/${gameTempPath}`])
+        appRootPath = taro_path
+        fse.removeSync(game_path)
       }
       if (tempType === 'expo') {
-        appRootPath = `${appName}/${expoTempPath}`
-        await execa('rm', ['-r', `${appName}/${taroTempPath}`])
-        await execa('rm', ['-r', `${appName}/${gameTempPath}`])
+        appRootPath = expo_path
+        fse.removeSync(game_path)
       }
       if (tempType === 'game-cocos') {
-        appRootPath = `${appName}/${gameTempPath}`
-        await execa('rm', ['-r', `${appName}/${expoTempPath}`])
-        await execa('rm', ['-r', `${appName}/${taroTempPath}`])
+        appRootPath = game_path
+        fse.removeSync(taro_path)
+        fse.removeSync(expo_path)
       }
-      await execa('rm', ['-r', `${appName}/cli`])
-      await execa('rm', ['-rf', `${appName}/.git`])
+      fse.removeSync(cli_path)
+      fse.removeSync(git_path)
+      fse.removeSync(docs_path)
+      fse.removeSync(README_path)
     } catch (err) {}
     const __TEMP_PATH__ = path.join(appRootPath, '__TEMP__');
     const pkg_path = path.join(appRootPath, './package.json');
-    const dgzJosn = path.join(`${appRootPath}`, project.dgz.json)
+    const dgzJosn = path.join(`${appRootPath}`, 'project.dgz.json')
+    console.log(' ')
+    console.log(tempType)
+    console.log(__TEMP_PATH__)
+    console.log(' ')
     if (tempType === 'taro') {
-      fse.closeSync(
+      fse.copySync(
         path.join(__TEMP_PATH__, 'taro_src'),
         path.join(appRootPath, './src') 
       )
-      fse.closeSync(
+      fse.copySync(
         path.join(__TEMP_PATH__, 'taro.App.tsx'),
         path.join(appRootPath, './App.tsx') 
       )
-      fse.closeSync(
+      fse.copySync(
         path.join(__TEMP_PATH__, 'taro.index.js'),
         path.join(appRootPath, './index.js') 
       )
-      fse.closeSync(
-        path.join(__TEMP_PATH__, 'taro.bable.config.js'),
-        path.join(appRootPath, './bable.config.js') 
+      fse.copySync(
+        path.join(__TEMP_PATH__, 'taro.babel.config.js'),
+        path.join(appRootPath, './babel.config.js') 
       )
-      fse.closeSync(
+      fse.copySync(
         path.join(__TEMP_PATH__, 'taro.project.dgz.json'),
         path.join(appRootPath, './project.dgz.json') 
       )
@@ -196,23 +222,23 @@ async function main() {
       fse.writeJSONSync(pkg_path, JSON.stringify(pkg_info, undefined, 2))
     }
     if (tempType === 'expo') {
-      fse.closeSync(
+      fse.copySync(
         path.join(__TEMP_PATH__, 'expo_src'),
         path.join(appRootPath, './src') 
       )
-      fse.closeSync(
+      fse.copySync(
         path.join(__TEMP_PATH__, 'expo.App.tsx'),
         path.join(appRootPath, './App.tsx') 
       )
-      fse.closeSync(
+      fse.copySync(
         path.join(__TEMP_PATH__, 'expo.index.js'),
         path.join(appRootPath, './index.js') 
       )
-      fse.closeSync(
-        path.join(__TEMP_PATH__, 'expo.bable.config.js'),
-        path.join(appRootPath, './bable.config.js') 
+      fse.copySync(
+        path.join(__TEMP_PATH__, 'expo.babel.config.js'),
+        path.join(appRootPath, './babel.config.js') 
       )
-      fse.closeSync(
+      fse.copySync(
         path.join(__TEMP_PATH__, 'expo.project.dgz.json'),
         path.join(appRootPath, './project.dgz.json') 
       )
@@ -224,7 +250,7 @@ async function main() {
     fs.writeFileSync(dgzJosn, JSON.stringify(config, undefined, 2))
     console.log(dgzJosn)
     
-    fse.removeSync(appRootPath)
+    fse.removeSync(__TEMP_PATH__)
     
     spinner.text = ''
 
