@@ -14,7 +14,7 @@ npx @htyf-mp/cli
 
 ### 运行应用程序
 
-进入`mini-apps-template-expo`或`mini-apps-template-taro`或`mini-game-template-cocos`目录并运行:
+进入`mini-apps-template`或`mini-game-template`目录并运行:
 > 具体模板使用，可参考模板内的README.md
 ```sh
 npm start
@@ -32,4 +32,4 @@ npm start
 
 | 微信  | 支付宝 |
 | ------------- | ------------- |
-| ![微信](./mini-apps-template-expo/docs/IMG_5087.jpg)  | ![支付宝](./mini-apps-template-expo/docs/IMG_5088.jpg) |
+| ![微信](./docs/IMG_5087.jpg)  | ![支付宝](./docs/IMG_5088.jpg) |
