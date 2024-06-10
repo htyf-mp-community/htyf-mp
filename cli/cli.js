@@ -219,7 +219,9 @@ async function main() {
       }
       delete pkg_info['scripts']['web']
       delete pkg_info['scripts']['web:dev']
-      fse.writeJSONSync(pkg_path, JSON.stringify(pkg_info, undefined, 2))
+      fse.writeJSONSync(pkg_path, pkg_info, {
+        spaces: 2
+      })
     }
     if (tempType === 'expo') {
       fse.copySync(
