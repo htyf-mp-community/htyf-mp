@@ -3,6 +3,7 @@
 import chalk from 'chalk'
 import path from 'path'
 import fs from 'fs'
+import fse from 'fs-extra'
 import { Command } from 'commander'
 import select from '@inquirer/select'
 import { input } from '@inquirer/prompts';
@@ -24,8 +25,8 @@ const green = chalk.green
 
 const repoUrl = 'https://github.com/htyf-mp-community/htyf-mp.git'
 
-const taroTempPath = 'mini-apps-template-taro';
-const expoTempPath = 'mini-apps-template-expo';
+const taroTempPath = 'mini-apps-template';
+const expoTempPath = 'mini-apps-template';
 const gameTempPath = 'mini-game-template-cocos';
 
 const isYarnInstalled = () => {
@@ -144,23 +145,86 @@ async function main() {
       await execa('rm', ['-r', `${appName}/cli`])
       await execa('rm', ['-rf', `${appName}/.git`])
     } catch (err) {}
-    
+    const __TEMP_PATH__ = path.join(appRootPath, '__TEMP__');
+    const pkg_path = path.join(appRootPath, './package.json');
+    const dgzJosn = path.join(`${appRootPath}`, project.dgz.json)
     if (tempType === 'taro') {
-      const dgzJosn = `${appRootPath}/project.dgz.json`
-      fs.writeFileSync(dgzJosn, JSON.stringify(config, undefined, 2))
-      console.log(dgzJosn)
+      fse.closeSync(
+        path.join(__TEMP_PATH__, 'taro_src'),
+        path.join(appRootPath, './src') 
+      )
+      fse.closeSync(
+        path.join(__TEMP_PATH__, 'taro.App.tsx'),
+        path.join(appRootPath, './App.tsx') 
+      )
+      fse.closeSync(
+        path.join(__TEMP_PATH__, 'taro.index.js'),
+        path.join(appRootPath, './index.js') 
+      )
+      fse.closeSync(
+        path.join(__TEMP_PATH__, 'taro.bable.config.js'),
+        path.join(appRootPath, './bable.config.js') 
+      )
+      fse.closeSync(
+        path.join(__TEMP_PATH__, 'taro.project.dgz.json'),
+        path.join(appRootPath, './project.dgz.json') 
+      )
+      const pkg_info = fse.readJSONSync(pkg_path)
+      pkg_info['scripts'] = {
+        ...(pkg_info['scripts'] || {}),
+        "build:weapp": "taro build --type weapp",
+        "build:swan": "taro build --type swan",
+        "build:alipay": "taro build --type alipay",
+        "build:tt": "taro build --type tt",
+        "build:h5": "taro build --type h5",
+        "build:rn": "taro build --type rn",
+        "build:qq": "taro build --type qq",
+        "build:jd": "taro build --type jd",
+        "build:quickapp": "taro build --type quickapp",
+        "dev:weapp": "npm run build:weapp -- --watch",
+        "dev:swan": "npm run build:swan -- --watch",
+        "dev:alipay": "npm run build:alipay -- --watch",
+        "dev:tt": "npm run build:tt -- --watch",
+        "dev:h5": "npm run build:h5 -- --watch",
+        "dev:rn": "npm run build:rn -- --watch",
+        "dev:qq": "npm run build:qq -- --watch",
+        "dev:jd": "npm run build:jd -- --watch",
+        "dev:quickapp": "npm run build:quickapp -- --watch",
+      }
+      delete pkg_info['scripts']['web']
+      delete pkg_info['scripts']['web:dev']
+      fse.writeJSONSync(pkg_path, JSON.stringify(pkg_info, undefined, 2))
     }
-    if (tempType === 'react-native') {
-      const dgzJosn = `${appRootPath}/project.dgz.json`
-      fs.writeFileSync(dgzJosn, JSON.stringify(config, undefined, 2))
-      console.log(dgzJosn)
+    if (tempType === 'expo') {
+      fse.closeSync(
+        path.join(__TEMP_PATH__, 'expo_src'),
+        path.join(appRootPath, './src') 
+      )
+      fse.closeSync(
+        path.join(__TEMP_PATH__, 'expo.App.tsx'),
+        path.join(appRootPath, './App.tsx') 
+      )
+      fse.closeSync(
+        path.join(__TEMP_PATH__, 'expo.index.js'),
+        path.join(appRootPath, './index.js') 
+      )
+      fse.closeSync(
+        path.join(__TEMP_PATH__, 'expo.bable.config.js'),
+        path.join(appRootPath, './bable.config.js') 
+      )
+      fse.closeSync(
+        path.join(__TEMP_PATH__, 'expo.project.dgz.json'),
+        path.join(appRootPath, './project.dgz.json') 
+      )
     }
     if (tempType === 'game-cocos') {
-      const dgzJosn = `${appRootPath}/project.dgz.json`
-      fs.writeFileSync(dgzJosn, JSON.stringify(config, undefined, 2))
-      console.log(dgzJosn)
+      
     }
 
+    fs.writeFileSync(dgzJosn, JSON.stringify(config, undefined, 2))
+    console.log(dgzJosn)
+    
+    fse.removeSync(appRootPath)
     
     spinner.text = ''
 
