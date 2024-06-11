@@ -45,9 +45,9 @@ PODS:
     - React-Core
   - EXLocation (17.0.1):
     - ExpoModulesCore
-  - EXNotifications (0.28.7):
+  - EXNotifications (0.28.8):
     - ExpoModulesCore
-  - Expo (51.0.11):
+  - Expo (51.0.12):
     - ExpoModulesCore
   - ExpoAsset (10.0.8):
     - ExpoModulesCore
@@ -1720,7 +1720,7 @@ PODS:
     - ZIPFoundation
   - rn-update-apk (5.0.0):
     - React-Core
-  - RNAudioRecorderPlayer (3.6.7):
+  - RNAudioRecorderPlayer (3.6.8):
     - React-Core
   - RNCAsyncStorage (1.23.1):
     - React-Core
@@ -1731,7 +1731,7 @@ PODS:
     - React-Core
   - RNCMaskedView (0.3.1):
     - React-Core
-  - RNCPicker (2.7.6):
+  - RNCPicker (2.7.7):
     - React-Core
   - RNDeviceInfo (11.1.0):
     - React-Core
@@ -1762,7 +1762,7 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
-  - RNLocalize (3.1.0):
+  - RNLocalize (3.2.0):
     - React-Core
   - RNPermissions (4.1.5):
     - React-Core
@@ -2355,8 +2355,8 @@ SPEC CHECKSUMS:
   EXConstants: 409690fbfd5afea964e5e9d6c4eb2c2b59222c59
   EXImageLoader: ab589d67d6c5f2c33572afea9917304418566334
   EXLocation: 43e9b582ca63a23c6f0a18d8cbe2145b3a388b55
-  EXNotifications: 4c5cefb57a645779a055134b308c439f7bdbccd8
-  Expo: 8af2fbdfe35b232c2361cc9b9f09a5719ceb4635
+  EXNotifications: c2622ab681b1e8644224cc99497621b5de195aa5
+  Expo: be0f48f4f1aa08d863d88480c2810b956e05e813
   ExpoAsset: 100b840e5dc1e1619df2d7c76441d33fb84a3202
   ExpoBrightness: c184f0ef116a51d7f5c1dd4c253d4d9806a5e022
   ExpoCamera: 11129a52e17fea1701ce923db49b08de8494145a
@@ -2484,17 +2484,17 @@ SPEC CHECKSUMS:
   ReactNativeAvoidSoftinput: 681c06aa418705e95fa1d29913401f14dbdb9fad
   ReactNativeFileAccess: e3b1a0a36b919d20279947aac31c2e939827c93b
   rn-update-apk: aae84919e4a72fc9517cf72a50c48db563c3e321
-  RNAudioRecorderPlayer: 9b34adc281800e5b19258f1b91d889b1ef3abdd6
+  RNAudioRecorderPlayer: 93e4f95bcc25c8e2caa1a64134bc929942e76b59
   RNCAsyncStorage: 826b603ae9c0f88b5ac4e956801f755109fa4d5c
   RNCCheckbox: a3ca9978cb0846b981d28da4e9914bd437403d77
   RNCClipboard: 0a720adef5ec193aa0e3de24c3977222c7e52a37
   RNCMaskedView: 090213d32d8b3bb83a4dcb7d12c18f0152591906
-  RNCPicker: f58e790450cb0a74c09dd1c677bd1de41a5741b9
+  RNCPicker: b7873ba797dc586bfaf3307d737cbdc620a9ff3e
   RNDeviceInfo: b899ce37a403a4dea52b7cb85e16e49c04a5b88e
   RNFastImage: 245a26474e581bcb6ad90e02c4d57b185a6bcc8e
   RNFlashList: b521ebdd7f9352673817f1d98e8bdc0c8cf8545b
   RNGestureHandler: 2282cfbcf86c360d29f44ace393203afd5c6cff7
-  RNLocalize: e8694475db034bf601e17bd3dfa8986565e769eb
+  RNLocalize: b77875884750cb6a58cd6865863fe2ba2729b72b
   RNPermissions: 10d46d6c38fa0ff137d9aad0f676699de60b5bf4
   RNReanimated: 8978449b2a511388ea71faf1e66f669134e87658
   RNScreens: b32a9ff15bea7fcdbe5dff6477bc503f792b1208

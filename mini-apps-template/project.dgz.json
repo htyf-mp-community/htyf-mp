@@ -1,8 +1,8 @@
 {
   "type": "app",
-  "name": "Taro模版",
-  "projectname": "Taro模版",
-  "appid": "__taro_temp_appid__",
-  "appUrlConfig": "https://raw.githubusercontent.com/htyf-mp-community/htyf-mp/main/mini-apps-template-taro/dgz/build/outputs/app.json",
-  "zipUrl": "https://raw.githubusercontent.com/htyf-mp-community/htyf-mp/main/mini-apps-template-taro/dgz/build/outputs/dist.dgz"
+  "name": "模版",
+  "projectname": "模版",
+  "appid": "__temp_appid__",
+  "appUrlConfig": "https://raw.githubusercontent.com/htyf-mp-community/htyf-mp/main/mini-apps-template/dgz/build/outputs/app.json",
+  "zipUrl": "https://raw.githubusercontent.com/htyf-mp-community/htyf-mp/main/mini-apps-template/dgz/build/outputs/dist.dgz"
 }
