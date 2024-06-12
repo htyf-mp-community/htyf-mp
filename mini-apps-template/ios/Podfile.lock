@@ -47,7 +47,7 @@ PODS:
     - ExpoModulesCore
   - EXNotifications (0.28.8):
     - ExpoModulesCore
-  - Expo (51.0.12):
+  - Expo (51.0.13):
     - ExpoModulesCore
   - ExpoAsset (10.0.8):
     - ExpoModulesCore
@@ -2356,7 +2356,7 @@ SPEC CHECKSUMS:
   EXImageLoader: ab589d67d6c5f2c33572afea9917304418566334
   EXLocation: 43e9b582ca63a23c6f0a18d8cbe2145b3a388b55
   EXNotifications: c2622ab681b1e8644224cc99497621b5de195aa5
-  Expo: be0f48f4f1aa08d863d88480c2810b956e05e813
+  Expo: 5fb0613e7cfc806c500400eabb96b1a75473be1b
   ExpoAsset: 100b840e5dc1e1619df2d7c76441d33fb84a3202
   ExpoBrightness: c184f0ef116a51d7f5c1dd4c253d4d9806a5e022
   ExpoCamera: 11129a52e17fea1701ce923db49b08de8494145a
