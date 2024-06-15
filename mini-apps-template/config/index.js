@@ -15,7 +15,7 @@ const config = {
   defineConstants: {},
   copy: {
     patterns: [
-      { from: 'assets/', to: 'dist/assets' },
+      { from: 'assets/', to: 'dist' },
       // { from: 'dgz/build/outputs/app.json', to: 'dist/' },
       // { from: 'dgz/build/outputs/dist.zip', to: 'dist/' },
     ],
