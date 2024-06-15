@@ -15,7 +15,7 @@ const config = {
   defineConstants: {},
   copy: {
     patterns: [
-      { from: 'assets/', to: 'dist/' },
+      { from: 'assets/', to: 'dist/assets' },
       // { from: 'dgz/build/outputs/app.json', to: 'dist/' },
       // { from: 'dgz/build/outputs/dist.zip', to: 'dist/' },
     ],
@@ -58,7 +58,7 @@ const config = {
   },
   h5: {
     publicPath: '/',
-    staticDirectory: 'static',
+    staticDirectory: 'assets',
     postcss: {
       pxtransform: {
         enable: true,
