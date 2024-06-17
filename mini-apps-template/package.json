@@ -332,7 +332,8 @@
     "stylelint-config-standard-scss": "11.1.0",
     "stylelint-scss": "5.3.1",
     "ts-node": "10.9.1",
-    "typescript": "5.3.0"
+    "typescript": "5.3.0",
+    "webpack-merge": "^5.10.0"
   },
   "private": true,
   "resolutions": {
