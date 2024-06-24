@@ -70,7 +70,7 @@ async function main() {
         default: 'my-htyf-mp',
         validate: d => {
          if(!kebabRegez.test(d)) {
-          return '请以my-app-name格式输入您的应用程序目录名称'
+          return '请以my-app-name格式输入您的应用程序英文目录名称'
          }
          return true
         }
@@ -139,15 +139,21 @@ async function main() {
     log(`\n初始化项目. \n`)
 
     spinner.start()
+    const root_path = path.join(process.cwd(), `${appName}`);
+    if (/[\u4e00-\u9fa5]/gi.test(root_path)) {
+      console.error('禁止目录中包含中文字符')
+      spinner.stop() 
+      return;
+    }
     await execa('git', ['clone', repoType, appName])
     let appRootPath = '';
-    const taro_path = path.join('./', `${appName}`, `${taroTempPath}`)
-    const expo_path = path.join('./', `${appName}`, `${expoTempPath}`)
-    const game_path = path.join('./', `${appName}`, `${gameTempPath}`)
-    const cli_path = path.join('./', `${appName}`, `cli`)
-    const git_path = path.join('./', `${appName}`, `.git`)
-    const docs_path = path.join('./', `${appName}`, `docs`)
-    const README_path = path.join('./', `${appName}`, `README.md`)
+    const taro_path = path.join(root_path, `${taroTempPath}`)
+    const expo_path = path.join(root_path, `${expoTempPath}`)
+    const game_path = path.join(root_path, `${gameTempPath}`)
+    const cli_path = path.join(root_path, `cli`)
+    const git_path = path.join(root_path, `.git`)
+    const docs_path = path.join(root_path, `docs`)
+    const README_path = path.join(root_path, `README.md`)
     try {
       if (tempType === 'taro') {
         appRootPath = taro_path
