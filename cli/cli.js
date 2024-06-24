@@ -12,6 +12,7 @@ import ora from 'ora'
 import childProcess from 'child_process'
 import { v4 as uuidv4 } from 'uuid';
 import md5 from 'md5'
+import os from 'os'
 
 const v4options = {
   random: [
@@ -138,22 +139,29 @@ async function main() {
 
     log(`\n初始化项目. \n`)
 
-    spinner.start()
+    
     const root_path = path.join(process.cwd(), `${appName}`);
-    if (/[\u4e00-\u9fa5]/gi.test(root_path)) {
-      console.error('禁止目录中包含中文字符')
-      spinner.stop() 
+    const isExists = fs.existsSync(root_path);
+    if (isExists) {
+      console.error('目录已经存在。')
       return;
     }
-    await execa('git', ['clone', repoType, appName])
+    if (/[\u4e00-\u9fa5]/gi.test(root_path)) {
+      console.error('禁止目录中包含中文字符')
+      return;
+    }
+    spinner.start()
+    const tmpdir = path.join(os.tmpdir(), md5(`__HTYF__`), appName);
+    fse.emptyDirSync(tmpdir)
+    await execa('git', ['clone', repoType, tmpdir])
     let appRootPath = '';
-    const taro_path = path.join(root_path, `${taroTempPath}`)
-    const expo_path = path.join(root_path, `${expoTempPath}`)
-    const game_path = path.join(root_path, `${gameTempPath}`)
-    const cli_path = path.join(root_path, `cli`)
-    const git_path = path.join(root_path, `.git`)
-    const docs_path = path.join(root_path, `docs`)
-    const README_path = path.join(root_path, `README.md`)
+    const taro_path = path.join(tmpdir, `${taroTempPath}`)
+    const expo_path = path.join(tmpdir, `${expoTempPath}`)
+    const game_path = path.join(tmpdir, `${gameTempPath}`)
+    const cli_path = path.join(tmpdir, `cli`)
+    const git_path = path.join(tmpdir, `.git`)
+    const docs_path = path.join(tmpdir, `docs`)
+    const README_path = path.join(tmpdir, `README.md`)
     try {
       if (tempType === 'taro') {
         appRootPath = taro_path
@@ -262,9 +270,11 @@ async function main() {
     
     spinner.text = ''
 
+    fse.moveSync(appRootPath, root_path)
+
     spinner.stop() 
-    log(`${green.bold('Success!')} 创建项目 ${appName} 在 ${appRootPath} \n`)
-    log(`切换到【 ${appRootPath} 】目录并运行开发`)
+    log(`${green.bold('Success!')} 创建项目 ${appName} 在 ${root_path} \n`)
+    log(`切换到【 ${root_path} 】目录并运行开发`)
     log('\n')
   } catch (err) {
     console.log(err)
