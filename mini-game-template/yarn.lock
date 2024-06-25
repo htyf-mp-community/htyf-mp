@@ -155,10 +155,10 @@
   dependencies:
     is-negated-glob "^1.0.0"
 
-"@htyf-mp/engines@^0.2.2":
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/@htyf-mp/engines/-/engines-0.2.2.tgz#90845d7f983d02952319f51b1495250bddb616f2"
-  integrity sha512-692psCiijCdQ02DfPRUS5qMWvFxqg2FL6vjnjajUzaB6AAEX429M/kQsxIuhqBAGH++4AhonXm5NRWcTqCG6Jw==
+"@htyf-mp/engines@^0.2.3":
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/@htyf-mp/engines/-/engines-0.2.3.tgz#96ddeae286d4df2a157db28f875357690ae843f2"
+  integrity sha512-a2shbfcowc8TyG0l172kGs4vJSS3UFIMVilxOmEr51sanbn3M1eITWCfe+s9oC2+Kr+OH1bGo5f6r9VFzGZhtQ==
   dependencies:
     "@callstack/repack" "^3.7.0"
     "@gorhom/bottom-sheet" "^4.6.0"
@@ -178,7 +178,7 @@
     jsonc-parser "^3.2.1"
     lodash "^4.17.21"
     md5 "2.3.0"
-    ora "5.4.1"
+    ora "5"
     portfinder "^1.0.32"
     qrcode "^1.5.3"
     react-native-keyboard-controller "^1.11.1"
@@ -3704,7 +3704,7 @@ open@^8.4.0:
     is-docker "^2.1.1"
     is-wsl "^2.2.0"
 
-ora@5.4.1, ora@^5.4.1:
+ora@5, ora@^5.4.1:
   version "5.4.1"
   resolved "https://registry.yarnpkg.com/ora/-/ora-5.4.1.tgz#1b2678426af4ac4a509008e5e4ac9e9959db9e18"
   integrity sha512-5b6Y85tPxZZ7QytO+BQzysW31HJku27cRIlkbAXaNx+BdcVi+LlRFmVXzeF6a7JCwJpyw5c4b+YSVImQIrBpuQ==
