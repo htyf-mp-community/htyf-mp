@@ -1,4 +1,4 @@
-.__global_pages_404_wrap__ {
+.__404_wrap__ {
   background-color: #fff;
   overflow: hidden;
   display: flex;
@@ -12,7 +12,7 @@
   left: 0;
 }
 
-.__global_pages_404_wrap_body_wrap__ {
+.__404_wrap_body_wrap__ {
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -21,7 +21,7 @@
   padding: 0 20px;
 }
 
-.__global_pages_404_wrap_body_wrap_404__ {
+.__404_wrap_body_wrap_404__ {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -29,19 +29,19 @@
   gap: 20px;
 }
 
-.__global_pages_404_wrap_body_wrap_404_image_wrap__ {
+.__404_wrap_body_wrap_404_image_wrap__ {
   width: 400px;
   height: 400px;
 }
 
-.__global_pages_404_wrap_body_wrap_404_image__ {
+.__404_wrap_body_wrap_404_image__ {
   width: 400px;
   height: 400px;
   display: block;
 }
-.__global_pages_404_wrap_body_wrap_404_text__ {
+.__404_wrap_body_wrap_404_text__ {
   font-size: 30px;
   font-weight: 400;
-  color: #757FA1;
+  color: #757fa1;
   line-height: 46px;
 }

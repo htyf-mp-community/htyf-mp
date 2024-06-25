@@ -1,6 +1,7 @@
 import { View, Text, Button, Image } from '@tarojs/components'
 import { UIProvider, useAppSelector } from '@/_UIHOOKS_';
-import './index.scss'
+import styles from './index.module.scss';
+import classNames from 'classnames';
 import pngIcon from '@/assets/icon.png'
 import Taro from '@tarojs/taro';
 import routes from '@/routes';
@@ -9,7 +10,7 @@ import jssdk from '@htyf-mp/js-sdk'
 function Index() {
   const apps = useAppSelector(i => i.apps)
   return (
-    <View className='page'>
+    <View className={classNames(styles.page, styles.pageB)}>
       <Text>红糖云服-小程序模板(Taro)</Text>
       <Text>appid: {apps.__APPID__}</Text>
       <Text>version: {apps.__VERSION__}</Text>
@@ -50,4 +51,4 @@ function Index() {
   )
 }
 
-export default () => <UIProvider><Index/></UIProvider>
+export default () => <UIProvider><Index /></UIProvider>

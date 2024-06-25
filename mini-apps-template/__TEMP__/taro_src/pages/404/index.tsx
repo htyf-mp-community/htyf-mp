@@ -1,20 +1,20 @@
 import { Button, View, Text } from '@tarojs/components'
-import './index.scss';
+import styles from './index.module.scss';
 import { Header, UIProvider, navigate } from '@/_UIHOOKS_';
 
 function Index() {
   return (
-    <View className='__global_pages_404_wrap__'>
+    <View className={styles['__404_wrap__']}>
       <Header title='404' />
-      <View className='__global_pages_404_wrap_body_wrap__'>
-        <View className='__global_pages_404_wrap_body_wrap_404__'>
-          <View className='__global_pages_404_wrap_body_wrap_404_image_wrap__'>
-            {/* <Image className="__global_pages_404_wrap_body_wrap_404_image__" src={icon} /> */}
+      <View className={styles['__404_wrap_body_wrap__']}>
+        <View className={styles['__404_wrap_body_wrap_404__']}>
+          <View className={styles['__404_wrap_body_wrap_404_image_wrap__']}>
+            {/* <Image className="__404_wrap_body_wrap_404_image__" src={icon} /> */}
           </View>
           <View>
-            <Text className="__global_pages_404_wrap_body_wrap_404_text__">糟糕，加载错误</Text>
+            <Text className={styles["__404_wrap_body_wrap_404_text__"]}>糟糕，加载错误</Text>
           </View>
-          <Button 
+          <Button
             type="primary"
             onClick={() => {
               navigate.backToHome();
@@ -28,4 +28,4 @@ function Index() {
   )
 }
 
-export default () => <UIProvider><Index/></UIProvider>
+export default () => <UIProvider><Index /></UIProvider>

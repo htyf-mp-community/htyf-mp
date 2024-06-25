@@ -1,4 +1,5 @@
 declare module "*.png";
+declare module "*.scss";
 
 /**
  * appid
