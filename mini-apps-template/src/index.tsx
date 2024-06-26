@@ -1,6 +1,6 @@
 import React from 'react'
-import { View, Text } from 'react-native';
-
+import { View, Text, Image } from 'react-native';
+import logo from '../assets/images/logo-lg.png'
 
 
 const MiniApp = () => {
@@ -10,6 +10,17 @@ const MiniApp = () => {
     alignItems: 'center',
   }}>
     <Text style={{color: 'red', fontSize: 30,}}>DEMO</Text>
+    <View>
+      <Image  
+        style={{
+          width: 100,
+          height: 100,
+          backgroundColor: 'red'
+        }}
+        resizeMode="center"
+        source={logo}
+      />
+    </View>
   </View>
 }
 
