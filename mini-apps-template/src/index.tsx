@@ -17,7 +17,6 @@ const MiniApp = () => {
           height: 100,
           backgroundColor: 'red'
         }}
-        resizeMode="center"
         source={logo}
       />
     </View>
