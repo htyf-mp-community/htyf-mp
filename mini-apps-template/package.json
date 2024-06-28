@@ -294,8 +294,7 @@
     "webpack-bundle-analyzer": "4.10.2",
     "webpack-obfuscator": "3.5.1",
     "webpack-sources": "3.2.3",
-    "wtils": "0.2.0",
-    "react-native-brayant-ad": "0.1.6"
+    "wtils": "0.2.0"
   },
   "devDependencies": {
     "@babel/core": "7.23.3",
@@ -560,7 +559,6 @@
     "@tarojs/rn-supporter": "3.6.32",
     "react-redux": "9.1.2",
     "@react-native-community/cli-config": "13.6.9",
-    "react-native-aes-crypto": "3.0.3",
-    "react-native-brayant-ad": "0.1.6"
+    "react-native-aes-crypto": "3.0.3"
   }
 }
