@@ -15,7 +15,7 @@ const MiniApp = () => {
         style={{
           width: 100,
           height: 100,
-          backgroundColor: 'red'
+          backgroundColor: '#ccc'
         }}
         source={logo}
       />
