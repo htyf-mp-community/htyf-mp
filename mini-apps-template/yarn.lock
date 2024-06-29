@@ -2301,10 +2301,10 @@
     mv "~2"
     safe-json-stringify "~1"
 
-"@expo/cli@0.18.20":
-  version "0.18.20"
-  resolved "https://registry.yarnpkg.com/@expo/cli/-/cli-0.18.20.tgz#4a605b95cdff08a38aee9a4b82c0b72e8f78f13e"
-  integrity sha512-UkEiS8l8UV34WywmjLgxMKoGBsdKXNJwVF8BJaNsXc0XcmAvvawkXiUvToO3MvJpf0www2tEjqlia8EJaTL38w==
+"@expo/cli@0.18.21":
+  version "0.18.21"
+  resolved "https://registry.yarnpkg.com/@expo/cli/-/cli-0.18.21.tgz#a44fb04bbac42141bc101b6acb91eb7b237e5722"
+  integrity sha512-t8sFUGXRM/vafILp98H/MvIgJ5c7OG+d780Zastpzn0zfakaVDvXyw9tXskwAYi9YHJpG8/cfvght1c5fBDBoA==
   dependencies:
     "@babel/runtime" "^7.20.0"
     "@expo/code-signing-certificates" "0.0.5"
@@ -2875,10 +2875,10 @@
   dependencies:
     "@hapi/hoek" "^9.0.0"
 
-"@htyf-mp/engines@0.2.14":
-  version "0.2.14"
-  resolved "https://registry.yarnpkg.com/@htyf-mp/engines/-/engines-0.2.14.tgz#ef67dfc2af358721a43dc009ca084a0d0a03b7c2"
-  integrity sha512-yGqH7OvN/w0O2/5q4eJ/luFEEonTf2ZITwo07VSPMLZ2POc5fy1CI+nDg6TSzZ25gh3ucAbGwmjJmcyHB7fStQ==
+"@htyf-mp/engines@0.2.15":
+  version "0.2.15"
+  resolved "https://registry.yarnpkg.com/@htyf-mp/engines/-/engines-0.2.15.tgz#1e9c12e0a1fe69bfd1072fcce239e12fd92ba54d"
+  integrity sha512-CHiVhN5udFNglS4lGDXYJlsgZfBcw+zi0scFV9gGtKFSSmP6S+JIsqbUvdOGQTz9emV0F+s5LqHucW0FGKKGHA==
   dependencies:
     "@callstack/repack" "^3.7.0"
     "@gorhom/bottom-sheet" "^4.6.0"
@@ -11140,10 +11140,10 @@ expo-modules-autolinking@1.11.1:
     find-up "^5.0.0"
     fs-extra "^9.1.0"
 
-expo-modules-core@1.12.17:
-  version "1.12.17"
-  resolved "https://registry.yarnpkg.com/expo-modules-core/-/expo-modules-core-1.12.17.tgz#4a1e2c84bd1e3686384e10a52801967e8952f030"
-  integrity sha512-f4wD3GwWD1QnxsVjvqPys6migmGtEaofAQCG3zdMz2ovuXf99mwLEY9+mhtnlwwxcJ1bqjOLpjB6/3wMwJaxqw==
+expo-modules-core@1.12.18:
+  version "1.12.18"
+  resolved "https://registry.yarnpkg.com/expo-modules-core/-/expo-modules-core-1.12.18.tgz#fd086c3177b42df979db912f8a2389494ef98483"
+  integrity sha512-YhIOJsMNjPvP0tmTbC1MRlxl5q7l21uQQDr1rlXEWHNmI2AEMW0gfr2wXrlB2Tz/oOIx8YqREsj3i0VsYXEaCA==
   dependencies:
     invariant "^2.2.4"
 
@@ -11227,13 +11227,13 @@ expo-web-browser@13.0.3:
   resolved "https://registry.yarnpkg.com/expo-web-browser/-/expo-web-browser-13.0.3.tgz#dceb05dbc187b498ca937b02adf385b0232a4e92"
   integrity sha512-HXb7y82ApVJtqk8tManyudtTrCtx8xcUnVzmJECeHCB0SsWSQ+penVLZxJkcyATWoJOsFMnfVSVdrTcpKKGszQ==
 
-expo@51.0.16:
-  version "51.0.16"
-  resolved "https://registry.yarnpkg.com/expo/-/expo-51.0.16.tgz#cc3882757f0e1fe1d7890697bfa46e0efa2d8811"
-  integrity sha512-BDxw+8zEcgPlXcw+jWTkQsyb7mFtNK8eu2XUC4A34aNBeryCV2cDFurV9kkAFzRXa8BNNi3Ije39RI9OS7uIRA==
+expo@51.0.17:
+  version "51.0.17"
+  resolved "https://registry.yarnpkg.com/expo/-/expo-51.0.17.tgz#aa5217a38edd9fd0b28b598daf3661acd66537f2"
+  integrity sha512-VqLrdVMLdjCUhNuWWGdexqkiscnudY7OACafBrfqIFOejAeKceEaBU5YQIlNlOsKuB7PBMqDkhdZ+dG93Ul4ig==
   dependencies:
     "@babel/runtime" "^7.20.0"
-    "@expo/cli" "0.18.20"
+    "@expo/cli" "0.18.21"
     "@expo/config" "9.0.1"
     "@expo/config-plugins" "8.0.6"
     "@expo/metro-config" "0.18.8"
@@ -11244,7 +11244,7 @@ expo@51.0.16:
     expo-font "~12.0.7"
     expo-keep-awake "~13.0.2"
     expo-modules-autolinking "1.11.1"
-    expo-modules-core "1.12.17"
+    expo-modules-core "1.12.18"
     fbemitter "^3.0.0"
     whatwg-url-without-unicode "8.0.0-3"
 
@@ -18935,10 +18935,10 @@ react-native-saf-x@2.2.3:
   resolved "https://registry.yarnpkg.com/react-native-saf-x/-/react-native-saf-x-2.2.3.tgz#677287eb1db0ba310c7022c9440509d8f6787a6e"
   integrity sha512-aPQbUfuHy8txZ/+t8Daoy8G3aRZ5H+0/SH9mJdb6quvxvt48jeIjq2n82anV77tSCXyX0du955PrtWpRzYliPQ==
 
-react-native-safe-area-context@4.10.5, react-native-safe-area-context@~4.4.1:
-  version "4.10.5"
-  resolved "https://registry.yarnpkg.com/react-native-safe-area-context/-/react-native-safe-area-context-4.10.5.tgz#a9c677a48bd273afa6876772062ce08e8af1f18d"
-  integrity sha512-Wyb0Nqw2XJ6oZxW/cK8k5q7/UAhg/wbEG6UVf89rQqecDZTDA5ic//P9J6VvJRVZerzGmxWQpVuM7f+PRYUM4g==
+react-native-safe-area-context@4.10.7, react-native-safe-area-context@~4.4.1:
+  version "4.10.7"
+  resolved "https://registry.yarnpkg.com/react-native-safe-area-context/-/react-native-safe-area-context-4.10.7.tgz#91d04e510bf96e3c38bec2beb7ae37347522a503"
+  integrity sha512-Lq+gtuIF28mMtBacFchGpO1KHMTvzeb3ji1HAVnMTPe3qWR46Tb4AlztZTvTwUnpZ8JVaC9sKXnJHKmuaIQwXA==
 
 react-native-screens@3.32.0, react-native-screens@~3.20.0:
   version "3.32.0"
