@@ -3,6 +3,7 @@
   "version": "0.0.24",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
+    "prebuild": "npx expo prebuild --clean",
     "run:scripts": "node ./scripts/index.js",
     "postinstall": "npm run run:scripts && npm run dgz:init && npx pod-install",
     "dgz": "npm run run:scripts && htyf-mp",
