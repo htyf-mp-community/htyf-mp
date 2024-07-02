@@ -1191,7 +1191,7 @@ PODS:
     - Yoga
   - react-native-cookies (6.2.1):
     - React-Core
-  - react-native-date-picker (5.0.3):
+  - react-native-date-picker (5.0.4):
     - React-Core
   - react-native-document-picker (9.3.0):
     - React-Core
@@ -2411,7 +2411,7 @@ SPEC CHECKSUMS:
   react-native-blur: a2acf22fd7bd13621df5e0b1c130b81adea7009c
   react-native-cameraroll: a9138c165c9975da773d26945591d313992c799b
   react-native-cookies: f54fcded06bb0cda05c11d86788020b43528a26c
-  react-native-date-picker: 682417ada6f9c334b969f7df6dd331a56983c63c
+  react-native-date-picker: 6891317e850deae5b53d51355226e07a495aba61
   react-native-document-picker: 5b97e24a7f1a1e4a50a72c540a043f32d29a70a2
   react-native-geolocation: fe0562c94eb0b6334f266aea717448dfd9b08cd0
   react-native-get-random-values: 21325b2244dfa6b58878f51f9aa42821e7ba3d06
