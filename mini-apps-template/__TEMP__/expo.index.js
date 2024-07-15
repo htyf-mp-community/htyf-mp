@@ -2,7 +2,6 @@
 import * as SplashScreen from 'expo-splash-screen';
 import App from './src'
 import { useEffect } from 'react';
-import {MiniAppsEnginesProvider} from '@htyf-mp/engines'
 
 
 // keep the splash screen visible while complete fetching resources
@@ -15,6 +14,6 @@ export default function Root() {
 
     }
   }, [])
-  return <MiniAppsEnginesProvider><App /></MiniAppsEnginesProvider>;
+  return <App />;
 }
 /** 禁止修改此块代码 */

@@ -2,7 +2,6 @@
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
 import App from './dgz/__source__/entry-file'
-import {MiniAppsEnginesProvider} from '@htyf-mp/engines'
 // keep the splash screen visible while complete fetching resources
 SplashScreen.preventAutoHideAsync();
 
@@ -13,8 +12,6 @@ export default function Root() {
 
     }
   }, [])
-  return <MiniAppsEnginesProvider>
-    <App />
-  </MiniAppsEnginesProvider>
+  return <App />
 }
 /** 禁止修改此块代码 */
