@@ -45,15 +45,15 @@ PODS:
     - React-Core
   - EXLocation (17.0.1):
     - ExpoModulesCore
-  - EXNotifications (0.28.9):
+  - EXNotifications (0.28.10):
     - ExpoModulesCore
-  - Expo (51.0.20):
+  - Expo (51.0.21):
     - ExpoModulesCore
   - ExpoAsset (10.0.10):
     - ExpoModulesCore
   - ExpoBrightness (12.0.1):
     - ExpoModulesCore
-  - ExpoCamera (15.0.13):
+  - ExpoCamera (15.0.14):
     - ExpoModulesCore
     - ZXingObjC/OneD
     - ZXingObjC/PDF417
@@ -65,14 +65,14 @@ PODS:
     - ExpoModulesCore
   - ExpoFileSystem (17.0.1):
     - ExpoModulesCore
-  - ExpoFont (12.0.8):
+  - ExpoFont (12.0.9):
     - ExpoModulesCore
   - ExpoGL (14.0.2):
     - ExpoModulesCore
     - ReactCommon/turbomodule/core
   - ExpoHaptics (13.0.1):
     - ExpoModulesCore
-  - ExpoImage (1.12.12):
+  - ExpoImage (1.12.13):
     - ExpoModulesCore
     - libavif/libdav1d
     - SDWebImage (~> 5.19.1)
@@ -1392,7 +1392,7 @@ PODS:
     - React-Core
   - react-native-user-agent (2.3.1):
     - React
-  - react-native-video (6.4.1):
+  - react-native-video (6.4.2):
     - DoubleConversion
     - glog
     - hermes-engine
@@ -1406,7 +1406,7 @@ PODS:
     - React-featureflags
     - React-graphics
     - React-ImageManager
-    - react-native-video/Video (= 6.4.1)
+    - react-native-video/Video (= 6.4.2)
     - React-NativeModulesApple
     - React-RCTFabric
     - React-rendererdebug
@@ -1414,7 +1414,7 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
-  - react-native-video/Video (6.4.1):
+  - react-native-video/Video (6.4.2):
     - DoubleConversion
     - glog
     - hermes-engine
@@ -2379,19 +2379,19 @@ SPEC CHECKSUMS:
   EXConstants: 409690fbfd5afea964e5e9d6c4eb2c2b59222c59
   EXImageLoader: ab589d67d6c5f2c33572afea9917304418566334
   EXLocation: 43e9b582ca63a23c6f0a18d8cbe2145b3a388b55
-  EXNotifications: fcecd5a47fc8448d4f6173490b6fa8ee747f687d
-  Expo: 0cab4b4dc73f263c0d4297e993686973725adb7f
+  EXNotifications: e4738fea8e8e3a9f2ba4e98c73977b7914cb5a52
+  Expo: 6ff8c293719c5e5d23204e3f5fc9f472b5d0fd32
   ExpoAsset: 323700f291684f110fb55f0d4022a3362ea9f875
   ExpoBrightness: c184f0ef116a51d7f5c1dd4c253d4d9806a5e022
-  ExpoCamera: c5be8a28a769c4dee3a02e017e5b55415d9beb2c
+  ExpoCamera: a5d000b22cd7dfd2c5904ed960e549de42c96da0
   ExpoClipboard: 23d203f5d4843699fbc45be1cc4fe1fbd811a6fa
   ExpoCrypto: 156078f266bf28f80ecf5e2a9c3a0d6ffce07a1c
   ExpoDocumentPicker: a82eaccc62ecb62662d5a6ca7a8ef40b71daa521
   ExpoFileSystem: 80bfe850b1f9922c16905822ecbf97acd711dc51
-  ExpoFont: b3630aff6bfb29ae3c261412f0796813a522cca9
+  ExpoFont: e7f2275c10ca8573c991e007329ad6bf98086485
   ExpoGL: a2d717e4b7279a075d7dff04d8d2471cb404ad2c
   ExpoHaptics: 5a3a88971af384255baf2504f38b41189cec6984
-  ExpoImage: 2ccccff1219ebc765e344f3338f2430af2df4824
+  ExpoImage: cbe7617b4e0e7ba064cc4caa51bfc96262e51ef3
   ExpoImagePicker: 12a420923383ae38dccb069847218f27a3b87816
   ExpoKeepAwake: 3b8815d9dd1d419ee474df004021c69fdd316d08
   ExpoLinearGradient: 8cec4a09426d8934c433e83cb36262d72c667fce
@@ -2477,7 +2477,7 @@ SPEC CHECKSUMS:
   react-native-track-player: 82ef1756ffeea61140fea17519ecd6d64ec3cf3e
   react-native-udp: df79c3cb72c4e71240cd3ce4687bfb8a137140d5
   react-native-user-agent: a90a1e839b99801baad67a73dd6f361a52aa3cf1
-  react-native-video: 80b5e8699d83d6f17247caf921be316cd5af67ab
+  react-native-video: 142a54631c8c3e49bb2f0a3c90d05e729a3f15e3
   react-native-view-shot: 6b7ed61d77d88580fed10954d45fad0eb2d47688
   react-native-vlc-media-player: 0f9860bded57cd6764ac55b5c0e97347069cb40a
   react-native-volume-manager: 3c7d8047841b6831730dea7bf25250522388b4f4
