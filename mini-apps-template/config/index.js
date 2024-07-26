@@ -63,7 +63,7 @@ const config = {
       pxtransform: {
         enable: true,
         config: {
-          maxRootSize: 1024,
+          maxRootSize: 30,
         },
       },
       autoprefixer: {
