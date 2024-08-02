@@ -561,5 +561,6 @@
     "@react-native-community/cli-config": "13.6.9",
     "react-native-aes-crypto": "3.0.3",
     "metro-config": "0.80.9"
-  }
+  },
+  "packageManager": "yarn@3.6.4"
 }

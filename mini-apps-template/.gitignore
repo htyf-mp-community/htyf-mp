@@ -14,6 +14,15 @@ web-build/
 # macOS
 .DS_Store
 
+# Yarn
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+
 # Temporary files created by Metro to check the health of the file watcher
 .metro-health-check*
 
