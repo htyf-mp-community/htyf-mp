@@ -155,10 +155,10 @@
   dependencies:
     is-negated-glob "^1.0.0"
 
-"@htyf-mp/engines@0.3.5":
-  version "0.3.5"
-  resolved "https://registry.yarnpkg.com/@htyf-mp/engines/-/engines-0.3.5.tgz#7a28877244af13ed0a7bfdd9fa40b9c3d5a4fe2e"
-  integrity sha512-5yq8osBVLYTeeAXP9x7zOWyMaNEZ0030EWb8ldqD6n7tR0qJKXkjBp0vXSa40YX/yHOrcDDuecLa68EDbGhQdw==
+"@htyf-mp/engines@0.3.6":
+  version "0.3.6"
+  resolved "https://registry.yarnpkg.com/@htyf-mp/engines/-/engines-0.3.6.tgz#779d64681c772a672a91af1b41a4aa185640d3a9"
+  integrity sha512-gfn9rr/ddpmTKQims8ENzmwb7gHc8Tfx+VkYs8RSB8fd35xS1RLKcyYVB1ZtyPLdVWXZRJSrKS8XojX9QwY8Qg==
   dependencies:
     "@callstack/repack" "^3.7.0"
     "@gorhom/bottom-sheet" "^4.6.0"
@@ -167,7 +167,7 @@
     "@react-native-community/hooks" "^3.0.0"
     "@react-native-segmented-control/segmented-control" "^2.5.0"
     "@types/uuid" "^9.0.8"
-    adm-zip "^0.5.15"
+    adm-zip "0.5.10"
     babel-plugin-transform-remove-debugger "^6.9.4"
     dayjs "^1.11.10"
     delay "5"
@@ -618,10 +618,10 @@ acorn@^8.7.1, acorn@^8.8.2:
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-8.11.3.tgz#71e0b14e13a4ec160724b38fb7b0f233b1b81d7a"
   integrity sha512-Y9rRfJG5jcKOE0CLisYbojUjIrIEE7AGMzA/Sm4BslANhbS+cDMpgBdcPT91oJ7OuJ9hYJBx59RjbhxVnrF8Xg==
 
-adm-zip@^0.5.15:
-  version "0.5.15"
-  resolved "https://registry.yarnpkg.com/adm-zip/-/adm-zip-0.5.15.tgz#c2c9b3d4f3b1c911e72b2394e84fd91bcc81e08e"
-  integrity sha512-jYPWSeOA8EFoZnucrKCNihqBjoEGQSU4HKgHYQgKNEQ0pQF9a/DYuo/+fAxY76k4qe75LUlLWpAM1QWcBMTOKw==
+adm-zip@0.5.10:
+  version "0.5.10"
+  resolved "https://registry.yarnpkg.com/adm-zip/-/adm-zip-0.5.10.tgz#4a51d5ab544b1f5ce51e1b9043139b639afff45b"
+  integrity sha512-x0HvcHqVJNTPk/Bw8JbLWlWoo6Wwnsug0fnYYro1HBrjxZ3G7/AZk7Ahv8JwDe1uIcz8eBqvu86FuF1POiG7vQ==
 
 agent-base@^7.0.2, agent-base@^7.1.0, agent-base@^7.1.1:
   version "7.1.1"
