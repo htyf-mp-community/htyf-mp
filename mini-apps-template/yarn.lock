@@ -2116,10 +2116,10 @@
   dependencies:
     "@hapi/hoek" "^9.0.0"
 
-"@htyf-mp/engines@0.3.4":
-  version "0.3.4"
-  resolved "https://registry.yarnpkg.com/@htyf-mp/engines/-/engines-0.3.4.tgz#452c2f72d8b124ab92b10b7a8de75cb49a90f1c1"
-  integrity sha512-6uSuYL7TBN2Oiu7GRm6A5wZErH8HnRjr2KLT5dRQq4YbLYVBdY2unM06zyqMGJ1/vgFqDv5bhtKCoR6ppxK1vQ==
+"@htyf-mp/engines@0.3.5":
+  version "0.3.5"
+  resolved "https://registry.yarnpkg.com/@htyf-mp/engines/-/engines-0.3.5.tgz#7a28877244af13ed0a7bfdd9fa40b9c3d5a4fe2e"
+  integrity sha512-5yq8osBVLYTeeAXP9x7zOWyMaNEZ0030EWb8ldqD6n7tR0qJKXkjBp0vXSa40YX/yHOrcDDuecLa68EDbGhQdw==
   dependencies:
     "@callstack/repack" "^3.7.0"
     "@gorhom/bottom-sheet" "^4.6.0"
@@ -2128,7 +2128,7 @@
     "@react-native-community/hooks" "^3.0.0"
     "@react-native-segmented-control/segmented-control" "^2.5.0"
     "@types/uuid" "^9.0.8"
-    adm-zip "^0.5.10"
+    adm-zip "^0.5.15"
     babel-plugin-transform-remove-debugger "^6.9.4"
     dayjs "^1.11.10"
     delay "5"
@@ -5425,10 +5425,10 @@ adm-zip@^0.4.13:
   resolved "https://registry.npmmirror.com/adm-zip/-/adm-zip-0.4.16.tgz#cf4c508fdffab02c269cbc7f471a875f05570365"
   integrity sha512-TFi4HBKSGfIKsK5YCkKaaFG2m4PEDyViZmEwof3MTIgzimHLto6muaHVpbrljdIvIrFZzEq/p4nafOeLcYegrg==
 
-adm-zip@^0.5.10:
-  version "0.5.14"
-  resolved "https://registry.npmmirror.com/adm-zip/-/adm-zip-0.5.14.tgz#2c557c0bf12af4311cf6d32970f4060cf8133b2a"
-  integrity sha512-DnyqqifT4Jrcvb8USYjp6FHtBpEIz1mnXu6pTRHZ0RL69LbQYiO+0lDFg5+OKA7U29oWSs3a/i8fhn8ZcceIWg==
+adm-zip@^0.5.15:
+  version "0.5.15"
+  resolved "https://registry.yarnpkg.com/adm-zip/-/adm-zip-0.5.15.tgz#c2c9b3d4f3b1c911e72b2394e84fd91bcc81e08e"
+  integrity sha512-jYPWSeOA8EFoZnucrKCNihqBjoEGQSU4HKgHYQgKNEQ0pQF9a/DYuo/+fAxY76k4qe75LUlLWpAM1QWcBMTOKw==
 
 agent-base@6:
   version "6.0.2"
