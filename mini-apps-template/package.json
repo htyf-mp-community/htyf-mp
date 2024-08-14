@@ -286,6 +286,7 @@
     "systeminformation": "5.23.4",
     "terser-webpack-plugin": "5.3.10",
     "text-encoding-polyfill": "0.6.7",
+    "twrnc": "^4.5.0",
     "typescript": "5.5.4",
     "ua-parser-js": "1.0.38",
     "url-parse": "1.5.10",

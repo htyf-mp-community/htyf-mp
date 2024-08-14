@@ -1,4 +1,14 @@
 {
+  "tailwindCSS.classAttributes": [
+        "style"
+    ],
+	"tailwindCSS.includeLanguages": {
+		
+	},
+  "tailwindCSS.experimental.classRegex": [
+      "tw`([^`]*)",
+      ["tw.style\\(([^)]*)\\)", "'([^']*)'"]
+  ],
   "typescript.tsdk": "node_modules/typescript/lib",
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
