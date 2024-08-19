@@ -155,14 +155,13 @@
   dependencies:
     is-negated-glob "^1.0.0"
 
-"@htyf-mp/engines@0.4.3":
-  version "0.4.3"
-  resolved "https://registry.yarnpkg.com/@htyf-mp/engines/-/engines-0.4.3.tgz#9778eee0bf0b83754d7080f825094aea8e35924a"
-  integrity sha512-p1HouxHRUv1jbGjtrCHn8D5wbStAlgEM9/ezdkRc+VZCkkzHcWYnTDt2enI4BZ5/fEbfgTrRW+i50yO3nSLdVA==
+"@htyf-mp/engines@0.4.6":
+  version "0.4.6"
+  resolved "https://registry.yarnpkg.com/@htyf-mp/engines/-/engines-0.4.6.tgz#d8b960a6f72ef1a3fde15e054675012bfcc4b48f"
+  integrity sha512-Tz38f3tMLUcmG67trWK2whyOPlY5GsKveWxvE4VodlAM7aZWUfzOGHvuQtfXgsooS/hInHaT5WT54FZgKEcYdg==
   dependencies:
     "@callstack/repack" "^3.7.0"
     "@gorhom/bottom-sheet" "^4.6.0"
-    "@htyf-mp/js-sdk" "^0.0.11"
     "@react-native-clipboard/clipboard" "^1.13.2"
     "@react-native-community/hooks" "^3.0.0"
     "@react-native-segmented-control/segmented-control" "^2.5.0"
