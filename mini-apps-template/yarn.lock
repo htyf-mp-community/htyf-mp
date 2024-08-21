@@ -2160,10 +2160,10 @@
     webpack-merge "5.10.0"
     yarn-add-no-save "1.0.3"
 
-"@htyf-mp/js-sdk@0.0.12":
-  version "0.0.12"
-  resolved "https://registry.yarnpkg.com/@htyf-mp/js-sdk/-/js-sdk-0.0.12.tgz#2e808ba8f2ad96bf56fa4cd7a7067e7c35a8c9ca"
-  integrity sha512-c7KJLPghl7Ef0bOsN7y+4c+LXYPwOFcUk6Il4lDskQh3OjYofV2loW0V+1U6TgHVF9gnTqtJKs/D1lVxzjsksQ==
+"@htyf-mp/js-sdk@0.0.14":
+  version "0.0.14"
+  resolved "https://registry.yarnpkg.com/@htyf-mp/js-sdk/-/js-sdk-0.0.14.tgz#7b37590e4d641593b9d56ca1a145c352e15d075f"
+  integrity sha512-ubUMVCoJyI0nkh9GFda4YBoL//Y/oh8V6iuZrLHq9K8zr1u7zvJBzv+Fg0lH80pmbzuR6nE8Nz6VPWriNwgjNA==
   dependencies:
     "@fingerprintjs/fingerprintjs" "^3.3.3"
     "@types/qs" "^6.9.7"
