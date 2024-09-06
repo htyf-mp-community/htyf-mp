@@ -155,10 +155,10 @@
   dependencies:
     is-negated-glob "^1.0.0"
 
-"@htyf-mp/engines@^0.5.1":
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/@htyf-mp/engines/-/engines-0.5.1.tgz#232054c0dc615e2f0f0f55f8788ce98f5c4897f0"
-  integrity sha512-uSfez8fomb2s7XbWVxSQt3ubtY6PZaBLtS1CbV1b9dpJnVolk28djIVoChST5eQrHXZl2i8WSeiKrGn25Qe4NA==
+"@htyf-mp/engines@^0.5.4":
+  version "0.5.4"
+  resolved "https://registry.yarnpkg.com/@htyf-mp/engines/-/engines-0.5.4.tgz#cc526500a158504460e129db0cfc4976f949f2d6"
+  integrity sha512-D7jj/po9fcPRyeaZN4e12N2vrqPOTRB1H5vsuBZd40RiipDZuNdQKg7UPX1bMTNhk3w24lBgF22dbhAAVxxY2w==
   dependencies:
     "@callstack/repack" "^3.7.0"
     "@gorhom/bottom-sheet" "^4.6.0"
@@ -194,12 +194,13 @@
     webpack-merge "5.10.0"
     yarn-add-no-save "1.0.3"
 
-"@htyf-mp/js-sdk@^0.0.11":
-  version "0.0.11"
-  resolved "https://registry.yarnpkg.com/@htyf-mp/js-sdk/-/js-sdk-0.0.11.tgz#6f47660c446822bde8633e5a811734be9c0e9ff5"
-  integrity sha512-pqVF3IMruNomtS6bbtZWq9vgidXTw3zYvlTFF0YNgtOz0E+VOJnOcN+17rX7g3TqRDGF4qJqtPHdB6NmirZ3pQ==
+"@htyf-mp/js-sdk@^0.0.17":
+  version "0.0.17"
+  resolved "https://registry.yarnpkg.com/@htyf-mp/js-sdk/-/js-sdk-0.0.17.tgz#930bef9f070a185485283ab1d6a15bf992a1800f"
+  integrity sha512-A0d76/2WqujYfRoiQlwjzn1r+W4UOMV5d4Y906j42H8ESYaovXzF1jQt3Arg/BYpAwpIkiiLuzEQaFYDd5ijlg==
   dependencies:
     "@fingerprintjs/fingerprintjs" "^3.3.3"
+    "@react-native-async-storage/async-storage" "^2.0.0"
     "@types/qs" "^6.9.7"
     axios "^0.26.1"
     dayjs "^1.11.0"
@@ -348,6 +349,13 @@
     "@pnpm/config.env-replace" "^1.1.0"
     "@pnpm/network.ca-file" "^1.0.1"
     config-chain "^1.1.11"
+
+"@react-native-async-storage/async-storage@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@react-native-async-storage/async-storage/-/async-storage-2.0.0.tgz#22373f7f83132547701637fc574ddb83b83b384e"
+  integrity sha512-af6H9JjfL6G/PktBfUivvexoiFKQTJGQCtSWxMdivLzNIY94mu9DdiY0JqCSg/LyPCLGKhHPUlRQhNvpu3/KVA==
+  dependencies:
+    merge-options "^3.0.4"
 
 "@react-native-clipboard/clipboard@^1.13.2":
   version "1.14.0"
@@ -2830,6 +2838,11 @@ is-path-inside@^3.0.2:
   resolved "https://registry.yarnpkg.com/is-path-inside/-/is-path-inside-3.0.3.tgz#d231362e53a07ff2b0e0ea7fed049161ffd16283"
   integrity sha512-Fd4gABb+ycGAmKou8eMftCupSir5lRxqf4aD/vd0cD2qc4HL07OjCeuHMr8Ro4CoMaeCKDB0/ECBOVWjTwUvPQ==
 
+is-plain-obj@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/is-plain-obj/-/is-plain-obj-2.1.0.tgz#45e42e37fccf1f40da8e5f76ee21515840c09287"
+  integrity sha512-YWnfyRwxL/+SsrWYfOpUtz5b3YD+nyfkHvjbcanzk8zgyO4ASD67uVMRt8k5bM4lLMDnXfriRhOpemw+NfT1eA==
+
 is-plain-object@^2.0.4:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/is-plain-object/-/is-plain-object-2.0.4.tgz#2c163b3fafb1b606d9d17928f05c2a1c38e07677"
@@ -3324,6 +3337,13 @@ memfs@^3.4.4:
   integrity sha512-EGowvkkgbMcIChjMTMkESFDbZeSh8xZ7kNSF0hAiAN4Jh6jgHCRS0Ga/+C8y6Au+oqpezRHCfPsmJ2+DwAgiwQ==
   dependencies:
     fs-monkey "^1.0.4"
+
+merge-options@^3.0.4:
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/merge-options/-/merge-options-3.0.4.tgz#84709c2aa2a4b24c1981f66c179fe5565cc6dbb7"
+  integrity sha512-2Sug1+knBjkaMsMgf1ctR1Ujx+Ayku4EdJN4Z+C2+JzoeF7A3OZ9KM2GY0CpQS51NR61LTurMJrRKPhSs3ZRTQ==
+  dependencies:
+    is-plain-obj "^2.1.0"
 
 merge-stream@^2.0.0:
   version "2.0.0"
