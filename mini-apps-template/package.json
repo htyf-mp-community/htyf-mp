@@ -62,7 +62,7 @@
     "@expo/metro-config": "0.18.11",
     "@expo/metro-runtime": "3.2.1",
     "@gorhom/bottom-sheet": "4.6.4",
-    "@htyf-mp/engines": "^0.5.4",
+    "@htyf-mp/engines": "^0.5.9",
     "@htyf-mp/js-sdk": "^0.0.17",
     "@pmmmwh/react-refresh-webpack-plugin": "0.5.15",
     "@react-native-async-storage/async-storage": "2.0.0",

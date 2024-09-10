@@ -11,11 +11,11 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */; };
-		56C9F055C8D804F4927C3302 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 7FC5D87C5E255CDEF76873E3 /* PrivacyInfo.xcprivacy */; };
-		8EBA01F84E6F495DB5FF81BF /* noop-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58953BEF5A24BCB8780EDC5 /* noop-file.swift */; };
 		96905EF65AED1B983A6B3ABC /* libPods-DEVhtyfmp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58EEBF8E8E6FB1BC6CAF49B5 /* libPods-DEVhtyfmp.a */; };
 		B18059E884C0ABDD17F3DC3D /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC715A2D49A985799AEE119 /* ExpoModulesProvider.swift */; };
+		B1A3C97F414D4BBF80AF3E9B /* noop-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85BA611629348A8A6EFDF38 /* noop-file.swift */; };
 		BB2F792D24A3F905000567C9 /* Expo.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB2F792C24A3F905000567C9 /* Expo.plist */; };
+		F2AEF3381352DBF0B8E4132C /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 672C366DFA4C573D517CC384 /* PrivacyInfo.xcprivacy */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,14 +26,14 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = DEVhtyfmp/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = DEVhtyfmp/main.m; sourceTree = "<group>"; };
 		58EEBF8E8E6FB1BC6CAF49B5 /* libPods-DEVhtyfmp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DEVhtyfmp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		672C366DFA4C573D517CC384 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = DEVhtyfmp/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		6C2E3173556A471DD304B334 /* Pods-DEVhtyfmp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DEVhtyfmp.debug.xcconfig"; path = "Target Support Files/Pods-DEVhtyfmp/Pods-DEVhtyfmp.debug.xcconfig"; sourceTree = "<group>"; };
 		7A4D352CD337FB3A3BF06240 /* Pods-DEVhtyfmp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DEVhtyfmp.release.xcconfig"; path = "Target Support Files/Pods-DEVhtyfmp/Pods-DEVhtyfmp.release.xcconfig"; sourceTree = "<group>"; };
-		7FC5D87C5E255CDEF76873E3 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = DEVhtyfmp/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		7D10FB588F4F45FD8FB026C2 /* DEVhtyfmp-Bridging-Header.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = "DEVhtyfmp-Bridging-Header.h"; path = "DEVhtyfmp/DEVhtyfmp-Bridging-Header.h"; sourceTree = "<group>"; };
 		AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SplashScreen.storyboard; path = DEVhtyfmp/SplashScreen.storyboard; sourceTree = "<group>"; };
 		BB2F792C24A3F905000567C9 /* Expo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Expo.plist; sourceTree = "<group>"; };
-		C35D84DC5ACB40B1A4CFA462 /* DEVhtyfmp-Bridging-Header.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = "DEVhtyfmp-Bridging-Header.h"; path = "DEVhtyfmp/DEVhtyfmp-Bridging-Header.h"; sourceTree = "<group>"; };
+		D85BA611629348A8A6EFDF38 /* noop-file.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = "noop-file.swift"; path = "DEVhtyfmp/noop-file.swift"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		F58953BEF5A24BCB8780EDC5 /* noop-file.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = "noop-file.swift"; path = "DEVhtyfmp/noop-file.swift"; sourceTree = "<group>"; };
 		FAC715A2D49A985799AEE119 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-DEVhtyfmp/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -59,9 +59,9 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB71A68108700A75B9A /* main.m */,
 				AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */,
-				F58953BEF5A24BCB8780EDC5 /* noop-file.swift */,
-				C35D84DC5ACB40B1A4CFA462 /* DEVhtyfmp-Bridging-Header.h */,
-				7FC5D87C5E255CDEF76873E3 /* PrivacyInfo.xcprivacy */,
+				D85BA611629348A8A6EFDF38 /* noop-file.swift */,
+				7D10FB588F4F45FD8FB026C2 /* DEVhtyfmp-Bridging-Header.h */,
+				672C366DFA4C573D517CC384 /* PrivacyInfo.xcprivacy */,
 			);
 			name = DEVhtyfmp;
 			sourceTree = "<group>";
@@ -147,13 +147,13 @@
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "DEVhtyfmp" */;
 			buildPhases = (
 				08A4A3CD28434E44B6B9DE2E /* [CP] Check Pods Manifest.lock */,
-				4027DD54B0F274DF80A1688F /* [Expo] Configure project */,
+				170053C76660C29E28FDEF22 /* [Expo] Configure project */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				800E24972A6A228C8D4807E9 /* [CP] Copy Pods Resources */,
-				C94D9DE8C17862FA74027BBE /* [CP] Embed Pods Frameworks */,
+				AEE2B7E3B1C520C303154CC3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -203,7 +203,7 @@
 				BB2F792D24A3F905000567C9 /* Expo.plist in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */,
-				56C9F055C8D804F4927C3302 /* PrivacyInfo.xcprivacy in Resources */,
+				F2AEF3381352DBF0B8E4132C /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,7 +247,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4027DD54B0F274DF80A1688F /* [Expo] Configure project */ = {
+		170053C76660C29E28FDEF22 /* [Expo] Configure project */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
@@ -360,7 +360,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DEVhtyfmp/Pods-DEVhtyfmp-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C94D9DE8C17862FA74027BBE /* [CP] Embed Pods Frameworks */ = {
+		AEE2B7E3B1C520C303154CC3 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -392,7 +392,7 @@
 				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 				B18059E884C0ABDD17F3DC3D /* ExpoModulesProvider.swift in Sources */,
-				8EBA01F84E6F495DB5FF81BF /* noop-file.swift in Sources */,
+				B1A3C97F414D4BBF80AF3E9B /* noop-file.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
