@@ -1352,10 +1352,10 @@
     deepmerge "^3.2.0"
     hoist-non-react-statics "^3.3.0"
 
-"@callstack/repack-dev-server@^4.3.2":
-  version "4.3.2"
-  resolved "https://registry.yarnpkg.com/@callstack/repack-dev-server/-/repack-dev-server-4.3.2.tgz#3edb7cc60aa77cfa4ff9cf8aefaa0cc26ee671aa"
-  integrity sha512-utbgkxMKFygdmO5E+H74C0IAYvdi086PqefrTzSB5XSb8WB24RwsmjPVxeOZdcC3N139tnveHBPRGUQ0Tf74Bw==
+"@callstack/repack-dev-server@^4.3.3":
+  version "4.3.3"
+  resolved "https://registry.yarnpkg.com/@callstack/repack-dev-server/-/repack-dev-server-4.3.3.tgz#c1f909d4ad64537ec1e7f1e4d64a0b4f625be659"
+  integrity sha512-ofHhLET+mkAX6hEuF0tR/hpfqeP2xsQqnkme3BqqgghvuwB3KRPPY5qNaA9L0vS27iAwHeuBaGVDom/L7WmszA==
   dependencies:
     "@babel/code-frame" "^7.16.7"
     "@fastify/middie" "^8.3.0"
@@ -1369,12 +1369,12 @@
     source-map "^0.7.4"
     ws "^8.7.0"
 
-"@callstack/repack@4.3.2", "@callstack/repack@^3.7.0":
-  version "4.3.2"
-  resolved "https://registry.yarnpkg.com/@callstack/repack/-/repack-4.3.2.tgz#e462f2f545386c62a5dbbf8fc072b48ab85b93c8"
-  integrity sha512-IAZccgCBvr2zU9rfA7Hgs9xFZgRCS4kHXNNK5dWRnlyxoFG3uf16J8BD4cHveTqWBmEBCq5No7vyBTQjcOm+vg==
+"@callstack/repack@4.3.3", "@callstack/repack@^3.7.0":
+  version "4.3.3"
+  resolved "https://registry.yarnpkg.com/@callstack/repack/-/repack-4.3.3.tgz#bf0ebf565495ed4b8151a22f968926e0f3e29496"
+  integrity sha512-6M4vgcUBN/yAf7/cEfwm16Nh5m2bn4xTJAH/joL9wLRFYGOrZN77CLFD6dDDFVAuIfieplu1AcaEvloaLIAXHA==
   dependencies:
-    "@callstack/repack-dev-server" "^4.3.2"
+    "@callstack/repack-dev-server" "^4.3.3"
     "@discoveryjs/json-ext" "^0.5.7"
     "@pmmmwh/react-refresh-webpack-plugin" "^0.5.13"
     colorette "^1.2.2"
@@ -2200,10 +2200,10 @@
   dependencies:
     "@hapi/hoek" "^9.0.0"
 
-"@htyf-mp/engines@^0.5.11":
-  version "0.5.11"
-  resolved "https://registry.yarnpkg.com/@htyf-mp/engines/-/engines-0.5.11.tgz#4648eebdbfb6d8cea44b0e6f63e08e29a2051c49"
-  integrity sha512-Ljipm/GZ/vrc0VzLPVtQBx1MaIn8AGi1IBwVS9ieZtDRs5fLv1dH800XLQ/S2ZdUAl9lyrK74a59458bdFfkNw==
+"@htyf-mp/engines@0.5.13":
+  version "0.5.13"
+  resolved "https://registry.yarnpkg.com/@htyf-mp/engines/-/engines-0.5.13.tgz#e38a51f14da2b4d350423aa3e19b76a78c636544"
+  integrity sha512-CqWjVRqGU5wRKUP6b7VCJXHKWI7LC/Fi9jfdpx2PqJKGi7qX06t93z/FvBtdAO/o9xayuTggxzuDEKdO25/6Jg==
   dependencies:
     "@callstack/repack" "^3.7.0"
     "@gorhom/bottom-sheet" "^4.6.0"
@@ -2239,7 +2239,7 @@
     webpack-merge "5.10.0"
     yarn-add-no-save "1.0.3"
 
-"@htyf-mp/js-sdk@^0.0.22":
+"@htyf-mp/js-sdk@0.0.22":
   version "0.0.22"
   resolved "https://registry.yarnpkg.com/@htyf-mp/js-sdk/-/js-sdk-0.0.22.tgz#e87b564a3e459936ce47ca7f6ef9b269c65d8fbd"
   integrity sha512-9DoU+BSQ2FokqWyWwXGyxY+rdkQGKgfySXPuDUjwPFDGqGk9ZG7S2G8DE6aQu61lpkrHHISogHYYZ0XlKzZb/g==
@@ -2838,10 +2838,10 @@
   resolved "https://registry.npmmirror.com/@react-native-camera-roll/camera-roll/-/camera-roll-7.8.3.tgz#c0ad3035ed129cc84101fb586d6bb070629cb26d"
   integrity sha512-F4xNVg/cqN+MiAhoqC11/RafIVQCzLxJVMYke1eBkqLmP5aJ+fKfPPClnRcvXfWHyXOuM17og45LP0S4H09wnQ==
 
-"@react-native-clipboard/clipboard@1.14.1", "@react-native-clipboard/clipboard@^1.13.2", "@react-native-clipboard/clipboard@~1.11.1":
-  version "1.14.1"
-  resolved "https://registry.npmmirror.com/@react-native-clipboard/clipboard/-/clipboard-1.14.1.tgz#835f82fc86881a0808a8405f2576617bb5383554"
-  integrity sha512-SM3el0A28SwoeJljVNhF217o0nI4E7RfalLmuRQcT1/7tGcxUjgFa3jyrEndYUct8/uxxK5EUNGUu1YEDqzxqw==
+"@react-native-clipboard/clipboard@1.14.2", "@react-native-clipboard/clipboard@^1.13.2", "@react-native-clipboard/clipboard@~1.11.1":
+  version "1.14.2"
+  resolved "https://registry.yarnpkg.com/@react-native-clipboard/clipboard/-/clipboard-1.14.2.tgz#d290e9f79799e260ba4ebd9e9948079258826b25"
+  integrity sha512-Mb58f3neB6sM9oOtKYVGLvN8KVByea67OA9ekJ0c9FwdH24INu8RJoA7/fq+PRk+7oxbeamAcEoQPRv0uwbbMw==
 
 "@react-native-community/art@1.2.0":
   version "1.2.0"
@@ -3066,15 +3066,15 @@
   resolved "https://registry.npmmirror.com/@react-native-community/hooks/-/hooks-3.0.0.tgz#af5f2ca32eea59b792ce9e3d9a4cf0354f9b195f"
   integrity sha512-g2OyxXHfwIytXUJitBR6Z/ISoOfp0WKx5FOv+NqJ/CrWjRDcTw6zXE5I1C9axfuh30kJqzWchVfCDrkzZYTxqg==
 
-"@react-native-community/netinfo@11.3.2", "@react-native-community/netinfo@~9.3.0":
-  version "11.3.2"
-  resolved "https://registry.npmmirror.com/@react-native-community/netinfo/-/netinfo-11.3.2.tgz#e63201d0b87ad42d086d1003be48ae7b327f0594"
-  integrity sha512-YsaS3Dutnzqd1BEoeC+DEcuNJedYRkN6Ef3kftT5Sm8ExnCF94C/nl4laNxuvFli3+Jz8Df3jO25Jn8A9S0h4w==
+"@react-native-community/netinfo@11.4.0", "@react-native-community/netinfo@~9.3.0":
+  version "11.4.0"
+  resolved "https://registry.yarnpkg.com/@react-native-community/netinfo/-/netinfo-11.4.0.tgz#de0930db98e3618d74693d84d3ef956eabbeb0b6"
+  integrity sha512-EGJByXkYebOfbflwcgdUO6hgUmVsE6RnRPHJ2Pp6M1mZX3YQkfotS7i1/TwTk4LpioyOePvEQwmy8PfW942Upg==
 
-"@react-native-community/slider@4.5.2", "@react-native-community/slider@~4.3.2":
-  version "4.5.2"
-  resolved "https://registry.npmmirror.com/@react-native-community/slider/-/slider-4.5.2.tgz#c3835788dbc1bd83d3778b83ca15533c805db149"
-  integrity sha512-DbFyCyI7rwl0FkBkp0lzEVp+5mNfS5qU/nM2sK2aSguWhj0Odkt1aKHP2iW/ljruOhgS/O4dEixXlne4OdZJDQ==
+"@react-native-community/slider@4.5.3", "@react-native-community/slider@~4.3.2":
+  version "4.5.3"
+  resolved "https://registry.yarnpkg.com/@react-native-community/slider/-/slider-4.5.3.tgz#84821ae17e746d90f73553bb58386e9db4db124c"
+  integrity sha512-0mOdnIL3xPWYGkP7levDH3bBsjdMOiR5mQIzFrSkZznZdIfX9MvGnelNZxsWuibmkc3hczHybo7RRb6mE96H2g==
 
 "@react-native-cookies/cookies@6.2.1":
   version "6.2.1"
@@ -3093,10 +3093,10 @@
   resolved "https://registry.yarnpkg.com/@react-native-picker/picker/-/picker-2.8.0.tgz#441ce47bcf7d227fe616d5b906350448f6327a01"
   integrity sha512-nNU3T3DUi0NDmOEv34aGvV3tDybfIo4Di+1AaNceiImhRFD/dvBWIEgkVfOKUsC/biqv1Yo7td+2BrDL0gyZcw==
 
-"@react-native-segmented-control/segmented-control@2.5.2", "@react-native-segmented-control/segmented-control@^2.5.0":
-  version "2.5.2"
-  resolved "https://registry.npmmirror.com/@react-native-segmented-control/segmented-control/-/segmented-control-2.5.2.tgz#60a090487afb5105edec58197c6c6d64d5f2fba0"
-  integrity sha512-Rm+i7cI/ztZyYLUXzzfiyoe44m3JxAix82qS2Av/DkPWCR1bgfkxtrm6OZ06p4/2hqp4RvtMftxQiHGr/GDPew==
+"@react-native-segmented-control/segmented-control@2.5.4", "@react-native-segmented-control/segmented-control@^2.5.0":
+  version "2.5.4"
+  resolved "https://registry.yarnpkg.com/@react-native-segmented-control/segmented-control/-/segmented-control-2.5.4.tgz#c0097491c3ec7c7c34397d72c44501d615354dcd"
+  integrity sha512-M8c+NORkGZzKUXB+yT6pq6+wWZUZK9HhVtuMz8Y5Co4tnOSJ86KhhJsM3RI1rPuUvmyzGc0jeJpkB3ul8X1XNw==
 
 "@react-native/assets-registry@0.74.87":
   version "0.74.87"
@@ -4701,10 +4701,10 @@
   dependencies:
     "@types/istanbul-lib-report" "*"
 
-"@types/jest@29.5.12":
-  version "29.5.12"
-  resolved "https://registry.npmmirror.com/@types/jest/-/jest-29.5.12.tgz#7f7dc6eb4cf246d2474ed78744b05d06ce025544"
-  integrity sha512-eDC8bTvT/QhYdxJAulQikueigY5AsdBRH2yDKW3yveW7svY3+DzN84/2NUgkw10RTiJbWqZrTtoGVdYlvFJdLw==
+"@types/jest@29.5.13":
+  version "29.5.13"
+  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-29.5.13.tgz#8bc571659f401e6a719a7bf0dbcb8b78c71a8adc"
+  integrity sha512-wd+MVEZCHt23V0/L642O5APvspWply/rGY5BcW4SUETo2UzPU3Z26qr8jC2qxpimI2jjx9h7+2cj2FwIr01bXg==
   dependencies:
     expect "^29.0.0"
     pretty-format "^29.0.0"
@@ -9775,10 +9775,10 @@ expo-brightness@12.0.1, expo-brightness@~11.0.0:
   resolved "https://registry.npmmirror.com/expo-brightness/-/expo-brightness-12.0.1.tgz#24505912a19a909ab73814574ddf145430230d53"
   integrity sha512-Jdi8+9YeixWdg0Z2A/f3YnQ86+iMLuGyqcTi8UTipGotTHZBG8UuV1Gab/2tttOhUK2cfv4Hc2zDbkKFP6F1JQ==
 
-expo-camera@15.0.15, expo-camera@~13.0.0:
-  version "15.0.15"
-  resolved "https://registry.yarnpkg.com/expo-camera/-/expo-camera-15.0.15.tgz#2959963b65219ca5d101327b3298b4170a4e107b"
-  integrity sha512-zJS0rfOwGfyDrccMsFaLH9s0mW0f6czw+W+RHvbyAdAmoAh6ZtzZRGbosKIYoRsn/8L7ajNp01seJUjsT0FtzA==
+expo-camera@15.0.16, expo-camera@~13.0.0:
+  version "15.0.16"
+  resolved "https://registry.yarnpkg.com/expo-camera/-/expo-camera-15.0.16.tgz#149f25304ae7d76ae55653ca16f947e9f437c782"
+  integrity sha512-FLE02DMqkjwsb7IugKAqQvBe6s+TCQeb5LupO1+r//wAhBwmHncOrc6zV95ZEC2f9PTPK34nFH/s8CDGiVzIAA==
   dependencies:
     invariant "^2.2.4"
 
@@ -9878,10 +9878,10 @@ expo-location@17.0.1, expo-location@~15.0.1:
   resolved "https://registry.npmmirror.com/expo-location/-/expo-location-17.0.1.tgz#3bdbf91066f1a40ec3468dc1807f3e106473f74c"
   integrity sha512-m+OzotzlAXO3ZZ1uqW5GC25nXW868zN+ROyBA1V4VF6jGay1ZEs4URPglCVUDzZby2F5wt24cMzqDKw2IX6nRw==
 
-expo-media-library@16.0.4:
-  version "16.0.4"
-  resolved "https://registry.npmmirror.com/expo-media-library/-/expo-media-library-16.0.4.tgz#d6b264a201861a2eb055b8c181368d2e7f525ca4"
-  integrity sha512-nX9iN8+XAoERDVGPpDdUbhFwvfYdBpkgTAxwDOYL7heASYCOdxfqQtXy/jv1+QZpj0epaR6Owq/LUn1lVP3ykg==
+expo-media-library@16.0.5:
+  version "16.0.5"
+  resolved "https://registry.yarnpkg.com/expo-media-library/-/expo-media-library-16.0.5.tgz#5827f237f4425088bdb15f1f0949916613d0ae3d"
+  integrity sha512-O9RUqBWgJVRF0mO6EiLSBFyfb5wR1/ZqovbT43V0TAo5sgcjrHRs+0NID/U6BWDRuiFeX2AU516JgNDutNUFSw==
 
 expo-modules-autolinking@1.11.2:
   version "1.11.2"
@@ -14198,10 +14198,10 @@ loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.4.0:
   dependencies:
     js-tokens "^3.0.0 || ^4.0.0"
 
-lottie-react-native@6.7.2:
-  version "6.7.2"
-  resolved "https://registry.npmmirror.com/lottie-react-native/-/lottie-react-native-6.7.2.tgz#615fc16f88970fcbdf63699537f499b5937afe8a"
-  integrity sha512-MZVx6N1EeO/EaSx8T44mJ0aHc5Mqee+xIfWwszni0oz8U2wlHdaWGjES44dHxaxgAp/0dRaFt3PkpZ6egTzcBg==
+lottie-react-native@7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/lottie-react-native/-/lottie-react-native-7.0.0.tgz#045a30432b75ef33ae2f36a67c9fa3b44abebf5a"
+  integrity sha512-RnwacxdB1MKDS/WSX8XFyXw5nxEKF+aLYRzbkQBQY0pZTRF2XYg8zd25D1su1M0TEP0sgWutwN5rweSeCsf8qQ==
 
 lower-case@^1.1.1:
   version "1.1.4"
@@ -17465,10 +17465,10 @@ react-native-date-picker@5.0.7:
   resolved "https://registry.yarnpkg.com/react-native-date-picker/-/react-native-date-picker-5.0.7.tgz#24161d30c6dca8627afe1aa5a55a389421fdfba4"
   integrity sha512-/RodyCZWjb+f3f4YHqKbWFYczGm+tNngwbVSB6MLGgt5Kl7LQXpv4QE6ybnHW+DM4LteTP8A6lj8LEkQ7+usLQ==
 
-react-native-device-info@11.1.0, react-native-device-info@~10.3.0:
-  version "11.1.0"
-  resolved "https://registry.npmmirror.com/react-native-device-info/-/react-native-device-info-11.1.0.tgz#7db5c4e5a179dce761efac155a493aa0956a40ab"
-  integrity sha512-hzXJSObJdezEz0hF7MAJ3tGeoesuQWenXXt9mrQR9Mjb8kXpZ09rqSsZ/quNpJdZpQ3rYiFa3/0GFG5KNn9PBg==
+react-native-device-info@13.0.0, react-native-device-info@~10.3.0:
+  version "13.0.0"
+  resolved "https://registry.yarnpkg.com/react-native-device-info/-/react-native-device-info-13.0.0.tgz#6c272ffe805f74b2aaa22c81ae989286448c83b4"
+  integrity sha512-TKCq4XKl8lzB04RdEbADxkbzDJwOfWcxZxNcf1LweT+A+KRAUv1no7bch7RM0WLyMVKMTa2hbusESnzxB5QQRA==
 
 react-native-document-picker@9.3.1:
   version "9.3.1"
@@ -17683,10 +17683,10 @@ react-native-quick-sqlite@8.1.0:
   resolved "https://registry.npmmirror.com/react-native-quick-sqlite/-/react-native-quick-sqlite-8.1.0.tgz#befccdbbbb3c87d9a9d16094ab4f509a5a93c3d6"
   integrity sha512-PxAWo/xiBULcD+E+jC+zSJlu3xPYzJhPBXKN5WeyfIyID1dXJ6vm2q1ic5166q9m8ZxpDM+JC9ZhaAHGw9N3wA==
 
-react-native-reanimated@3.15.1:
-  version "3.15.1"
-  resolved "https://registry.yarnpkg.com/react-native-reanimated/-/react-native-reanimated-3.15.1.tgz#59fb0ce9de7b8c7add2bcea80911cce332349a0e"
-  integrity sha512-DbBeUUExtJ1x1nfE94I8qgDgWjq5ztM3IO/+XFO+agOkPeVpBs5cRnxHfJKrjqJ2MgwhJOUDmtHxo+tDsoeitg==
+react-native-reanimated@3.15.2:
+  version "3.15.2"
+  resolved "https://registry.yarnpkg.com/react-native-reanimated/-/react-native-reanimated-3.15.2.tgz#d0fe19006255f7ac350ff27de0b56b8fa11ef270"
+  integrity sha512-2kg80jhPCYAxoT+xx/+oTvOkc2YbzD0mfodQ8y7OtR1aZUECXd3UnHb6uN2J19TFF4si1TKS5Qi17R4qOENBHA==
   dependencies:
     "@babel/plugin-transform-arrow-functions" "^7.0.0-0"
     "@babel/plugin-transform-class-properties" "^7.0.0-0"
@@ -17724,10 +17724,10 @@ react-native-saf-x@2.2.3:
   resolved "https://registry.npmmirror.com/react-native-saf-x/-/react-native-saf-x-2.2.3.tgz#677287eb1db0ba310c7022c9440509d8f6787a6e"
   integrity sha512-aPQbUfuHy8txZ/+t8Daoy8G3aRZ5H+0/SH9mJdb6quvxvt48jeIjq2n82anV77tSCXyX0du955PrtWpRzYliPQ==
 
-react-native-safe-area-context@4.10.9, react-native-safe-area-context@~4.4.1:
-  version "4.10.9"
-  resolved "https://registry.yarnpkg.com/react-native-safe-area-context/-/react-native-safe-area-context-4.10.9.tgz#6ab82dc866ab499b101b033cb0f5b40125a4d410"
-  integrity sha512-wz/JXV1kARWyP5q93PFNKQP03StVBimOK7rRYEJjM+blZdXbM6H7EP3XhQUb6OK620+0M1AzpcGgyTHvgSJNAw==
+react-native-safe-area-context@4.11.0, react-native-safe-area-context@~4.4.1:
+  version "4.11.0"
+  resolved "https://registry.yarnpkg.com/react-native-safe-area-context/-/react-native-safe-area-context-4.11.0.tgz#d45271363672dc1923ddb0ce5a6ad588e210c85d"
+  integrity sha512-Bg7bozxEB+ZS+H3tVYs5yY1cvxNXgR6nRQwpSMkYR9IN5CbxohLnSprrOPG/ostTCd4F6iCk0c51pExEhifSKQ==
 
 react-native-screens@3.34.0, react-native-screens@~3.20.0:
   version "3.34.0"
@@ -17823,10 +17823,10 @@ react-native-user-agent@2.3.1:
   resolved "https://registry.npmmirror.com/react-native-user-agent/-/react-native-user-agent-2.3.1.tgz#81308be0026d9d4e50cc8f1126068d58e6745868"
   integrity sha512-AIFr1VgJHwgWmMwCOmIGxuBeAaADlouXKc10UyR4fzWneUbt5uIJIoRu2oExlfCtiT8IyCp106khDD5vx7RUjw==
 
-react-native-vector-icons@10.1.0, react-native-vector-icons@^9.2.0:
-  version "10.1.0"
-  resolved "https://registry.npmmirror.com/react-native-vector-icons/-/react-native-vector-icons-10.1.0.tgz#c98a225213700177d23492e32d1dc920b9bae8aa"
-  integrity sha512-fdQjCHIdoXmRoTZ5gvN1FmT4sGLQ2wmQiNZHKJQUYnE2tkIwjGnxNch+6Nd4lHAACvMWO7LOzBNot2u/zlOmkw==
+react-native-vector-icons@10.2.0, react-native-vector-icons@^9.2.0:
+  version "10.2.0"
+  resolved "https://registry.yarnpkg.com/react-native-vector-icons/-/react-native-vector-icons-10.2.0.tgz#f438f2ca16f7d6be658fd6ec8f0d2b7e2132b91c"
+  integrity sha512-n5HGcxUuVaTf9QJPs/W22xQpC2Z9u0nb0KgLPnVltP8vdUvOp6+R26gF55kilP/fV4eL4vsAHUqUjewppJMBOQ==
   dependencies:
     prop-types "^15.7.2"
     yargs "^16.1.1"
@@ -17843,10 +17843,10 @@ react-native-view-shot@3.8.0, react-native-view-shot@^3.8.0:
   dependencies:
     html2canvas "^1.4.1"
 
-react-native-vlc-media-player@1.0.69:
-  version "1.0.69"
-  resolved "https://registry.yarnpkg.com/react-native-vlc-media-player/-/react-native-vlc-media-player-1.0.69.tgz#fe243e15fe7e536f87a898f9905f999c6572f2de"
-  integrity sha512-FUDjel9vv58O9L3jgtaDrnh2N/jL7WGrM0neL2rg0KU1k4VH7fIy0EymSUzp8R9zW54Ve1v/CQW4ORHUN1TzQw==
+react-native-vlc-media-player@1.0.70:
+  version "1.0.70"
+  resolved "https://registry.yarnpkg.com/react-native-vlc-media-player/-/react-native-vlc-media-player-1.0.70.tgz#49f0f3120654dde0d1d5f0f0fa3c20fdd879d044"
+  integrity sha512-sEJW0+qWgxyUJBmrG4w/arua4rFnGwQLQ5eaqttTAnAtFY+4p+nwIBrORKO146paUntpL9yJH3+teZli+B+SeQ==
   dependencies:
     react-native-slider "^0.11.0"
     react-native-vector-icons "^9.2.0"
