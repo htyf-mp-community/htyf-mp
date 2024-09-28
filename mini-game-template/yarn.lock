@@ -155,10 +155,10 @@
   dependencies:
     is-negated-glob "^1.0.0"
 
-"@htyf-mp/engines@^0.5.13":
-  version "0.5.13"
-  resolved "https://registry.yarnpkg.com/@htyf-mp/engines/-/engines-0.5.13.tgz#e38a51f14da2b4d350423aa3e19b76a78c636544"
-  integrity sha512-CqWjVRqGU5wRKUP6b7VCJXHKWI7LC/Fi9jfdpx2PqJKGi7qX06t93z/FvBtdAO/o9xayuTggxzuDEKdO25/6Jg==
+"@htyf-mp/engines@^0.5.15":
+  version "0.5.15"
+  resolved "https://registry.npmmirror.com/@htyf-mp/engines/-/engines-0.5.15.tgz#2a351af64e77d1ad7a7076f944ac5e5f10838541"
+  integrity sha512-oF1JKLbjnrAn54rBBYuv1G3iyf1aSAJYJWG9Wg5gCAFs3DX2TvpSRvFx8guYzSszJ9CAn2gG3QsEau9dxQDLUw==
   dependencies:
     "@callstack/repack" "^3.7.0"
     "@gorhom/bottom-sheet" "^4.6.0"
@@ -196,7 +196,7 @@
 
 "@htyf-mp/js-sdk@^0.0.22":
   version "0.0.22"
-  resolved "https://registry.yarnpkg.com/@htyf-mp/js-sdk/-/js-sdk-0.0.22.tgz#e87b564a3e459936ce47ca7f6ef9b269c65d8fbd"
+  resolved "https://registry.npmmirror.com/@htyf-mp/js-sdk/-/js-sdk-0.0.22.tgz#e87b564a3e459936ce47ca7f6ef9b269c65d8fbd"
   integrity sha512-9DoU+BSQ2FokqWyWwXGyxY+rdkQGKgfySXPuDUjwPFDGqGk9ZG7S2G8DE6aQu61lpkrHHISogHYYZ0XlKzZb/g==
   dependencies:
     "@fingerprintjs/fingerprintjs" "^3.3.3"
