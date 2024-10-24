@@ -2595,9 +2595,9 @@
   dependencies:
     "@hapi/hoek" "^9.0.0"
 
-"@htyf-mp/engines@0.5.17":
+"@htyf-mp/engines@^0.5.17":
   version "0.5.17"
-  resolved "https://registry.npmmirror.com/@htyf-mp/engines/-/engines-0.5.17.tgz#a716d43114c5f309fb10fcd2ec0b5599de24951b"
+  resolved "https://registry.yarnpkg.com/@htyf-mp/engines/-/engines-0.5.17.tgz#a716d43114c5f309fb10fcd2ec0b5599de24951b"
   integrity sha512-WjG7EUKIvt2Egn9IeW/OdlSwrDMHai+sIvz6TZJuHWKSmyLTjhqaZz9YqpzZyeIJNDj9txeuZ3a5tbEVDfa7uA==
   dependencies:
     "@callstack/repack" "^3.7.0"
@@ -2634,9 +2634,9 @@
     webpack-merge "5.10.0"
     yarn-add-no-save "1.0.3"
 
-"@htyf-mp/js-sdk@0.0.22":
+"@htyf-mp/js-sdk@^0.0.22":
   version "0.0.22"
-  resolved "https://registry.npmmirror.com/@htyf-mp/js-sdk/-/js-sdk-0.0.22.tgz#e87b564a3e459936ce47ca7f6ef9b269c65d8fbd"
+  resolved "https://registry.yarnpkg.com/@htyf-mp/js-sdk/-/js-sdk-0.0.22.tgz#e87b564a3e459936ce47ca7f6ef9b269c65d8fbd"
   integrity sha512-9DoU+BSQ2FokqWyWwXGyxY+rdkQGKgfySXPuDUjwPFDGqGk9ZG7S2G8DE6aQu61lpkrHHISogHYYZ0XlKzZb/g==
   dependencies:
     "@fingerprintjs/fingerprintjs" "^3.3.3"
