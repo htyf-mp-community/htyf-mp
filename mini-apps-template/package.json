@@ -63,7 +63,7 @@
     "@expo/metro-runtime": "3.2.1",
     "@gorhom/bottom-sheet": "4.6.4",
     "@htyf-mp/engines": "^0.5.17",
-    "@htyf-mp/js-sdk": "^0.0.24",
+    "@htyf-mp/js-sdk": "^0.0.25",
     "@pmmmwh/react-refresh-webpack-plugin": "0.5.15",
     "@react-native-async-storage/async-storage": "2.0.0",
     "@react-native-camera-roll/camera-roll": "7.8.3",

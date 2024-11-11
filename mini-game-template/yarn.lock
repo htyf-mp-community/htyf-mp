@@ -940,10 +940,10 @@
     webpack-merge "5.10.0"
     yarn-add-no-save "1.0.3"
 
-"@htyf-mp/js-sdk@^0.0.24":
-  version "0.0.24"
-  resolved "https://registry.yarnpkg.com/@htyf-mp/js-sdk/-/js-sdk-0.0.24.tgz#90a7698497e75f494a0ad1db43bb767f3469c083"
-  integrity sha512-OX0R/p9hoQ3Uuor0ByNaQM0usf9WrJ03FXlWbo4GxoqS5TGeHoU6kgWec72BZcw1lU0fec+UNKs4Bgdn+nFxQA==
+"@htyf-mp/js-sdk@^0.0.25":
+  version "0.0.25"
+  resolved "https://registry.yarnpkg.com/@htyf-mp/js-sdk/-/js-sdk-0.0.25.tgz#2ff5dd34ed142ff23b157641e8eadd9ec48a71df"
+  integrity sha512-B3MeeHS9FVsf/A2lunaB3yLPe8jAzkfRw7DbHnWyxblHvMo/4tSjaaIcffcpKJ6Sb9mqY9YUiRIW38xuzLGSzQ==
   dependencies:
     "@fingerprintjs/fingerprintjs" "^3.3.3"
     "@react-native-async-storage/async-storage" "^2.0.0"
