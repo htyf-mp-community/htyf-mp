@@ -19,7 +19,7 @@ export default function Root() {
   }, [])
   const AppRoot = useCallback(() => {
     // @ts-ignore
-    const sdk = global[`__GLOBAL_MINI_APP_SDK__`] = useMiniAppSdk();
+    const sdk = global[`__DGZ_GLOBAL_CURRENT_MP_CLIENT__`] = useMiniAppSdk();
     return  <App />
   }, [])
   return <GestureHandlerRootView>
