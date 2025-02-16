@@ -1,8 +1,8 @@
 /** 禁止修改此块代码 */
 import * as SplashScreen from 'expo-splash-screen';
 import App from './src'
-import { useCallback, useEffect } from 'react';
-import { MiniAppsEnginesProvider, useMiniAppSdk } from '@htyf-mp/engines'
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { SDKPortal } from '@htyf-mp/engines'
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
@@ -11,22 +11,39 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 SplashScreen.preventAutoHideAsync();
 
 export default function Root() {
+  const skdRef = useRef();
+  const [isReady, setIsReady] = useState(false);
+  // @ts-ignore
+  global[`__DGZ_GLOBAL_CURRENT_MP_CLIENT__`] = skdRef.current;
+  
   useEffect(() => {
     SplashScreen.hideAsync();
     return () => {
 
     }
   }, [])
-  const AppRoot = useCallback(() => {
+  const AppRoot = useCallback((props) => {
     // @ts-ignore
-    const sdk = global[`__DGZ_GLOBAL_CURRENT_MP_CLIENT__`] = useMiniAppSdk();
+    global[`__DGZ_GLOBAL_CURRENT_MP_CLIENT__`] = props.sdk;
     return  <App />
   }, [])
   return <GestureHandlerRootView>
     <SafeAreaProvider>
-      <MiniAppsEnginesProvider>
-        <AppRoot />
-      </MiniAppsEnginesProvider>
+      <>
+        {
+          (isReady && skdRef.current) && <AppRoot sdk={skdRef.current} />
+        }
+        <SDKPortal 
+          appid={pkg.appid} 
+          ref={skdRef} 
+          launchOptions={{
+            extraData: {}
+          }}
+          onReady={() => {
+            setIsReady(true);
+          }}
+        />
+      </>
     </SafeAreaProvider>
   </GestureHandlerRootView>;
 }
