@@ -16,8 +16,8 @@
     "build:dgz": "npm run run:scripts && htyf-mp --build"
   },
   "dependencies": {
-    "@htyf-mp/engines": "^0.5.20",
-    "@htyf-mp/js-sdk": "^0.0.28"
+    "@htyf-mp/engines": "^0.5.22",
+    "@htyf-mp/js-sdk": "^0.0.29"
   },
   "devDependencies": {
     "qrcode": "^1.5.3"
