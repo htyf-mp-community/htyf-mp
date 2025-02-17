@@ -1,10 +1,11 @@
 /** 禁止修改此块代码 */
 import * as SplashScreen from 'expo-splash-screen';
-import App from './src'
-import { useCallback, useEffect, useRef, useState } from 'react';
+import React from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { SDKPortal } from '@htyf-mp/engines'
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import App from './src'
 import pkg from './project.dgz.json'
 
 
@@ -20,28 +21,25 @@ export default function Root() {
 
     }
   }, [])
-  const AppRoot = useCallback((props: {sdk: any}) => {
-    // @ts-ignore
-    global[`__DGZ_GLOBAL_CURRENT_MP_CLIENT__`] = props.sdk;
-    return  <App />
-  }, [])
+
   return <GestureHandlerRootView>
     <SafeAreaProvider>
-      <>
+      <React.Fragment>
         {
-          (isReady && skdRef.current) ? <AppRoot sdk={skdRef.current} /> : null
+          (isReady && skdRef.current) ? <App /> : null
         }
         <SDKPortal 
           appid={pkg.appid} 
-          ref={skdRef} 
           launchOptions={{
             extraData: {}
           }}
-          onReady={() => {
+          onReady={(sdk) => {
+            // @ts-ignore
+            global[`__DGZ_GLOBAL_CURRENT_MP_CLIENT__`] = skdRef.current = sdk;
             setIsReady(true);
           }}
         />
-      </>
+      </React.Fragment>
     </SafeAreaProvider>
   </GestureHandlerRootView>;
 }
