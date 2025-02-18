@@ -35,7 +35,11 @@ const MiniApp = () => {
     <TouchableOpacity
       onPress={async () => {
         const data = await jssdk.openQR()
-        Alert.alert('二维码', JSON.stringify(data))
+        jssdk.showToast({
+          title: '二维码',
+          description: JSON.stringify(data),
+          duration: 2000,
+        })
       }}
     >
       <Text>打开二维码</Text>
