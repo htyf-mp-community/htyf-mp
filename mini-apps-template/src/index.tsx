@@ -9,6 +9,7 @@ const MiniApp = () => {
     flex: 1,
     justifyContent: 'center', 
     alignItems: 'center',
+    backgroundColor: 'white'
   }}>
     <Text style={{color: 'red', fontSize: 30,}}>DEMO</Text>
     <View>
