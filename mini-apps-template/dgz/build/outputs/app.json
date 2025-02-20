@@ -1,8 +1,1 @@
-{
-  "type": "app",
-  "name": "模版",
-  "appid": "__temp_appid__",
-  "version": "0.0.24",
-  "appUrlConfig": "https://raw.githubusercontent.com/htyf-mp-community/htyf-mp/main/mini-apps-template/dgz/build/outputs/app.json",
-  "zipUrl": "https://raw.githubusercontent.com/htyf-mp-community/htyf-mp/main/mini-apps-template/dgz/build/outputs/dist.dgz"
-}
+{"type":"app","name":"模版","appid":"__temp_appid____dev__","version":"0.0.24.1740011546825","appUrlConfig":"http://172.16.16.5:8000/app.json","zipUrl":"http://172.16.16.5:8000/dist.dgz"}

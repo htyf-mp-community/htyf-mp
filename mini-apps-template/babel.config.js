@@ -1,21 +1,19 @@
 /** 非必要禁止修改此块代码 */
-const pkg = require('./package.json');
-const dgz = require('./project.dgz.json');
+const dgz = require('./project.dgz.json')
+const pkg = require('./package.json')
 
 module.exports = function (api) {
   api.cache(true);
+  let type = 'htyf-mp';
+  let presets = ['module:metro-react-native-babel-preset'];
+  if (process.env.EXPO_PUBLIC_PROJECT_ROOT) {
+    presets = ['babel-preset-expo'];
+    type = 'expo';
+  }
+  console.log('run', type)
   return {
-    presets: ['babel-preset-expo'],
+    presets: presets,
     plugins: [
-      [
-        'module-resolver',
-        {
-          root: ['.'],
-          alias: {
-            '@': './src',
-          },
-        },
-      ],
       [
         'transform-define',
         {
@@ -33,6 +31,16 @@ module.exports = function (api) {
           __APP_DEFINE_BUILD_TIME__: `${new Date().getTime()}`,
         },
       ],
-    ]
+      [
+        'module-resolver',
+        {
+          root: ['.'],
+          alias: {
+            '@': './src',
+          },
+        },
+      ],
+      'react-native-reanimated/plugin',
+    ],
   };
 };

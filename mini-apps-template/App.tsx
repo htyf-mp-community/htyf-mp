@@ -8,7 +8,6 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import App from './src'
 import pkg from './project.dgz.json'
 
-
 // keep the splash screen visible while complete fetching resources
 SplashScreen.preventAutoHideAsync();
 
