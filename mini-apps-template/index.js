@@ -1,7 +1,7 @@
 /** 禁止修改此块代码 */
 import * as SplashScreen from 'expo-splash-screen';
 import React from 'react';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { SDKPortal } from '@htyf-mp/engines'
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
@@ -12,7 +12,6 @@ import pkg from './project.dgz.json'
 SplashScreen.preventAutoHideAsync();
 
 export default function Root() {
-  const skdRef = useRef();
   const [isReady, setIsReady] = useState(false);
   useEffect(() => {
     SplashScreen.hideAsync();
@@ -25,7 +24,7 @@ export default function Root() {
     <SafeAreaProvider>
       <>
         {
-          (isReady && skdRef.current) && <App />
+          (isReady) && <App />
         }
         <SDKPortal 
           appid={pkg.appid} 
@@ -34,8 +33,6 @@ export default function Root() {
             extraData: {}
           }}
           onReady={() => {
-            // @ts-ignore
-            global[`__DGZ_GLOBAL_CURRENT_MP_CLIENT__`] = skdRef.current = sdk;
             setIsReady(true);
           }}
         />
