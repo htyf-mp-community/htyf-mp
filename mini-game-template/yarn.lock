@@ -901,10 +901,10 @@
   dependencies:
     is-negated-glob "^1.0.0"
 
-"@htyf-mp/engines@^0.5.29":
-  version "0.5.29"
-  resolved "https://registry.yarnpkg.com/@htyf-mp/engines/-/engines-0.5.29.tgz#7e02ab112569628c61e68ad70ed1a953b2cc86bf"
-  integrity sha512-exByc/8BEHte1P97W9riAvl+epGZkZgrERFId+Y85UkQ3F1p1ht7PbJWuNwgzOaCTN/dxfvb+2dWieJTkal2wA==
+"@htyf-mp/engines@^0.5.30":
+  version "0.5.30"
+  resolved "https://registry.yarnpkg.com/@htyf-mp/engines/-/engines-0.5.30.tgz#c19b08fcdb4b1ce498fa380eca0a06c0421dce87"
+  integrity sha512-fpeyRT9NOVOX9THB3/ynrUcyBCnm/J9IcyPTTxlNYGTjBMIQjToRmk2ef361dA3LamyaWZWigB5/atdZaT67ew==
   dependencies:
     "@callstack/repack" "^3.7.0"
     "@gorhom/bottom-sheet" "^4.6.0"
@@ -927,6 +927,7 @@
     portfinder "^1.0.32"
     qrcode "^1.5.3"
     react-native-keyboard-controller "^1.11.1"
+    react-native-shadow-2 "^7.1.1"
     react-native-splash-screen "^3.3.0"
     request "^2.88.2"
     rimraf "^5.0.5"
@@ -940,10 +941,10 @@
     webpack-merge "5.10.0"
     yarn-add-no-save "1.0.3"
 
-"@htyf-mp/js-sdk@^0.0.31":
-  version "0.0.31"
-  resolved "https://registry.yarnpkg.com/@htyf-mp/js-sdk/-/js-sdk-0.0.31.tgz#bccf8e45824b7ad67537c3b1a31cc6cfb5d70e38"
-  integrity sha512-bP+PqRqKV8sH5fM7G206hxq3unuBCv4I/v0qOJ2DHMs8lRRKxSFZo5jgHhYZY64D1SPCmNmkMDOWVNAYDzYyew==
+"@htyf-mp/js-sdk@^0.0.32":
+  version "0.0.32"
+  resolved "https://registry.yarnpkg.com/@htyf-mp/js-sdk/-/js-sdk-0.0.32.tgz#3c726ea4a73fbc58f5fe357bb59ac19344752962"
+  integrity sha512-7k3s46F1KDnpH11+ghDdPg/9v2ghIswVV4l08TTxkSapJehsODcB9eMwfS+YcpKlEF0GBVX5mzxAoOoRcnUymg==
   dependencies:
     "@fingerprintjs/fingerprintjs" "^3.3.3"
     "@react-native-async-storage/async-storage" "^2.0.0"
@@ -2495,6 +2496,11 @@ color-name@~1.1.4:
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/color-name/-/color-name-1.1.4.tgz#c2a09a87acbde69543de6f63fa3995c826c536a2"
   integrity sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==
+
+colord@2.9.2:
+  version "2.9.2"
+  resolved "https://registry.yarnpkg.com/colord/-/colord-2.9.2.tgz#25e2bacbbaa65991422c07ea209e2089428effb1"
+  integrity sha512-Uqbg+J445nc1TKn4FoDPS6ZZqAvEDnwrH42yo8B40JSOgSLxMZ/gt3h4nmCtPLQeXhjJJkqBx7SCY35WnIixaQ==
 
 colorette@^1.2.2:
   version "1.4.0"
@@ -6108,6 +6114,13 @@ react-native-permissions@^4.1.4:
   version "4.1.5"
   resolved "https://registry.yarnpkg.com/react-native-permissions/-/react-native-permissions-4.1.5.tgz#db4d1ddbf076570043f4fd4168f54bb6020aec92"
   integrity sha512-r6VMRacASmtRHS+GZ+5HQCp9p9kiE+UU9magHOZCXZLTJitdTuVHWZRrb4v4oqZGU+zAp3mZhTQftuMMv+WLUg==
+
+react-native-shadow-2@^7.1.1:
+  version "7.1.1"
+  resolved "https://registry.yarnpkg.com/react-native-shadow-2/-/react-native-shadow-2-7.1.1.tgz#3ef760f629bd3678eab68de5ef352a1b79302c49"
+  integrity sha512-zmzcVFzys+jMe1UJUKaNsMEpFa2/1o9SoUjweapolcgxq0h935VCSAqxkUwkYpOpxFhK9BmcmYy5xZLO9dnkIw==
+  dependencies:
+    colord "2.9.2"
 
 react-native-splash-screen@^3.3.0:
   version "3.3.0"
