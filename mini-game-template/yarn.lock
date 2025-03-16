@@ -901,10 +901,10 @@
   dependencies:
     is-negated-glob "^1.0.0"
 
-"@htyf-mp/engines@^0.5.36":
-  version "0.5.36"
-  resolved "https://registry.yarnpkg.com/@htyf-mp/engines/-/engines-0.5.36.tgz#c813debe738978f3b786616fe5fd62d08d385082"
-  integrity sha512-/dOS9xERgT1syZqXxT5MAp3cqSNYSzGRJI/BkrmDzZF8MXh3R7o/zWK8auY06yuHVxUp8uX3mlwUTvHcC1rm6w==
+"@htyf-mp/engines@^0.5.37":
+  version "0.5.37"
+  resolved "https://registry.yarnpkg.com/@htyf-mp/engines/-/engines-0.5.37.tgz#343e8addab39381b2380d76c83b4abc1648048d2"
+  integrity sha512-EJhpk7mWGjbGGySreEe+p74CD02x0pr6KEbVGiivPEqTWXgdttuZzc8DQxApRzK97eyR7LZJRJo3SEFWL8bd6Q==
   dependencies:
     "@callstack/repack" "^3.7.0"
     "@gorhom/bottom-sheet" "^4.6.0"
@@ -917,6 +917,7 @@
     dayjs "^1.11.10"
     delay "5"
     eventemitter2 "^6.4.9"
+    expo-camera "^16.0.18"
     fs-extra "^11.2.0"
     gulp "^5.0.0"
     inquirer "8.2.0"
@@ -3191,6 +3192,13 @@ expand-tilde@^2.0.0, expand-tilde@^2.0.2:
   integrity sha512-A5EmesHW6rfnZ9ysHQjPdJRni0SRar0tjtG5MNtm9n5TUvsYU8oozprtRD4AqHxcZWWlVuAmQo2nWKfN9oyjTw==
   dependencies:
     homedir-polyfill "^1.0.1"
+
+expo-camera@^16.0.18:
+  version "16.0.18"
+  resolved "https://registry.yarnpkg.com/expo-camera/-/expo-camera-16.0.18.tgz#5b54dc1a929c12732c585b137b04cef2b01dee3b"
+  integrity sha512-NP5u2yyc+wZc9GdUXH+jcEytyXZwBnHxItMwXoZQQxi4wgltwvs4XfSWjBtRZe1LngnhpBfPyPJV0aShjWlLDg==
+  dependencies:
+    invariant "^2.2.4"
 
 exponential-backoff@^3.1.1:
   version "3.1.1"

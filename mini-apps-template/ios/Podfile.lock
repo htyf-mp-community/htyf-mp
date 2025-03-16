@@ -1729,8 +1729,27 @@ PODS:
     - React-Core
   - RNCClipboard (1.16.1):
     - React-Core
-  - RNCMaskedView (0.3.1):
+  - RNCMaskedView (0.3.2):
+    - DoubleConversion
+    - glog
+    - hermes-engine
+    - RCT-Folly (= 2024.01.01.00)
+    - RCTRequired
+    - RCTTypeSafety
+    - React-Codegen
     - React-Core
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-ImageManager
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-rendererdebug
+    - React-utils
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - Yoga
   - RNCPicker (2.11.0):
     - React-Core
   - RNDateTimePicker (8.3.0):
@@ -1741,6 +1760,8 @@ PODS:
     - React-Core
     - SDWebImage
     - SDWebImageWebPCoder
+  - RNFileViewer (2.1.5):
+    - React-Core
   - RNFlashList (1.7.3):
     - DoubleConversion
     - glog
@@ -2115,6 +2136,7 @@ DEPENDENCIES:
   - "RNDateTimePicker (from `../node_modules/@react-native-community/datetimepicker`)"
   - RNDeviceInfo (from `../node_modules/react-native-device-info`)
   - RNFastImage (from `../node_modules/react-native-fast-image`)
+  - RNFileViewer (from `../node_modules/react-native-file-viewer`)
   - "RNFlashList (from `../node_modules/@shopify/flash-list`)"
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - RNLocalize (from `../node_modules/react-native-localize`)
@@ -2430,6 +2452,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-device-info"
   RNFastImage:
     :path: "../node_modules/react-native-fast-image"
+  RNFileViewer:
+    :path: "../node_modules/react-native-file-viewer"
   RNFlashList:
     :path: "../node_modules/@shopify/flash-list"
   RNGestureHandler:
@@ -2597,11 +2621,12 @@ SPEC CHECKSUMS:
   RNCAsyncStorage: b9f5f78da5d16a853fe3dc22e8268d932fc45a83
   RNCCheckbox: 450ce156f3e29e25efa0315c96cfbabe5a39ded1
   RNCClipboard: ee059e6006b137e369caed5eb852b4aad9f5d886
-  RNCMaskedView: de80352547bd4f0d607bf6bab363d826822bd126
+  RNCMaskedView: af7c1703f39cdef08a99275bfcadf324aa403403
   RNCPicker: 124b4fb5859ba1a3fd53a91e16d1e7a0fc016e59
   RNDateTimePicker: 29264364ea7b8cc0fb355b3843cf276a4ff78966
   RNDeviceInfo: ae4e1a9b955b2a65314588cc7251795631925668
   RNFastImage: 3211d456215a18a31a0b9727005fe0ca52514b27
+  RNFileViewer: 4b5d83358214347e4ab2d4ca8d5c1c90d869e251
   RNFlashList: 69ec93baaaeba8b2306546782bd5638f59a118fa
   RNGestureHandler: 4c50b5e4ca199cf497511d44e3fe45d54d62e279
   RNLocalize: 15463c4d79c7da45230064b4adcf5e9bb984667e
