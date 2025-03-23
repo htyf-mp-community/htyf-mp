@@ -903,7 +903,7 @@
 
 "@htyf-mp/engines@^0.5.37":
   version "0.5.37"
-  resolved "https://registry.yarnpkg.com/@htyf-mp/engines/-/engines-0.5.37.tgz#343e8addab39381b2380d76c83b4abc1648048d2"
+  resolved "https://registry.npmmirror.com/@htyf-mp/engines/-/engines-0.5.37.tgz#343e8addab39381b2380d76c83b4abc1648048d2"
   integrity sha512-EJhpk7mWGjbGGySreEe+p74CD02x0pr6KEbVGiivPEqTWXgdttuZzc8DQxApRzK97eyR7LZJRJo3SEFWL8bd6Q==
   dependencies:
     "@callstack/repack" "^3.7.0"
@@ -945,7 +945,7 @@
 
 "@htyf-mp/js-sdk@^0.0.36":
   version "0.0.36"
-  resolved "https://registry.yarnpkg.com/@htyf-mp/js-sdk/-/js-sdk-0.0.36.tgz#1557cd34011e125d7d667dfb950629b8b95551d3"
+  resolved "https://registry.npmmirror.com/@htyf-mp/js-sdk/-/js-sdk-0.0.36.tgz#1557cd34011e125d7d667dfb950629b8b95551d3"
   integrity sha512-GBnsIoFysgUb/BjA6gGj2esfpGcVTdCsHJYM9T5d2bTTImrXEdt04uTAMu2V22J7GcSnF977dTdcZnwRa9+UQw==
   dependencies:
     "@fingerprintjs/fingerprintjs" "^3.3.3"
