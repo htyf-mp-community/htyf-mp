@@ -20041,11 +20041,6 @@ react-native-get-random-values@1.11.0:
   dependencies:
     fast-base64-decode "^1.0.0"
 
-react-native-iap@12.15.6:
-  version "12.15.6"
-  resolved "https://registry.yarnpkg.com/react-native-iap/-/react-native-iap-12.15.6.tgz#35360ac146a784932cbaf1750f07fdb80703338f"
-  integrity sha512-aIHeHoOJTCcVfwaoV1PqSib+hKKouizzqzO/RCe9/aFKZc4MaArLBKoKvQt7PYBzzdDXh3vq8F5mybzMyOdtmg==
-
 react-native-image-colors@2.4.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/react-native-image-colors/-/react-native-image-colors-2.4.0.tgz#6af1d5fe0e994331de789c1fa33788971f755aec"
