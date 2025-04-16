@@ -3324,16 +3324,17 @@
   dependencies:
     "@hapi/hoek" "^9.0.0"
 
-"@htyf-mp/engines@^0.5.47":
-  version "0.5.47"
-  resolved "https://registry.yarnpkg.com/@htyf-mp/engines/-/engines-0.5.47.tgz#7e5d727e114288960a4ee2711bca94efcb9a786b"
-  integrity sha512-AEiyuNGnYvq2f6qeSkv0vPs66uF1Scg6EtwT5bgfLf7k0Nvn91hVF3nGey/+Zqu3KxhnqpxLHdzQDjPGb21x7Q==
+"@htyf-mp/engines@^0.5.49":
+  version "0.5.49"
+  resolved "https://registry.yarnpkg.com/@htyf-mp/engines/-/engines-0.5.49.tgz#a4e4206877c271639c55202619188884a19a7e60"
+  integrity sha512-ISd3IiDeCHsJfEeFdOGh/eHB5PHpEeUbZHfgpfC5jww9t+vxdU0n4cCN3DkJLoSeRL9cs4UxvaV58DosXlylwA==
   dependencies:
     "@callstack/repack" "^3.7.0"
     "@gorhom/bottom-sheet" "^4.6.0"
     "@react-native-clipboard/clipboard" "^1.13.2"
     "@react-native-community/hooks" "^3.0.0"
     "@react-native-segmented-control/segmented-control" "^2.5.0"
+    "@types/react-native-video" "^5.0.20"
     "@types/uuid" "^9.0.8"
     adm-zip "0.5.10"
     babel-plugin-transform-remove-debugger "^6.9.4"
@@ -6964,6 +6965,14 @@
   dependencies:
     "@types/react" "*"
     "@types/react-native" "^0.70"
+
+"@types/react-native-video@^5.0.20":
+  version "5.0.20"
+  resolved "https://registry.yarnpkg.com/@types/react-native-video/-/react-native-video-5.0.20.tgz#32b8409aed4a0e91f15ab110b2efef8a58e2fc1c"
+  integrity sha512-CdD4T43uEKzTNJ/RylTDViNuGuyOPWQUEuA1Y9GY8T+HiE9cwYw1zQNqk8a7zz9GHamlPfJQ+bYoEE9OWjZ/6g==
+  dependencies:
+    "@types/react" "*"
+    react-native "*"
 
 "@types/react-native@0.73.0", "@types/react-native@^0.70":
   version "0.73.0"
