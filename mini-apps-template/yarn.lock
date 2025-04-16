@@ -3324,7 +3324,7 @@
   dependencies:
     "@hapi/hoek" "^9.0.0"
 
-"@htyf-mp/engines@^0.5.49":
+"@htyf-mp/engines@0.5.49":
   version "0.5.49"
   resolved "https://registry.yarnpkg.com/@htyf-mp/engines/-/engines-0.5.49.tgz#a4e4206877c271639c55202619188884a19a7e60"
   integrity sha512-ISd3IiDeCHsJfEeFdOGh/eHB5PHpEeUbZHfgpfC5jww9t+vxdU0n4cCN3DkJLoSeRL9cs4UxvaV58DosXlylwA==
@@ -3367,7 +3367,7 @@
     webpack-merge "5.10.0"
     yarn-add-no-save "1.0.3"
 
-"@htyf-mp/js-sdk@^0.0.37":
+"@htyf-mp/js-sdk@0.0.37":
   version "0.0.37"
   resolved "https://registry.yarnpkg.com/@htyf-mp/js-sdk/-/js-sdk-0.0.37.tgz#8037e6a544537c2f03ec975aeb3145378a4cb9bf"
   integrity sha512-a1OAr8+YwhiHKpQtZkjgszkj9Ew8xwtW2EBwd5mCVtHYrPwowIwET+8E60t8CiX0SNB6Kbh5z/lpa1yj0HNyUg==
@@ -20399,10 +20399,10 @@ react-native-view-shot@3.8.0, react-native-view-shot@^3.8.0:
   dependencies:
     html2canvas "^1.4.1"
 
-react-native-vlc-media-player@1.0.81:
-  version "1.0.81"
-  resolved "https://registry.yarnpkg.com/react-native-vlc-media-player/-/react-native-vlc-media-player-1.0.81.tgz#160c1590883b748920829f36efc661347ac13172"
-  integrity sha512-sXPrgR3VOadVXRnj1PCl4Eyp2Uc9oZix8BxxpxJh2tyK7t7esN0fYo6sWZvJgrkMTBFGhW2bynTO2s84NuMyhA==
+react-native-vlc-media-player@1.0.82:
+  version "1.0.82"
+  resolved "https://registry.yarnpkg.com/react-native-vlc-media-player/-/react-native-vlc-media-player-1.0.82.tgz#d9edea3fba07ad5558c8060b7b681cfda844b348"
+  integrity sha512-pbVHychGYokZVqpy1gEKoSW27iyOT/bP5EwGSJMo6ySPyVyiUWgQ/8jnkUbPMSb3yFtuDjBLoHQP+sifSobScQ==
   dependencies:
     react-native-slider "^0.11.0"
     react-native-vector-icons "^9.2.0"
