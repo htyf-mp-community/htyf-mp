@@ -14,6 +14,7 @@ module.exports = function (api) {
   return {
     presets: presets,
     plugins: [
+      'react-native-reanimated/plugin',
       [
         'transform-define',
         {
@@ -40,7 +41,6 @@ module.exports = function (api) {
           },
         },
       ],
-      'react-native-reanimated/plugin',
     ],
   };
 };
