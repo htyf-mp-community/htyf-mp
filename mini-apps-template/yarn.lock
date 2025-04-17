@@ -2453,6 +2453,18 @@
   resolved "https://registry.yarnpkg.com/@discoveryjs/json-ext/-/json-ext-0.5.7.tgz#1d572bfbbe14b7704e0ba0f39b74815b84870d70"
   integrity sha512-dBVuXR082gk3jsFp7Rd/JI4kytwGHecnCoTtXFb7DB6CNHp4rg5k1bhg0nWdLGLnOV71lmDzGQaLMy8iPLY0pw==
 
+"@dr.pogodin/js-utils@^0.0.12":
+  version "0.0.12"
+  resolved "https://registry.yarnpkg.com/@dr.pogodin/js-utils/-/js-utils-0.0.12.tgz#16657fc5d2f8053d009651b3ede755c1f9101c5e"
+  integrity sha512-XHSI8nW7SipmSGtTZsc3kDIBUilX84hcswuvOO488LKOq6rB06cwMYNfzm5TNzi7DrrmnwtGpobt0KW+t/4Omg==
+
+"@dr.pogodin/react-native-static-server@0.15.2":
+  version "0.15.2"
+  resolved "https://registry.yarnpkg.com/@dr.pogodin/react-native-static-server/-/react-native-static-server-0.15.2.tgz#3908c314e51140f71715e4fba5f7bac038029856"
+  integrity sha512-Dk/yO3uK2a+o/R8UtJNv0Ti3y7+7t4c8IQkKnMYgzbdyKLgwep6BS/Tc/GN1ab9nTrzNxQ8w9VXvYXYZEyZGmQ==
+  dependencies:
+    "@dr.pogodin/js-utils" "^0.0.12"
+
 "@egjs/hammerjs@^2.0.17":
   version "2.0.17"
   resolved "https://registry.yarnpkg.com/@egjs/hammerjs/-/hammerjs-2.0.17.tgz#5dc02af75a6a06e4c2db0202cae38c9263895124"
@@ -3324,10 +3336,10 @@
   dependencies:
     "@hapi/hoek" "^9.0.0"
 
-"@htyf-mp/engines@0.5.49":
-  version "0.5.49"
-  resolved "https://registry.yarnpkg.com/@htyf-mp/engines/-/engines-0.5.49.tgz#a4e4206877c271639c55202619188884a19a7e60"
-  integrity sha512-ISd3IiDeCHsJfEeFdOGh/eHB5PHpEeUbZHfgpfC5jww9t+vxdU0n4cCN3DkJLoSeRL9cs4UxvaV58DosXlylwA==
+"@htyf-mp/engines@^0.5.50":
+  version "0.5.50"
+  resolved "https://registry.yarnpkg.com/@htyf-mp/engines/-/engines-0.5.50.tgz#03c336c067cef2a6e689763cb14aa36291f3bcee"
+  integrity sha512-jLa1xUeBte36WEFhlj3/o2PvL3EJqO1dIUamuy0SPOG2i+nW2vMa50lkvPs8aGNMddJPbR1UKDOTHLMt6jGffg==
   dependencies:
     "@callstack/repack" "^3.7.0"
     "@gorhom/bottom-sheet" "^4.6.0"
@@ -3367,7 +3379,7 @@
     webpack-merge "5.10.0"
     yarn-add-no-save "1.0.3"
 
-"@htyf-mp/js-sdk@0.0.37":
+"@htyf-mp/js-sdk@^0.0.37":
   version "0.0.37"
   resolved "https://registry.yarnpkg.com/@htyf-mp/js-sdk/-/js-sdk-0.0.37.tgz#8037e6a544537c2f03ec975aeb3145378a4cb9bf"
   integrity sha512-a1OAr8+YwhiHKpQtZkjgszkj9Ew8xwtW2EBwd5mCVtHYrPwowIwET+8E60t8CiX0SNB6Kbh5z/lpa1yj0HNyUg==

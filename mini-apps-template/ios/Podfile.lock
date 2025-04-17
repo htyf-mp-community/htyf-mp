@@ -28,6 +28,27 @@ PODS:
     - Yoga
   - CocoaAsyncSocket (7.6.5)
   - DoubleConversion (1.1.6)
+  - dr-pogodin-react-native-static-server (0.15.2):
+    - DoubleConversion
+    - glog
+    - hermes-engine
+    - RCT-Folly (= 2024.01.01.00)
+    - RCTRequired
+    - RCTTypeSafety
+    - React-Codegen
+    - React-Core
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-ImageManager
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-rendererdebug
+    - React-utils
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - Yoga
   - EXApplication (5.9.1):
     - ExpoModulesCore
   - EXAV (14.0.7):
@@ -2005,6 +2026,7 @@ DEPENDENCIES:
   - BVLinearGradient (from `../node_modules/react-native-linear-gradient`)
   - "callstack-repack (from `../node_modules/@callstack/repack`)"
   - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
+  - "dr-pogodin-react-native-static-server (from `../node_modules/@dr.pogodin/react-native-static-server`)"
   - EXApplication (from `../node_modules/expo-application/ios`)
   - EXAV (from `../node_modules/expo-av/ios`)
   - EXBarCodeScanner (from `../node_modules/expo-barcode-scanner/ios`)
@@ -2189,6 +2211,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/@callstack/repack"
   DoubleConversion:
     :podspec: "../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec"
+  dr-pogodin-react-native-static-server:
+    :path: "../node_modules/@dr.pogodin/react-native-static-server"
   EXApplication:
     :path: "../node_modules/expo-application/ios"
   EXAV:
@@ -2494,6 +2518,7 @@ SPEC CHECKSUMS:
   callstack-repack: 9718fc5d0063bb3ee39941eb451a9e7c4aba97c9
   CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
   DoubleConversion: 76ab83afb40bddeeee456813d9c04f67f78771b5
+  dr-pogodin-react-native-static-server: 69429963a0646c1cc0609c016bce87fe58efc5f5
   EXApplication: ec862905fdab3a15bf6bd8ca1a99df7fc02d7762
   EXAV: 64e72329d2f8c2ba13608fed4a713af4e793242d
   EXBarCodeScanner: 6415603150dd5989a139570bb5af19b7f169fe49
