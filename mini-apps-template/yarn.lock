@@ -3344,12 +3344,14 @@
   dependencies:
     "@hapi/hoek" "^9.0.0"
 
-"@htyf-mp/engines@^0.5.50":
-  version "0.5.50"
-  resolved "https://registry.yarnpkg.com/@htyf-mp/engines/-/engines-0.5.50.tgz#03c336c067cef2a6e689763cb14aa36291f3bcee"
-  integrity sha512-jLa1xUeBte36WEFhlj3/o2PvL3EJqO1dIUamuy0SPOG2i+nW2vMa50lkvPs8aGNMddJPbR1UKDOTHLMt6jGffg==
+"@htyf-mp/engines@^0.5.51":
+  version "0.5.51"
+  resolved "https://registry.yarnpkg.com/@htyf-mp/engines/-/engines-0.5.51.tgz#2da73ccb4adb41580ec266110a5af8a210d916ea"
+  integrity sha512-vqc8w4KVnze+tsK3IvQxizMtLEXDE3lugdG7fRUkgEuWt6jB7LNtHxHT2ad/q41ez/tvCbzrohKgWQzBbinbOQ==
   dependencies:
     "@callstack/repack" "^3.7.0"
+    "@dr.pogodin/react-native-fs" "2.28.1"
+    "@dr.pogodin/react-native-static-server" "0.15.2"
     "@gorhom/bottom-sheet" "^4.6.0"
     "@react-native-clipboard/clipboard" "^1.13.2"
     "@react-native-community/hooks" "^3.0.0"
