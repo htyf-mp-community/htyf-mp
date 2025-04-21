@@ -921,10 +921,10 @@
   dependencies:
     is-negated-glob "^1.0.0"
 
-"@htyf-mp/engines@^0.5.51":
-  version "0.5.51"
-  resolved "https://registry.yarnpkg.com/@htyf-mp/engines/-/engines-0.5.51.tgz#2da73ccb4adb41580ec266110a5af8a210d916ea"
-  integrity sha512-vqc8w4KVnze+tsK3IvQxizMtLEXDE3lugdG7fRUkgEuWt6jB7LNtHxHT2ad/q41ez/tvCbzrohKgWQzBbinbOQ==
+"@htyf-mp/engines@^0.5.52":
+  version "0.5.52"
+  resolved "https://registry.yarnpkg.com/@htyf-mp/engines/-/engines-0.5.52.tgz#200bbb8bec16ce5d9e817b2987af2ecba9e9ed8a"
+  integrity sha512-ln69e+EKoAGuL5tHk+J/hnj4ERN80KrTzRmfVeexEqu3w/s4k+HpvxDCEO3WnHkOdtUBESOv5UbXkiyErKsp1w==
   dependencies:
     "@callstack/repack" "^3.7.0"
     "@dr.pogodin/react-native-fs" "2.28.1"
