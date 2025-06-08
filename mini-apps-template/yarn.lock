@@ -3344,7 +3344,7 @@
   dependencies:
     "@hapi/hoek" "^9.0.0"
 
-"@htyf-mp/engines@0.5.53":
+"@htyf-mp/engines@^0.5.53":
   version "0.5.53"
   resolved "https://registry.yarnpkg.com/@htyf-mp/engines/-/engines-0.5.53.tgz#1c98fa77d1f5f4fdd0868bcd41206398eda0d4e6"
   integrity sha512-1RO+KnFBvhDk6YnHpKH+Hyg+aUe5KDKz0fKFuDswgGLppdplXK1nBwMsbhCBphlSY6owycDVjWe80wPhdkXKLg==
@@ -3389,10 +3389,10 @@
     webpack-merge "5.10.0"
     yarn-add-no-save "1.0.3"
 
-"@htyf-mp/js-sdk@0.0.38":
-  version "0.0.38"
-  resolved "https://registry.yarnpkg.com/@htyf-mp/js-sdk/-/js-sdk-0.0.38.tgz#ebb39148225dc1bb5d3afebf0777758a42ddc90d"
-  integrity sha512-LXJvZth6YkAjBmDyym3gIbwzx0pQh+6C1XW0CUY9M+FgDfluvOlpW/rknUYjTPwExN5I0aNUsQLqoeTw/ZSGHA==
+"@htyf-mp/js-sdk@^0.0.41":
+  version "0.0.41"
+  resolved "https://registry.yarnpkg.com/@htyf-mp/js-sdk/-/js-sdk-0.0.41.tgz#ce29f4d7dd77dc6ece645ff46ae4afad43655d96"
+  integrity sha512-SSonzQL7XUq4laelvTHf9OkYDCL/K3cmgT7vCWcy3+4Ji1RdkFyE4wDletaJBWxRo07RaXqLuNmjp6xJreVFvg==
   dependencies:
     "@fingerprintjs/fingerprintjs" "^3.3.3"
     "@react-native-async-storage/async-storage" "^2.0.0"
