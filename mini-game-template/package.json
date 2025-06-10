@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@htyf-mp/engines": "^0.5.54",
-    "@htyf-mp/js-sdk": "^0.0.41"
+    "@htyf-mp/js-sdk": "^0.0.42"
   },
   "devDependencies": {
     "qrcode": "^1.5.3"
