@@ -921,10 +921,10 @@
   dependencies:
     is-negated-glob "^1.0.0"
 
-"@htyf-mp/engines@^0.5.54":
-  version "0.5.54"
-  resolved "https://registry.yarnpkg.com/@htyf-mp/engines/-/engines-0.5.54.tgz#f20e7a403738e27d751afb2c31727a402b3ccd1c"
-  integrity sha512-rhxl7Iy5vOSTEEgV051a4hi33jH7ZBLtfep5dH5HD52uU2kKMcRK3+sPJWwMIexw0MnQwgIMkAZ+EMSA6dUaXw==
+"@htyf-mp/engines@^0.5.55":
+  version "0.5.55"
+  resolved "https://registry.yarnpkg.com/@htyf-mp/engines/-/engines-0.5.55.tgz#9fa4f2e7be29ef0afdde1a64c1a59773f404a87f"
+  integrity sha512-99VIpSY718EQUwUsWafdHJwXO+lL8mDGPpN5fkyJYn3N1ka2V8ICxAwo+lb6Uw1bMt+Ygd2J1C2qpjHOvaQWuQ==
   dependencies:
     "@callstack/repack" "^3.7.0"
     "@dr.pogodin/react-native-fs" "2.28.1"
@@ -966,10 +966,10 @@
     webpack-merge "5.10.0"
     yarn-add-no-save "1.0.3"
 
-"@htyf-mp/js-sdk@^0.0.42":
-  version "0.0.42"
-  resolved "https://registry.yarnpkg.com/@htyf-mp/js-sdk/-/js-sdk-0.0.42.tgz#e5be9e26f4f433a3463215752e4b5bed22e1a5b2"
-  integrity sha512-cph9GZpAJaaxD1C9inJuNGTnkIrerphn0DKlBJ8ZiO1gqKefyKp0PvrVvTmDplLieHxwx4voRjn8qKyDFpolXg==
+"@htyf-mp/js-sdk@^0.0.43":
+  version "0.0.43"
+  resolved "https://registry.yarnpkg.com/@htyf-mp/js-sdk/-/js-sdk-0.0.43.tgz#2390dc5d1b63017c2df60b456300ec516df4878f"
+  integrity sha512-zfv07k19c3bUH8ubgZ/IgF7DVJuIZkyrnLN/83k5nfDJgpvsChBrPVWwUAVq/p1Dtwe+YUFQwX+pKigJ6r8Nyg==
   dependencies:
     "@fingerprintjs/fingerprintjs" "^3.3.3"
     "@react-native-async-storage/async-storage" "^2.0.0"
