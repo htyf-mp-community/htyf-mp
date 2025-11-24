@@ -62,6 +62,24 @@ export class FileSystemUtils {
     return Math.round(bytes / Math.pow(1024, i) * 100) / 100 + ' ' + sizes[i];
   }
 
+  /**
+   * 检查目录是否为空
+   * @param {string} dirPath
+   * @returns {boolean}
+   */
+  static isDirectoryEmpty(dirPath) {
+    if (!fs.existsSync(dirPath)) {
+      return true;
+    }
+    try {
+      const entries = fs.readdirSync(dirPath);
+      return entries.length === 0;
+    } catch (error) {
+      Logger.warn(`读取目录内容失败: ${dirPath}`, error.message);
+      return false;
+    }
+  }
+
   static validatePath(path) {
     // if (/[ -	fa5]/gi.test(path)) {
     //   return { isValid: false, error: '路径中包含中文字符' };

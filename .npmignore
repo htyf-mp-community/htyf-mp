@@ -49,3 +49,4 @@ coverage/
 .env.*.local
 
 .htyf/
+test/

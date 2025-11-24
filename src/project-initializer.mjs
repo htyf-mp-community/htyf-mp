@@ -86,7 +86,7 @@ export class ProjectInitializer {
       process.removeListener('SIGTERM', handleExit);
 
       // 5. 显示成功信息
-      this.showSuccessInfo(userInputs.appName, rootPath);
+      this.showSuccessInfo(userInputs.appName, rootPath, userInputs.templateType);
 
     } catch (error) {
       process.removeListener('SIGINT', handleExit);
@@ -205,7 +205,19 @@ export class ProjectInitializer {
 
       // 移动到目标目录
       spinner.text = '正在创建项目目录...';
-      fse.moveSync(appRootPath, rootPath);
+
+      if (fs.existsSync(rootPath)) {
+        fse.ensureDirSync(rootPath);
+        const items = fs.readdirSync(appRootPath);
+        items.forEach((item) => {
+          const source = path.join(appRootPath, item);
+          const destination = path.join(rootPath, item);
+          fse.moveSync(source, destination, { overwrite: true });
+        });
+        fse.removeSync(appRootPath);
+      } else {
+        fse.moveSync(appRootPath, rootPath);
+      }
 
       // 清理临时目录
       fse.removeSync(tmpdir);
@@ -221,19 +233,33 @@ export class ProjectInitializer {
     }
   }
 
-  showSuccessInfo(appName, rootPath) {
+  showSuccessInfo(appName, rootPath, templateType) {
     console.log('\n' + boxen(
       gradient.rainbow('🎉 项目创建成功!') + '\n\n' +
       chalk.cyan('项目名称: ') + chalk.white(appName) + '\n' +
       chalk.cyan('项目路径: ') + chalk.white(rootPath) + '\n\n' +
       chalk.yellow('下一步操作:') + '\n' +
-      chalk.white(`  cd ${appName}`) + '\n' +
-      chalk.white('  npm install') + '\n' +
-      chalk.white('  npm run dev:weapp') + '\n\n' +
+      (() => {
+        const relativePath = path.relative(process.cwd(), rootPath);
+        const commands = [];
+        if (relativePath) {
+          commands.push(chalk.white(`  cd ${relativePath}`));
+        }
+
+        if (templateType === CONSTANTS.TEMPLATE_TYPES.GAME_TEMPLATE) {
+          commands.push(chalk.white('  npm install'));
+        } else {
+          commands.push(
+            chalk.white('  npm install'),
+            chalk.white('  npm run ios'),
+            chalk.white('  npm run android')
+          );
+        }
+
+        return commands.join('\n');
+      })() + '\n\n' +
       chalk.blue('常用命令:') + '\n' +
-      chalk.white('  npm run build:weapp  # 构建微信小程序') + '\n' +
-      chalk.white('  npm run build:h5     # 构建H5版本') + '\n' +
-      chalk.white('  npm run build:rn     # 构建React Native版本') + '\n\n' +
+      chalk.white('  npm run htyf  # 构建红糖云服小程序') + '\n' +
       chalk.gray('💡 提示: 使用 --debug 参数可以查看详细的调试信息'),
       {
         padding: 1,
