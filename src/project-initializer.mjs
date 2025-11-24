@@ -26,7 +26,7 @@ export class ProjectInitializer {
   }
 
   async initialize() {
-    const spinner = ora('正在初始化项目...').start();
+    const spinner = ora('正在初始化项目...');
     let tmpdir = null;
     let rootPath = null;
 
@@ -73,7 +73,10 @@ export class ProjectInitializer {
         return;
       }
 
-      // 4. 创建项目（传递 tmpdir 引用以便清理）
+      // 4. 创建项目（在此之前启动 spinner）
+      spinner.start();
+      spinner.text = '正在初始化项目...';
+      // 传递 tmpdir 引用以便清理
       await this.createProject(userInputs, rootPath, spinner, (dir) => {
         tmpdir = dir;
       });
@@ -139,7 +142,6 @@ export class ProjectInitializer {
       message: '请选择模板镜像?',
       choices: [
         { name: 'GitHub (最新)', value: CONSTANTS.TEMPLATE_REPOS.GITHUB },
-        { name: 'Coding (最快)', value: CONSTANTS.TEMPLATE_REPOS.CODING }
       ]
     });
 

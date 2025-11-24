@@ -13,17 +13,14 @@ export class ProjectConfig {
     };
 
     this.templates = {
-      [CONSTANTS.TEMPLATE_TYPES.EXPO]: {
-        name: 'Expo (https://docs.expo.dev/)',
-        tempPath: 'mini-apps-template',
-        files: {
-          src: 'expo_src',
-          app: 'expo.App.tsx',
-          index: 'expo.index.js',
-          babel: 'expo.babel.config.js',
-          config: 'expo.project.dgz.json'
-        }
+      [CONSTANTS.TEMPLATE_TYPES.APP_TEMPLATE]: {
+        name: 'app-template',
+        tempPath: '_apps_temp_'
       },
+      [CONSTANTS.TEMPLATE_TYPES.GAME_TEMPLATE]: {
+        name: 'game-template',
+        tempPath: '_games_temp_'
+      }
     };
   }
 

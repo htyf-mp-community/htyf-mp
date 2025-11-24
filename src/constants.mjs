@@ -25,9 +25,8 @@ export const CONSTANTS = {
     CODING: 'https://e.coding.net/dagouzhi/hongtangyun_mobile/htyf-mp.git'
   },
   TEMPLATE_TYPES: {
-    EXPO: 'expo',
-    TARO: 'taro',
-    GAME_COCOS: 'game-cocos',
+    APP_TEMPLATE: 'app-template',
+    GAME_TEMPLATE: 'game-template',
   }
 };
 
