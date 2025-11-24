@@ -27,6 +27,48 @@ import { incrementVersion, updateAppConfig } from './utils-functions.mjs';
 
 const projectPath = getProjectRoot();
 
+// 全局状态管理，用于优雅退出
+let isExiting = false;
+let currentProcess = null;
+
+/**
+ * 优雅退出处理
+ */
+function handleGracefulExit() {
+  if (isExiting) {
+    // 如果已经在退出中，强制退出
+    Logger.warn('强制退出...');
+    process.exit(1);
+  }
+
+  isExiting = true;
+  Logger.info('\n正在退出...');
+
+  // 如果有正在运行的进程，尝试关闭
+  if (currentProcess) {
+    try {
+      if (typeof currentProcess.close === 'function') {
+        currentProcess.close();
+      } else if (typeof currentProcess.kill === 'function') {
+        currentProcess.kill('SIGTERM');
+      }
+    } catch (error) {
+      Logger.debug(`关闭进程时出错: ${error.message}`);
+    }
+  }
+
+  // 延迟退出，给清理操作一些时间
+  setTimeout(() => {
+    Logger.info('再见!');
+    process.exit(0);
+  }, 100);
+}
+
+// 注册全局信号处理（使用 once 确保只注册一次）
+// 注意：某些模块（如 debug.mjs）可能会移除这些监听器并添加自己的处理
+process.on('SIGINT', handleGracefulExit);
+process.on('SIGTERM', handleGracefulExit);
+
 /**
  * 主启动函数
  * @param {string} action - 操作类型
@@ -250,6 +292,13 @@ inquirer
     }
   })
   .catch((error) => {
+    // 如果是用户取消（Ctrl+C），不显示错误
+    if (error.isTtyError || error.name === 'AbortError') {
+      handleGracefulExit();
+      return;
+    }
     Logger.error(`程序启动失败: ${error.message}`);
-    process.exit(1);
+    if (!isExiting) {
+      process.exit(1);
+    }
   });

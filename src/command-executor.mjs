@@ -20,46 +20,72 @@ export class CommandExecutor {
     const displayCommand = showCommand ? command : description;
     const spinner = ora(displayCommand).start();
 
-    for (let attempt = 1; attempt <= retryCount; attempt++) {
-      try {
-        Logger.debug(`执行命令 (尝试 ${attempt}/${retryCount}): ${command}`);
+    // 信号处理：当收到退出信号时，停止 spinner
+    const cleanup = () => {
+      spinner.stop();
+    };
+    process.once('SIGINT', cleanup);
+    process.once('SIGTERM', cleanup);
 
-        const result = await new Promise((resolve, reject) => {
-          const timeoutId = setTimeout(() => {
-            reject(new Error(`命令执行超时 (${timeout}ms)`));
-          }, timeout);
+    try {
+      for (let attempt = 1; attempt <= retryCount; attempt++) {
+        try {
+          Logger.debug(`执行命令 (尝试 ${attempt}/${retryCount}): ${command}`);
 
-          shell.exec(command, {
-            silent: silent,
-            fatal: false,
-            async: false
-          }, (code, stdout, stderr) => {
-            clearTimeout(timeoutId);
-            resolve({ code, stdout, stderr });
+          const result = await new Promise((resolve, reject) => {
+            const timeoutId = setTimeout(() => {
+              reject(new Error(`命令执行超时 (${timeout}ms)`));
+            }, timeout);
+
+            shell.exec(command, {
+              silent: silent,
+              fatal: false,
+              async: false
+            }, (code, stdout, stderr) => {
+              clearTimeout(timeoutId);
+              resolve({ code, stdout, stderr });
+            });
           });
-        });
 
-        if (result.code === 0) {
-          spinner.succeed(`${description} 成功`);
-          Logger.debug(`命令输出: ${result.stdout}`);
-          return result;
-        } else {
-          throw new Error(`命令执行失败，退出码: ${result.code}, 错误: ${result.stderr}`);
-        }
-      } catch (error) {
-        if (attempt === retryCount) {
-          spinner.fail(`${description} 失败 (${retryCount} 次尝试后)`);
-          Logger.error(`命令执行失败: ${error.message}`);
-
-          if (fatal) {
-            process.exit(1);
+          if (result.code === 0) {
+            process.removeListener('SIGINT', cleanup);
+            process.removeListener('SIGTERM', cleanup);
+            spinner.succeed(`${description} 成功`);
+            Logger.debug(`命令输出: ${result.stdout}`);
+            return result;
+          } else {
+            throw new Error(`命令执行失败，退出码: ${result.code}, 错误: ${result.stderr}`);
           }
-          throw error;
-        } else {
-          Logger.warn(`命令执行失败，准备重试 (${attempt}/${retryCount}): ${error.message}`);
-          await new Promise(resolve => setTimeout(resolve, 1000 * attempt)); // 递增延迟
+        } catch (error) {
+          // 如果是用户中断，直接退出
+          if (error.message && (error.message.includes('SIGINT') || error.message.includes('SIGTERM'))) {
+            process.removeListener('SIGINT', cleanup);
+            process.removeListener('SIGTERM', cleanup);
+            spinner.stop();
+            throw error;
+          }
+
+          if (attempt === retryCount) {
+            process.removeListener('SIGINT', cleanup);
+            process.removeListener('SIGTERM', cleanup);
+            spinner.fail(`${description} 失败 (${retryCount} 次尝试后)`);
+            Logger.error(`命令执行失败: ${error.message}`);
+
+            if (fatal) {
+              process.exit(1);
+            }
+            throw error;
+          } else {
+            Logger.warn(`命令执行失败，准备重试 (${attempt}/${retryCount}): ${error.message}`);
+            await new Promise(resolve => setTimeout(resolve, 1000 * attempt)); // 递增延迟
+          }
         }
       }
+    } catch (error) {
+      process.removeListener('SIGINT', cleanup);
+      process.removeListener('SIGTERM', cleanup);
+      spinner.stop();
+      throw error;
     }
   }
 

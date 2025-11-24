@@ -94,14 +94,35 @@ export async function mpDebugShell(newAppInfo) {
       Logger.info('调试服务器已启动，按 Ctrl+C 停止');
     });
 
-    // 优雅关闭
-    process.on('SIGINT', () => {
-      Logger.info('正在关闭调试服务器...');
+    // 优雅关闭 - 移除全局处理，添加专用的服务器关闭处理
+    const handleShutdown = () => {
+      Logger.info('\n正在关闭调试服务器...');
+      let isClosed = false;
+      
       server.close(() => {
-        Logger.success('调试服务器已关闭');
-        process.exit(0);
+        if (!isClosed) {
+          isClosed = true;
+          Logger.success('调试服务器已关闭');
+          process.exit(0);
+        }
       });
-    });
+      
+      // 如果服务器在 3 秒内没有关闭，强制退出
+      setTimeout(() => {
+        if (!isClosed) {
+          isClosed = true;
+          Logger.warn('强制退出...');
+          process.exit(0);
+        }
+      }, 3000);
+    };
+
+    // 移除全局的信号处理，添加专用的服务器关闭处理
+    // 这样可以确保服务器能够正确关闭
+    process.removeAllListeners('SIGINT');
+    process.removeAllListeners('SIGTERM');
+    process.once('SIGINT', handleShutdown);
+    process.once('SIGTERM', handleShutdown);
 
   } catch (error) {
     Logger.error(`小程序调试失败: ${error.message}`);

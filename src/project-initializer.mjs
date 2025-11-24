@@ -27,6 +27,27 @@ export class ProjectInitializer {
 
   async initialize() {
     const spinner = ora('正在初始化项目...').start();
+    let tmpdir = null;
+    let rootPath = null;
+
+    // 信号处理：清理临时文件并停止 spinner
+    const handleExit = () => {
+      spinner.stop();
+      Logger.info('\n正在清理临时文件...');
+      if (tmpdir && fs.existsSync(tmpdir)) {
+        try {
+          fse.removeSync(tmpdir);
+          Logger.info('临时文件已清理');
+        } catch (error) {
+          Logger.warn(`清理临时文件时出错: ${error.message}`);
+        }
+      }
+      Logger.info('已取消项目初始化');
+      process.exit(0);
+    };
+
+    process.once('SIGINT', handleExit);
+    process.once('SIGTERM', handleExit);
 
     try {
       // 1. 获取用户输入
@@ -35,26 +56,38 @@ export class ProjectInitializer {
       // 2. 验证输入
       const validation = this.validateInputs(userInputs);
       if (!validation.isValid) {
+        process.removeListener('SIGINT', handleExit);
+        process.removeListener('SIGTERM', handleExit);
         spinner.fail('输入验证失败');
         Logger.error(validation.error);
         return;
       }
 
       // 3. 检查目录
-      const rootPath = path.join(process.cwd(), userInputs.appName);
+      rootPath = path.join(process.cwd(), userInputs.appName);
       if (fs.existsSync(rootPath)) {
+        process.removeListener('SIGINT', handleExit);
+        process.removeListener('SIGTERM', handleExit);
         spinner.fail('目录已存在');
         Logger.error(`目录已存在: ${rootPath}`);
         return;
       }
 
-      // 4. 创建项目
-      await this.createProject(userInputs, rootPath, spinner);
+      // 4. 创建项目（传递 tmpdir 引用以便清理）
+      await this.createProject(userInputs, rootPath, spinner, (dir) => {
+        tmpdir = dir;
+      });
+
+      // 移除信号监听器
+      process.removeListener('SIGINT', handleExit);
+      process.removeListener('SIGTERM', handleExit);
 
       // 5. 显示成功信息
       this.showSuccessInfo(userInputs.appName, rootPath);
 
     } catch (error) {
+      process.removeListener('SIGINT', handleExit);
+      process.removeListener('SIGTERM', handleExit);
       spinner.fail('项目初始化失败');
       Logger.error('初始化失败:', error.message);
       if (error.exitCode === 128) {
@@ -122,13 +155,18 @@ export class ProjectInitializer {
     return { isValid: true };
   }
 
-  async createProject(userInputs, rootPath, spinner) {
+  async createProject(userInputs, rootPath, spinner, setTmpdirCallback = null) {
     const { appName, displayName, templateType, repoType } = userInputs;
 
     // 创建临时目录
     spinner.text = '正在准备临时目录...';
     const tmpdir = path.join(os.tmpdir(), md5('__HTYF__'), appName);
     fse.emptyDirSync(tmpdir);
+    
+    // 设置临时目录引用，以便在退出时清理
+    if (setTmpdirCallback) {
+      setTmpdirCallback(tmpdir);
+    }
 
     try {
       // 克隆仓库
