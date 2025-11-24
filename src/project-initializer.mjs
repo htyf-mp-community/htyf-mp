@@ -193,7 +193,7 @@ export class ProjectInitializer {
       const projectConfig = this.config.createProjectConfig(appName, displayName, appid);
 
       // 写入配置文件
-      const configPath = path.join(appRootPath, 'project.dgz.json');
+      const configPath = path.join(appRootPath, 'htyf.json');
       fs.writeFileSync(configPath, JSON.stringify(projectConfig, undefined, 2));
 
       // 清理临时文件
