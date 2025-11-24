@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.tsx",
   "scripts": {
+    "htyf": "@htyf-mp/cli",
     "start": "expo start --dev-client",
     "web": "expo start --web",
     "android": "expo run:android",
