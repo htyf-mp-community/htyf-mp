@@ -1,0 +1,50 @@
+# 模板目录 - 这些模板会从GitHub动态拉取，不需要包含在npm包中
+_apps_temp_/
+_game_temp_/
+
+# 开发相关文件
+node_modules/
+.DS_Store
+*.log
+.htyf/
+dist/
+my-htyf-mp*/
+rn-ai/
+yarn.lock
+package-lock.json
+
+# 测试和开发文件
+*.test.js
+*.test.mjs
+*.spec.js
+*.spec.mjs
+coverage/
+.nyc_output/
+
+# IDE配置
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+
+# 临时和缓存文件
+*.tmp
+*.temp
+.cache/
+.temp/
+*.log.*
+
+# Git相关
+.git/
+.gitignore
+.gitattributes
+
+# 其他
+.env
+.env.local
+.env.*.local
+
