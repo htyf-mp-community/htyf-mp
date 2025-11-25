@@ -1,16 +1,18 @@
 import path from 'path';
-import fs from 'fs';
 import fse from 'fs-extra';
 import AdmZip from 'adm-zip';
+import { fileURLToPath } from 'node:url';
 import { Logger } from './logger.mjs';
 import { CONSTANTS } from './constants.mjs';
 import { FileSystemUtils } from './file-system.mjs';
 import { CommandExecutor } from './command-executor.mjs';
 import { getMiniAppScriptId } from './utils-functions.mjs';
-import { fileURLToPath } from 'node:url';
+import { getProjectRoot, guessGodotProjectDir } from './utils.mjs';
+import { exportGodot, promptGodotOptions } from './export_godot.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+const PROJECT_ROOT = getProjectRoot();
 
 /**
  * 压缩文件夹为zip文件
@@ -22,16 +24,16 @@ export async function handleZip(inputPath, outputPath) {
   Logger.info(`开始压缩文件夹: ${inputPath}`);
   Logger.info(`输出文件: ${outputPath}`);
 
-  if (!fs.existsSync(inputPath)) {
+  if (!(await fse.pathExists(inputPath))) {
     throw new Error(`输入路径不存在: ${inputPath}`);
   }
 
-  const stats = fs.statSync(inputPath);
+  const stats = await fse.stat(inputPath);
   if (!stats.isDirectory()) {
     throw new Error(`输入路径不是目录: ${inputPath}`);
   }
 
-  const files = fs.readdirSync(inputPath);
+  const files = await fse.readdir(inputPath);
   Logger.debug(`目录内容: ${files.length} 个文件/文件夹`);
 
   if (files.length === 0) {
@@ -56,7 +58,7 @@ export async function handleZip(inputPath, outputPath) {
     await admzip.writeZipPromise(zipPath);
     Logger.success(`压缩完成: ${zipPath}`);
 
-    const zipStats = fs.statSync(zipPath);
+    const zipStats = await fse.stat(zipPath);
     Logger.info(`ZIP文件大小: ${FileSystemUtils.formatFileSize(zipStats.size)}`);
 
     return zipPath;
@@ -71,7 +73,7 @@ export async function handleZip(inputPath, outputPath) {
  * @param {object} newAppInfo - 应用信息
  * @returns {Promise<string>} 压缩包路径
  */
-export async function mpBuildShell(newAppInfo) {
+export async function mpBuildShell(newAppInfo, isGodot) {
   Logger.info(`开始构建小程序包...`);
   Logger.info(`应用: ${newAppInfo.name}`);
   Logger.info(`应用ID: ${newAppInfo.appid}`);
@@ -94,22 +96,22 @@ export async function mpBuildShell(newAppInfo) {
     throw new Error('无法创建输出目录');
   }
 
-  const version = newAppInfo.version;
-  const appid = newAppInfo.appid;
+  const { version, appid } = newAppInfo;
   const scriptName = getMiniAppScriptId(appid, version);
 
   const appJson = {
     type: 'app',
     engines: '2.0.0',
     name: newAppInfo.name,
-    appid: appid,
-    version: version,
+    appid,
+    version,
     appUrlConfig: newAppInfo.appUrlConfig || `${newAppInfo.host}/app.json`,
     zipUrl: newAppInfo.zipUrl || `${newAppInfo.host}/dist.dgz`
   };
   
-  const outputPath = path.join(mpOutputPath, './dist');
-  const rootIndexPath = path.join(tempPath, '../index.js');
+  let outputPath = path.join(mpOutputPath, 'dist');
+  const distPackagePath = path.join(mpOutputPath, 'dist.dgz');
+  const rootIndexPath = path.join(tempPath, '..', 'index.js');
 
   const mpOptions = {
     name: scriptName,
@@ -117,26 +119,46 @@ export async function mpBuildShell(newAppInfo) {
     exposes: {
       'App': newAppInfo.entry,
     },
-    outputPath: path.join(mpOutputPath, './build'),
+    outputPath: path.join(mpOutputPath, 'build'),
     extraChunksPath: outputPath,
-    manifest: path.join(mpOutputPath, './build'),
+    manifest: path.join(mpOutputPath, 'build'),
   };
 
   const appJsonPath = path.join(mpOutputPath, 'app.json');
-  fs.writeFileSync(appJsonPath, JSON.stringify(appJson, undefined, 2));
+  await fse.writeJson(appJsonPath, appJson, { spaces: 2 });
   const webpackConfigPath = path.join(__dirname, 'webpack.config.mjs');
 
-  const command = `npx cross-env APP_ROOT_INDEX_PATH=${rootIndexPath} APP_EXPOSES_OPTIONS=${encodeURI(JSON.stringify(mpOptions))} webpack --config ${webpackConfigPath}`;
 
   try {
-    await CommandExecutor.execute(command, {
-      description: '构建小程序包',
-      timeout: 120000,
-      showCommand: false
-    });
+    if (!isGodot) {
+      const command = `npx cross-env APP_ROOT_INDEX_PATH=${rootIndexPath} APP_EXPOSES_OPTIONS=${encodeURI(JSON.stringify(mpOptions))} webpack --config ${webpackConfigPath}`;
+      await CommandExecutor.execute(command, {
+        description: '构建小程序包',
+        timeout: 120000,
+        showCommand: false
+      });
+    } else {
+      Logger.info('检测到 Godot 项目，开始执行 Godot 导出流程...');
+      const defaultPlatform = ['android', 'ios'].includes(CONSTANTS.BUNDLE_PLATFORM) 
+        ? CONSTANTS.BUNDLE_PLATFORM 
+        : 'ios';
+      const godotDefaults = {
+        targetBaseDir: outputPath,
+        projectDir: guessGodotProjectDir(PROJECT_ROOT),
+        name: newAppInfo.name || 'GodotApp',
+        preset: defaultPlatform === 'android' ? 'Android' : 'iOS',
+        platform: defaultPlatform
+      };
+      const godotOptions = await promptGodotOptions(godotDefaults);
+      outputPath = path.resolve(godotOptions.targetBaseDir);
+      await fse.ensureDir(outputPath);
+      await fse.emptyDir(outputPath);
+      await exportGodot(godotOptions);
+    }
 
-    fs.copyFileSync(appJsonPath, path.join(outputPath, `./app.json`));
-    const zipPath = await handleZip(outputPath, path.join(outputPath, `../dist.dgz`));
+    await fse.ensureDir(outputPath);
+    await fse.copy(appJsonPath, path.join(outputPath, 'app.json'));
+    const zipPath = await handleZip(outputPath, distPackagePath);
     Logger.success(`压缩包已创建: ${zipPath}`);
     return zipPath;
   } catch (error) {

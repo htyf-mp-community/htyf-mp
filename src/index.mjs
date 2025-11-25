@@ -136,7 +136,10 @@ async function Start(action) {
 
   // 显示应用选择界面
   try {
-    const appInfo = fse.readJsonSync(path.join(projectPath, 'app.json')).htyf;
+    const appConfigPath = path.join(projectPath, 'app.json');
+    const appInfo = fse.readJsonSync(appConfigPath).htyf;
+    const isGodot = fse.existsSync(path.join(projectPath, 'project.godot'));
+    Logger.info(`是否是Game项目: ${isGodot}`);
     if (!appInfo) {
       Logger.error('应用配置不存在，请先在app.json中配置htyf');
       return;
@@ -185,10 +188,10 @@ async function Start(action) {
 
     switch (action) {
       case ACTION_TYPES.MP_BUILD:
-        await mpBuildShell(newAppInfo);
+        await mpBuildShell(newAppInfo, isGodot);
         break;
       case ACTION_TYPES.MP_DEBUG:
-        await mpDebugShell(newAppInfo);
+        await mpDebugShell(newAppInfo, isGodot);
         break;
       default:
         Logger.error(`未知的操作类型: ${action}`);
