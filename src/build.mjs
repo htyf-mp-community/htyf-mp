@@ -145,7 +145,7 @@ export async function mpBuildShell(newAppInfo, isGodot) {
       const godotDefaults = {
         targetBaseDir: outputPath,
         projectDir: guessGodotProjectDir(PROJECT_ROOT),
-        name: newAppInfo.name || 'GodotApp',
+        name: newAppInfo.appid || 'GodotApp',
         preset: defaultPlatform === 'android' ? 'Android' : 'iOS',
         platform: defaultPlatform
       };

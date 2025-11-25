@@ -29,14 +29,14 @@ export async function promptGodotOptions(defaults = {}) {
   if (
     defaults.targetBaseDir &&
     defaults.projectDir &&
-    defaults.name &&
+    defaults.appid &&
     defaults.preset &&
     defaults.platform
   ) {
     return {
       targetBaseDir: String(defaults.targetBaseDir).trim(),
       projectDir: String(defaults.projectDir).trim(),
-      name: String(defaults.name).trim(),
+      name: String(defaults.appid).trim(),
       preset: String(defaults.preset).trim(),
       platform: defaults.platform
     };
