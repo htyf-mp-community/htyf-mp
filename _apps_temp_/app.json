@@ -1,4 +1,12 @@
 {
   "name": "_apps_temp_",
-  "displayName": "_apps_temp_"
+  "displayName": "_apps_temp_",
+  "htyf": {
+    "entry": "src/index.tsx",
+    "version": "1.0.9",
+    "name": "_apps_temp_",
+    "appid": "htyf1234567890",
+    "appUrlConfig": "https://xxx.cos.ap-chengdu.myqcloud.com/assets/testMiniApps/htyanimation/app.json",
+    "zipUrl": "https://xxxxx.myqcloud.com/assets/testMiniApps/xxxxx/outputs/dist.dgz"
+  }
 }

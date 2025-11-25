@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "htyf": "htyf",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "lint": "eslint .",
@@ -10,9 +11,10 @@
     "test": "jest"
   },
   "dependencies": {
+    "@htyf-mp/cli": "^0.2.0-alpha.6",
+    "@react-native/new-app-screen": "0.81.5",
     "react": "19.1.0",
     "react-native": "0.81.5",
-    "@react-native/new-app-screen": "0.81.5",
     "react-native-safe-area-context": "^5.5.2"
   },
   "devDependencies": {

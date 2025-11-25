@@ -156,7 +156,10 @@ export default (env = {}) => {
         shareStrategy: 'loaded-first',
       }),
       new HtyfModulesPlugin({
-        codeSigning: true
+        codeSigning: true,
+        appid: mpOptions.appid,
+        version: mpOptions.version,
+        manifest: mpOptions.manifest,
       }),
       new webpack.optimize.LimitChunkCountPlugin({
         maxChunks: 2, // 限制最大chunk数，便于远程加载

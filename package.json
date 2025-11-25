@@ -1,9 +1,12 @@
 {
   "name": "@htyf-mp/cli",
-  "version": "0.2.0-alpha.5",
+  "version": "0.2.0-alpha.6",
   "description": "红糖云服app小程序模板-cli",
   "type": "module",
-  "bin": "src/index.mjs",
+  "bin": {
+    "htyf": "src/index.mjs",
+    "htyf-mp": "src/index.mjs"
+  },
   "files": [
     "src",
     "README.md"
@@ -40,6 +43,8 @@
     "@callstack/repack-plugin-reanimated": "^5.1.3",
     "@inquirer/prompts": "^7.8.0",
     "@inquirer/select": "^4.3.1",
+    "@module-federation/dts-plugin": "^0.21.6",
+    "@module-federation/enhanced": "^0.21.6",
     "adm-zip": "0.5.10",
     "boxen": "^8.0.1",
     "chalk": "^5.4.1",
@@ -47,6 +52,7 @@
     "fs-extra": "^11.3.0",
     "gradient-string": "^3.0.0",
     "inquirer": "^12.9.0",
+    "loader-utils": "^3.3.1",
     "lodash": "^4.17.21",
     "md5": "^2.3.0",
     "ora": "^8.2.0",
@@ -58,6 +64,7 @@
     "superstatic": "^9.2.0",
     "systeminformation": "^5.27.7",
     "terser-webpack-plugin": "^5.3.14",
+    "typescript": "^5.9.3",
     "uuid": "^9.0.1",
     "webpack": "^5.101.0",
     "webpack-cli": "^6.0.1"

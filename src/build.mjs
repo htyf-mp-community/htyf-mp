@@ -119,6 +119,7 @@ export async function mpBuildShell(newAppInfo) {
     },
     outputPath: path.join(mpOutputPath, './build'),
     extraChunksPath: outputPath,
+    manifest: path.join(mpOutputPath, './build'),
   };
 
   const appJsonPath = path.join(mpOutputPath, 'app.json');
