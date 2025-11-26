@@ -60,12 +60,30 @@ export default (env = {}) => {
   if (appExposesOptions) {
     mpOptions = JSON.parse(decodeURI(appExposesOptions));
   }
+  
+  // 处理 exposes 路径，确保路径正确解析
+  // Module Federation 需要相对于 context 的路径，如果路径不以 ./ 开头，需要添加
+  if (mpOptions.exposes) {
+    const processedExposes = {};
+    for (const [key, value] of Object.entries(mpOptions.exposes)) {
+      // 如果路径不是绝对路径且不以 ./ 开头，添加 ./ 前缀
+      if (value && typeof value === 'string' && !path.isAbsolute(value) && !value.startsWith('./') && !value.startsWith('../')) {
+        processedExposes[key] = `./${value}`;
+      } else {
+        processedExposes[key] = value;
+      }
+    }
+    mpOptions.exposes = processedExposes;
+  }
+  
   console.log('\n');
-  console.log('=====mpOptions=====');
+  console.log('=====mpOptions (after processing)=====');
   console.log('\n');
   console.log('context:', projectRoot);
   console.log('\n');
   console.log('entry:', entry);
+  console.log('\n');
+  console.log('exposes (processed):', JSON.stringify(mpOptions.exposes, null, 2));
   console.log('\n');
   console.log(JSON.stringify(mpOptions, null, 2));
   console.log('\n');
@@ -77,6 +95,8 @@ export default (env = {}) => {
     entry,
     resolve: {
       ..._options,
+      // 确保扩展名解析正确
+      extensions: ['.tsx', '.ts', '.jsx', '.js', '.json', ...(_options.extensions || [])],
     },
     output: {
       // 默认输出路径，host模式下会被覆盖

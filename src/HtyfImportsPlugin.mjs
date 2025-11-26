@@ -1,7 +1,6 @@
 import path from 'node:path';
 import fse from 'fs-extra';
 import { fileURLToPath } from 'node:url';
-import { getOptions } from 'loader-utils';
 
 // ==================== 常量定义 ====================
 const __dirname = path.dirname(fileURLToPath(import.meta.url));

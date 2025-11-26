@@ -186,9 +186,21 @@ export async function mpBuildShell(newAppInfo, isGodot = false) {
   await fse.emptyDir(outputPath);
   
   // 清空 webpack 构建目录
+  // 如果 buildPath 是一个文件，先删除它，然后创建目录
   const buildPath = path.join(mpOutputPath, 'build');
   if (await fse.pathExists(buildPath)) {
+    const stats = await fse.stat(buildPath);
+    if (stats.isFile()) {
+      // 如果是文件，删除它
+      await fse.remove(buildPath);
+      Logger.info(`已删除文件: ${buildPath}`);
+    }
+    // 确保是目录并清空
+    await fse.ensureDir(buildPath);
     await fse.emptyDir(buildPath);
+  } else {
+    // 如果不存在，直接创建目录
+    await fse.ensureDir(buildPath);
   }
 
   // ========== 执行构建 ==========
