@@ -1,5 +1,12 @@
 #!/usr/bin/env node
 
+/**
+ * Godot 导出模块
+ * 负责处理 Godot 游戏项目的导出和打包
+ * 
+ * @module export_godot
+ */
+
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { accessSync, constants as fsConstants } from 'node:fs';
@@ -10,22 +17,54 @@ import AdmZip from 'adm-zip';
 import { execa } from 'execa';
 import inquirer from 'inquirer';
 
+// ========== 常量定义 ==========
+
+/** Godot 编辑器默认路径（macOS） */
 const DEFAULT_GODOT_BIN = '/Applications/Godot.app/Contents/MacOS/Godot';
+
+/** Godot 配置缓存目录 */
 const GODOT_CACHE_DIR = path.join(homedir() || process.cwd(), '.htyf');
+
+/** Godot 配置缓存文件路径 */
 const GODOT_CACHE_FILE = path.join(GODOT_CACHE_DIR, 'godot-config.json');
 
+/** 支持的平台枚举 */
 const PLATFORMS = {
   IOS: 'ios',
   ANDROID: 'android'
 };
 
+/** 平台预设名称映射 */
 const PRESET_NAMES = {
   [PLATFORMS.IOS]: 'iOS',
   [PLATFORMS.ANDROID]: 'Android'
 };
 
+/**
+ * 提示用户输入或确认 Godot 导出选项
+ * 
+ * 如果所有必需参数都已提供，则直接返回，不进行交互式询问
+ * 否则通过命令行交互获取用户输入
+ * 
+ * @param {object} [defaults={}] - 默认选项
+ * @param {string} [defaults.targetBaseDir] - 导出目标根目录
+ * @param {string} [defaults.projectDir] - Godot 项目目录
+ * @param {string} [defaults.appid] - 应用ID（用作导出文件名）
+ * @param {string} [defaults.preset] - Godot 导出预设名称
+ * @param {string} [defaults.platform] - 导出平台（'ios' 或 'android'）
+ * @returns {Promise<object>} Godot 导出选项对象
+ * 
+ * @example
+ * const options = await promptGodotOptions({
+ *   targetBaseDir: './dist',
+ *   projectDir: './game',
+ *   appid: 'com.example.game',
+ *   preset: 'iOS',
+ *   platform: 'ios'
+ * });
+ */
 export async function promptGodotOptions(defaults = {}) {
-  // 如果所有必需的值都已提供，直接返回，不进行询问
+  // 如果所有必需的值都已提供，直接返回，不进行询问（用于自动化场景）
   if (
     defaults.targetBaseDir &&
     defaults.projectDir &&
@@ -42,6 +81,7 @@ export async function promptGodotOptions(defaults = {}) {
     };
   }
 
+  // 通过交互式命令行获取用户输入
   const answers = await inquirer.prompt([
     {
       type: 'input',
@@ -92,6 +132,12 @@ export async function promptGodotOptions(defaults = {}) {
   };
 }
 
+/**
+ * 检查文件是否可执行
+ * 
+ * @param {string} filePath - 文件路径
+ * @returns {boolean} 文件是否可执行
+ */
 function isExecutable(filePath) {
   if (!filePath) return false;
   if (!fs.existsSync(filePath)) return false;
@@ -104,6 +150,11 @@ function isExecutable(filePath) {
   }
 }
 
+/**
+ * 读取缓存的 Godot 编辑器路径
+ * 
+ * @returns {string} 缓存的路径，如果不存在则返回空字符串
+ */
 function readCachedGodotPath() {
   try {
     if (!fs.existsSync(GODOT_CACHE_FILE)) {
@@ -116,15 +167,26 @@ function readCachedGodotPath() {
   }
 }
 
+/**
+ * 保存 Godot 编辑器路径到缓存
+ * 
+ * @param {string} godotPath - Godot 编辑器路径
+ */
 async function writeCachedGodotPath(godotPath) {
   try {
     await fs.ensureDir(GODOT_CACHE_DIR);
     await fs.writeJson(GODOT_CACHE_FILE, { godotPath }, { spaces: 2 });
   } catch {
-    // cache failures should not block execution
+    // 缓存失败不应该阻塞执行
   }
 }
 
+/**
+ * 提示用户输入 Godot 编辑器路径
+ * 
+ * @param {string} defaultPath - 默认路径
+ * @returns {Promise<string>} 用户输入的路径
+ */
 async function promptForGodotBinaryPath(defaultPath) {
   const { godotPath } = await inquirer.prompt([
     {
@@ -139,6 +201,15 @@ async function promptForGodotBinaryPath(defaultPath) {
   return godotPath.trim();
 }
 
+/**
+ * 解析并获取 Godot 编辑器可执行文件路径
+ * 
+ * 优先级：环境变量 > 缓存 > 默认路径
+ * 总是会询问用户，但将缓存值或默认值作为默认输入
+ * 
+ * @returns {Promise<string>} Godot 编辑器可执行文件路径
+ * @throws {Error} 当路径不可执行时抛出错误
+ */
 async function resolveGodotBinary() {
   // 获取可能的默认值（优先级：环境变量 > 缓存 > 默认路径）
   const override = process.env.GODOT_EDITOR ? process.env.GODOT_EDITOR.trim() : '';
@@ -150,6 +221,7 @@ async function resolveGodotBinary() {
   // 总是询问用户，但将缓存值或默认值作为默认输入
   const godotPath = await promptForGodotBinaryPath(defaultPath);
 
+  // 验证路径是否可执行
   if (!isExecutable(godotPath)) {
     throw new Error(`Godot 二进制文件不可执行: ${godotPath}`);
   }
@@ -159,42 +231,112 @@ async function resolveGodotBinary() {
   return godotPath;
 }
 
+/**
+ * 执行 Godot 命令行命令
+ * 
+ * @param {string} godotBin - Godot 编辑器可执行文件路径
+ * @param {string[]} args - 命令参数
+ */
 async function runGodotCommand(godotBin, args) {
   await execa(godotBin, args, { stdio: 'inherit' });
 }
 
+/**
+ * 处理 Android 平台导出
+ * 
+ * Android 导出流程：
+ * 1. 使用 Godot 导出为 ZIP 包
+ * 2. 解压 ZIP 包到指定目录
+ * 3. 清理临时 ZIP 文件
+ * 
+ * @param {object} options - 导出选项
+ * @param {string} options.godotBin - Godot 编辑器路径
+ * @param {string} options.projectDir - Godot 项目目录
+ * @param {string} options.preset - 导出预设名称
+ * @param {string} options.targetBaseDir - 目标根目录
+ * @param {string} options.name - 导出文件名（不含扩展名）
+ */
 async function handleAndroidExport({ godotBin, projectDir, preset, targetBaseDir, name }) {
+  // Android 导出路径：targetBaseDir/android/app/src/main/assets/
   const assetsBaseDir = path.join(targetBaseDir, 'android', 'app', 'src', 'main', 'assets');
   await fs.ensureDir(assetsBaseDir);
 
+  // 使用 Godot 导出为 ZIP 包
   const zipPath = path.join(assetsBaseDir, `${name}.zip`);
   await runGodotCommand(godotBin, ['--headless', '--path', projectDir, '--export-pack', preset, zipPath]);
 
+  // 解压 ZIP 包到目标目录
   const targetDir = path.join(assetsBaseDir, name);
   await fs.remove(targetDir);
   await fs.ensureDir(targetDir);
 
   const zip = new AdmZip(zipPath);
   zip.extractAllTo(targetDir, true);
+  
+  // 清理临时 ZIP 文件
   await fs.remove(zipPath);
 }
 
+/**
+ * 处理 iOS 平台导出
+ * 
+ * iOS 导出流程：
+ * 1. 使用 Godot 直接导出为 PCK 文件
+ * 
+ * @param {object} options - 导出选项
+ * @param {string} options.godotBin - Godot 编辑器路径
+ * @param {string} options.projectDir - Godot 项目目录
+ * @param {string} options.preset - 导出预设名称
+ * @param {string} options.targetBaseDir - 目标根目录
+ * @param {string} options.name - 导出文件名（不含扩展名）
+ */
 async function handleIosExport({ godotBin, projectDir, preset, targetBaseDir, name }) {
+  // iOS 导出路径：targetBaseDir/ios/
   const assetsBaseDir = path.join(targetBaseDir, 'ios');
   await fs.ensureDir(assetsBaseDir);
+  
+  // 使用 Godot 直接导出为 PCK 文件
   const outputPath = path.join(assetsBaseDir, `${name}.pck`);
   await runGodotCommand(godotBin, ['--headless', '--path', projectDir, '--export-pack', preset, outputPath]);
 }
 
+/**
+ * 导出 Godot 项目
+ * 
+ * 主要流程：
+ * 1. 解析并获取 Godot 编辑器路径
+ * 2. 执行资源导入（执行两次以确保资源正确导入）
+ * 3. 根据平台执行相应的导出流程
+ * 
+ * @param {object} options - 导出选项
+ * @param {string} options.platform - 导出平台（'ios' 或 'android'）
+ * @param {string} options.projectDir - Godot 项目目录
+ * @param {string} options.preset - Godot 导出预设名称
+ * @param {string} options.targetBaseDir - 目标根目录
+ * @param {string} options.name - 导出文件名（不含扩展名）
+ * @throws {Error} 当平台不支持时抛出错误
+ * 
+ * @example
+ * await exportGodot({
+ *   platform: 'ios',
+ *   projectDir: './game',
+ *   preset: 'iOS',
+ *   targetBaseDir: './dist',
+ *   name: 'MyGame'
+ * });
+ */
 export async function exportGodot(options) {
+  // 解析并获取 Godot 编辑器路径
   const godotBin = await resolveGodotBinary();
   const { platform, projectDir, preset, targetBaseDir, name } = options;
 
   // 执行两次 import 以确保资源正确导入
+  // 某些情况下，第一次导入可能不完整，执行两次可以确保所有资源都被正确导入
   const importArgs = ['--headless', '--path', projectDir, '--import'];
   await runGodotCommand(godotBin, importArgs);
   await runGodotCommand(godotBin, importArgs);
 
+  // 根据平台执行相应的导出流程
   switch (platform) {
     case PLATFORMS.IOS:
       await handleIosExport({ godotBin, projectDir, preset, targetBaseDir, name });
@@ -207,11 +349,21 @@ export async function exportGodot(options) {
   }
 }
 
+/**
+ * 主函数（当文件作为 CLI 直接执行时）
+ * 
+ * 如果该文件被直接执行（而非作为模块导入），则运行主函数
+ */
 async function main() {
   const options = await promptGodotOptions();
   await exportGodot(options);
 }
 
+/**
+ * 检查当前文件是否作为 CLI 直接执行
+ * 
+ * @returns {boolean} 是否为 CLI 执行
+ */
 const isCliExecution = (() => {
   if (!process.argv[1]) {
     return false;
@@ -220,6 +372,7 @@ const isCliExecution = (() => {
   return cliUrl === import.meta.url;
 })();
 
+// 如果作为 CLI 直接执行，运行主函数
 if (isCliExecution) {
   main().catch((error) => {
     console.error(error.message || error);

@@ -1,11 +1,21 @@
 #!/usr/bin/env node
 
 /**
- * React Native 应用 CLI 工具
- * 用于管理多应用项目的开发、构建和部署
+ * 红糖云服应用 CLI 工具主入口
+ * 
+ * 功能：
+ * - 初始化新小程序项目
+ * - 小程序打包构建
+ * - 小程序真机调试
+ * - 清理临时文件
+ * 
+ * 支持项目类型：
+ * - 普通小程序项目（使用 webpack 构建）
+ * - Godot 游戏项目（使用 Godot 导出工具）
  *
  * @author CLI Team
  * @version 2.2.0
+ * @module index
  */
 
 import inquirer from 'inquirer';
@@ -27,12 +37,18 @@ import { incrementVersion, updateAppConfig } from './utils-functions.mjs';
 
 const projectPath = getProjectRoot();
 
-// 全局状态管理，用于优雅退出
+// ========== 全局状态管理 ==========
+// 用于优雅退出，避免重复退出操作
 let isExiting = false;
 let currentProcess = null;
 
 /**
- * 优雅退出处理
+ * 优雅退出处理函数
+ * 
+ * 当收到退出信号（如 Ctrl+C）时：
+ * 1. 尝试关闭正在运行的进程
+ * 2. 延迟退出，给清理操作一些时间
+ * 3. 如果已经在退出中，强制退出
  */
 function handleGracefulExit() {
   if (isExiting) {
@@ -64,14 +80,22 @@ function handleGracefulExit() {
   }, 100);
 }
 
-// 注册全局信号处理（使用 once 确保只注册一次）
+// ========== 注册全局信号处理 ==========
+// 使用 once 确保只注册一次
 // 注意：某些模块（如 debug.mjs）可能会移除这些监听器并添加自己的处理
-process.on('SIGINT', handleGracefulExit);
-process.on('SIGTERM', handleGracefulExit);
+process.on('SIGINT', handleGracefulExit);   // Ctrl+C
+process.on('SIGTERM', handleGracefulExit);  // 终止信号
 
 /**
  * 主启动函数
- * @param {string} action - 操作类型
+ * 
+ * 根据操作类型执行相应的功能：
+ * - MP_BUILD: 构建小程序包
+ * - MP_DEBUG: 启动真机调试服务器
+ * - CLEAN: 清理临时文件
+ * - QUIT: 退出程序
+ * 
+ * @param {string} action - 操作类型（ACTION_TYPES 中的值）
  */
 async function Start(action) {
   const actionNames = {
@@ -83,11 +107,13 @@ async function Start(action) {
 
   Logger.info(`当前操作: ${actionNames[action] || '未知操作'}`);
 
+  // ========== 退出操作 ==========
   if (action === ACTION_TYPES.QUIT) {
     Logger.info('再见!');
     return;
   }
 
+  // ========== 清理操作 ==========
   if (action === ACTION_TYPES.CLEAN) {
     const { cleanType } = await inquirer.prompt([
       {
@@ -134,17 +160,23 @@ async function Start(action) {
     return;
   }
 
-  // 显示应用选择界面
+  // ========== 构建/调试操作 ==========
   try {
+    // 读取应用配置
     const appConfigPath = path.join(projectPath, 'app.json');
     const appInfo = fse.readJsonSync(appConfigPath).htyf;
+    
+    // 检测是否为 Godot 项目（通过检查是否存在 project.godot 文件）
     const isGodot = fse.existsSync(path.join(projectPath, 'project.godot'));
-    Logger.info(`是否是Game项目: ${isGodot}`);
+    Logger.info(`项目类型: ${isGodot ? 'Godot 游戏项目' : '普通小程序项目'}`);
+    
     if (!appInfo) {
       Logger.error('应用配置不存在，请先在app.json中配置htyf');
       return;
     }
     
+    // ========== 版本处理 ==========
+    // 自动递增版本号作为默认值
     const version = appInfo?.version;
     const incrementedVersion = version ? incrementVersion(version) : '1.0.0';
     const { versionName } = await inquirer.prompt([
@@ -163,15 +195,18 @@ async function Start(action) {
     Logger.info(`用户选择:`);
     Logger.info(`版本名称: ${versionName}`);
 
+    // ========== 更新应用配置 ==========
+    // 合并用户输入的版本号到应用信息中
     const newAppInfo = lodash.merge({}, appInfo, {
       version: versionName,
     });
 
+    // 更新 app.json 文件
     if (!updateAppConfig(newAppInfo)) {
       return;
     }
 
-    // 显示操作信息
+    // ========== 显示应用信息 ==========
     console.log('\n' + boxen(
       chalk.cyan('应用信息') + '\n\n' +
       chalk.white('名称: ') + chalk.yellow(`${newAppInfo.name}`) + '\n' +
@@ -184,13 +219,16 @@ async function Start(action) {
       }
     ));
 
-    Logger.info('执行初始化...');
+    Logger.info('开始执行操作...');
 
+    // ========== 执行相应操作 ==========
     switch (action) {
       case ACTION_TYPES.MP_BUILD:
+        // 构建小程序包
         await mpBuildShell(newAppInfo, isGodot);
         break;
       case ACTION_TYPES.MP_DEBUG:
+        // 启动真机调试服务器
         await mpDebugShell(newAppInfo, isGodot);
         break;
       default:
@@ -203,7 +241,8 @@ async function Start(action) {
   }
 }
 
-// 主程序入口
+// ========== 主程序入口 ==========
+// 显示欢迎信息
 console.log('\n' + boxen(
   gradient.rainbow('🎯 红糖云服 应用 CLI 工具 v2.2.0') + '\n' +
   chalk.gray('用于管理多应用项目的开发、构建和部署') + '\n' +
@@ -217,7 +256,9 @@ console.log('\n' + boxen(
   }
 ));
 
-// 设置日志级别
+// ========== 命令行参数处理 ==========
+
+// 处理调试模式参数
 if (process.argv.includes('--debug')) {
   setLogLevel(LOG_LEVELS.DEBUG);
   Logger.debug('调试模式已启用');
@@ -226,7 +267,7 @@ if (process.argv.includes('--debug')) {
 // 记录启动日志
 Logger.writeToFile('CLI 工具启动', 'INFO');
 
-// 处理命令行清理参数
+// 处理清理参数（命令行直接清理，不进入交互界面）
 if (process.argv.includes('--clean')) {
   const cleanIndex = process.argv.indexOf('--clean');
   const cleanType = process.argv[cleanIndex + 1] || 'all';
