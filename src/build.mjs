@@ -161,7 +161,6 @@ export async function mpBuildShell(newAppInfo, isGodot = false) {
   let outputPath = path.join(mpOutputPath, 'dist');  // 最终输出目录
   let distPackagePath = path.join(mpOutputPath, 'dist.dgz');  // 最终压缩包路径
   const rootIndexPath = path.join(tempPath, '..', 'index.js');
-
   // Webpack 构建选项（仅普通小程序使用）
   const mpOptions = {
     name: scriptName,
@@ -171,8 +170,9 @@ export async function mpBuildShell(newAppInfo, isGodot = false) {
     },
     outputPath: path.join(mpOutputPath, 'build'),  // webpack 构建输出目录
     extraChunksPath: outputPath,
-    manifest: path.join(mpOutputPath, 'build'),
+    manifest: path.join(mpOutputPath, 'manifest.json'),
   };
+  Logger.info('mpOptions', mpOptions);
 
   // 保存 app.json 到输出目录
   const appJsonPath = path.join(mpOutputPath, 'app.json');
@@ -253,7 +253,8 @@ export async function mpBuildShell(newAppInfo, isGodot = false) {
     // 将 app.json 复制到输出目录
     await fse.ensureDir(outputPath);
     await fse.copy(appJsonPath, path.join(outputPath, 'app.json'));
-    
+    fse.copyFileSync(path.join(outputPath, '../manifest.json'), path.join(outputPath, 'manifest.json'));
+
     // 压缩输出目录为最终包
     const zipPath = await handleZip(outputPath, distPackagePath);
     Logger.success(`压缩包已创建: ${zipPath}`);
