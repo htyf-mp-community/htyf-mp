@@ -1,6 +1,6 @@
 {
   "htyf": {
-    "name": "helloworld",
+    "name": "game",
     "version": "1.0.0",
     "appid": "htyfgame123",
     "appUrlConfig": "https://xxx.cos.ap-chengdu.myqcloud.com/assets/testMiniApps/htyanimation/app.json",

@@ -4,7 +4,7 @@
   "htyf": {
     "entry": "./src/index.tsx",
     "version": "1.0.0",
-    "name": "_apps_temp_",
+    "name": "htyf",
     "appid": "htyfapp123",
     "appUrlConfig": "https://xxx.cos.ap-chengdu.myqcloud.com/assets/testMiniApps/htyanimation/app.json",
     "zipUrl": "https://xxxxx.myqcloud.com/assets/testMiniApps/xxxxx/outputs/dist.dgz"
