@@ -140,28 +140,21 @@ async function promptForGodotBinaryPath(defaultPath) {
 }
 
 async function resolveGodotBinary() {
+  // 获取可能的默认值（优先级：环境变量 > 缓存 > 默认路径）
   const override = process.env.GODOT_EDITOR ? process.env.GODOT_EDITOR.trim() : '';
-  if (override && isExecutable(override)) {
-    return override;
-  }
-
   const cached = readCachedGodotPath();
-  if (cached && isExecutable(cached)) {
-    return cached;
-  }
-
-  if (isExecutable(DEFAULT_GODOT_BIN)) {
-    await writeCachedGodotPath(DEFAULT_GODOT_BIN);
-    return DEFAULT_GODOT_BIN;
-  }
-
-  const fallbackDefault = override || cached || DEFAULT_GODOT_BIN;
-  const godotPath = await promptForGodotBinaryPath(fallbackDefault);
+  
+  // 确定默认值
+  let defaultPath = override || cached || DEFAULT_GODOT_BIN;
+  
+  // 总是询问用户，但将缓存值或默认值作为默认输入
+  const godotPath = await promptForGodotBinaryPath(defaultPath);
 
   if (!isExecutable(godotPath)) {
     throw new Error(`Godot 二进制文件不可执行: ${godotPath}`);
   }
 
+  // 保存用户输入作为下次的默认值
   await writeCachedGodotPath(godotPath);
   return godotPath;
 }
