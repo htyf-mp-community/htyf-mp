@@ -253,7 +253,9 @@ export async function mpBuildShell(newAppInfo, isGodot = false) {
     // 将 app.json 复制到输出目录
     await fse.ensureDir(outputPath);
     await fse.copy(appJsonPath, path.join(outputPath, 'app.json'));
-    fse.copyFileSync(path.join(outputPath, '../manifest.json'), path.join(outputPath, 'manifest.json'));
+    if (!isGodot) {
+      fse.copyFileSync(path.join(outputPath, '../manifest.json'), path.join(outputPath, 'manifest.json'));
+    }
 
     // 压缩输出目录为最终包
     const zipPath = await handleZip(outputPath, distPackagePath);
