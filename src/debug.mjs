@@ -13,15 +13,16 @@ import { printQrcode } from './utils-functions.mjs';
 /**
  * 小程序真机调试
  * @param {object} newAppInfo - 应用信息
+ * @param {boolean} isGodot - 是否为 Godot 项目
  */
-export async function mpDebugShell(newAppInfo) {
+export async function mpDebugShell(newAppInfo, isGodot = false) {
   try {
-    // 验证必需字段
-    if (!newAppInfo.entry) {
+    // 验证必需字段（Godot 项目不需要 entry）
+    if (!isGodot && !newAppInfo.entry) {
       throw new Error('缺少必需的应用信息: entry');
     }
     
-    const zipPath = await mpBuildShell(newAppInfo);
+    const zipPath = await mpBuildShell(newAppInfo, isGodot);
     const assetsPath = path.dirname(zipPath);
     const appJsonPath = path.join(assetsPath, 'app.json');
 
