@@ -1,7 +1,7 @@
 {
   "htyf": {
     "name": "helloworld",
-    "version": "1.0.13",
+    "version": "1.0.17",
     "appid": "htyf1234567890",
     "appUrlConfig": "https://xxx.cos.ap-chengdu.myqcloud.com/assets/testMiniApps/htyanimation/app.json",
     "zipUrl": "https://xxxxx.myqcloud.com/assets/testMiniApps/xxxxx/outputs/dist.dgz"
