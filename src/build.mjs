@@ -148,6 +148,8 @@ export async function mpBuildShell(newAppInfo, isGodot = false) {
 
   // 构建 app.json 配置
   const appJson = {
+    ...newAppInfo,
+    rotate: newAppInfo.rotate || 'portrait',
     type: isGodot ? 'game' : 'app',  // Godot 项目类型为 'game'，普通小程序为 'app'
     engines: '2.0.0',
     name: newAppInfo.name,
@@ -207,8 +209,39 @@ export async function mpBuildShell(newAppInfo, isGodot = false) {
   try {
     if (!isGodot) {
       // ========== 普通小程序构建流程 ==========
-      Logger.info('使用 Webpack 构建小程序包...');
-      const command = `npx cross-env APP_ROOT_INDEX_PATH=${rootIndexPath} APP_EXPOSES_OPTIONS=${encodeURI(JSON.stringify(mpOptions))} webpack --config ${webpackConfigPath}`;
+      Logger.info('使用 React Native 构建小程序包...');
+      
+      // 计算 react-native CLI 路径
+      const reactNativePath = path.resolve(__dirname, '../../../.bin/react-native');
+      const entryFile = newAppInfo.entry
+        ? path.resolve(PROJECT_ROOT, newAppInfo.entry)
+        : rootIndexPath;
+      const bundlePlatform = (CONSTANTS.BUNDLE_PLATFORM || 'ios').toLowerCase();
+      const bundleOutput = path.join(mpOptions.extraChunksPath, `${scriptName}.${bundlePlatform}.jsbundle`);
+      const assetsDest = path.join(mpOptions.extraChunksPath, 'assets');
+      
+      await fse.ensureDir(path.dirname(bundleOutput));
+      await fse.ensureDir(assetsDest);
+      
+      const command = [
+        'npx',
+        'cross-env',
+        `APP_ROOT_INDEX_PATH=${rootIndexPath}`,
+        `APP_EXPOSES_OPTIONS=${encodeURI(JSON.stringify(mpOptions))}`,
+        'node',
+        reactNativePath,
+        'bundle',
+        '--entry-file',
+        rootIndexPath,
+        '--platform',
+        bundlePlatform,
+        '--dev',
+        'false',
+        '--reset-cache',
+        '--minify',
+        'false',
+      ].join(' ');
+      console.log('command', command);
       await CommandExecutor.execute(command, {
         description: '构建小程序包',
         timeout: 120000,  // 2 分钟超时

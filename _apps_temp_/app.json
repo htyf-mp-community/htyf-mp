@@ -3,9 +3,10 @@
   "displayName": "_apps_temp_",
   "htyf": {
     "entry": "./src/index.tsx",
-    "version": "1.0.0",
+    "version": "1.0.49",
     "name": "htyf",
     "appid": "htyfapp123",
+    "rotate": "portrait",
     "appUrlConfig": "https://xxx.cos.ap-chengdu.myqcloud.com/assets/testMiniApps/htyanimation/app.json",
     "zipUrl": "https://xxxxx.myqcloud.com/assets/testMiniApps/xxxxx/outputs/dist.dgz"
   }
