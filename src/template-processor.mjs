@@ -89,7 +89,7 @@ export class TemplateProcessor {
     // 复制模板文件
     Object.entries(template.files).forEach(([key, fileName]) => {
       const srcPath = path.join(tempPath, fileName);
-      const destPath = path.join(appRootPath, key === 'src' ? './src' : `./${key === 'app' ? 'App.tsx' : key === 'index' ? 'index.js' : key === 'babel' ? 'babel.config.js' : 'htyf.json'}`);
+      const destPath = path.join(appRootPath, key === 'src' ? './src' : `./${key === 'app' ? 'App.tsx' : key === 'index' ? 'index.js' : key === 'babel' ? 'babel.config.js' : 'app.json'}`);
 
       if (fs.existsSync(srcPath)) {
         fse.copySync(srcPath, destPath);
@@ -125,7 +125,7 @@ export class TemplateProcessor {
     // 复制模板文件
     Object.entries(template.files).forEach(([key, fileName]) => {
       const srcPath = path.join(tempPath, fileName);
-      const destPath = path.join(appRootPath, key === 'src' ? './src' : `./${key === 'app' ? 'App.tsx' : key === 'index' ? 'index.js' : key === 'babel' ? 'babel.config.js' : 'htyf.json'}`);
+      const destPath = path.join(appRootPath, key === 'src' ? './src' : `./${key === 'app' ? 'App.tsx' : key === 'index' ? 'index.js' : key === 'babel' ? 'babel.config.js' : 'app.json'}`);
 
       if (fs.existsSync(srcPath)) {
         fse.copySync(srcPath, destPath);

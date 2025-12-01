@@ -193,8 +193,26 @@ export class ProjectInitializer {
       const projectConfig = this.config.createProjectConfig(appName, displayName, appid);
 
       // 写入配置文件
-      const configPath = path.join(appRootPath, 'htyf.json');
-      fs.writeFileSync(configPath, JSON.stringify(projectConfig, undefined, 2));
+      const configPath = path.join(appRootPath, 'app.json');
+      let existingConfig = {};
+      
+      // 检查 app.json 是否存在
+      if (fs.existsSync(configPath)) {
+        // 如果存在，读取现有内容
+        const existingContent = fs.readFileSync(configPath, 'utf-8');
+        try {
+          existingConfig = JSON.parse(existingContent);
+        } catch (error) {
+          Logger.warn('app.json 格式错误，将创建新配置');
+          existingConfig = {};
+        }
+      }
+      
+      // 添加 htyf 字段
+      existingConfig.htyf = projectConfig;
+      
+      // 写入配置文件
+      fs.writeFileSync(configPath, JSON.stringify(existingConfig, undefined, 2));
 
       // 清理临时文件
       spinner.text = '正在清理临时文件...';
