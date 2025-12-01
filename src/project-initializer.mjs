@@ -191,9 +191,8 @@ export class ProjectInitializer {
       spinner.text = '正在生成项目配置...';
       const appid = this.config.generateAppId();
       const projectConfig = this.config.createProjectConfig(appName, displayName, appid);
-
       // 写入配置文件
-      const configPath = path.join(appRootPath, 'app.json');
+      const configPath = path.join(appRootPath, template.tempPath, 'app.json');
       let existingConfig = {};
       
       // 检查 app.json 是否存在
@@ -245,7 +244,7 @@ export class ProjectInitializer {
     } catch (error) {
       // 清理临时目录
       if (fs.existsSync(tmpdir)) {
-        fse.removeSync(tmpdir);
+        // fse.removeSync(tmpdir);
       }
       throw error;
     }

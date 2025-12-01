@@ -47,9 +47,10 @@ export class TemplateProcessor {
     ];
 
     // 根据模板类型移除不需要的模板
-    if (templateType === CONSTANTS.TEMPLATE_TYPES.TARO || templateType === CONSTANTS.TEMPLATE_TYPES.EXPO) {
+    if (templateType === CONSTANTS.TEMPLATE_TYPES.GAME_TEMPLATE) {
       pathsToRemove.push(path.join(tmpdir, 'mini-game-template'));
-    } else if (templateType === CONSTANTS.TEMPLATE_TYPES.GAME_COCOS) {
+    } 
+    if (templateType === CONSTANTS.TEMPLATE_TYPES.APP_TEMPLATE) {
       pathsToRemove.push(path.join(tmpdir, 'mini-apps-template'));
     }
 
@@ -73,65 +74,7 @@ export class TemplateProcessor {
 
     const tempPath = path.join(appRootPath, '__TEMP__');
 
-    if (templateType === CONSTANTS.TEMPLATE_TYPES.TARO) {
-      this.processTaroTemplate(appRootPath, tempPath, template);
-    } else if (templateType === CONSTANTS.TEMPLATE_TYPES.EXPO) {
-      this.processExpoTemplate(appRootPath, tempPath, template);
-    } else if (templateType === CONSTANTS.TEMPLATE_TYPES.GAME_COCOS) {
-      // 预留游戏模板处理
-      Logger.info('游戏模板处理功能开发中...');
-    }
   }
 
-  processTaroTemplate(appRootPath, tempPath, template) {
-    Logger.info('正在处理 Taro 模板...');
-
-    // 复制模板文件
-    Object.entries(template.files).forEach(([key, fileName]) => {
-      const srcPath = path.join(tempPath, fileName);
-      const destPath = path.join(appRootPath, key === 'src' ? './src' : `./${key === 'app' ? 'App.tsx' : key === 'index' ? 'index.js' : key === 'babel' ? 'babel.config.js' : 'app.json'}`);
-
-      if (fs.existsSync(srcPath)) {
-        fse.copySync(srcPath, destPath);
-        Logger.debug(`已复制: ${fileName} -> ${destPath}`);
-      }
-    });
-
-    // 更新 package.json
-    const pkgPath = path.join(appRootPath, './package.json');
-    if (fs.existsSync(pkgPath)) {
-      const pkgInfo = fse.readJSONSync(pkgPath);
-      if (template.scripts) {
-        pkgInfo.scripts = {
-          ...(pkgInfo.scripts || {}),
-          ...template.scripts
-        };
-      }
-
-      // 移除不需要的脚本
-      if (pkgInfo.scripts) {
-        delete pkgInfo.scripts.web;
-        delete pkgInfo.scripts['web:dev'];
-      }
-
-      fse.writeJSONSync(pkgPath, pkgInfo, { spaces: 2 });
-      Logger.info('package.json 已更新');
-    }
-  }
-
-  processExpoTemplate(appRootPath, tempPath, template) {
-    Logger.info('正在处理 Expo 模板...');
-
-    // 复制模板文件
-    Object.entries(template.files).forEach(([key, fileName]) => {
-      const srcPath = path.join(tempPath, fileName);
-      const destPath = path.join(appRootPath, key === 'src' ? './src' : `./${key === 'app' ? 'App.tsx' : key === 'index' ? 'index.js' : key === 'babel' ? 'babel.config.js' : 'app.json'}`);
-
-      if (fs.existsSync(srcPath)) {
-        fse.copySync(srcPath, destPath);
-        Logger.debug(`已复制: ${fileName} -> ${destPath}`);
-      }
-    });
-  }
 }
 

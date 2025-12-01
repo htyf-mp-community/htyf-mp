@@ -19,7 +19,7 @@ export class ProjectConfig {
       },
       [CONSTANTS.TEMPLATE_TYPES.GAME_TEMPLATE]: {
         name: 'game-template',
-        tempPath: '_games_temp_'
+        tempPath: '_game_temp_'
       }
     };
   }
