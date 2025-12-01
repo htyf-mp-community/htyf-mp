@@ -3,7 +3,7 @@
   "displayName": "apps",
   "htyf": {
     "entry": "./src/index.tsx",
-    "version": "1.0.54",
+    "version": "1.0.0",
     "name": "demo",
     "appid": "htyfapp123",
     "rotate": "portrait",
