@@ -192,7 +192,7 @@ export class ProjectInitializer {
       const appid = this.config.generateAppId();
       const projectConfig = this.config.createProjectConfig(appName, displayName, appid);
       // 写入配置文件
-      const configPath = path.join(appRootPath, template.tempPath, 'app.json');
+      const configPath = path.join(appRootPath, 'app.json');
       let existingConfig = {};
       
       // 检查 app.json 是否存在
