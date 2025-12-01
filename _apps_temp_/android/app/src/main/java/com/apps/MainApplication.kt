@@ -1,4 +1,4 @@
-package com._apps_temp_
+package com.apps
 
 import android.app.Application
 import com.facebook.react.PackageList
