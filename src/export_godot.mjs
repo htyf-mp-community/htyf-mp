@@ -8,7 +8,7 @@
  */
 
 import path from 'node:path';
-import { pathToFileURL } from 'node:url';
+import { pathToFileURL, fileURLToPath } from 'node:url';
 import { accessSync, constants as fsConstants } from 'node:fs';
 import process from 'node:process';
 import { homedir } from 'node:os';
@@ -40,6 +40,199 @@ const PRESET_NAMES = {
   [PLATFORMS.ANDROID]: 'Android'
 };
 
+/** 模板 export_presets.cfg 文件路径 */
+const TEMPLATE_EXPORT_PRESETS_PATH = path.join(
+  path.dirname(fileURLToPath(import.meta.url)),
+  'export_presets.cfg'
+);
+
+/**
+ * 查找 Godot 项目根目录（包含 project.godot 的目录）
+ * 
+ * @param {string} projectDir - 项目目录
+ * @returns {string|null} 项目根目录，如果未找到则返回 null
+ */
+function findGodotProjectRoot(projectDir) {
+  let currentDir = path.resolve(projectDir);
+  
+  // 向上查找，直到找到包含 project.godot 的目录
+  while (currentDir !== path.dirname(currentDir)) {
+    const projectFile = path.join(currentDir, 'project.godot');
+    if (fs.existsSync(projectFile)) {
+      return currentDir;
+    }
+    currentDir = path.dirname(currentDir);
+  }
+  
+  return null;
+}
+
+/**
+ * 解析 export_presets.cfg 文件，检查是否包含指定平台的配置
+ * 
+ * @param {string} content - 文件内容
+ * @returns {object} 包含 hasAndroid 和 hasIos 的对象
+ */
+function parseExportPresets(content) {
+  const hasAndroid = /platform\s*=\s*"Android"/i.test(content);
+  const hasIos = /platform\s*=\s*"iOS"/i.test(content);
+  return { hasAndroid, hasIos };
+}
+
+/**
+ * 从模板文件中提取指定平台的预设配置
+ * 
+ * @param {string} templateContent - 模板文件内容
+ * @param {string} platform - 平台名称（'Android' 或 'iOS'）
+ * @returns {string} 预设配置内容
+ */
+function extractPresetFromTemplate(templateContent, platform) {
+  const lines = templateContent.split('\n');
+  const presetIndex = platform === 'Android' ? 0 : 1;
+  const presetSection = `[preset.${presetIndex}]`;
+  const optionsSection = `[preset.${presetIndex}.options]`;
+  
+  let startIndex = -1;
+  let endIndex = -1;
+  let inPreset = false;
+  let inOptions = false;
+  
+  // 找到预设开始位置
+  for (let i = 0; i < lines.length; i++) {
+    if (lines[i].trim() === presetSection) {
+      startIndex = i;
+      inPreset = true;
+    } else if (inPreset && lines[i].trim() === optionsSection) {
+      inOptions = true;
+    } else if (inOptions && lines[i].trim().startsWith('[') && lines[i].trim() !== optionsSection) {
+      // 遇到下一个节，结束
+      endIndex = i;
+      break;
+    }
+  }
+  
+  if (startIndex === -1) {
+    return '';
+  }
+  
+  // 如果没有找到结束位置，取到文件末尾
+  if (endIndex === -1) {
+    endIndex = lines.length;
+  }
+  
+  return lines.slice(startIndex, endIndex).join('\n');
+}
+
+/**
+ * 获取现有文件中最大的预设索引
+ * 
+ * @param {string} content - 文件内容
+ * @returns {number} 最大的预设索引，如果没有找到则返回 -1
+ */
+function getMaxPresetIndex(content) {
+  const presetRegex = /\[preset\.(\d+)\]/g;
+  let maxIndex = -1;
+  let match;
+  
+  while ((match = presetRegex.exec(content)) !== null) {
+    const index = parseInt(match[1], 10);
+    if (index > maxIndex) {
+      maxIndex = index;
+    }
+  }
+  
+  return maxIndex;
+}
+
+/**
+ * 调整预设配置中的索引
+ * 
+ * @param {string} presetContent - 预设配置内容
+ * @param {number} oldIndex - 旧索引
+ * @param {number} newIndex - 新索引
+ * @returns {string} 调整后的预设配置内容
+ */
+function adjustPresetIndex(presetContent, oldIndex, newIndex) {
+  return presetContent
+    .replace(new RegExp(`\\[preset\\.${oldIndex}\\]`, 'g'), `[preset.${newIndex}]`)
+    .replace(new RegExp(`\\[preset\\.${oldIndex}\\.options\\]`, 'g'), `[preset.${newIndex}.options]`);
+}
+
+/**
+ * 合并预设配置到现有文件
+ * 
+ * @param {string} existingContent - 现有文件内容
+ * @param {string} templateContent - 模板文件内容
+ * @returns {string} 合并后的内容
+ */
+function mergePresets(existingContent, templateContent) {
+  const { hasAndroid, hasIos } = parseExportPresets(existingContent);
+  let mergedContent = existingContent.trim();
+  
+  // 获取现有文件中最大的预设索引
+  const maxIndex = getMaxPresetIndex(mergedContent);
+  let nextIndex = maxIndex + 1;
+  
+  // 如果缺少 Android 配置，添加它
+  if (!hasAndroid) {
+    const androidPreset = extractPresetFromTemplate(templateContent, 'Android');
+    if (androidPreset) {
+      // 调整预设索引
+      const adjustedPreset = adjustPresetIndex(androidPreset, 0, nextIndex);
+      mergedContent += '\n\n' + adjustedPreset;
+      nextIndex++;
+    }
+  }
+  
+  // 如果缺少 iOS 配置，添加它
+  if (!hasIos) {
+    const iosPreset = extractPresetFromTemplate(templateContent, 'iOS');
+    if (iosPreset) {
+      // 调整预设索引
+      const adjustedPreset = adjustPresetIndex(iosPreset, 1, nextIndex);
+      mergedContent += '\n\n' + adjustedPreset;
+    }
+  }
+  
+  return mergedContent;
+}
+
+/**
+ * 检查并合并 export_presets.cfg 文件
+ * 
+ * @param {string} projectRoot - Godot 项目根目录
+ */
+async function checkAndMergeExportPresets(projectRoot) {
+  const exportPresetsPath = path.join(projectRoot, 'export_presets.cfg');
+  const templateExists = fs.existsSync(TEMPLATE_EXPORT_PRESETS_PATH);
+  
+  if (!templateExists) {
+    console.warn(`警告: 模板文件 ${TEMPLATE_EXPORT_PRESETS_PATH} 不存在，跳过配置合并`);
+    return;
+  }
+  
+  const templateContent = await fs.readFile(TEMPLATE_EXPORT_PRESETS_PATH, 'utf-8');
+  
+  // 如果项目根目录下没有 export_presets.cfg，直接复制模板文件
+  if (!fs.existsSync(exportPresetsPath)) {
+    await fs.copyFile(TEMPLATE_EXPORT_PRESETS_PATH, exportPresetsPath);
+    return;
+  }
+  
+  // 如果文件存在，检查是否需要合并
+  const existingContent = await fs.readFile(exportPresetsPath, 'utf-8');
+  const { hasAndroid, hasIos } = parseExportPresets(existingContent);
+  
+  // 如果两个平台配置都存在，不需要合并
+  if (hasAndroid && hasIos) {
+    return;
+  }
+  
+  // 需要合并配置
+  const mergedContent = mergePresets(existingContent, templateContent);
+  await fs.writeFile(exportPresetsPath, mergedContent, 'utf-8');
+}
+
 /**
  * 提示用户输入或确认 Godot 导出选项
  * 
@@ -65,16 +258,24 @@ const PRESET_NAMES = {
  */
 export async function promptGodotOptions(defaults = {}) {
   // 如果所有必需的值都已提供，直接返回，不进行询问（用于自动化场景）
+  let projectDir = defaults.projectDir ? String(defaults.projectDir).trim() : null;
+  
   if (
     defaults.targetBaseDir &&
-    defaults.projectDir &&
+    projectDir &&
     defaults.appid &&
     defaults.preset &&
     defaults.platform
   ) {
+    // 在返回前检查并合并 export_presets.cfg
+    const projectRoot = findGodotProjectRoot(projectDir);
+    if (projectRoot) {
+      await checkAndMergeExportPresets(projectRoot);
+    }
+    
     return {
       targetBaseDir: String(defaults.targetBaseDir).trim(),
-      projectDir: String(defaults.projectDir).trim(),
+      projectDir: projectDir,
       name: String(defaults.appid).trim(),
       preset: String(defaults.preset).trim(),
       platform: defaults.platform
@@ -123,9 +324,17 @@ export async function promptGodotOptions(defaults = {}) {
     }
   ]);
 
+  projectDir = answers.projectDir.trim();
+  
+  // 检查并合并 export_presets.cfg
+  const projectRoot = findGodotProjectRoot(projectDir);
+  if (projectRoot) {
+    await checkAndMergeExportPresets(projectRoot);
+  }
+
   return {
     targetBaseDir: answers.targetBaseDir.trim(),
-    projectDir: answers.projectDir.trim(),
+    projectDir: projectDir,
     name: answers.name.trim(),
     preset: answers.preset.trim(),
     platform: answers.platform

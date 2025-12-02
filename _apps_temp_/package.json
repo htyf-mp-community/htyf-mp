@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@callstack/repack": "5.2.2",
-    "@htyf-mp/cli": "0.2.6",
+    "@htyf-mp/cli": "0.2.7",
     "@react-native-masked-view/masked-view": "0.3.2",
     "@react-native/new-app-screen": "0.81.5",
     "@react-navigation/bottom-tabs": "7.8.8",
