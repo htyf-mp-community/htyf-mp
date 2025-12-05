@@ -187,10 +187,12 @@ export class ProjectInitializer {
       spinner.text = '正在处理模板...';
       this.processor.processTemplate(appRootPath, templateType);
 
+      const isGodot = this.config.templates[templateType] === CONSTANTS.TEMPLATE_TYPES.GAME_TEMPLATE;
+
       // 生成配置
       spinner.text = '正在生成项目配置...';
       const appid = this.config.generateAppId();
-      const projectConfig = this.config.createProjectConfig(appName, displayName, appid);
+      const projectConfig = this.config.createProjectConfig(appName, displayName, appid, isGodot ? 'landscape' : 'portrait');
       // 写入配置文件
       const configPath = path.join(appRootPath, 'app.json');
       let existingConfig = {};
@@ -208,7 +210,10 @@ export class ProjectInitializer {
       }
       
       // 添加 htyf 字段
-      existingConfig.htyf = projectConfig;
+      existingConfig.htyf = {
+        ...(existingConfig?.htyf || {}),
+        ...projectConfig
+      };
       
       // 写入配置文件
       fs.writeFileSync(configPath, JSON.stringify(existingConfig, undefined, 2));

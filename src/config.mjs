@@ -38,14 +38,15 @@ export class ProjectConfig {
     }));
   }
 
-  createProjectConfig(appName, displayName, appid) {
+  createProjectConfig(appName, displayName, appid, rotate) {
     return {
       type: 'app',
       name: appName,
+      rotate: rotate || 'portrait',
       projectname: displayName,
       appid: appid,
-      appUrlConfig: 'https://xxx.cos.ap-chengdu.myqcloud.com/assets/testMiniApps/htyanimation/app.json',
-      zipUrl: 'https://xxxxx.myqcloud.com/assets/testMiniApps/xxxxx/outputs/dist.dgz'
+      appUrlConfig: 'https://xxxxx/app.json',
+      zipUrl: 'https://xxxxx/dist.[PLATFORM].dgz'
     };
   }
 }
