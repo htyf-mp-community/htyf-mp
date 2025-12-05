@@ -275,10 +275,10 @@ export async function mpBuildShell(newAppInfo, isGodot = false) {
       
       // Godot 项目使用平台特定的文件名（如 dist.ios.dgz 或 dist.android.dgz）
       const platformName = godotOptions.platform === 'ios' ? 'ios' : 'android';
-      distPackagePath = path.join(mpOutputPath, `dist.[PLATFORM].dgz`);
+      distPackagePath = path.join(mpOutputPath, `dist.[${platformName}].dgz`);
       
       // 更新 app.json 中的 zipUrl
-      appJson.zipUrl = newAppInfo.zipUrl || `${newAppInfo.host}/dist.[PLATFORM].dgz`;
+      appJson.zipUrl = newAppInfo.zipUrl || `${newAppInfo.host}/dist.[${platformName}].dgz`;
       await fse.writeJson(appJsonPath, appJson, { spaces: 2 });
     }
 
