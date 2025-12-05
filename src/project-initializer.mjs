@@ -187,7 +187,7 @@ export class ProjectInitializer {
       spinner.text = '正在处理模板...';
       this.processor.processTemplate(appRootPath, templateType);
 
-      const isGodot = this.config.templates[templateType] === CONSTANTS.TEMPLATE_TYPES.GAME_TEMPLATE;
+      const isGodot = templateType === CONSTANTS.TEMPLATE_TYPES.GAME_TEMPLATE;
 
       // 生成配置
       spinner.text = '正在生成项目配置...';
