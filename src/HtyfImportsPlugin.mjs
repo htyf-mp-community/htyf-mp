@@ -342,6 +342,29 @@ export class HtyfModulesPlugin {
     }
 
     try {
+      // 确保 react-native 版本在依赖报告中
+      if (!dependencies['react-native']) {
+        // 如果 shared-output.json 中没有，尝试从 package.json 读取
+        try {
+          const packageJsonPath = path.join(nodeModulesPath, '../package.json');
+          if (fse.pathExistsSync(packageJsonPath)) {
+            const packageJson = fse.readJsonSync(packageJsonPath);
+            const reactNativeVersion = packageJson.dependencies?.['react-native'] || 
+                                     packageJson.devDependencies?.['react-native'];
+            if (reactNativeVersion) {
+              const cleanVersion = reactNativeVersion.replace(/^[~^]/, '');
+              dependencies['react-native'] = {
+                name: 'react-native',
+                version: cleanVersion,
+                nativeModule: true,
+              };
+            }
+          }
+        } catch (error) {
+          // 静默失败
+        }
+      }
+      
       const reportDir = path.dirname(manifest);
       fse.ensureDirSync(reportDir);
       fse.writeJsonSync(
