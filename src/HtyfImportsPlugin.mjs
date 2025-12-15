@@ -307,7 +307,9 @@ export class HtyfModulesPlugin {
       }
 
       // 首次处理该包
-      const nativeModule = hasNativeCode(packageName);
+      // react-native 必须视为原生依赖，无论是否检测到 ios/android 目录
+      const nativeModule =
+        packageName === "react-native" ? true : hasNativeCode(packageName);
       const dependencyInfo = {
         name: packageName,
         version: getPackageVersion(packageName),
