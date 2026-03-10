@@ -13,16 +13,17 @@
   "dependencies": {
     "@callstack/repack": "5.2.2",
     "@htyf-mp/cli": "0.2.16",
+    "@htyf-mp/js-sdk": "^0.2.3",
     "@react-native-masked-view/masked-view": "0.3.2",
+    "@react-native/new-app-screen": "0.83.0",
     "@react-navigation/bottom-tabs": "7.8.8",
     "@react-navigation/elements": "2.8.4",
     "@react-navigation/native": "7.1.22",
     "@react-navigation/native-stack": "7.8.2",
-    "react-native-screens": "4.18.0",
     "react": "19.2.0",
     "react-native": "0.83.0",
-    "@react-native/new-app-screen": "0.83.0",
-    "react-native-safe-area-context": "5.5.2"
+    "react-native-safe-area-context": "5.5.2",
+    "react-native-screens": "4.18.0"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
