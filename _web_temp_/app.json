@@ -1,10 +1,11 @@
 {
   "htyf": {
-    "type": "game",
+    "type": "web",
     "name": "demo",
-    "version": "1.0.38",
-    "appid": "htyfgame123",
+    "version": "1.0.2",
+    "appid": "htyfweb123",
     "rotate": "",
+    "webUrl": "https://bing.com",
     "appUrlConfig": "https://xxx.cos.ap-chengdu.myqcloud.com/assets/testMiniApps/htyanimation/app.json",
     "zipUrl": "https://xxxxx.myqcloud.com/assets/testMiniApps/xxxxx/outputs/dist.[PLATFORM].dgz"
   }

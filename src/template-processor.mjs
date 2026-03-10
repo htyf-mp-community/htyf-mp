@@ -53,6 +53,12 @@ export class TemplateProcessor {
     if (templateType === CONSTANTS.TEMPLATE_TYPES.APP_TEMPLATE) {
       pathsToRemove.push(path.join(tmpdir, 'mini-apps-template'));
     }
+    if (templateType === CONSTANTS.TEMPLATE_TYPES.WEB_TEMPLATE) {
+      pathsToRemove.push(
+        path.join(tmpdir, 'mini-apps-template'),
+        path.join(tmpdir, 'mini-game-template')
+      );
+    }
 
     pathsToRemove.forEach(pathToRemove => {
       try {

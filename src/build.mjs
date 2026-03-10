@@ -147,10 +147,11 @@ export async function mpBuildShell(newAppInfo, isGodot = false) {
   const scriptName = getMiniAppScriptId(appid, version);
 
   // 构建 app.json 配置
+  const appType = newAppInfo.type || (isGodot ? 'game' : 'app');
   const appJson = {
     ...newAppInfo,
     rotate: newAppInfo.rotate || 'portrait',
-    type: isGodot ? 'game' : 'app',  // Godot 项目类型为 'game'，普通小程序为 'app'
+    type: appType,  // 支持 app / game / web 等类型
     engines: '2.0.0',
     name: newAppInfo.name,
     appid,
@@ -207,7 +208,8 @@ export async function mpBuildShell(newAppInfo, isGodot = false) {
 
   // ========== 执行构建 ==========
   try {
-    if (!isGodot) {
+    const isWeb = appType === 'web';
+    if (!isGodot && !isWeb) {
       // ========== 普通小程序构建流程 ==========
       Logger.info('使用 React Native 构建小程序包...');
       
@@ -247,7 +249,7 @@ export async function mpBuildShell(newAppInfo, isGodot = false) {
         timeout: 120000,  // 2 分钟超时
         showCommand: false
       });
-    } else {
+    } else if (isGodot) {
       // ========== Godot 游戏构建流程 ==========
       Logger.info('检测到 Godot 项目，开始执行 Godot 导出流程...');
       
@@ -286,7 +288,7 @@ export async function mpBuildShell(newAppInfo, isGodot = false) {
     // 将 app.json 复制到输出目录
     await fse.ensureDir(outputPath);
     await fse.copy(appJsonPath, path.join(outputPath, 'app.json'));
-    if (!isGodot) {
+    if (!isGodot && appType !== 'web') {
       fse.copyFileSync(path.join(outputPath, '../manifest.json'), path.join(outputPath, 'manifest.json'));
     }
 

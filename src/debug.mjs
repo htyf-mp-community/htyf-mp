@@ -45,8 +45,10 @@ import { printQrcode } from './utils-functions.mjs';
 export async function mpDebugShell(newAppInfo, isGodot = false) {
   try {
     // ========== 参数验证 ==========
-    // Godot 项目不需要 entry 字段，普通小程序需要
-    if (!isGodot && !newAppInfo.entry) {
+    // Godot 项目不需要 entry 字段，Web 类型也不需要；
+    // 仅普通小程序（非 Godot 且非 Web）需要 entry
+    const isWeb = newAppInfo.type === 'web';
+    if (!isGodot && !isWeb && !newAppInfo.entry) {
       throw new Error('缺少必需的应用信息: entry');
     }
     

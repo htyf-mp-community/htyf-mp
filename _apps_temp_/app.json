@@ -2,11 +2,12 @@
   "name": "apps",
   "displayName": "apps",
   "htyf": {
+    "type": "app",
     "entry": "./src/index.tsx",
-    "version": "1.0.0",
+    "version": "1.0.3",
     "name": "demo",
     "appid": "htyfapp123",
-    "rotate": "portrait",
+    "rotate": false,
     "appUrlConfig": "https://xxx.cos.ap-chengdu.myqcloud.com/assets/testMiniApps/htyanimation/app.json",
     "zipUrl": "https://xxxxx.myqcloud.com/assets/testMiniApps/xxxxx/outputs/dist.dgz"
   }
