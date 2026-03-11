@@ -1,16 +1,16 @@
 {
-  "name": "helloworld",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-	"htyf": "htyf",
-	"test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "dependencies": {
-	"@htyf-mp/cli": "0.2.17",
-	"@htyf-mp/js-sdk": "0.2.3"
-  }
+ "name": "helloworld",
+ "version": "1.0.0",
+ "main": "index.js",
+ "scripts": {
+  "htyf": "htyf",
+  "test": "echo \"Error: no test specified\" && exit 1"
+ },
+ "author": "",
+ "license": "ISC",
+ "description": "",
+ "dependencies": {
+  "@htyf-mp/cli": "0.2.17",
+  "@htyf-mp/js-sdk": "^0.2.4"
+ }
 }
