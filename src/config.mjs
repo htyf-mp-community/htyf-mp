@@ -42,7 +42,7 @@ export class ProjectConfig {
     const timestamp = Date.now();
     const randomUuid = uuidv4();
     const uniqueString = `${timestamp}-${randomUuid}`;
-    return md5(uniqueString);
+    return `htyfapp${md5(uniqueString)}`;
   }
 
   createProjectConfig(appName, displayName, appid, rotate) {
