@@ -192,7 +192,18 @@ export class ProjectInitializer {
       // 生成配置
       spinner.text = '正在生成项目配置...';
       const appid = this.config.generateAppId();
-      const projectConfig = this.config.createProjectConfig(appName, displayName, appid, isGodot ? 'landscape' : 'portrait');
+      const projectConfig = this.config.createProjectConfig(appName, displayName, appid, 'portrait');
+
+      // 根据模板类型设置 htyf.type（app / game / web）
+      let appType = 'app';
+      if (templateType === CONSTANTS.TEMPLATE_TYPES.GAME_TEMPLATE) {
+        appType = 'game';
+      } else if (templateType === CONSTANTS.TEMPLATE_TYPES.WEB_TEMPLATE) {
+        appType = 'web';
+      } else if (templateType === CONSTANTS.TEMPLATE_TYPES.APP_TEMPLATE) {
+        appType = 'app';
+      }
+      projectConfig.type = appType;
       // 写入配置文件
       const configPath = path.join(appRootPath, 'app.json');
       let existingConfig = {};
