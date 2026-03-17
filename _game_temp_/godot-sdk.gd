@@ -67,3 +67,7 @@ func call_trigger_haptic(haptic_type: String = "impactMedium") -> void:
 ## 示例：关闭应用
 func call_close_app() -> void:
 	call_rn("closeApp", {})
+
+## 示例：获取菜单按钮边界矩形
+func call_get_menu_button_bounding_client_rect() -> void:
+	call_rn("getMenuButtonBoundingClientRect", {})
