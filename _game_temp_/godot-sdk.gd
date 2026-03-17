@@ -63,3 +63,7 @@ func call_get_network_state() -> void:
 ## 示例：触觉反馈
 func call_trigger_haptic(haptic_type: String = "impactMedium") -> void:
 	call_rn("triggerHaptic", { "type": haptic_type })
+
+## 示例：关闭应用
+func call_close_app() -> void:
+	call_rn("closeApp", {})
