@@ -93,7 +93,9 @@ func _ready() -> void:
 	main.add_child(_section_header("系统"))
 	main.add_child(_make_group([
 		["打开浏览器", "godotengine.org", _on_open_browser],
+		["菜单按钮矩形", "getMenuButtonBoundingClientRect", _on_get_menu_button_bounding_client_rect],
 		["网络状态", "", _on_get_network_state],
+		["关闭应用", "closeApp", _on_close_app],
 	]))
 
 	# 分组：触觉反馈
@@ -212,3 +214,9 @@ func _on_open_browser() -> void:
 
 func _on_get_network_state() -> void:
 	_rn.call_get_network_state()
+
+func _on_get_menu_button_bounding_client_rect() -> void:
+	_rn.call_get_menu_button_bounding_client_rect()
+
+func _on_close_app() -> void:
+	_rn.call_close_app()
