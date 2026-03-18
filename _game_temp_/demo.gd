@@ -2,7 +2,6 @@ extends CanvasLayer
 
 ## RNInterface API 演示：苹果设置风格 UI，分组列表 + 圆角卡片
 
-var _rn: RNInterface
 var _result_dialog: AcceptDialog
 
 # 苹果风格颜色（浅色）
@@ -18,16 +17,10 @@ const SECTION_SPACING := 24
 const ROW_PADDING := 14
 
 func _ready() -> void:
-	_rn = get_parent().get_node("RNInterface") as RNInterface
-	if _rn == null:
-		push_error("Demo: RNInterface 节点未找到")
-		return
-
 	_result_dialog = AcceptDialog.new()
 	_result_dialog.title = "RN 返回"
 	add_child(_result_dialog)
-
-	_rn.ipcResponse.connect(_on_ipc_response)
+	HtyfSdk.ipcResponse.connect(_on_ipc_response)
 
 	# 根：全屏边距
 	var root_margin := MarginContainer.new()
@@ -77,8 +70,8 @@ func _ready() -> void:
 	# 分组：Toast
 	main.add_child(_section_header("Toast"))
 	main.add_child(_make_group([
-		["Toast - 信息", "info", func(): _rn.call_show_toast("标题", "这是描述", "info")],
-		["Toast - 成功", "success", func(): _rn.call_show_toast("成功", "操作完成", "success")],
+		["Toast - 信息", "info", func(): HtyfSdk.call_show_toast("标题", "这是描述", "info")],
+		["Toast - 成功", "success", func(): HtyfSdk.call_show_toast("成功", "操作完成", "success")],
 	]))
 
 	# 分组：弹窗与剪贴板
@@ -101,8 +94,8 @@ func _ready() -> void:
 	# 分组：触觉反馈
 	main.add_child(_section_header("触觉反馈"))
 	main.add_child(_make_group([
-		["impactMedium", "", func(): _rn.call_trigger_haptic("impactMedium")],
-		["notificationSuccess", "", func(): _rn.call_trigger_haptic("notificationSuccess")],
+		["impactMedium", "", func(): HtyfSdk.call_trigger_haptic("impactMedium")],
+		["notificationSuccess", "", func(): HtyfSdk.call_trigger_haptic("notificationSuccess")],
 	]))
 
 func _section_header(text: String) -> Control:
@@ -195,28 +188,28 @@ func _on_ipc_response(message: String) -> void:
 	_result_dialog.popup_centered()
 
 func _on_test_callable() -> void:
-	_rn.call_rn("test", { "greeting": "Hello from Godot" })
+	HtyfSdk.call_rn("test", { "greeting": "Hello from Godot" })
 
 func _on_open_qr() -> void:
-	_rn.call_open_qr()
+	HtyfSdk.call_open_qr()
 
 func _on_show_modal() -> void:
-	_rn.call_show_modal("演示弹窗", "这是 Godot 通过 RNInterface 调起的弹窗", "确定", "取消")
+	HtyfSdk.call_show_modal("演示弹窗", "这是 Godot 通过 RNInterface 调起的弹窗", "确定", "取消")
 
 func _on_get_clipboard() -> void:
-	_rn.call_get_clipboard()
+	HtyfSdk.call_get_clipboard()
 
 func _on_set_clipboard() -> void:
-	_rn.call_set_clipboard("来自 Godot 的剪贴板内容")
+	HtyfSdk.call_set_clipboard("来自 Godot 的剪贴板内容")
 
 func _on_open_browser() -> void:
-	_rn.call_open_browser("https://godotengine.org")
+	HtyfSdk.call_open_browser("https://godotengine.org")
 
 func _on_get_network_state() -> void:
-	_rn.call_get_network_state()
+	HtyfSdk.call_get_network_state()
 
 func _on_get_menu_button_bounding_client_rect() -> void:
-	_rn.call_get_menu_button_bounding_client_rect()
+	HtyfSdk.call_get_menu_button_bounding_client_rect()
 
 func _on_close_app() -> void:
-	_rn.call_close_app()
+	HtyfSdk.call_close_app()

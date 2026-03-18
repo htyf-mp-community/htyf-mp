@@ -1,5 +1,5 @@
 extends Node
-class_name RNInterface
+class_name _HtyfSdk
 
 ## Godot 发往 RN 的请求：通过 ipcMain 发送 JSON 字符串，格式 { "id": "可选请求id", "type": "方法名", "payload": {} }
 ## RN 处理后会通过 emitToGodot 回传，本节点发出 ipcResponse 信号，格式 { "id", "type", "success": bool, "payload"?, "error"? }
