@@ -10,6 +10,14 @@ var _pending_callbacks: Dictionary = {}
 var _ipc_response_connected: bool = false
 var _isReady: bool = false
 var _is_dev_mode: bool = false
+var _menu_button_bounding_client_rect: Dictionary = {
+	"top" = 0,
+	"right" = 0,
+	"bottom" = 0,
+	"left" = 0,
+	"width" = 0,
+	"height" = 0
+}
 
 func set_dev_mode(is_dev_mode: bool) -> void:
 	_is_dev_mode = is_dev_mode
@@ -24,6 +32,9 @@ func _ready() -> void:
 	call_rn("isReady", {}, func(data: Dictionary):
 		call_show_modal("success", "isReady result: " + JSON.stringify(data))
 		_isReady = data.get("payload", false)
+	)
+	call_rn("getMenuButtonBoundingClientRect", {}, func(data: Dictionary):
+		pass
 	)
 
 func _on_ipc_response(message: String) -> void:
@@ -126,6 +137,7 @@ func call_close_app() -> void:
 ## 示例：获取菜单按钮边界矩形
 ## on_result 回调签名约定：func _cb(result: Dictionary) -> void
 func call_get_menu_button_bounding_client_rect(on_result: Callable = Callable()) -> void:
+	on_result.call(_menu_button_bounding_client_rect)
 	call_rn(
 		"getMenuButtonBoundingClientRect",
 		{},
@@ -140,8 +152,9 @@ func call_get_menu_button_bounding_client_rect(on_result: Callable = Callable())
 					"width": result.get("width", 0),
 					"height": result.get("height", 0)
 				}
+				_menu_button_bounding_client_rect = rect
 				if on_result.is_valid():
-					on_result.call(rect)
+					on_result.call(_menu_button_bounding_client_rect)
 			else:
 				if on_result.is_valid():
 					on_result.call({ "top": 0, "right": 0, "bottom": 0, "left": 0, "width": 0, "height": 0 })
