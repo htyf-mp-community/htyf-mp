@@ -22,6 +22,17 @@ var _menu_button_bounding_client_rect: Dictionary = {
 func set_dev_mode(is_dev_mode: bool) -> void:
 	_is_dev_mode = is_dev_mode
 
+# 示例：log("message", "debug")
+## level 可选：debug | info | warn | error
+func log(message: Variant, level: String = "info") -> void:
+	var message_str: String = ""
+	if typeof(message) == TYPE_DICTIONARY or typeof(message) == TYPE_ARRAY:
+		message_str = JSON.stringify(message)
+	else:
+		message_str = str(message)
+	print("__log[ " + level + " ]: " + message_str)
+	call_rn("__log", { "message": message_str, "level": level })
+
 func _ready() -> void:
 	_isReady = false
 	# 只连接一次：让所有 call_rn 都能通过 id 匹配回调
@@ -33,7 +44,7 @@ func _ready() -> void:
 		call_show_modal("success", "isReady result: " + JSON.stringify(data))
 		_isReady = data.get("payload", false)
 	)
-	call_rn("getMenuButtonBoundingClientRect", {}, func(data: Dictionary):
+	call_rn("getMenuButtonBoundingClientRect", {}, func(_data: Dictionary):
 		pass
 	)
 
