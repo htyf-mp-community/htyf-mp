@@ -6,35 +6,90 @@ class_name _HtyfSdk
 signal ipcMain(message: String)
 signal ipcResponse(message: String)
 
+var _pending_callbacks: Dictionary = {}
+var _ipc_response_connected: bool = false
+var _isReady: bool = false
+var _is_dev_mode: bool = false
+
+func set_dev_mode(is_dev_mode: bool) -> void:
+	_is_dev_mode = is_dev_mode
+
+func _ready() -> void:
+	_isReady = false
+	# 只连接一次：让所有 call_rn 都能通过 id 匹配回调
+	if _ipc_response_connected:
+		return
+	_ipc_response_connected = true
+	ipcResponse.connect(_on_ipc_response)
+	call_rn("isReady", {}, func(data: Dictionary):
+		call_show_modal("success", "isReady result: " + JSON.stringify(data))
+		_isReady = data.get("payload", false)
+	)
+
+func _on_ipc_response(message: String) -> void:
+	# message 是 RN 回传的 JSON 字符串
+	var json := JSON.new()
+	var err := json.parse(message)
+	if err != OK:
+		if _is_dev_mode:
+			call_show_modal("error", "parse json error: " + message)
+		return
+	var data: Dictionary = json.get_data()
+	if typeof(data) != TYPE_DICTIONARY:
+		if _is_dev_mode:
+			call_show_modal("error", "data is not a dictionary: " + message)	
+		return
+	var id: String = str(data.get("id", ""))
+	if id == "":
+		if _is_dev_mode:
+			call_show_modal("error", "id is empty: " + message)
+		return
+	if !_pending_callbacks.has(id):
+		return
+	var cb: Callable = _pending_callbacks[id]
+	_pending_callbacks.erase(id)
+	if cb.is_valid():
+		cb.call(data)
+
 ## RN 调用此方法传入一个 Callable，Godot 执行 c.call() 取得返回值（RN 的响应 JSON），并发出 ipcResponse 供业务层使用
 func emitToGodot(c: Callable) -> void:
 	var result: Variant = c.call()
 	if result != null and str(result).length() > 0:
 		ipcResponse.emit(str(result))
-
-## 联调用：RN 侧 test_callable 会收到 Godot 传入的字符串并返回 123
-func test_callable(c: Callable) -> void:
-	var result: Variant = c.call("Hello from Godot")
-	ipcMain.emit(JSON.stringify({
-		"id": "test",
-		"type": "test",
-		"payload": { "greeting": "Hello from Godot", "result": result }
-	}))
+		
 
 ## 便捷方法：向 RN 发起 SDK 调用。type 为方法名，payload 为可选参数字典。
 ## 业务层连接 ipcResponse 信号，根据返回 JSON 的 id 或 type 匹配本次调用结果。
 ## 支持的 type 示例：openQR, showToast, showModal, getClipboardString, setClipboardString, openBrowser, getNetworkState, triggerHaptic 等；
 ## 也可以直接传 SDKFuncs 上的其它方法名，并通过 payload.args（数组）传参。
-func call_rn(type: String, payload: Dictionary = {}) -> void:
-	var id := str(Time.get_ticks_msec()) + "_" + str(randi())
+func call_rn(type: String, payload: Dictionary = {}, on_result: Callable = Callable()) -> String:
+	var id := str(type + "_" + str(Time.get_ticks_msec()) + "_" + str(randi()))
 	var msg := { "id": id, "type": type, "payload": payload }
 	var json_str: String = JSON.stringify(msg)
 	var base64 = Marshalls.raw_to_base64(json_str.to_utf8_buffer())
+
+	# 注册回调（支持并发）：等 RN 回传带相同 id 的 ipcResponse
+	if on_result.is_valid():
+		_pending_callbacks[id] = on_result
+
 	ipcMain.emit(base64)
+	return id
 
 ## 示例：打开扫码
-func call_open_qr() -> void:
-	call_rn("openQR", {})
+## on_result 回调签名约定：func _cb(result: String) -> void
+func call_open_qr(on_result: Callable = Callable()) -> void:
+	call_rn(
+		"openQR",
+		{},
+		func (data: Dictionary):
+			if data.get("success", false) == true:
+				var result: String = data.get("payload").get("data", "")
+				on_result.call(result)
+			# 失败时也把 error 透传出去，避免 Godot 侧“无回调”
+			else:
+				var error: String = data.get("error", "")
+				on_result.call(error)
+	)
 
 ## 示例：显示 Toast（type 可选：success | alert | error | loading）
 func call_show_toast(title: String, description: String = "", toast_type: String = "success") -> void:
@@ -69,5 +124,26 @@ func call_close_app() -> void:
 	call_rn("closeApp", {})
 
 ## 示例：获取菜单按钮边界矩形
-func call_get_menu_button_bounding_client_rect() -> void:
-	call_rn("getMenuButtonBoundingClientRect", {})
+## on_result 回调签名约定：func _cb(result: Dictionary) -> void
+func call_get_menu_button_bounding_client_rect(on_result: Callable = Callable()) -> void:
+	call_rn(
+		"getMenuButtonBoundingClientRect",
+		{},
+		func (data: Dictionary):
+			if data.get("success", false) == true:
+				var result: Dictionary = data.get("payload", {})
+				var rect: Dictionary = {
+					"top": result.get("top", 0),
+					"right": result.get("right", 0),
+					"bottom": result.get("bottom", 0),
+					"left": result.get("left", 0),
+					"width": result.get("width", 0),
+					"height": result.get("height", 0)
+				}
+				if on_result.is_valid():
+					on_result.call(rect)
+			else:
+				if on_result.is_valid():
+					on_result.call({ "top": 0, "right": 0, "bottom": 0, "left": 0, "width": 0, "height": 0 })
+	)
+	

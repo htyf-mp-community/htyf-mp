@@ -20,7 +20,7 @@ func _ready() -> void:
 	_result_dialog = AcceptDialog.new()
 	_result_dialog.title = "RN 返回"
 	add_child(_result_dialog)
-	HtyfSdk.ipcResponse.connect(_on_ipc_response)
+	# HtyfSdk.ipcResponse.connect(_on_ipc_response)
 
 	# 根：全屏边距
 	var root_margin := MarginContainer.new()
@@ -63,7 +63,6 @@ func _ready() -> void:
 	# 分组：通信与扫码
 	main.add_child(_section_header("通信与扫码"))
 	main.add_child(_make_group([
-		["Test Callable", "需 RN 注册回调", _on_test_callable],
 		["打开扫码", "openQR", _on_open_qr],
 	]))
 
@@ -187,11 +186,12 @@ func _on_ipc_response(message: String) -> void:
 	_result_dialog.dialog_text = message
 	_result_dialog.popup_centered()
 
-func _on_test_callable() -> void:
-	HtyfSdk.call_rn("test", { "greeting": "Hello from Godot" })
 
 func _on_open_qr() -> void:
-	HtyfSdk.call_open_qr()
+	HtyfSdk.call_open_qr(func(data: String):
+		print("openQR result: ", data)
+		HtyfSdk.call_show_modal("success", "openQR result: " + data)
+	)
 
 func _on_show_modal() -> void:
 	HtyfSdk.call_show_modal("演示弹窗", "这是 Godot 通过 RNInterface 调起的弹窗", "确定", "取消")
@@ -209,7 +209,9 @@ func _on_get_network_state() -> void:
 	HtyfSdk.call_get_network_state()
 
 func _on_get_menu_button_bounding_client_rect() -> void:
-	HtyfSdk.call_get_menu_button_bounding_client_rect()
-
+	HtyfSdk.call_get_menu_button_bounding_client_rect(func(data: Dictionary):
+		print("getMenuButtonBoundingClientRect result: ", data)
+		HtyfSdk.call_show_modal("success", "getMenuButtonBoundingClientRect result: " + JSON.stringify(data))
+	)
 func _on_close_app() -> void:
 	HtyfSdk.call_close_app()
