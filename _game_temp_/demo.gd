@@ -188,30 +188,38 @@ func _on_ipc_response(message: String) -> void:
 
 
 func _on_open_qr() -> void:
+	HtyfSdk.log("openQR")
 	HtyfSdk.call_open_qr(func(data: String):
 		print("openQR result: ", data)
 		HtyfSdk.call_show_modal("success", "openQR result: " + data)
 	)
 
 func _on_show_modal() -> void:
+	HtyfSdk.log("showModal")
 	HtyfSdk.call_show_modal("演示弹窗", "这是 Godot 通过 RNInterface 调起的弹窗", "确定", "取消")
 
 func _on_get_clipboard() -> void:
+	HtyfSdk.log("getClipboard")
 	HtyfSdk.call_get_clipboard()
 
 func _on_set_clipboard() -> void:
+	HtyfSdk.log("setClipboard")
 	HtyfSdk.call_set_clipboard("来自 Godot 的剪贴板内容")
 
 func _on_open_browser() -> void:
+	HtyfSdk.log("openBrowser")
 	HtyfSdk.call_open_browser("https://godotengine.org")
 
 func _on_get_network_state() -> void:
+	HtyfSdk.log("getNetworkState")
 	HtyfSdk.call_get_network_state()
 
 func _on_get_menu_button_bounding_client_rect() -> void:
+	HtyfSdk.log("getMenuButtonBoundingClientRect")
 	HtyfSdk.call_get_menu_button_bounding_client_rect(func(data: Dictionary):
 		print("getMenuButtonBoundingClientRect result: ", data)
 		HtyfSdk.call_show_modal("success", "getMenuButtonBoundingClientRect result: " + JSON.stringify(data))
 	)
 func _on_close_app() -> void:
+	HtyfSdk.log("closeApp")
 	HtyfSdk.call_close_app()

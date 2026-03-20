@@ -23,8 +23,8 @@ func set_dev_mode(is_dev_mode: bool) -> void:
 	_is_dev_mode = is_dev_mode
 
 # 示例：log("message", "debug")
-## level 可选：debug | info | warn | error
-func log(message: Variant, level: String = "info") -> void:
+## level 可选：debug | log | warn | error
+func log(message: Variant, level: String = "log") -> void:
 	var message_str: String = ""
 	if typeof(message) == TYPE_DICTIONARY or typeof(message) == TYPE_ARRAY:
 		message_str = JSON.stringify(message)

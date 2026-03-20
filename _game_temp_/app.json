@@ -2,7 +2,7 @@
   "htyf": {
     "type": "game",
     "name": "demo",
-    "version": "1.0.67",
+    "version": "1.0.70",
     "appid": "htyfgame123",
     "rotate": "",
     "appUrlConfig": "https://xxx.cos.ap-chengdu.myqcloud.com/assets/testMiniApps/htyanimation/app.json",
