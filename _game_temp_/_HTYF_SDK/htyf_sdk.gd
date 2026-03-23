@@ -3,6 +3,8 @@ class_name _HtyfSdk
 
 ## Godot 发往 RN 的请求：通过 ipcMain 发送 JSON 字符串，格式 { "id": "可选请求id", "type": "方法名", "payload": {} }
 ## RN 处理后会通过 emitToGodot 回传，本节点发出 ipcResponse 信号，格式 { "id", "type", "success": bool, "payload"?, "error"? }
+## 排查链路建议：
+## 1) 先看 call_rn 是否发出（带 id/type） -> 2) 看 RN 是否回传 emitToGodot -> 3) 看 _on_ipc_response 是否命中 pending 回调。
 signal ipcMain(message: String)
 signal ipcResponse(message: String)
 
@@ -10,6 +12,8 @@ var _pending_callbacks: Dictionary = {}
 var _ipc_response_connected: bool = false
 var _isReady: bool = false
 var _is_dev_mode: bool = false
+# 统一日志前缀，方便在控制台快速过滤 SDK 输出。
+const LOG_TAG := "[HTYF_SDK]"
 var _menu_button_bounding_client_rect: Dictionary = {
 	"top" = 0,
 	"right" = 0,
@@ -22,16 +26,17 @@ var _menu_button_bounding_client_rect: Dictionary = {
 func set_dev_mode(is_dev_mode: bool) -> void:
 	_is_dev_mode = is_dev_mode
 
-# 示例：log("message", "debug")
-## level 可选：debug | log | warn | error
-func log(message: Variant, level: String = "log") -> void:
+# 示例：log("message", "warn")
+## level 可选：warn | error
+func log(message: Variant, level: String = "warn") -> void:
 	var message_str: String = ""
 	if typeof(message) == TYPE_DICTIONARY or typeof(message) == TYPE_ARRAY:
 		message_str = JSON.stringify(message)
 	else:
 		message_str = str(message)
-	print("[ " + level + " ]: " + message_str)
+	print(LOG_TAG + " [ " + level + " ]: " + message_str)
 	call_rn("__log", { "message": message_str, "level": level })
+
 
 func _ready() -> void:
 	_isReady = false
@@ -40,12 +45,21 @@ func _ready() -> void:
 		return
 	_ipc_response_connected = true
 	ipcResponse.connect(_on_ipc_response)
-	call_rn("isReady", {}, func(data: Dictionary):
+	self.log("  ")
+	self.log("========= HTYF READY =========")
+	self.log("  ")
+	if _is_dev_mode:
+		self.log("ipcResponse connected", "debug")
+	call_rn("checkIsReady", {}, func(data: Dictionary):
+		if _is_dev_mode:
+			self.log({ "type": "checkIsReady result", "data": data }, "debug")
 		call_show_modal("success", "isReady result: " + JSON.stringify(data))
 		_isReady = data.get("payload", false)
 	)
-	call_rn("getMenuButtonBoundingClientRect", {}, func(_data: Dictionary):
-		pass
+	call_get_menu_button_bounding_client_rect( 
+		func(_data: Dictionary):
+			self.log(_data)
+			pass
 	)
 
 func _on_ipc_response(message: String) -> void:
@@ -57,6 +71,8 @@ func _on_ipc_response(message: String) -> void:
 			call_show_modal("error", "parse json error: " + message)
 		return
 	var data: Dictionary = json.get_data()
+	if _is_dev_mode:
+		self.log({ "type": "ipcResponse parsed", "data": data }, "debug")
 	if typeof(data) != TYPE_DICTIONARY:
 		if _is_dev_mode:
 			call_show_modal("error", "data is not a dictionary: " + message)	
@@ -71,8 +87,11 @@ func _on_ipc_response(message: String) -> void:
 	if id == "":
 		if _is_dev_mode:
 			call_show_modal("error", "id is empty: " + message)
+			self.log({ "type": "ipcResponse missing id", "raw": message }, "warn")
 		return
 	if !_pending_callbacks.has(id):
+		if _is_dev_mode:
+			self.log({ "type": "callback not found", "id": id, "response": data }, "warn")
 		return
 	var cb: Callable = _pending_callbacks[id]
 	_pending_callbacks.erase(id)
@@ -81,12 +100,12 @@ func _on_ipc_response(message: String) -> void:
 
 # 宿主生命周期回调 参数为what与_notification的参数对齐
 var _host_lifecycle_callback: Callable = func(what: int):
-	# print("host_lifecycle default callback: " + str(what))
+	self.log("host_lifecycle default callback: " + str(what))
 	pass
 # 设置宿主生命周期回调
 func set_host_lifecycle_callback(c: Callable = Callable()) -> void:
 	_host_lifecycle_callback = func(what: int):
-		# print("host_lifecycle: " + str(what))
+		self.log("host_lifecycle: " + str(what))
 		if c.is_valid():
 			c.call(what)
 
@@ -115,6 +134,10 @@ func call_rn(type: String, payload: Dictionary = {}, on_result: Callable = Calla
 	# 注册回调（支持并发）：等 RN 回传带相同 id 的 ipcResponse
 	if on_result.is_valid():
 		_pending_callbacks[id] = on_result
+
+	# 开发模式下记录出站请求，排查“是否真的发出请求”与“id 是否对应”。
+	if _is_dev_mode:
+		self.log({ "type": "call_rn send", "id": id, "method": type, "payload": payload }, "debug")
 
 	ipcMain.emit(base64)
 	return id
@@ -170,6 +193,7 @@ func call_close_app() -> void:
 ## 示例：获取菜单按钮边界矩形
 ## on_result 回调签名约定：func _cb(result: Dictionary) -> void
 func call_get_menu_button_bounding_client_rect(on_result: Callable = Callable()) -> void:
+	# 先同步返回缓存值，避免首次渲染时 UI 等待异步结果导致抖动。
 	on_result.call(_menu_button_bounding_client_rect)
 	call_rn(
 		"getMenuButtonBoundingClientRect",
@@ -186,9 +210,13 @@ func call_get_menu_button_bounding_client_rect(on_result: Callable = Callable())
 					"height": result.get("height", 0)
 				}
 				_menu_button_bounding_client_rect = rect
+				if _is_dev_mode:
+					self.log({ "type": "menu rect updated", "rect": _menu_button_bounding_client_rect }, "debug")
 				if on_result.is_valid():
 					on_result.call(_menu_button_bounding_client_rect)
 			else:
+				if _is_dev_mode:
+					self.log({ "type": "menu rect failed", "data": data }, "warn")
 				if on_result.is_valid():
 					on_result.call({ "top": 0, "right": 0, "bottom": 0, "left": 0, "width": 0, "height": 0 })
 	)
