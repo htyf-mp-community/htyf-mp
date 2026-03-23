@@ -17,6 +17,16 @@ const SECTION_SPACING := 24
 const ROW_PADDING := 14
 
 func _ready() -> void:
+	HtyfSdk.set_host_lifecycle_callback(
+		func (what: int): 
+			if what == NOTIFICATION_APPLICATION_FOCUS_OUT:
+				#HtyfSdk.log("进入后台，暂停游戏")
+				HtyfSdk.call_show_modal("进入后台", "暂停游戏")
+			if what == NOTIFICATION_APPLICATION_FOCUS_IN:
+				#HtyfSdk.log("回到前台，恢复游戏")
+				HtyfSdk.call_show_modal("回到前台", "恢复游戏")
+			
+	)
 	_result_dialog = AcceptDialog.new()
 	_result_dialog.title = "RN 返回"
 	add_child(_result_dialog)

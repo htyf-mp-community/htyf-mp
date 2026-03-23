@@ -30,7 +30,7 @@ func log(message: Variant, level: String = "log") -> void:
 		message_str = JSON.stringify(message)
 	else:
 		message_str = str(message)
-	print("__log[ " + level + " ]: " + message_str)
+	print("[ " + level + " ]: " + message_str)
 	call_rn("__log", { "message": message_str, "level": level })
 
 func _ready() -> void:
@@ -61,6 +61,12 @@ func _on_ipc_response(message: String) -> void:
 		if _is_dev_mode:
 			call_show_modal("error", "data is not a dictionary: " + message)	
 		return
+	# 宿主主动推送：无 id，不走 pending 回调（嵌入 Godot 时系统不会把前后台事件交给 _notification）
+	if str(data.get("type", "")) == "lifecycle":
+		var ev: int = int(data.get("event", 2017))
+		if _host_lifecycle_callback.is_valid():
+			_host_lifecycle_callback.call(ev)
+		return
 	var id: String = str(data.get("id", ""))
 	if id == "":
 		if _is_dev_mode:
@@ -72,6 +78,22 @@ func _on_ipc_response(message: String) -> void:
 	_pending_callbacks.erase(id)
 	if cb.is_valid():
 		cb.call(data)
+
+# 宿主生命周期回调 参数为what与_notification的参数对齐
+var _host_lifecycle_callback: Callable = func(what: int):
+	# print("host_lifecycle default callback: " + str(what))
+	pass
+# 设置宿主生命周期回调
+func set_host_lifecycle_callback(c: Callable = Callable()) -> void:
+	_host_lifecycle_callback = func(what: int):
+		# print("host_lifecycle: " + str(what))
+		if c.is_valid():
+			c.call(what)
+
+# 宿主生命周期回调
+func _notification(what: int) -> void:
+	if _host_lifecycle_callback.is_valid():
+		_host_lifecycle_callback.call(what)
 
 ## RN 调用此方法传入一个 Callable，Godot 执行 c.call() 取得返回值（RN 的响应 JSON），并发出 ipcResponse 供业务层使用
 func emitToGodot(c: Callable) -> void:
