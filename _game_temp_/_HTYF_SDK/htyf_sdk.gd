@@ -193,6 +193,30 @@ func call_trigger_haptic(haptic_type: String = "impactMedium") -> void:
 func call_close_app() -> void:
 	call_rn("closeApp", {})
 
+## 示例：展示激励广告
+## on_result 回调签名：func _cb(data: Dictionary) -> void
+## data 结构：{ "success": bool, "payload": any, "error": String }
+func call_show_rewarded_ad(on_result: Callable = Callable()) -> void:
+	call_rn(
+		"showRewardedAd",
+		{},
+		func (data: Dictionary):
+			if on_result.is_valid():
+				on_result.call(data)
+	)
+
+## 示例：展示插页广告
+## options 可选，透传给 RN 侧 showInterstitialAd(options)
+## on_result 回调签名：func _cb(data: Dictionary) -> void
+func call_show_interstitial_ad(options: Dictionary = {}, on_result: Callable = Callable()) -> void:
+	call_rn(
+		"showInterstitialAd",
+		{ "options": options },
+		func (data: Dictionary):
+			if on_result.is_valid():
+				on_result.call(data)
+	)
+
 ## 示例：获取菜单按钮边界矩形
 ## on_result 回调签名约定：func _cb(result: Dictionary) -> void
 func call_get_menu_button_bounding_client_rect(on_result: Callable = Callable()) -> void:

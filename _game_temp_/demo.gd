@@ -107,6 +107,13 @@ func _ready() -> void:
 		["notificationSuccess", "", func(): HtyfSdk.call_trigger_haptic("notificationSuccess")],
 	]))
 
+	# 分组：广告
+	main.add_child(_section_header("广告"))
+	main.add_child(_make_group([
+		["激励广告", "showRewardedAd", _on_show_rewarded_ad],
+		["插页广告", "showInterstitialAd", _on_show_interstitial_ad],
+	]))
+
 func _section_header(text: String) -> Control:
 	var h := Label.new()
 	h.text = text
@@ -230,6 +237,21 @@ func _on_get_menu_button_bounding_client_rect() -> void:
 		print("getMenuButtonBoundingClientRect result: ", data)
 		HtyfSdk.call_show_modal("success", "getMenuButtonBoundingClientRect result: " + JSON.stringify(data))
 	)
+
+func _on_show_rewarded_ad() -> void:
+	HtyfSdk.log("showRewardedAd")
+	HtyfSdk.call_show_rewarded_ad(func(data: Dictionary):
+		print("showRewardedAd result: ", data)
+		HtyfSdk.call_show_modal("showRewardedAd", JSON.stringify(data))
+	)
+
+func _on_show_interstitial_ad() -> void:
+	HtyfSdk.log("showInterstitialAd")
+	HtyfSdk.call_show_interstitial_ad({}, func(data: Dictionary):
+		print("showInterstitialAd result: ", data)
+		HtyfSdk.call_show_modal("showInterstitialAd", JSON.stringify(data))
+	)
+
 func _on_close_app() -> void:
 	HtyfSdk.log("closeApp")
 	HtyfSdk.call_close_app()
