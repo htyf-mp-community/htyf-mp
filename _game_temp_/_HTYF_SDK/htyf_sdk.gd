@@ -45,22 +45,8 @@ func _ready() -> void:
 		return
 	_ipc_response_connected = true
 	ipcResponse.connect(_on_ipc_response)
-	self.log("  ")
-	self.log("========= HTYF READY =========")
-	self.log("  ")
 	if _is_dev_mode:
 		self.log("ipcResponse connected", "debug")
-	call_rn("checkIsReady", {}, func(data: Dictionary):
-		if _is_dev_mode:
-			self.log({ "type": "checkIsReady result", "data": data }, "debug")
-		call_show_modal("success", "isReady result: " + JSON.stringify(data))
-		_isReady = data.get("payload", false)
-	)
-	call_get_menu_button_bounding_client_rect( 
-		func(_data: Dictionary):
-			self.log(_data)
-			pass
-	)
 
 func _on_ipc_response(message: String) -> void:
 	# message 是 RN 回传的 JSON 字符串
@@ -83,6 +69,18 @@ func _on_ipc_response(message: String) -> void:
 		if _host_lifecycle_callback.is_valid():
 			_host_lifecycle_callback.call(ev)
 		return
+	if str(data.get("type", "")) == "isReady":
+		var ev: int = int(data.get("event", false))
+		_isReady = bool(ev)
+		self.log("  ")
+		self.log("========= HTYF READY =========")
+		self.log("  ")
+		call_get_menu_button_bounding_client_rect( 
+			func(_data: Dictionary):
+				self.log(_data)
+				pass
+		)
+		return
 	var id: String = str(data.get("id", ""))
 	if id == "":
 		if _is_dev_mode:
@@ -100,12 +98,14 @@ func _on_ipc_response(message: String) -> void:
 
 # 宿主生命周期回调 参数为what与_notification的参数对齐
 var _host_lifecycle_callback: Callable = func(what: int):
-	self.log("host_lifecycle default callback: " + str(what))
+	if _is_dev_mode:
+		self.log("host_lifecycle default callback: " + str(what))
 	pass
 # 设置宿主生命周期回调
 func set_host_lifecycle_callback(c: Callable = Callable()) -> void:
 	_host_lifecycle_callback = func(what: int):
-		self.log("host_lifecycle: " + str(what))
+		if _is_dev_mode:
+			self.log("host_lifecycle: " + str(what))
 		if c.is_valid():
 			c.call(what)
 
@@ -126,6 +126,9 @@ func emitToGodot(c: Callable) -> void:
 ## 支持的 type 示例：openQR, showToast, showModal, getClipboardString, setClipboardString, openBrowser, getNetworkState, triggerHaptic 等；
 ## 也可以直接传 SDKFuncs 上的其它方法名，并通过 payload.args（数组）传参。
 func call_rn(type: String, payload: Dictionary = {}, on_result: Callable = Callable()) -> String:
+	if !_isReady:
+		print("SDK not ready")
+		return ""
 	var id := str(type + "_" + str(Time.get_ticks_msec()) + "_" + str(randi()))
 	var msg := { "id": id, "type": type, "payload": payload }
 	var json_str: String = JSON.stringify(msg)
