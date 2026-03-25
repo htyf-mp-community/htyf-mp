@@ -8,6 +8,7 @@
 import path from 'path';
 import fse from 'fs-extra';
 import AdmZip from 'adm-zip';
+import QRCode from 'qrcode';
 import { fileURLToPath } from 'node:url';
 import { Logger } from './logger.mjs';
 import { CONSTANTS } from './constants.mjs';
@@ -21,6 +22,98 @@ import { exportGodot, promptGodotOptions } from './export_godot.mjs';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const PROJECT_ROOT = getProjectRoot();
+
+/**
+ * 复制目录内容（不包含最外层目录名）
+ * @param {string} srcDir
+ * @param {string} destDir
+ */
+async function copyDirContents(srcDir, destDir) {
+  await fse.ensureDir(destDir);
+  const entries = await fse.readdir(srcDir);
+  for (const entry of entries) {
+    await fse.copy(path.join(srcDir, entry), path.join(destDir, entry), { overwrite: true });
+  }
+}
+
+/**
+ * 执行 Web 端 H5 构建
+ * @param {'build'|'dev'} mode
+ */
+async function runWebH5Build(mode = 'build') {
+  const cmd = mode === 'dev' ? 'npm run dev:h5' : 'npm run build:h5';
+  Logger.info(`开始执行 Web H5 构建: ${cmd}`);
+  await CommandExecutor.execute(cmd, {
+    description: `Web H5 ${mode === 'dev' ? '开发' : '构建'}`,
+    timeout: mode === 'dev' ? 120000 : 300000,
+    showCommand: false,
+  });
+}
+
+/**
+ * 将 taro build:h5 的输出同步到最终 zip 目录
+ *
+ * 说明：
+ * - taro 的 outputRoot 在模板里通常是 ./dist
+ * - CLI 最终会把内容打包到 ./dist/dist（outputPath）
+ * - 因此这里需要把 ./dist 下的 h5 静态产物复制到 ./dist/dist
+ *
+ * @param {string} projectDistRoot - taro 输出目录（一般为 ./dist）
+ * @param {string} zipInputDir - zip 输入目录（一般为 ./dist/dist）
+ */
+async function syncWebH5Output(projectDistRoot, zipInputDir) {
+  // 先清空 zip 输入目录，避免残留
+  await fse.ensureDir(zipInputDir);
+  await fse.emptyDir(zipInputDir);
+
+  const h5Dir = path.join(projectDistRoot, 'h5');
+  if (await fse.pathExists(h5Dir)) {
+    Logger.info('检测到 taro H5 输出目录 ./dist/h5，复制其内容...');
+    await copyDirContents(h5Dir, zipInputDir);
+    return;
+  }
+
+  Logger.info('未检测到 ./dist/h5，尝试复制 ./dist 下的 H5 静态产物...');
+  const entries = await fse.readdir(projectDistRoot);
+
+  const excludeNames = new Set([
+    'dist', // 避免递归复制 ./dist/dist
+    'build', // RN bundle 输出目录
+    'app.json',
+    'manifest.json',
+  ]);
+
+  for (const entry of entries) {
+    if (excludeNames.has(entry)) continue;
+    if (entry.endsWith('.dgz')) continue;
+
+    await fse.copy(path.join(projectDistRoot, entry), path.join(zipInputDir, entry), { overwrite: true });
+  }
+}
+
+/**
+ * 在构建输出目录生成二维码图片
+ *
+ * 优先使用 zipUrl，若为空则回退到 appUrlConfig。
+ *
+ * @param {string} outputPath - 构建输出目录
+ * @param {object} appJson - 应用配置对象
+ * @returns {Promise<void>}
+ */
+async function generateBuildQrCode(outputPath, appJson) {
+  const qrContent = appJson?.zipUrl || appJson?.appUrlConfig;
+  if (!qrContent) {
+    Logger.warn('未配置 zipUrl/appUrlConfig，跳过二维码生成');
+    return;
+  }
+
+  const qrFilePath = path.join(outputPath, 'qrcode.png');
+  await QRCode.toFile(qrFilePath, qrContent, {
+    width: 320,
+    margin: 2
+  });
+  Logger.success(`二维码已生成: ${qrFilePath}`);
+}
 
 /**
  * 压缩文件夹为 ZIP 文件
@@ -116,13 +209,13 @@ export async function handleZip(inputPath, outputPath) {
  *   entry: './src/index.js'
  * }, false);
  */
-export async function mpBuildShell(newAppInfo, isGodot = false) {
+export async function mpBuildShell(newAppInfo, isGodot = false, buildOptions = {}) {
   Logger.info(`开始构建小程序包...`);
   Logger.info(`应用: ${newAppInfo.name}`);
   Logger.info(`应用ID: ${newAppInfo.appid}`);
   Logger.info(`版本: ${newAppInfo.version}`);
   Logger.info(`平台: ${CONSTANTS.BUNDLE_PLATFORM}`);
-  Logger.info(`项目类型: ${isGodot ? 'Godot 游戏' : '普通小程序'}`);
+  Logger.info(`项目类型: ${isGodot ? 'Godot 游戏' : (newAppInfo?.type === 'web' ? 'Web 应用' : '普通小程序')}`);
   
   // ========== 参数验证 ==========
   if (!newAppInfo.name || !newAppInfo.appid || !newAppInfo.version) {
@@ -148,6 +241,7 @@ export async function mpBuildShell(newAppInfo, isGodot = false) {
 
   // 构建 app.json 配置
   const appType = newAppInfo.type || (isGodot ? 'game' : 'app');
+  const isWeb = appType === 'web';
   const appJson = {
     ...newAppInfo,
     rotate: newAppInfo.rotate || 'portrait',
@@ -177,9 +271,11 @@ export async function mpBuildShell(newAppInfo, isGodot = false) {
   };
   Logger.info('mpOptions', mpOptions);
 
-  // 保存 app.json 到输出目录
   const appJsonPath = path.join(mpOutputPath, 'app.json');
-  await fse.writeJson(appJsonPath, appJson, { spaces: 2 });
+  // 注意：Web H5 构建会清理 ./dist，因此 app.json 写入要尽量晚一点
+  if (!isWeb) {
+    await fse.writeJson(appJsonPath, appJson, { spaces: 2 });
+  }
   const webpackConfigPath = path.join(__dirname, 'webpack.config.mjs');
 
   // ========== 清空输出目录 ==========
@@ -208,7 +304,6 @@ export async function mpBuildShell(newAppInfo, isGodot = false) {
 
   // ========== 执行构建 ==========
   try {
-    const isWeb = appType === 'web';
     if (!isGodot && !isWeb) {
       // ========== 普通小程序构建流程 ==========
       Logger.info('使用 React Native 构建小程序包...');
@@ -282,6 +377,21 @@ export async function mpBuildShell(newAppInfo, isGodot = false) {
       // 更新 app.json 中的 zipUrl
       appJson.zipUrl = newAppInfo.zipUrl || `${newAppInfo.host}/dist.${platformName}.dgz`;
       await fse.writeJson(appJsonPath, appJson, { spaces: 2 });
+    } else if (isWeb) {
+      // ========== Web 应用构建流程 ==========
+      // 正式打包走 build:h5；真机调试可通过 buildOptions.skipWebBuild 跳过
+      if (!buildOptions.skipWebBuild) {
+        await runWebH5Build('build');
+        await syncWebH5Output(mpOutputPath, outputPath);
+      } else {
+        Logger.info('跳过 Web H5 构建（debug 模式），仅打包 app.json');
+        // 保证 zipInputDir 存在，后续还要写 app.json/qrcode
+        await fse.ensureDir(outputPath);
+        await fse.emptyDir(outputPath);
+      }
+
+      // Web 构建后再写 app.json，避免被 taro 清理掉
+      await fse.writeJson(appJsonPath, appJson, { spaces: 2 });
     }
 
     // ========== 打包最终产物 ==========
@@ -291,6 +401,7 @@ export async function mpBuildShell(newAppInfo, isGodot = false) {
     if (!isGodot && appType !== 'web') {
       fse.copyFileSync(path.join(outputPath, '../manifest.json'), path.join(outputPath, 'manifest.json'));
     }
+    await generateBuildQrCode(outputPath, appJson);
 
     // 压缩输出目录为最终包
     const zipPath = await handleZip(outputPath, distPackagePath);

@@ -13,9 +13,38 @@ import chalk from 'chalk';
 import boxen from 'boxen';
 import gradient from 'gradient-string';
 import { Logger } from './logger.mjs';
+import { CONSTANTS } from './constants.mjs';
 import { ConfigValidator } from './validators.mjs';
 import { mpBuildShell } from './build.mjs';
 import { printQrcode } from './utils-functions.mjs';
+import { spawn } from 'node:child_process';
+
+/**
+ * 等待 Web H5 首次编译产物就绪，避免 taro watch 后续清理 dist
+ * 导致最终缺少 dist/app.json 与 dist/dist.dgz。
+ *
+ * @param {{timeoutMs?: number, intervalMs?: number}} [options]
+ * @returns {Promise<boolean>}
+ */
+async function waitForWebH5Output(options = {}) {
+  const { timeoutMs = 120000, intervalMs = 1000 } = options;
+  const h5Dir = path.join(CONSTANTS.MP_OUTPUT_DIR, 'h5'); // ./dist/h5
+
+  const start = Date.now();
+  while (Date.now() - start < timeoutMs) {
+    if (await fse.pathExists(h5Dir)) {
+      try {
+        const entries = await fse.readdir(h5Dir);
+        if (entries.length > 0) return true;
+      } catch (_) {
+        // directory may be in flux
+      }
+    }
+    await new Promise((r) => setTimeout(r, intervalMs));
+  }
+
+  return false;
+}
 
 /**
  * 小程序真机调试
@@ -51,10 +80,27 @@ export async function mpDebugShell(newAppInfo, isGodot = false) {
     if (!isGodot && !isWeb && !newAppInfo.entry) {
       throw new Error('缺少必需的应用信息: entry');
     }
-    
+    let devH5Process = null;
+    if (isWeb) {
+      // devH5Process = spawn('npm', ['run', 'dev:h5'], {
+      //   stdio: 'inherit',
+      //   shell: true,
+      // });
+    }
+
+    // Web 真机调试：等待 taro 首次编译产物就绪
+    // 这样后续生成的 dist/app.json 与 dist/dist.dgz 不容易被覆盖/删除。
+    if (isWeb) {
+      Logger.info('等待 Web H5 首次编译完成...');
+      const ok = await waitForWebH5Output();
+      if (!ok) {
+        Logger.warn('等待 Web H5 产物超时，将继续生成调试用 dist 资源');
+      }
+    }
+
     // ========== 构建小程序包 ==========
     Logger.info('开始构建小程序包...');
-    const zipPath = await mpBuildShell(newAppInfo, isGodot);
+    const zipPath = await mpBuildShell(newAppInfo, isGodot, { skipWebBuild: isWeb });
     const assetsPath = path.dirname(zipPath);
     const appJsonPath = path.join(assetsPath, 'app.json');
 
@@ -70,6 +116,11 @@ export async function mpDebugShell(newAppInfo, isGodot = false) {
     // ========== 启动调试服务器 ==========
     const host = networkValidation.host;
     const port = await portfinder.getPortPromise();  // 自动查找可用端口
+
+    // Web 真机调试：启动 H5 dev server，并把固定地址写入打包后的 app.json 的 webUrl
+    // 注意：dev:h5 由 taro 侧负责启动静态服务（这里只启动命令并在 app.json 写死 URL）
+    const webDevUrl = process.env.WEB_H5_DEV_URL || 'http://192.168.1.28:10086';
+    
 
     // 创建静态文件服务器
     const app = superstatic.server({
@@ -96,6 +147,7 @@ export async function mpDebugShell(newAppInfo, isGodot = false) {
         "version": applocaljson.version,
         appUrlConfig: debugerAppUrlConfig,
         zipUrl: debugerZip,
+        ...(isWeb ? { webUrl: webDevUrl } : {}),
       };
 
       // 更新 app.json 文件，写入调试 URL
@@ -103,6 +155,7 @@ export async function mpDebugShell(newAppInfo, isGodot = false) {
         ...fse.readJSONSync(appJsonPath),
         appUrlConfig: debugerAppUrlConfig,
         zipUrl: debugerZip,
+        ...(isWeb ? { webUrl: webDevUrl } : {}),
       });
 
       // 生成调试二维码 URL
@@ -145,6 +198,20 @@ export async function mpDebugShell(newAppInfo, isGodot = false) {
     const handleShutdown = () => {
       Logger.info('\n正在关闭调试服务器...');
       let isClosed = false;
+
+      // 优先停止 Web H5 dev server（debug 进程）
+      if (devH5Process) {
+        try {
+          // detached 后它会成为新的进程组 leader，使用负 pid 可杀整个组
+          process.kill(-devH5Process.pid, 'SIGTERM');
+        } catch (e) {
+          try {
+            devH5Process.kill('SIGTERM');
+          } catch (_) {
+            // ignore
+          }
+        }
+      }
       
       // 尝试关闭服务器
       server.close(() => {
