@@ -4,7 +4,7 @@ import {
   createStaticNavigation,
   StaticParamList,
 } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createStackNavigator } from "@react-navigation/stack";
 import { Image } from 'react-native';
 import bell from '../assets/bell.png';
 import newspaper from '../assets/newspaper.png';
@@ -50,7 +50,7 @@ const HomeTabs = createBottomTabNavigator({
   },
 });
 
-const RootStack = createNativeStackNavigator({
+const RootStack = createStackNavigator({
   screens: {
     HomeTabs: {
       screen: HomeTabs,
