@@ -1,0 +1,320 @@
+[gd_scene load_steps=5 format=3 uid="uid://cy168swpr8vvn"]
+
+[ext_resource type="Script" uid="uid://wyl4lqsoud4e" path="res://scripts/demo.gd" id="1_hyk8p"]
+
+[sub_resource type="StyleBoxFlat" id="1"]
+content_margin_left = 18.0
+content_margin_top = 12.0
+content_margin_right = 18.0
+content_margin_bottom = 12.0
+bg_color = Color(0.12, 0.15, 0.24, 0.9)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.2)
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="2"]
+content_margin_left = 18.0
+content_margin_top = 10.0
+content_margin_right = 18.0
+content_margin_bottom = 10.0
+bg_color = Color(0.16, 0.2, 0.32, 0.94)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.32, 0.58, 1, 0.45)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+shadow_color = Color(0, 0, 0, 0.25)
+shadow_size = 8
+
+[sub_resource type="StyleBoxFlat" id="3"]
+content_margin_left = 18.0
+content_margin_top = 10.0
+content_margin_right = 18.0
+content_margin_bottom = 10.0
+bg_color = Color(0.21, 0.27, 0.42, 0.98)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.39, 0.66, 1, 0.7)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+shadow_color = Color(0, 0, 0, 0.3)
+shadow_size = 10
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Demo" type="CanvasLayer" parent="."]
+script = ExtResource("1_hyk8p")
+
+[node name="Bg" type="ColorRect" parent="Demo"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.06, 0.08, 0.13, 1)
+
+[node name="Scroll" type="ScrollContainer" parent="Demo"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="Main" type="VBoxContainer" parent="Demo/Scroll"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 3
+theme_override_constants/separation = 14
+
+[node name="Title" type="Label" parent="Demo/Scroll/Main"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.94, 0.97, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "RNInterface API 演示"
+
+[node name="SubTitle" type="Label" parent="Demo/Scroll/Main"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.62, 0.69, 0.8, 1)
+theme_override_font_sizes/font_size = 15
+text = "移动端竖屏 · 单手操作优先 · 点击即反馈"
+
+[node name="TopCard" type="PanelContainer" parent="Demo/Scroll/Main"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("1")
+
+[node name="TopCardText" type="Label" parent="Demo/Scroll/Main/TopCard"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.76, 0.84, 0.98, 1)
+theme_override_font_sizes/font_size = 14
+text = "建议：从上到下依次体验「扫码 > 系统 > 广告」，底部按钮保留安全区。"
+
+[node name="Spacer1" type="Control" parent="Demo/Scroll/Main"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="SectionComm" type="Label" parent="Demo/Scroll/Main"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.49, 0.75, 1, 1)
+theme_override_font_sizes/font_size = 16
+text = "通信与扫码"
+
+[node name="OpenQRButton" type="Button" parent="Demo/Scroll/Main"]
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.93, 0.96, 1, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("2")
+theme_override_styles/pressed = SubResource("3")
+theme_override_styles/hover = SubResource("3")
+text = "打开扫码"
+
+[node name="Spacer2" type="Control" parent="Demo/Scroll/Main"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="SectionToast" type="Label" parent="Demo/Scroll/Main"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.49, 0.75, 1, 1)
+theme_override_font_sizes/font_size = 16
+text = "Toast"
+
+[node name="ToastInfoButton" type="Button" parent="Demo/Scroll/Main"]
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.93, 0.96, 1, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("2")
+theme_override_styles/pressed = SubResource("3")
+theme_override_styles/hover = SubResource("3")
+text = "Toast - 信息"
+
+[node name="ToastSuccessButton" type="Button" parent="Demo/Scroll/Main"]
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.93, 0.96, 1, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("2")
+theme_override_styles/pressed = SubResource("3")
+theme_override_styles/hover = SubResource("3")
+text = "Toast - 成功"
+
+[node name="Spacer3" type="Control" parent="Demo/Scroll/Main"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="SectionModal" type="Label" parent="Demo/Scroll/Main"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.49, 0.75, 1, 1)
+theme_override_font_sizes/font_size = 16
+text = "弹窗与剪贴板"
+
+[node name="ShowModalButton" type="Button" parent="Demo/Scroll/Main"]
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.93, 0.96, 1, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("2")
+theme_override_styles/pressed = SubResource("3")
+theme_override_styles/hover = SubResource("3")
+text = "显示弹窗"
+
+[node name="GetClipboardButton" type="Button" parent="Demo/Scroll/Main"]
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.93, 0.96, 1, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("2")
+theme_override_styles/pressed = SubResource("3")
+theme_override_styles/hover = SubResource("3")
+text = "获取剪贴板"
+
+[node name="SetClipboardButton" type="Button" parent="Demo/Scroll/Main"]
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.93, 0.96, 1, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("2")
+theme_override_styles/pressed = SubResource("3")
+theme_override_styles/hover = SubResource("3")
+text = "设置剪贴板"
+
+[node name="Spacer4" type="Control" parent="Demo/Scroll/Main"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="SectionSystem" type="Label" parent="Demo/Scroll/Main"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.49, 0.75, 1, 1)
+theme_override_font_sizes/font_size = 16
+text = "系统"
+
+[node name="OpenBrowserButton" type="Button" parent="Demo/Scroll/Main"]
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.93, 0.96, 1, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("2")
+theme_override_styles/pressed = SubResource("3")
+theme_override_styles/hover = SubResource("3")
+text = "打开浏览器 (godotengine.org)"
+
+[node name="GetMenuRectButton" type="Button" parent="Demo/Scroll/Main"]
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.93, 0.96, 1, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("2")
+theme_override_styles/pressed = SubResource("3")
+theme_override_styles/hover = SubResource("3")
+text = "菜单按钮矩形"
+
+[node name="GetNetworkStateButton" type="Button" parent="Demo/Scroll/Main"]
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.93, 0.96, 1, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("2")
+theme_override_styles/pressed = SubResource("3")
+theme_override_styles/hover = SubResource("3")
+text = "网络状态"
+
+[node name="CloseAppButton" type="Button" parent="Demo/Scroll/Main"]
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 0.86, 0.86, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("2")
+theme_override_styles/pressed = SubResource("3")
+theme_override_styles/hover = SubResource("3")
+text = "关闭应用"
+
+[node name="Spacer5" type="Control" parent="Demo/Scroll/Main"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="SectionHaptic" type="Label" parent="Demo/Scroll/Main"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.49, 0.75, 1, 1)
+theme_override_font_sizes/font_size = 16
+text = "触觉反馈"
+
+[node name="HapticImpactButton" type="Button" parent="Demo/Scroll/Main"]
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.93, 0.96, 1, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("2")
+theme_override_styles/pressed = SubResource("3")
+theme_override_styles/hover = SubResource("3")
+text = "impactMedium"
+
+[node name="HapticSuccessButton" type="Button" parent="Demo/Scroll/Main"]
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.93, 0.96, 1, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("2")
+theme_override_styles/pressed = SubResource("3")
+theme_override_styles/hover = SubResource("3")
+text = "notificationSuccess"
+
+[node name="Spacer6" type="Control" parent="Demo/Scroll/Main"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="SectionAd" type="Label" parent="Demo/Scroll/Main"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.49, 0.75, 1, 1)
+theme_override_font_sizes/font_size = 16
+text = "广告"
+
+[node name="RewardedAdButton" type="Button" parent="Demo/Scroll/Main"]
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.93, 0.96, 1, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("2")
+theme_override_styles/pressed = SubResource("3")
+theme_override_styles/hover = SubResource("3")
+text = "激励广告"
+
+[node name="InterstitialAdButton" type="Button" parent="Demo/Scroll/Main"]
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.93, 0.96, 1, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("2")
+theme_override_styles/pressed = SubResource("3")
+theme_override_styles/hover = SubResource("3")
+text = "插页广告"
+
+[node name="BottomSafeSpace" type="Control" parent="Demo/Scroll/Main"]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
