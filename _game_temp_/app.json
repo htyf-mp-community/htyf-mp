@@ -1,11 +1,11 @@
 {
   "htyf": {
     "type": "game",
-    "name": "demo",
-    "version": "1.0.76",
-    "appid": "htyfgame123",
-    "rotate": "",
-    "appUrlConfig": "https://xxx.cos.ap-chengdu.myqcloud.com/assets/testMiniApps/htyanimation/app.json",
-    "zipUrl": "https://xxxxx.myqcloud.com/assets/testMiniApps/xxxxx/outputs/dist.[PLATFORM].dgz"
+    "name": "game_demo",
+    "version": "1.0.77",
+    "appid": "game_demo_sdk",
+    "rotate": "portrait",
+    "appUrlConfig": "https://raw.githubusercontent.com/htyf-mp-community/demo/main/v2/game_demo_sdk/latest/app.json",
+    "zipUrl": "https://raw.githubusercontent.com/htyf-mp-community/demo/main/v2/game_demo_sdk/latest/dist.dgz"
   }
 }
