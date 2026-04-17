@@ -14,6 +14,7 @@
     "@callstack/repack": "5.2.5",
     "@htyf-mp/cli": "0.3.0",
     "@htyf-mp/js-sdk": "0.2.20",
+    "@react-native-async-storage/async-storage": "3.0.2",
     "react": "19.2.0",
     "react-native": "0.83.5",
     "react-native-nitro-modules": "0.35.4",
